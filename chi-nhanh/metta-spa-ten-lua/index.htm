@@ -884,6 +884,10 @@
     />
     <style id="custom-css" type="text/css">
       :root {
+			--metta-bg: #4a2d2e;
+			--metta-main: #f49d21;
+			--metta-sub: #f5f2e8;
+			--metta-gold-soft:#E5D3BD;
         --primary-color: #603813;
         --fs-color-primary: #603813;
         --fs-color-secondary: #074404;
@@ -902,7 +906,8 @@
         --drawer-width: 300px;
       }
       html {
-        background-color: #fffcf9 !important;
+        background: #4a2d2e;
+        color: var(--metta-main);
       }
       .container-width,
       .full-width .ubermenu-nav,
@@ -928,6 +933,13 @@
       body.boxed .is-sticky-section {
         max-width: 1920px;
       }
+			body {
+				margin: 0;
+				font-family: "Inter", sans-serif;
+				background: #4a2d2e;
+				color: var(--metta-main);
+				line-height: 1.6;
+			}
       .sticky-add-to-cart--active,
       #wrapper,
       #main,

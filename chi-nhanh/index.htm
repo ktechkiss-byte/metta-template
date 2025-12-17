@@ -855,6 +855,14 @@
     />
     <style id="custom-css" type="text/css">
       :root {
+				--metta-bg: #4A2D2E;
+				/* nền mận trầm */
+				--metta-main: #F49D21;
+				/* text chính vàng ánh kim */
+				--metta-sub: #F5F2E8;
+				/* text phụ (trắng ngà) */
+				--metta-gold-soft: #F8B85A;
+				/* vàng nhạt cho gradient */
         --primary-color: #603813;
         --fs-color-primary: #603813;
         --fs-color-secondary: #074404;
@@ -873,7 +881,8 @@
         --drawer-width: 300px;
       }
       html {
-        background-color: #fffcf9 !important;
+        background: #4a2d2e;
+        color: var(--metta-main);
       }
       .container-width,
       .full-width .ubermenu-nav,
@@ -899,6 +908,13 @@
       body.boxed .is-sticky-section {
         max-width: 1920px;
       }
+			body {
+				margin: 0;
+				font-family: "Inter", sans-serif;
+				background: #4a2d2e;
+				color: var(--metta-main);
+				line-height: 1.6;
+			}
       .sticky-add-to-cart--active,
       #wrapper,
       #main,
