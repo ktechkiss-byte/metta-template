@@ -1326,7 +1326,7 @@ section {
 /* mobile responsiveness */
 @media (max-width: 768px) {
   .banner#banner-1503614659{
-   padding-top: calc(100vh + 37px);
+   padding-top: 100vh;
   }
   .hero-v2-container {
     flex-direction: column;
@@ -1733,7 +1733,7 @@ section {
   margin-right: 12px;
   width: 28px;
   height: 28px;
-  background-image: url("https://tamoispa.vn/wp-content/uploads/2025/08/Group-15.svg");
+  background-image: url("https://tamoispa.vn/wp-content/uploads/2025/08/group-15.svg");
   background-repeat: no-repeat;
   background-size: contain;
   transform: translateY(2px);
