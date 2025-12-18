@@ -8,7 +8,7 @@
 
 	<script>
 		(function (html) {
-			html.className = html.className.replace(/\bno-js\b/, "js");
+			html.class = html.class.replace(/\bno-js\b/, "js");
 		})(document.documentElement);
 	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -856,6 +856,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
 		href="wp-content/plugins/3d-flipbook-dflip-lite/assets/css/dflip.min.css?ver=2.3.75" type="text/css" media="all" />
 	<link rel="stylesheet" id="flatsome-main-css" href="wp-content/themes/flatsome/assets/css/flatsome.css?ver=3.20.0"
 		type="text/css" media="all" />
+	<link rel="stylesheet" href="wp-content/themes/flatsome/assets/css/home.css?ver=3.20.0" type="text/css" media="all" />
 	<style id="flatsome-main-inline-css" type="text/css">
 		@font-face {
 			font-family: "fl-icons";
@@ -920,7 +921,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
 			--metta-bg: #4a2d2e;
 			--metta-main: #f49d21;
 			--metta-sub: #f5f2e8;
-			--metta-gold-soft:#E5D3BD;
+			--metta-gold-soft: #E5D3BD;
 			--primary-color: #603813;
 			--fs-color-primary: #603813;
 			--fs-color-secondary: #074404;
@@ -1440,6 +1441,16 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
 			border: 1px solid var(--vang-dat, #a87e09);
 		}
 
+		.banner-bg.blur {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding-bottom: 50px;
+			background-color: #4a2d2eb0;
+		}
+
 		.about-end-banner,
 		.about-end-banner .banner-bg {
 			border-radius: 0 94px 10px 0;
@@ -1511,12 +1522,12 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
 		}
 
 		.header.transparent.has-transparent.has-sticky.sticky-jump .header-wrapper {
-			background: linear-gradient(0deg,
-					rgba(96, 56, 19, 0.1) 0%,
-					rgba(96, 56, 19, 0.5) 100%);
+			background: var(--metta-bg);
 
 			backdrop-filter: blur(8px);
 			-webkit-backdrop-filter: blur(8px);
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+			border-bottom: 1px solid rgba(244, 157, 33, 0.4);
 		}
 
 		.bannergioithieu .video-button-wrapper a {
@@ -1935,10 +1946,76 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
 					<div class="banner-inner fill">
 						<div class="banner-bg fill">
 							<img fetchpriority="high" decoding="async" width="2560" height="1707"
-								src="wp-content/uploads/2025/12/z7321243502543_d287f9b41171f1aa3b8ab4eca5f92808.jpg"
+								src="wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg"
 								class="bg attachment-original size-original" alt="" />
 						</div>
+						<div class="hero-v2-container">
+							<div class="hero-v2-text">
+								<div class="hero-chip">
+									<span class="hero-chip-icon">✺</span>
+									<span>Trải nghiệm dưỡng sinh cao cấp</span>
+								</div>
 
+								<h1 class="hero-title">
+									<span class="hero-title-main">Metta cùng bạn xây dựng</span>
+									<span class="hero-title-sub">lối sống dưỡng sinh.</span>
+								</h1>
+
+								<p class="hero-desc">
+									Tái tạo sức khoẻ từ gốc – lan toả giá trị dưỡng sinh Đông Y. Chúng tôi chọn con đường chậm,
+									tự nhiên, chân thật – để sức khoẻ trở về đúng bản chất.
+								</p>
+
+								<a href="https://m.me/mettaspadongy" class="hero-booking-link">
+									Đặt hẹn ngay
+								</a>
+							</div>
+
+							<div class="hero-v2-image-card">
+								<div class="slider-wrapper relative sliderow" id="slider-1373166469">
+									<div
+										class="slider slider-nav-simple slider-nav-large slider-nav-light slider-style-container slider-show-nav"
+										data-flickity-options='{
+            "cellAlign": "left",
+            "imagesLoaded": true,
+            "lazyLoad": 1,
+            "freeScroll": false,
+            "wrapAround": true,
+            "autoPlay": 6000,
+            "pauseAutoPlayOnHover" : true,
+            "prevNextButtons": true,
+            "contain" : true,
+            "adaptiveHeight" : true,
+            "dragThreshold" : 10,
+            "percentPosition": true,
+            "pageDots": true,
+            "rightToLeft": false,
+            "draggable": true,
+            "selectedAttraction": 0.1,
+            "parallax" : 0,
+            "friction": 0.6        }'>
+										<div class="hero-slide-item">
+											<img src="wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp"
+												alt="Metta slide fallback" />
+											<div class="hero-image-label">Metta Spa Tên Lửa</div>
+										</div>
+										<div class="hero-slide-item">
+											<img src="wp-content/uploads/2025/12/z7321243502543_d287f9b41171f1aa3b8ab4eca5f92808.jpg"
+												alt="Metta slide fallback" />
+											<div class="hero-image-label">Metta Spa Tên Lửa</div>
+										</div>
+										<div class="hero-slide-item">
+											<img src="wp-content/uploads/2025/12/vn-11134207-820l4-metvfqzrcydj87.webp"
+												alt="Metta slide fallback" />
+											<div class="hero-image-label">Metta Spa Tên Lửa</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="banner-bg blur">
+						</div>
 						<div class="banner-layers container">
 							<div class="fill banner-link"></div>
 						</div>
@@ -2013,15 +2090,15 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
 											<img decoding="async" width="1920" height="1280"
 												src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
 												class="attachment-original size-original lazyload" alt=""
-												data-src="/wp-content/uploads/2025/08/YAM00226-1.jpg"
-												data-srcset="/wp-content/uploads/2025/08/YAM00226-1.jpg 1920w, /wp-content/uploads/2025/08/YAM00226-1-1024x683.jpg 1024w, /wp-content/uploads/2025/12/z7321243467505_b13ddf913107542b17a1eb9dc74c3cc8.jpg 768w, /wp-content/uploads/2025/08/YAM00226-1-1536x1024.jpg 1536w"
+												data-src="/wp-content/uploads/2025/12/z7321243467496_f7d4cb3936392fd3897d465a35fcd2ed.jpg"
+												data-srcset="/wp-content/uploads/2025/12/z7321243467496_f7d4cb3936392fd3897d465a35fcd2ed.jpg 1920w, /wp-content/uploads/2025/12/z7321243467496_f7d4cb3936392fd3897d465a35fcd2ed.jpg 1024w, /wp-content/uploads/2025/12/z7321243467496_f7d4cb3936392fd3897d465a35fcd2ed.jpg 768w, /wp-content/uploads/2025/12/z7321243467496_f7d4cb3936392fd3897d465a35fcd2ed.jpg 1536w"
 												data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1280" /><noscript><img
-													decoding="async" width="1920" height="1280" src="wp-content/uploads/2025/08/YAM00226-1.jpg"
+													decoding="async" width="1920" height="1280" src="wp-content/uploads/2025/12/z7321243467496_f7d4cb3936392fd3897d465a35fcd2ed.jpg"
 													class="attachment-original size-original" alt="" srcset="
-                              wp-content/uploads/2025/08/YAM00226-1.jpg                                      1920w,
-                              wp-content/uploads/2025/08/YAM00226-1-1024x683.jpg                             1024w,
-                              wp-content/uploads/2025/12/z7321243467505_b13ddf913107542b17a1eb9dc74c3cc8.jpg  768w,
-                              wp-content/uploads/2025/08/YAM00226-1-1536x1024.jpg                            1536w
+                              wp-content/uploads/2025/12/z7321243467496_f7d4cb3936392fd3897d465a35fcd2ed.jpg                                      1920w,
+                              wp-content/uploads/2025/12/z7321243467496_f7d4cb3936392fd3897d465a35fcd2ed.jpg                             1024w,
+                              wp-content/uploads/2025/12/z7321243467496_f7d4cb3936392fd3897d465a35fcd2ed.jpg  768w,
+                              wp-content/uploads/2025/12/z7321243467496_f7d4cb3936392fd3897d465a35fcd2ed.jpg                            1536w
                             " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
 										</div>
 
@@ -3858,6 +3935,16 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
 				<li id="menu-item-429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-429">
 					<a href="lien-he/index.htm">Liên hệ</a>
 				</li>
+				<li id="menu-item-429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-429">
+					<a
+              href="https://m.me/mettaspadongy"
+              class="mobile-booking"
+              onClick={closeMenu}
+            >
+              Hẹn lịch
+            </a>
+				</li>
+				
 			</ul>
 		</div>
 	</div>
@@ -3907,24 +3994,24 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
 			do_parallax("parallax-3", 0.2);
 			do_parallax("parallax-4", 0.3);
 
-			function do_parallax(className, depth) {
-				let parallaxClasses = document.querySelectorAll("." + className);
+			function do_parallax(class, depth) {
+			let parallaxClasses = document.querySelectorAll("." + class);
 
-				parallaxClasses.forEach((parallaxClass) => {
-					Array.from(parallaxClass.childNodes).forEach((child) => {
-						if (
-							child.nodeType === Node.ELEMENT_NODE &&
-							child.tagName !== "STYLE"
-						) {
-							child.setAttribute("data-depth", depth);
-						}
-					});
-
-					let parallaxtext = new Parallax(parallaxClass, {
-						relativeInput: true,
-					});
+			parallaxClasses.forEach((parallaxClass) => {
+				Array.from(parallaxClass.childNodes).forEach((child) => {
+					if (
+						child.nodeType === Node.ELEMENT_NODE &&
+						child.tagName !== "STYLE"
+					) {
+						child.setAttribute("data-depth", depth);
+					}
 				});
-			}
+
+				let parallaxtext = new Parallax(parallaxClass, {
+					relativeInput: true,
+				});
+			});
+		}
 		});
 	</script>
 	<script data-cfasync="false">
