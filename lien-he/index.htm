@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="/xmlrpc.php" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <script>
       (function (html) {
@@ -1857,7 +1858,7 @@
                     ><img
                       width="1"
                       height="1"
-                      src="../wp-content/uploads/2025/08/tam-oi.svg"
+                      src="../wp-content/uploads/2025/12/logo_meta.svg"
                       class="header-logo-dark"
                       alt="Metta đông y Spa"
                       data-eio="l" /></noscript
@@ -1935,7 +1936,7 @@
                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33 menu-item-design-default"
                   >
                     <a
-                      href="https://shopee.vn/mettaspashop"
+                      href="../san-pham/index.html"
                       class="nav-top-link"
                       >Sản phẩm</a
                     >
@@ -2084,138 +2085,54 @@
                           Vui lòng bật JavaScript trong trình duyệt của bạn để
                           hoàn thành Form này.
                         </div>
-                        <div class="wpforms-field-container">
-                          <div
-                            id="wpforms-206-field_1-container"
-                            class="wpforms-field wpforms-field-text"
-                            data-field-id="1"
-                          >
-                            <label
-                              class="wpforms-field-label wpforms-label-hide"
-                              for="wpforms-206-field_1"
-                              aria-hidden="false"
-                              >Họ tên
-                              <span
-                                class="wpforms-required-label"
-                                aria-hidden="true"
-                                >*</span
-                              ></label
-                            ><input
-                              type="text"
-                              id="wpforms-206-field_1"
-                              class="wpforms-field-large wpforms-field-required"
-                              name="wpforms[fields][1]"
-                              placeholder="Họ tên"
-                              aria-errormessage="wpforms-206-field_1-error"
-                              required=""
-                            />
+                          <div class="wpforms-field-container">
+                              <!-- Row 1: Name & Phone -->
+                              <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                                  <div class="wpforms-field" style="flex: 1;">
+                                      <input type="text" id="booking-name" class="wpforms-field-large" name="name" placeholder="Họ tên *" required style="width: 100%; border: 1px solid #a87e09; border-radius: 5px; padding: 10px;">
+                                  </div>
+                                  <div class="wpforms-field" style="flex: 1;">
+                                      <input type="tel" id="booking-phone" class="wpforms-field-large" name="phone" placeholder="Số điện thoại *" required style="width: 100%; border: 1px solid #a87e09; border-radius: 5px; padding: 10px;">
+                                  </div>
+                              </div>
+
+                              <!-- Row 2: Email & Branch -->
+                              <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                                  <div class="wpforms-field" style="flex: 1;">
+                                      <input type="email" id="booking-email" class="wpforms-field-large" name="email" placeholder="Email (Tùy chọn)" style="width: 100%; border: 1px solid #a87e09; border-radius: 5px; padding: 10px;">
+                                  </div>
+                                  <div class="wpforms-field" style="flex: 1;">
+                                      <select id="booking-branch" class="wpforms-field-large" name="branch" required style="width: 100%; border: 1px solid #a87e09; border-radius: 5px; padding: 10px; background: white;">
+                                          <option value="" disabled selected>Chọn Chi Nhánh *</option>
+                                          <option value="quan-1">Metta Spa - Quận 1</option>
+                                          <option value="ten-lua">Metta Spa - Tên Lửa (Bình Tân)</option>
+                                          <option value="bien-hoa">Metta Spa - Biên Hòa</option>
+                                      </select>
+                                  </div>
+                              </div>
+
+                              <!-- Row 3: Date & Time -->
+                              <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                                  <div class="wpforms-field" style="flex: 1;">
+                                      <label style="font-size: 0.9em; color: #603813; margin-bottom: 5px; display: block;">Ngày đặt lịch *</label>
+                                      <input type="date" id="booking-date" class="wpforms-field-large" name="date" required style="width: 100%; border: 1px solid #a87e09; border-radius: 5px; padding: 10px;">
+                                  </div>
+                                  <div class="wpforms-field" style="flex: 1;">
+                                      <label style="font-size: 0.9em; color: #603813; margin-bottom: 5px; display: block;">Giờ hẹn *</label>
+                                      <input type="time" id="booking-time" class="wpforms-field-large" name="time" required style="width: 100%; border: 1px solid #a87e09; border-radius: 5px; padding: 10px;">
+                                  </div>
+                              </div>
+
+                              <!-- Row 4: Message -->
+                              <div class="wpforms-field" style="margin-bottom: 15px;">
+                                  <textarea id="booking-message" class="wpforms-field-medium" name="message" placeholder="Lời nhắn hoặc dịch vụ quan tâm..." style="width: 100%; border: 1px solid #a87e09; border-radius: 5px; padding: 10px; height: 100px;"></textarea>
+                              </div>
+                              
+                              <!-- reCAPTCHA -->
+                              <div class="wpforms-field" style="margin-bottom: 15px; display: flex; justify-content: center;">
+                                   <div class="g-recaptcha" data-sitekey="6Lf_XzMsAAAAAJV7yYXVS1fLUMdVgiwT9yngP9V6"></div>
+                              </div>
                           </div>
-                          <div
-                            id="wpforms-206-field_2-container"
-                            class="wpforms-field wpforms-field-text"
-                            data-field-id="2"
-                          >
-                            <label
-                              class="wpforms-field-label wpforms-label-hide"
-                              for="wpforms-206-field_2"
-                              aria-hidden="false"
-                              >Số điện thoại
-                              <span
-                                class="wpforms-required-label"
-                                aria-hidden="true"
-                                >*</span
-                              ></label
-                            ><input
-                              type="text"
-                              id="wpforms-206-field_2"
-                              class="wpforms-field-large wpforms-field-required"
-                              name="wpforms[fields][2]"
-                              placeholder="Số điện thoại"
-                              aria-errormessage="wpforms-206-field_2-error"
-                              required=""
-                            />
-                          </div>
-                          <div
-                            id="wpforms-206-field_3-container"
-                            class="wpforms-field wpforms-field-email"
-                            data-field-id="3"
-                          >
-                            <label
-                              class="wpforms-field-label wpforms-label-hide"
-                              for="wpforms-206-field_3"
-                              aria-hidden="false"
-                              >Email
-                              <span
-                                class="wpforms-required-label"
-                                aria-hidden="true"
-                                >*</span
-                              ></label
-                            ><input
-                              type="email"
-                              id="wpforms-206-field_3"
-                              class="wpforms-field-large wpforms-field-required"
-                              name="wpforms[fields][3]"
-                              placeholder="Email"
-                              spellcheck="false"
-                              aria-errormessage="wpforms-206-field_3-error"
-                              required=""
-                            />
-                          </div>
-                          <div
-                            id="wpforms-206-field_5-container"
-                            class="wpforms-field wpforms-field-text"
-                            data-field-type="text"
-                            data-field-id="5"
-                          >
-                            <label
-                              class="wpforms-field-label"
-                              for="wpforms-206-field_5"
-                              >điện Số thoại</label
-                            >
-                            <input
-                              type="text"
-                              id="wpforms-206-field_5"
-                              class="wpforms-field-medium"
-                              name="wpforms[fields][5]"
-                            />
-                          </div>
-                          <div
-                            id="wpforms-206-field_4-container"
-                            class="wpforms-field wpforms-field-textarea"
-                            data-field-id="4"
-                          >
-                            <label
-                              class="wpforms-field-label wpforms-label-hide"
-                              for="wpforms-206-field_4"
-                              aria-hidden="false"
-                              >Lời nhắn
-                              <span
-                                class="wpforms-required-label"
-                                aria-hidden="true"
-                                >*</span
-                              ></label
-                            ><textarea
-                              id="wpforms-206-field_4"
-                              class="wpforms-field-medium wpforms-field-required"
-                              name="wpforms[fields][4]"
-                              placeholder="Để lại lời nhắn"
-                              aria-errormessage="wpforms-206-field_4-error"
-                              required=""
-                            ></textarea>
-                          </div>
-                          <script>
-                            (function () {
-                              const style = document.createElement("style");
-                              style.appendChild(
-                                document.createTextNode(
-                                  "#wpforms-206-field_5-container { position: absolute !important; overflow: hidden !important; display: inline !important; height: 1px !important; width: 1px !important; z-index: -1000 !important; padding: 0 !important; } #wpforms-206-field_5-container input { visibility: hidden; } #wpforms-conversational-form-page #wpforms-206-field_5-container label { counter-increment: none; }"
-                                )
-                              );
-                              document.head.appendChild(style);
-                              document.currentScript?.remove();
-                            })();
-                          </script>
-                        </div>
                         <!-- .wpforms-field-container -->
                         <div class="wpforms-submit-container">
                           <input
@@ -2319,7 +2236,7 @@
                           class="attachment-original size-original lazyload"
                           alt=""
                           data-src="/wp-content/uploads/2025/08/z6899631666807_0ecb2dbcef938113899687335066ef9f.jpg"
-                          data-srcset="/wp-content/uploads/2025/08/z6899631666807_0ecb2dbcef938113899687335066ef9f.jpg 1440w, /wp-content/uploads/2025/08/z6899631666807_0ecb2dbcef938113899687335066ef9f-768x1024.jpg 768w, /wp-content/uploads/2025/08/z6899631666807_0ecb2dbcef938113899687335066ef9f-1152x1536.jpg 1152w"
+                          data-srcset="/wp-content/uploads/2025/08/z6899631666807_0ecb2dbcef938113899687335066ef9f.jpg 1440w, /wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg 768w, /wp-content/uploads/2025/08/z6899631666807_0ecb2dbcef938113899687335066ef9f-1152x1536.jpg 1152w"
                           data-sizes="auto"
                           data-eio-rwidth="1440"
                           data-eio-rheight="1920"
@@ -2333,7 +2250,7 @@
                             alt=""
                             srcset="
                               ../wp-content/uploads/2025/08/z6899631666807_0ecb2dbcef938113899687335066ef9f.jpg           1440w,
-                              ../wp-content/uploads/2025/08/z6899631666807_0ecb2dbcef938113899687335066ef9f-768x1024.jpg   768w,
+                              ../wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg   768w,
                               ../wp-content/uploads/2025/08/z6899631666807_0ecb2dbcef938113899687335066ef9f-1152x1536.jpg 1152w
                             "
                             sizes="(max-width: 1440px) 100vw, 1440px"
@@ -2666,7 +2583,7 @@
                         data-src="/wp-content/uploads/2025/12/logo_meta.svg"
                       /><noscript
                         ><img
-                          src="../wp-content/uploads/2025/08/tam-oi.svg"
+                          src="../wp-content/uploads/2025/12/logo_meta.svg"
                           class="attachment-original size-original"
                           alt=""
                           decoding="async"
@@ -2820,15 +2737,7 @@
           </style>
         </section>
 
-        <div class="absolute-footer dark medium-text-center small-text-center">
-          <div class="container clearfix">
-            <div class="footer-primary pull-left">
-              <div class="copyright-footer">
-                Copyright 2025 &copy; <strong>Flatsome Theme</strong>
-              </div>
-            </div>
-          </div>
-        </div>
+        
         <button
           type="button"
           id="top-link"
