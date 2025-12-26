@@ -1325,9 +1325,10 @@ section {
 
 /* mobile responsiveness */
 @media (max-width: 768px) {
-  .banner#banner-1503614659{
-   padding-top: 835px;
+  .banner#banner-1503614659 {
+    padding-top: 835px;
   }
+
   .hero-v2-container {
     flex-direction: column;
     padding-top: 15vh;
@@ -1350,9 +1351,11 @@ section {
     width: fit-content;
     text-align: center;
   }
-  .banner-inner .banner-bg.blur{
+
+  .banner-inner .banner-bg.blur {
     background-color: #4a2d2ede;
   }
+
   .hero-v2-image-card .flickity-page-dots {
     /* display: none; */
     bottom: 20%;
@@ -1733,7 +1736,7 @@ section {
   margin-right: 12px;
   width: 28px;
   height: 28px;
-  background-image: url("https://tamoispa.vn/wp-content/uploads/2025/08/group-15.svg");
+  background-image: url("https://tamoispa.vn/wp-content/uploads/2025/08/Group-15.svg");
   background-repeat: no-repeat;
   background-size: contain;
   transform: translateY(2px);
