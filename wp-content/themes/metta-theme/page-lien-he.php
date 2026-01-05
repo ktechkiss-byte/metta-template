@@ -400,4 +400,78 @@ get_header(); ?>
         </section>
       </div>
     </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const submitBtn = document.getElementById('wpforms-submit-206');
+        const form = document.getElementById('wpforms-form-206');
+        if (!submitBtn || !form) return;
+
+        submitBtn.addEventListener('click', async function(e) {
+          e.preventDefault();
+
+          const name = document.getElementById('booking-name').value.trim();
+          const phone = document.getElementById('booking-phone').value.trim();
+          const email = document.getElementById('booking-email').value.trim();
+          const branchSelect = document.getElementById('booking-branch');
+          const branchValue = branchSelect.value;
+          const branchText = branchSelect.options[branchSelect.selectedIndex] ? branchSelect.options[branchSelect.selectedIndex].text : '';
+          const date = document.getElementById('booking-date').value;
+          const time = document.getElementById('booking-time').value;
+          const message = document.getElementById('booking-message').value.trim();
+
+          if (!name || !phone || !date || !time || !branchValue) {
+            alert('Vui lòng điền đầy đủ các thông tin có dấu *');
+            return;
+          }
+
+          // Hiệu ứng đang gửi
+          submitBtn.disabled = true;
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML = 'Đang gửi...';
+
+          try {
+            // Kết hợp ngày và giờ
+            const dateTimeStr = `${date}T${time}:00`;
+            const timeStart = new Date(dateTimeStr).toISOString();
+
+            const payload = {
+              recaptcha: document.getElementById('g-recaptcha-response')?.value || 'no-token',
+              telephone: phone,
+              fullname: name,
+              note: `Email: ${email} | Chi nhánh: ${branchText} | Lời nhắn: ${message}`,
+              timeStart: timeStart,
+              services: []
+            };
+
+            const response = await fetch('https://api.mettaspadongy.vn/guest/appointment', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': '*/*'
+              },
+              body: JSON.stringify(payload)
+            });
+
+            if (response.ok || response.status === 201) {
+              alert('Gửi yêu cầu đặt hẹn thành công! Metta Spa sẽ liên hệ với bạn sớm nhất.');
+              form.reset();
+            } else {
+              let errorMsg = 'Gửi yêu cầu thất bại.';
+              try {
+                const errData = await response.json();
+                errorMsg += ' ' + (errData.message || '');
+              } catch (e) {}
+              alert(errorMsg + ' Vui lòng thử lại sau hoặc gọi hotline.');
+            }
+          } catch (error) {
+            console.error('API Error:', error);
+            alert('Không thể kết nối với máy chủ. Vui lòng kiểm tra kết nối mạng và thử lại.');
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
+        });
+      });
+    </script>
 <?php get_footer(); ?>
