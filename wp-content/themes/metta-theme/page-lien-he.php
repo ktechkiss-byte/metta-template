@@ -402,23 +402,37 @@ get_header(); ?>
     </main>
 
     <script>
+      // Global error handler for debugging
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        alert('Có lỗi JS xảy ra: ' + msg + '\nTại: ' + lineNo + ':' + columnNo);
+        return false;
+      };
+
       document.addEventListener('DOMContentLoaded', function() {
+        console.log('Metta Contact Script Loaded');
         const submitBtn = document.getElementById('wpforms-submit-206');
         const form = document.getElementById('wpforms-form-206');
-        if (!submitBtn || !form) return;
+        
+        if (!submitBtn) {
+          console.error('Submit button not found!');
+          return;
+        }
 
         submitBtn.addEventListener('click', async function(e) {
           e.preventDefault();
-
+          console.log('Submit button clicked');
+          
           const name = document.getElementById('booking-name').value.trim();
           const phone = document.getElementById('booking-phone').value.trim();
           const email = document.getElementById('booking-email').value.trim();
           const branchSelect = document.getElementById('booking-branch');
-          const branchValue = branchSelect.value;
-          const branchText = branchSelect.options[branchSelect.selectedIndex] ? branchSelect.options[branchSelect.selectedIndex].text : '';
+          const branchValue = branchSelect ? branchSelect.value : '';
+          const branchText = branchSelect && branchSelect.options[branchSelect.selectedIndex] ? branchSelect.options[branchSelect.selectedIndex].text : '';
           const date = document.getElementById('booking-date').value;
           const time = document.getElementById('booking-time').value;
           const message = document.getElementById('booking-message').value.trim();
+
+          console.log('Form Data:', { name, phone, date, time, branchValue });
 
           if (!name || !phone || !date || !time || !branchValue) {
             alert('Vui lòng điền đầy đủ các thông tin có dấu *');
@@ -428,7 +442,7 @@ get_header(); ?>
           // Hiệu ứng đang gửi
           submitBtn.disabled = true;
           const originalText = submitBtn.innerHTML;
-          submitBtn.innerHTML = 'Đang gửi...';
+          submitBtn.innerHTML = 'Đang xử lý...';
 
           try {
             // Kết hợp ngày và giờ
@@ -436,7 +450,7 @@ get_header(); ?>
             const timeStart = new Date(dateTimeStr).toISOString();
 
             const payload = {
-              recaptcha: document.getElementById('g-recaptcha-response')?.value || 'no-token',
+              recaptcha: document.getElementById('g-recaptcha-response')?.value || 'no-token-metta',
               telephone: phone,
               fullname: name,
               note: `Email: ${email} | Chi nhánh: ${branchText} | Lời nhắn: ${message}`,
@@ -444,29 +458,31 @@ get_header(); ?>
               services: []
             };
 
+            console.log('Sending Payload:', payload);
+
             const response = await fetch('https://api.mettaspadongy.vn/guest/appointment', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
-                'Accept': '*/*'
+                'Accept': 'application/json'
               },
               body: JSON.stringify(payload)
             });
+
+            console.log('API Response Status:', response.status);
+
+            const result = await response.json();
+            console.log('API Result:', result);
 
             if (response.ok || response.status === 201) {
               alert('Gửi yêu cầu đặt hẹn thành công! Metta Spa sẽ liên hệ với bạn sớm nhất.');
               form.reset();
             } else {
-              let errorMsg = 'Gửi yêu cầu thất bại.';
-              try {
-                const errData = await response.json();
-                errorMsg += ' ' + (errData.message || '');
-              } catch (e) {}
-              alert(errorMsg + ' Vui lòng thử lại sau hoặc gọi hotline.');
+              alert('Lỗi từ máy chủ: ' + (result.message || 'Không xác định') + ' (Status: ' + response.status + ')');
             }
           } catch (error) {
-            console.error('API Error:', error);
-            alert('Không thể kết nối với máy chủ. Vui lòng kiểm tra kết nối mạng và thử lại.');
+            console.error('Fetch Error:', error);
+            alert('Lỗi kết nối: ' + error.message);
           } finally {
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalText;
