@@ -1,2 +1,11 @@
-*.DS_Store
+# WordPress
+wp-config.php
+wp-content/uploads/
+*.tmp
+*.log
 *.mp4
+*.zip
+*.gz
+*.pdf
+node_modules/
+.DS_Store
