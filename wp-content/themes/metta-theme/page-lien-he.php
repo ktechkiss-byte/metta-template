@@ -52,8 +52,8 @@ get_header(); ?>
                     </p>
                   </div>
 
-                  <style id="wpforms-css-vars-206">
-                    #wpforms-206 {
+                  <style id="metta-booking-css-vars">
+                    #metta-booking-container {
                       --wpforms-container-padding: 0px;
                       --wpforms-container-border-width: 1px;
                       --wpforms-container-border-radius: 3px;
@@ -77,10 +77,10 @@ get_header(); ?>
                       --wpforms-container-shadow-size-box-shadow: none;
                     }
                   </style>
-                  <div class="wpforms-container wpforms-container-full wpforms-render-modern" id="wpforms-206">
-                    <form id="wpforms-form-206" class="wpforms-validate wpforms-form wpforms-ajax-form"
-                      data-formid="206" {# method="post" #} {# enctype="multipart/form-data" #} {# action="/lien-he/" #}
-                      {# data-token="d2088c69868310ebea364715142a48f7" #} {# data-token-time="1765851538" #}>
+                  <div class="metta-booking-container" id="metta-booking-container">
+                    <form id="metta-booking-form" class="metta-custom-form" data-formid="206" method="post"
+                      action="/lien-he/">
+
                       <noscript class="wpforms-error-noscript">Vui lòng bật JavaScript trong trình duyệt của bạn để
                         hoàn thành Form này.</noscript>
                       <div id="wpforms-error-noscript" style="display: none">
@@ -152,8 +152,8 @@ get_header(); ?>
                           value="Liên hệ" /><input type="hidden" name="page_url" value="/lien-he/" /><input
                           type="hidden" name="url_referer" value="" /><input type="hidden" name="page_id"
                           value="17" /><input type="hidden" name="wpforms[post_id]" value="17" /><button
-                          name="wpforms[submit]" id="wpforms-submit-206" class="wpforms-submit"
-                          data-alt-text="Đang gửi..." data-submit-text="Gửi đi" aria-live="assertive" type="button">
+                          id="metta-submit-btn" class="metta-submit-btn" data-alt-text="Đang gửi..."
+                          data-submit-text="Gửi đi" aria-live="assertive" type="button">
 
                           Gửi đi</button><img decoding="async"
                           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaAQMAAACThN6NAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAAtJREFUCB1jGHAAAACCAAG31G3zAAAAAElFTkSuQmCC"
@@ -399,95 +399,111 @@ get_header(); ?>
           </style>
         </section>
       </div>
-    </main>
 
-    <script>
-      // Global error handler for debugging
-      window.onerror = function(msg, url, lineNo, columnNo, error) {
-        alert('Có lỗi JS xảy ra: ' + msg + '\nTại: ' + lineNo + ':' + columnNo);
-        return false;
-      };
+      <script>
+        // Hijack form submission
+        document.addEventListener("DOMContentLoaded", function () {
+          const form = document.getElementById('metta-booking-form');
+          const submitBtn = document.getElementById('metta-submit-btn');
 
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('Metta Contact Script Loaded');
-        const submitBtn = document.getElementById('wpforms-submit-206');
-        const form = document.getElementById('wpforms-form-206');
-        
-        if (!submitBtn) {
-          console.error('Submit button not found!');
-          return;
-        }
+          if (submitBtn) {
+            submitBtn.addEventListener('click', function (e) {
+              console.log('Submit button clicked, hijacking...');
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              submitAppointment(e);
+            });
+          }
+        });
 
-        submitBtn.addEventListener('click', async function(e) {
-          e.preventDefault();
-          console.log('Submit button clicked');
-          
-          const name = document.getElementById('booking-name').value.trim();
-          const phone = document.getElementById('booking-phone').value.trim();
-          const email = document.getElementById('booking-email').value.trim();
-          const branchSelect = document.getElementById('booking-branch');
-          const branchValue = branchSelect ? branchSelect.value : '';
-          const branchText = branchSelect && branchSelect.options[branchSelect.selectedIndex] ? branchSelect.options[branchSelect.selectedIndex].text : '';
-          const date = document.getElementById('booking-date').value;
-          const time = document.getElementById('booking-time').value;
-          const message = document.getElementById('booking-message').value.trim();
+        async function submitAppointment(e) {
+          if (e) e.preventDefault();
+          console.log('submitAppointment started');
 
-          console.log('Form Data:', { name, phone, date, time, branchValue });
 
-          if (!name || !phone || !date || !time || !branchValue) {
-            alert('Vui lòng điền đầy đủ các thông tin có dấu *');
+          const btn = document.getElementById('metta-submit-btn');
+          const originalText = btn.innerText;
+          btn.innerText = 'Đang gửi...';
+          btn.disabled = true;
+
+          // 1. Validate required fields
+          const name = document.getElementById("booking-name").value;
+          const phone = document.getElementById("booking-phone").value;
+          const branch = document.getElementById("booking-branch").value;
+          const date = document.getElementById("booking-date").value;
+          const time = document.getElementById("booking-time").value;
+          const message = document.getElementById("booking-message").value;
+          const email = document.getElementById("booking-email").value;
+
+          if (!name || !phone || !branch || !date || !time) {
+            alert("Vui lòng điền đầy đủ thông tin bắt buộc (*).");
+            btn.innerText = originalText;
+            btn.disabled = false;
             return;
           }
 
-          // Hiệu ứng đang gửi
-          submitBtn.disabled = true;
-          const originalText = submitBtn.innerHTML;
-          submitBtn.innerHTML = 'Đang xử lý...';
-
           try {
-            // Kết hợp ngày và giờ
-            const dateTimeStr = `${date}T${time}:00`;
-            const timeStart = new Date(dateTimeStr).toISOString();
-
-            const payload = {
-              recaptcha: document.getElementById('g-recaptcha-response')?.value || 'no-token-metta',
-              telephone: phone,
-              fullname: name,
-              note: `Email: ${email} | Chi nhánh: ${branchText} | Lời nhắn: ${message}`,
-              timeStart: timeStart,
-              services: []
-            };
-
-            console.log('Sending Payload:', payload);
-
-            const response = await fetch('https://api.mettaspadongy.vn/guest/appointment', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-              },
-              body: JSON.stringify(payload)
+            // 2. Get reCAPTCHA token
+            const token = await grecaptcha.execute("6Lf_XzMsAAAAAJV7yYXVS1fLUMdVgiwT9yngP9V6", {
+              action: "guest_appointment",
             });
 
-            console.log('API Response Status:', response.status);
+            // 3. Build payload
+            const SERVICE_ID = "web" + new Date().getTime();
 
-            const result = await response.json();
-            console.log('API Result:', result);
+            const combinedNote = `CN: ${branch} | Date: ${date} ${time} | Email: ${email} | Note: ${message}`;
 
-            if (response.ok || response.status === 201) {
-              alert('Gửi yêu cầu đặt hẹn thành công! Metta Spa sẽ liên hệ với bạn sớm nhất.');
-              form.reset();
-            } else {
-              alert('Lỗi từ máy chủ: ' + (result.message || 'Không xác định') + ' (Status: ' + response.status + ')');
+            let timeStart = new Date().toISOString();
+            if (date && time) {
+              const d = new Date(`${date}T${time}`);
+              if (!isNaN(d.getTime())) timeStart = d.toISOString();
             }
+
+            const payload = {
+              recaptcha: token,
+              telephone: phone,
+              fullname: name,
+              note: combinedNote,
+              timeStart: timeStart,
+              services: [
+                {
+                  _id: SERVICE_ID,
+                  quantity: 1, // Default quantity
+                }
+              ],
+            };
+
+            // 4. POST API
+            const res = await fetch(
+              "https://api.mettaspadongy.vn/guest/appointment",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json",
+                },
+                body: JSON.stringify(payload),
+              }
+            );
+
+            const data = await res.json();
+            console.log(data);
+
+            if (!res.ok) {
+              alert("Đặt lịch thất bại. Vui lòng thử lại sau.");
+            } else {
+              alert("Đặt lịch thành công! Chúng tôi sẽ liên hệ sớm.");
+              // Optional: Redirect or clear form
+            }
+
           } catch (error) {
-            console.error('Fetch Error:', error);
-            alert('Lỗi kết nối: ' + error.message);
+            console.error(error);
+            alert("Có lỗi xảy ra. Vui lòng thử lại.");
           } finally {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalText;
+            btn.innerText = originalText;
+            btn.disabled = false;
           }
-        });
-      });
-    </script>
+        }
+      </script>
+    </main>
 <?php get_footer(); ?>
