@@ -11,372 +11,732 @@
         })(document.documentElement);
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Khóa học Dưỡng sinh Đông y - Văn hóa Tây Nguyên & Trống Đồng - Metta Spa</title>
-    <meta name="robots" content="index, follow" />
+    <title>Khóa học Dưỡng sinh Đông y - Metta Spa</title>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+    <link rel="canonical" href="index.htm" />
+
     <link rel="stylesheet" id="flatsome-main-css" href="../wp-content/themes/flatsome/assets/css/flatsome.css"
         type="text/css" media="all" />
     <link rel="stylesheet" id="flatsome-style-css" href="../wp-content/themes/flatsome-child/style.css" type="text/css"
         media="all" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap');
 
         :root {
             --metta-brown: #4a2d2e;
             --metta-gold: #f49d21;
-            --metta-cream: #f5f2e8;
+            --metta-cream: #fdfaf5;
             --metta-dark: #2c1a1b;
+            --metta-text: #412b2c;
         }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--metta-cream);
-            color: var(--metta-dark);
+            color: var(--metta-text);
+            line-height: 1.6;
         }
 
         h1,
         h2,
         h3,
+        h4,
         .text-vip {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
+            color: var(--metta-brown);
         }
 
-        /* Tây Nguyên & Trống Đồng Elements */
-        .trong-dong-bg {
+        /* --- TÂY NGUYÊN & TRỐNG ĐỒNG AESTHETICS --- */
+        .pattern-overlay {
             background-image: url('tay_nguyen_pattern_bg.png');
-            /* Placeholder for generated image */
             background-size: cover;
             background-position: center;
-            position: relative;
-        }
-
-        .trong-dong-overlay {
-            background: rgba(74, 45, 46, 0.85);
+            opacity: 0.1;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            pointer-events: none;
         }
 
-        .pattern-divider {
-            height: 20px;
-            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M0 10 L25 0 L50 10 L75 20 L100 10" stroke="%23f49d21" fill="none" stroke-width="2"/></svg>');
+        .border-pattern {
+            height: 15px;
+            background-image: url('data:image/svg+xml;utf8,<svg width="60" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M0 7 L15 0 L30 7 L45 15 L60 7" stroke="%23f49d21" fill="none" stroke-width="2"/></svg>');
             background-repeat: repeat-x;
         }
 
-        /* Header Style */
+        /* --- HEADER --- */
         #header {
             background-color: var(--metta-brown) !important;
-            transition: all 0.3s;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         #header .nav>li>a {
             color: #fff !important;
             font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9em;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
         }
 
         #header .nav>li>a:hover {
             color: var(--metta-gold) !important;
         }
 
-        /* Hero Section */
-        .hero-section {
-            padding: 120px 0;
-            text-align: center;
+        /* --- HERO SECTION --- */
+        .hero-banner {
+            position: relative;
+            padding: 100px 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('students_practicing_oriental_spa.png');
+            background-size: cover;
+            background-position: center;
             color: #fff;
+            text-align: center;
         }
 
-        .hero-title {
+        .hero-content h1 {
             font-size: 3.5rem;
+            color: var(--metta-gold);
             margin-bottom: 20px;
-            line-height: 1.2;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .btn-cta {
+            padding: 18px 35px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn-gold {
+            background: var(--metta-gold);
+            color: var(--metta-brown);
+        }
+
+        .btn-white {
+            background: #fff;
+            color: var(--metta-brown);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background: #eee;
+        }
+
+        /* --- INTRO SECTION --- */
+        .intro-section {
+            padding: 80px 0;
+            background: var(--metta-cream);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--metta-gold);
+        }
+
+        /* --- USP CARDS --- */
+        .usp-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .usp-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            height: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            border: 1px solid #f0f0f0;
+            text-align: center;
+        }
+
+        .usp-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--metta-gold);
+        }
+
+        .usp-icon {
+            font-size: 3rem;
+            color: var(--metta-gold);
+            margin-bottom: 25px;
+        }
+
+        .usp-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--metta-brown);
+        }
+
+        /* --- CURRICULUM --- */
+        .curriculum-section {
+            padding: 80px 0;
+            background: var(--metta-cream);
+        }
+
+        .module-box {
+            background: #fff;
+            border-radius: 15px;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-left: 6px solid var(--metta-brown);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .module-box h4 {
+            color: var(--metta-gold);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .module-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .module-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .module-list li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
             color: var(--metta-gold);
         }
 
-        .hero-subtitle {
-            font-size: 1.5rem;
-            font-style: italic;
-            margin-bottom: 40px;
+        /* --- BENEFITS --- */
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
-        /* Course Modules */
-        .module-card {
+        .benefit-icon {
+            color: #28a745;
+            margin-right: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* --- TESTIMONIALS --- */
+        .testimonial-card {
             background: #fff;
             padding: 40px;
-            border-radius: 4px;
-            border-bottom: 4px solid var(--metta-gold);
-            height: 100%;
-            transition: transform 0.3s;
+            border-radius: 20px;
+            margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .module-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .module-number {
-            font-size: 3rem;
-            color: rgba(244, 157, 33, 0.2);
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-weight: 800;
-        }
-
-        /* Student Gallery */
-        .gallery-item {
+            font-style: italic;
             position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            color: rgba(244, 157, 33, 0.1);
+        }
+
+        .student-info {
+            display: flex;
+            align-items: center;
+            margin-top: 25px;
+            font-style: normal;
+        }
+
+        .student-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #ddd;
+            margin-right: 15px;
             overflow: hidden;
-            border-radius: 8px;
-            margin-bottom: 20px;
         }
 
-        .gallery-item img {
-            transition: transform 0.5s;
-            width: 100%;
-            display: block;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* CTA Section */
-        .cta-section {
+        /* --- REGISTRATION FORM --- */
+        .reg-section {
+            padding: 100px 0;
             background: var(--metta-brown);
             color: #fff;
-            padding: 80px 0;
-            border-top: 5px solid var(--metta-gold);
+            position: relative;
+            overflow: hidden;
         }
 
-        .form-control {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-            padding: 15px;
-            border-radius: 4px;
+        .reg-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-input {
             width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 1);
+            border: none;
+            border-radius: 8px;
             margin-bottom: 20px;
-        }
-
-        .form-control::placeholder {
-            color: #ccc;
+            font-size: 1rem;
+            color: var(--metta-dark);
         }
 
         .btn-submit {
+            width: 100%;
+            padding: 18px;
             background: var(--metta-gold);
             color: var(--metta-brown);
-            font-weight: 700;
-            padding: 15px 40px;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.2rem;
             cursor: pointer;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            transition: 0.3s;
         }
 
         .btn-submit:hover {
             background: #fff;
+            transform: translateY(-2px);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
+        /* --- FOOTER --- */
+        .footer-wrapper {
+            background: var(--metta-dark);
+            color: #fff;
+            padding: 80px 0 20px;
+        }
 
-            .hero-section {
-                padding: 80px 0;
-            }
+        .footer-logo {
+            width: 140px;
+            margin-bottom: 25px;
+        }
+
+        /* --- UTILITIES --- */
+        .text-gold {
+            color: var(--metta-gold);
+        }
+
+        .bg-pattern {
+            background-image: url('tay_nguyen_pattern_bg.png');
+            background-size: 300px;
         }
     </style>
 </head>
 
 <body>
     <div id="wrapper">
-        <!-- Header -->
-        <header id="header" class="header">
-            <div class="header-wrapper">
-                <div class="header-main">
-                    <div class="header-inner flex-row container">
-                        <div id="logo" class="flex-col logo">
-                            <a href=".." title="Metta Spoa">
-                                <img width="160" height="70" src="/wp-content/uploads/2025/12/logo_meta.svg"
-                                    class="header-logo" alt="Metta Spa" />
-                            </a>
-                        </div>
-                        <div class="flex-col hide-for-medium flex-right">
-                            <ul class="header-nav nav nav-right">
-                                <li><a href="..">Trang chủ</a></li>
-                                <li><a href="../gioi-thieu">Giới thiệu</a></li>
-                                <li><a href="../tin-tuc">Tin tức</a></li>
-                                <li><a href="../khoa-hoc-duong-sinh">Khóa học</a></li>
-                                <li><a href="../chi-nhanh">Chi nhánh</a></li>
-                                <li><a href="../lien-he">Liên hệ</a></li>
-                                <li class="html header-button-1">
-                                    <div class="header-button">
-                                        <a href="../lien-he" class="button primary"
-                                            style="background-color: var(--metta-gold) !important; color: var(--metta-brown) !important; border-radius: 8px;">
-                                            <span>Đăng ký ngay</span>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+        <!-- HEADER -->
+        <header id="header">
+            <div class="container">
+                <div class="flex-row">
+                    <div id="logo" class="flex-col">
+                        <a href="..">
+                            <img width="160" height="70" src="/wp-content/uploads/2025/12/logo_meta.svg"
+                                alt="Metta Spa" />
+                        </a>
+                    </div>
+                    <div class="flex-col hide-for-medium flex-right">
+                        <ul class="header-nav nav nav-right nav-uppercase">
+                            <li><a href="..">Trang chủ</a></li>
+                            <li><a href="../gioi-thieu">Giới thiệu</a></li>
+                            <li><a href="../tin-tuc">Tin tức</a></li>
+                            <li><a href="../khoa-hoc-duong-sinh">Khóa học</a></li>
+                            <li><a href="../chi-nhanh">Chi nhánh</a></li>
+                            <li><a href="../lien-he">Liên hệ</a></li>
+                            <li class="html">
+                                <a href="#register" class="button primary"
+                                    style="background: var(--metta-gold)!important; color: var(--metta-brown)!important; border-radius: 8px; padding: 5px 20px;">Đăng
+                                    ký ngay</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </header>
 
         <main id="main">
-            <!-- Hero Section with Trống Đồng Pattern -->
-            <section class="trong-dong-bg">
-                <div class="trong-dong-overlay"></div>
-                <div class="container relative hero-section">
-                    <h1 class="hero-title animate__animated animate__fadeInDown">TINH HOA DƯỠNG SINH<br>BẢN SẮC TÂY
-                        NGUYÊN</h1>
-                    <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Kế thừa tri thức ngàn
-                        đời - Kiến tạo sự nghiệp từ tâm</p>
-                    <div class="animate__animated animate__zoomIn animate__delay-2s">
-                        <a href="#register" class="button primary"
-                            style="padding: 20px 40px; font-size: 1.2em; border-radius: 50px; background: var(--metta-gold);">Khám
-                            phá ngay</a>
+            <!-- 1. HERO BANNER -->
+            <section class="hero-banner">
+                <div class="container hero-content">
+                    <h1 class="animate__animated animate__fadeInDown">KHỞI ĐẦU SỰ NGHIỆP VỮNG CHẮC<br>CÙNG NGHỀ DƯỠNG
+                        SINH ĐÔNG Y</h1>
+                    <h2 class="animate__animated animate__fadeInUp">"Trao nghề từ Tâm – Dựng nghiệp từ Tầm"<br>Metta Spa
+                        cam kết đào tạo KTV chuyên nghiệp với 80% thời lượng thực hành thực chiến.</h2>
+                    <div class="animate__animated animate__zoomIn animate__delay-1s">
+                        <a href="#register" class="btn-cta btn-gold">ĐĂNG KÝ TƯ VẤN LỘ TRÌNH</a>
+                        <a href="#register" class="btn-cta btn-white">NHẬN ƯU ĐÃI KHOÁ HỌC</a>
                     </div>
                 </div>
             </section>
 
-            <div class="pattern-divider"></div>
-
-            <!-- Introduction -->
-            <section class="section" style="padding: 80px 0;">
-                <div class="container">
+            <!-- 2. GIỚI THIỆU CHUNG -->
+            <section class="intro-section">
+                <div class="pattern-overlay"></div>
+                <div class="container text-center">
+                    <h2 class="section-title">TẠI SAO NGHỀ DƯỠNG SINH LÀ "CHÌA KHÓA VÀNG" TRONG THỜI ĐẠI MỚI?</h2>
                     <div class="row align-center">
-                        <div class="col medium-10 text-center">
-                            <h2 style="color: var(--metta-brown); margin-bottom: 30px;">HÀNH TRÌNH CHỮA LÀNH TỪ ĐÔI BÀN
-                                TAY</h2>
-                            <p style="font-size: 1.1rem; line-height: 1.8;">
-                                Tại Metta, chúng tôi mang hơi thở của núi rừng Tây Nguyên và linh hồn của hoa văn Trống
-                                Đồng vào từng bài giảng.
-                                Không chỉ là kỹ thuật, đó là sự kết nối giữa con người và thiên nhiên, giữa tâm ý và
-                                thân xác.
-                                Khóa học Dưỡng sinh Đông y tại Metta là nơi bạn tìm thấy bản ngã của một trị liệu viên
-                                chân chính.
+                        <div class="col medium-10">
+                            <p style="font-size: 1.2rem;">
+                                Sức khỏe tự nhiên đang là xu hướng toàn cầu. Khi con người ngày càng tìm về các phương
+                                pháp chữa lành không dùng thuốc, nhu cầu về nhân lực ngành Dưỡng sinh Đông y tăng trưởng
+                                mạnh mẽ hơn bao giờ hết.
+                                <br><br>
+                                Tại <strong>Học viện Đào tạo Metta</strong>, chúng tôi không chỉ dạy bạn một cái nghề để
+                                mưu sinh, mà còn truyền trao một sứ mệnh: <strong>Sứ mệnh chăm sóc sức khỏe cộng đồng
+                                    bằng đôi bàn tay và y lý cổ truyền.</strong>
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Course Modules -->
-            <section class="section" style="background-color: #f0ede4; padding: 80px 0;">
+            <!-- 3. USP SECTION -->
+            <section class="usp-section">
                 <div class="container">
-                    <div class="text-center" style="margin-bottom: 60px;">
-                        <h2 style="color: var(--metta-brown);">LỘ TRÌNH ĐÀO TẠO CHUYÊN SÂU</h2>
-                        <div style="width: 80px; height: 3px; background: var(--metta-gold); margin: 20px auto;"></div>
+                    <div class="text-center mb-50" style="margin-bottom: 50px;">
+                        <h2 class="section-title">ĐIỂM KHÁC BIỆT TẠI METTA</h2>
                     </div>
                     <div class="row row-large">
-                        <div class="col medium-4">
-                            <div class="module-card">
-                                <span class="module-number">01</span>
-                                <h3 style="color: var(--metta-brown);">Y LÝ NỀN TẢNG</h3>
-                                <p>Thấu hiểu Âm Dương, Ngũ Hành và hệ thống Kinh lạc huyệt đạo chuẩn Đông y Á Đông.</p>
+                        <div class="col medium-6 large-3">
+                            <div class="usp-card">
+                                <div class="usp-icon"><i class="fas fa-book-medical"></i></div>
+                                <h3>Chương trình chuẩn Đông Y</h3>
+                                <p>Giáo trình bài bản, chắt lọc tinh hoa Y học cổ truyền, tập trung vào kỹ thuật thực
+                                    tế.</p>
                             </div>
                         </div>
-                        <div class="col medium-4">
-                            <div class="module-card">
-                                <span class="module-number">02</span>
-                                <h3 style="color: var(--metta-brown);">KỸ THUẬT TRỊ LIỆU</h3>
-                                <p>Bấm huyệt, đả thông kinh lạc Cổ Vai Gáy, Thắt lưng và các liệu pháp phục hồi tự
-                                    nhiên.</p>
+                        <div class="col medium-6 large-3">
+                            <div class="usp-card">
+                                <div class="usp-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                                <h3>Cầm tay chỉ việc 1 kèm 1</h3>
+                                <p>Giảng viên sát sao chỉnh sửa từng tư thế đứng, lực đạo ngón tay để học viên làm đúng
+                                    ngay từ đầu.</p>
                             </div>
                         </div>
-                        <div class="col medium-4">
-                            <div class="module-card">
-                                <span class="module-number">03</span>
-                                <h3 style="color: var(--metta-brown);">TÂM THẾ TRỊ LIỆU</h3>
-                                <p>Đào tạo tư duy phục vụ từ tâm, kỹ năng giao tiếp và cách vận hành một Spa chuyên
-                                    nghiệp.</p>
+                        <div class="col medium-6 large-3">
+                            <div class="usp-card">
+                                <div class="usp-icon"><i class="fas fa-user-md"></i></div>
+                                <h3>Thực hành trên mẫu (93%)</h3>
+                                <p>Học viên được thực hành chéo và trên mẫu thật liên tục để rèn luyện cảm giác tay thực
+                                    tế.</p>
+                            </div>
+                        </div>
+                        <div class="col medium-6 large-3">
+                            <div class="usp-card">
+                                <div class="usp-icon"><i class="fas fa-brain"></i></div>
+                                <h3>Tư duy & Kỹ năng mềm</h3>
+                                <p>Đào tạo tư duy phục vụ từ tâm, kỹ năng giao tiếp và xử lý tình huống chuyên nghiệp.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Student Photos (Giới thiệu Học viên) -->
+            <!-- 4. LỘ TRÌNH ĐÀO TẠO -->
+            <section class="curriculum-section">
+                <div class="container">
+                    <h2 class="section-title text-center">LỘ TRÌNH ĐÀO TẠO CHI TIẾT</h2>
+                    <div class="row">
+                        <!-- Module 1 -->
+                        <div class="col medium-6">
+                            <div class="module-box">
+                                <h4>MODULE 1: NỀN TẢNG Y LÝ ĐÔNG Y</h4>
+                                <ul class="module-list">
+                                    <li>Học thuyết Âm Dương – Ngũ Hành ứng dụng.</li>
+                                    <li>Hệ thống Kinh lạc & Huyệt đạo cơ bản.</li>
+                                    <li>Kỹ thuật chẩn đoán Vọng - Văn - Vấn - Thiết.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 2 -->
+                        <div class="col medium-6">
+                            <div class="module-box" style="border-color: var(--metta-gold);">
+                                <h4>MODULE 2: KỸ THUẬT TRỊ LIỆU</h4>
+                                <ul class="module-list">
+                                    <li>Thủ thuật xoa, xác, dây, ấn, bấm chuẩn Đông Y.</li>
+                                    <li>Phác đồ đả thông Cổ Vai Gáy chuyên sâu.</li>
+                                    <li>Trị liệu Thắt lưng & Cột sống phục hồi.</li>
+                                    <li>Gội đầu Dưỡng sinh & Massage vùng mặt.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 3 -->
+                        <div class="col medium-6">
+                            <div class="module-box">
+                                <h4>MODULE 3: LIỆU PHÁP BỔ TRỢ</h4>
+                                <ul class="module-list">
+                                    <li>Giác hơi, cạo gió, hỏa liệu pháp an toàn.</li>
+                                    <li>Sử dụng dược liệu & tinh dầu Metta đặc quyền.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 4 -->
+                        <div class="col medium-6">
+                            <div class="module-box" style="border-color: var(--metta-gold);">
+                                <h4>MODULE 4: QUẢN TRỊ & VẬN HÀNH</h4>
+                                <ul class="module-list">
+                                    <li>Quy trình đón tiếp & tư vấn khách hàng.</li>
+                                    <li>Setup phòng & không gian trị liệu chuẩn mực.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight: Tạng phủ -->
+                    <div class="module-box" style="background: var(--metta-brown); color: #fff; margin-top: 30px;">
+                        <h4 style="color: var(--metta-gold);">DƯỠNG SINH CHUYÊN SÂU THEO TẠNG PHỦ</h4>
+                        <p style="color: #eee;">Khách hàng phục hồi gốc rễ sức khỏe, cân bằng âm dương:</p>
+                        <div class="row row-small">
+                            <div class="col medium-6 large-4">
+                                <li style="list-style: none; margin-bottom: 10px;"><i
+                                        class="fas fa-check-circle text-gold"></i> Trị liệu Vai - Cổ - Gáy chuyên sâu
+                                </li>
+                            </div>
+                            <div class="col medium-6 large-4">
+                                <li style="list-style: none; margin-bottom: 10px;"><i
+                                        class="fas fa-check-circle text-gold"></i> Dưỡng Gan Giải Uất</li>
+                            </div>
+                            <div class="col medium-6 large-4">
+                                <li style="list-style: none; margin-bottom: 10px;"><i
+                                        class="fas fa-check-circle text-gold"></i> Dưỡng Tim An Thần</li>
+                            </div>
+                            <div class="col medium-6 large-4">
+                                <li style="list-style: none; margin-bottom: 10px;"><i
+                                        class="fas fa-check-circle text-gold"></i> Dưỡng Phổi Ích Khí</li>
+                            </div>
+                            <div class="col medium-6 large-4">
+                                <li style="list-style: none; margin-bottom: 10px;"><i
+                                        class="fas fa-check-circle text-gold"></i> Dưỡng Tỳ Vị (Dạ dày)</li>
+                            </div>
+                            <div class="col medium-6 large-4">
+                                <li style="list-style: none; margin-bottom: 10px;"><i
+                                        class="fas fa-check-circle text-gold"></i> Dưỡng Thận An Nguyên</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. QUYỀN LỢI HỌC VIÊN -->
             <section class="section" style="padding: 80px 0; background: #fff;">
                 <div class="container">
-                    <div class="text-center" style="margin-bottom: 60px;">
-                        <h2 style="color: var(--metta-brown);">HÌNH ẢNH HỌC VIÊN TẠI METTA</h2>
-                        <p>Những khoảnh khắc rèn luyện tâm - thân - ý</p>
+                    <div class="row align-middle">
+                        <div class="col medium-6">
+                            <h2 class="section-title" style="text-align: left;">QUYỀN LỢI CỦA HỌC VIÊN</h2>
+                            <div class="benefit-item"><i class="fas fa-check-circle benefit-icon"></i> ✅ Chứng nhận: Có
+                                giá trị hành nghề toàn quốc.</div>
+                            <div class="benefit-item"><i class="fas fa-check-circle benefit-icon"></i> ✅ Việc làm: Cơ
+                                hội làm việc tại hệ thống Metta Spa.</div>
+                            <div class="benefit-item"><i class="fas fa-check-circle benefit-icon"></i> ✅ Bảo hành: Học
+                                lại miễn phí nếu chưa vững tay nghề.</div>
+                            <div class="benefit-item"><i class="fas fa-check-circle benefit-icon"></i> ✅ Dụng cụ: Hỗ trợ
+                                dược liệu, đồng phục suốt quá trình.</div>
+                            <div class="benefit-item"><i class="fas fa-check-circle benefit-icon"></i> ✅ Ký Túc Xá: Nơi
+                                ở chỉnh chu cho học viên ở xa.</div>
+                        </div>
+                        <div class="col medium-6">
+                            <img src="students_practicing_oriental_spa.png" alt="Quyền lợi"
+                                style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col medium-6 large-4">
-                            <div class="gallery-item">
-                                <img src="/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg"
-                                    alt="Học viên thực hành">
+                </div>
+            </section>
+
+            <!-- 6. ĐỐI TƯỢNG PHÙ HỢP -->
+            <section class="section" style="padding: 80px 0; background: var(--metta-cream);">
+                <div class="container">
+                    <h2 class="section-title text-center">AI NÊN THAM GIA KHÓA HỌC NÀY?</h2>
+                    <div class="row align-center">
+                        <div class="col medium-4">
+                            <div class="usp-card" style="padding: 20px;">
+                                <p><strong>Người mới bắt đầu</strong> tìm nghề ổn định, nhân văn.</p>
                             </div>
                         </div>
-                        <div class="col medium-6 large-4">
-                            <div class="gallery-item">
-                                <img src="/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg"
-                                    alt="Lớp học dưỡng sinh">
+                        <div class="col medium-4">
+                            <div class="usp-card" style="padding: 20px;">
+                                <p><strong>KTV Spa</strong> muốn nâng cao tay nghề Đông y trị liệu.</p>
                             </div>
                         </div>
-                        <div class="col medium-6 large-4">
-                            <div class="gallery-item">
-                                <img src="/wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg"
-                                    alt="Không gian học tập">
+                        <div class="col medium-4">
+                            <div class="usp-card" style="padding: 20px;">
+                                <p><strong>Chủ Spa</strong> muốn chuẩn hóa quy trình kỹ thuật.</p>
                             </div>
                         </div>
-                        <!-- Generated image placeholder -->
-                        <div class="col medium-12">
-                            <div class="gallery-item" style="margin-top: 20px;">
-                                <img src="students_practicing_oriental_spa.png" alt="Thực hành chuyên nghiệp"
-                                    style="max-height: 500px; object-fit: cover;">
+                        <div class="col medium-6" style="margin-top: 20px;">
+                            <div class="usp-card" style="padding: 20px; border-color: var(--metta-gold);">
+                                <p><strong>Định cư NƯỚC NGOÀI</strong> mở tiệm dưỡng sinh hút khách quốc tế.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- CTA Form -->
-            <section id="register" class="cta-section">
+            <!-- 7. CẢM NHẬN HỌC VIÊN -->
+            <section class="section" style="padding: 80px 0; background: #fff;">
+                <div class="container">
+                    <h2 class="section-title text-center">CẢM NHẬN TỪ HỌC VIÊN</h2>
+                    <div class="row">
+                        <div class="col medium-6">
+                            <div class="testimonial-card">
+                                "Trước khi đến Metta, mình rất sợ học không vào vì không biết gì về huyệt đạo. Nhưng
+                                giáo viên dạy rất nhiệt tình, cầm tay chỉ huyệt từng chút một. Giờ mình đã tự tin đi làm
+                                và có thu nhập ổn định."
+                                <div class="student-info">
+                                    <div class="student-img"><img
+                                            src="/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg"
+                                            style="width:100%; height:100%; object-fit:cover;"></div>
+                                    <div><strong>Học viên Nguyễn Thúy (Khóa K12)</strong><br><small>KTV Spa</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col medium-6">
+                            <div class="testimonial-card">
+                                "Khóa học giúp mình hệ thống lại toàn bộ kiến thức để về đào tạo lại cho nhân viên. Quy
+                                trình tại Metta rất chuẩn và thực tế, giúp khách hàng hài lòng hơn vượt mong đợi."
+                                <div class="student-info">
+                                    <div class="student-img"><img
+                                            src="/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg"
+                                            style="width:100%; height:100%; object-fit:cover;"></div>
+                                    <div><strong>Học viên Minh Tuấn</strong><br><small>Chủ Spa tại Bình Dương</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. FORM ĐĂNG KÝ -->
+            <section id="register" class="reg-section">
+                <div class="pattern-overlay" style="opacity: 0.05;"></div>
                 <div class="container">
                     <div class="row align-center">
-                        <div class="col medium-6 text-center">
-                            <h2 style="color: var(--metta-gold); font-size: 2.5rem; margin-bottom: 20px;">GIA NHẬP ĐẠI
-                                GIA ĐÌNH METTA</h2>
-                            <p style="margin-bottom: 40px;">Để lại thông tin để được tư vấn lộ trình học phù hợp nhất
-                                với bạn.</p>
-                            <form>
-                                <input type="text" class="form-control" placeholder="Họ và tên của bạn">
-                                <input type="tel" class="form-control" placeholder="Số điện thoại liên hệ">
-                                <select class="form-control">
-                                    <option value="">Chọn khóa học bạn quan tâm</option>
-                                    <option value="coban">Cơ bản cho người mới bắt đầu</option>
-                                    <option value="nangcao">Nâng cao & Trị liệu chuyên sâu</option>
-                                    <option value="quanly">Quản lý & Vận hành Spa</option>
-                                </select>
-                                <button type="button" class="btn-submit"
-                                    onclick="alert('Cảm ơn bạn! Metta sẽ liên hệ sớm nhất.')">Gửi đăng ký</button>
-                            </form>
+                        <div class="col medium-7 text-center">
+                            <h2 style="color: var(--metta-gold); font-size: 2.8rem; margin-bottom: 15px;">ĐỪNG BỎ LỠ CƠ
+                                HỘI</h2>
+                            <h3 style="color: #fff; margin-bottom: 40px;">TRỞ THÀNH "BÀN TAY VÀNG" TRONG LÀNG DƯỠNG SINH
+                            </h3>
+
+                            <div class="reg-form text-left">
+                                <form>
+                                    <div class="row row-small">
+                                        <div class="col small-12">
+                                            <input type="text" class="form-input" placeholder="Họ và tên của bạn">
+                                        </div>
+                                        <div class="col small-12">
+                                            <input type="tel" class="form-input" placeholder="Số điện thoại của bạn">
+                                        </div>
+                                        <div class="col small-12">
+                                            <select class="form-input" style="height: 55px;">
+                                                <option value="">Bạn quan tâm khóa học nào?</option>
+                                                <option value="nghe">Dưỡng sinh chuyên nghiệp (Từ cơ bản)</option>
+                                                <option value="nangcao">Nâng cao tay nghề trị liệu</option>
+                                                <option value="setup">Mở tiệm & Vận hành Spa chuyên nghiệp</option>
+                                            </select>
+                                        </div>
+                                        <div class="col small-12" style="margin-top: 10px;">
+                                            <button type="button" class="btn-submit"
+                                                onclick="alert('Cảm ơn bạn! Metta sẽ liên hệ tư vấn trong 24h tới.')">GỬI
+                                                THÔNG TIN NGAY</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="text-center" style="margin-top: 30px;">
+                                    <p>Hotline tuyển sinh: <strong>0938.296.337</strong></p>
+                                    <p style="font-size: 0.9em; opacity: 0.8;">Địa điểm đào tạo: Bình Tân (TP. HCM) &
+                                        Biên Hòa (Đồng Nai)</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer id="footer" style="background: var(--metta-dark); color: #fff; padding: 40px 0; text-align: center;">
+        <!-- FOOTER -->
+        <footer class="footer-wrapper">
             <div class="container">
-                <img width="120" src="/wp-content/uploads/2025/12/logo_meta.svg" alt="Metta Spa"
-                    style="margin-bottom: 20px;">
-                <p>Copyright © 2025 Metta Spa Đông Y. All rights reserved.</p>
+                <div class="row">
+                    <div class="col medium-4">
+                        <img src="/wp-content/uploads/2025/12/logo_meta.svg" class="footer-logo" alt="Metta Spa">
+                        <p>Metta đông y Spa – Cùng bạn xây dựng lối sống dưỡng sinh. Chuyên sâu trị liệu Đông y phục hồi
+                            sức khỏe.</p>
+                        <div style="font-size: 1.5rem; margin-top: 20px;">
+                            <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook"></i></a>
+                            <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" style="color: #fff;"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col medium-4">
+                        <h4 style="color: var(--metta-gold); margin-bottom: 25px;">LIÊN HỆ ĐÀO TẠO</h4>
+                        <p><i class="fas fa-map-marker-alt" style="color: var(--metta-gold); margin-right: 10px;"></i>
+                            378 Tên Lửa, P. Bình Trị Đông B, Bình Tân</p>
+                        <p><i class="fas fa-map-marker-alt" style="color: var(--metta-gold); margin-right: 10px;"></i>
+                            LK23 Đường N1, KDC Bửu Long, Biên Hòa</p>
+                        <p><i class="fas fa-phone-alt" style="color: var(--metta-gold); margin-right: 10px;"></i>
+                            0938.296.337</p>
+                    </div>
+                    <div class="col medium-4">
+                        <h4 style="color: var(--metta-gold); margin-bottom: 25px;">VỀ CHÚNG TÔI</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li><a href="../gioi-thieu" style="color:#eee">Giới thiệu hệ thống</a></li>
+                            <li><a href="../chi-nhanh" style="color:#eee">Các chi nhánh Metta</a></li>
+                            <li><a href="../menu" style="color:#eee">Bảng giá dịch vụ</a></li>
+                            <li><a href="../lien-he" style="color:#eee">Tư vấn sức khỏe</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; text-align: center; font-size: 0.8rem; opacity: 0.6;">
+                    Copyright © 2025 Metta Spa Đông Y. Designed By Metta Team.
+                </div>
             </div>
         </footer>
     </div>
