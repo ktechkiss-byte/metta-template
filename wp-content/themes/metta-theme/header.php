@@ -988,7 +988,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
     }
 
     #logo {
-      width: 200px;
+      width: 160px;
     }
 
     #logo img {
@@ -1080,8 +1080,13 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
     }
 
-    .nav>li>a {
-      font-family: Inter, sans-serif;
+    .header-nav-main {
+      white-space: nowrap;
+    }
+
+    .header-main .nav > li > a {
+      line-height: 16px;
+      font-size: 0.9em;
     }
 
     .mobile-sidebar-levels-2 .nav>li>ul>li>a {
@@ -1888,7 +1893,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
 
             <!-- Left Elements -->
             <div class="flex-col hide-for-medium flex-left">
-              <ul class="header-nav header-nav-main nav nav-left nav-size-large nav-spacing-large nav-uppercase">
+              <ul class="header-nav header-nav-main nav nav-left nav-size-medium nav-spacing-small nav-uppercase">
                 <li id="menu-item-29"
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item menu-item-29 active menu-item-design-default">
                   <a href="<?php echo home_url(); ?>" aria-current="page" class="nav-top-link">Trang chủ</a>
@@ -1910,7 +1915,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
 
             <!-- Right Elements -->
             <div class="flex-col hide-for-medium flex-right">
-              <ul class="header-nav header-nav-main nav nav-right nav-size-large nav-spacing-large nav-uppercase">
+              <ul class="header-nav header-nav-main nav nav-right nav-size-medium nav-spacing-small nav-uppercase">
                 <li id="menu-item-1122"
                   class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1122 menu-item-design-default">
                   <a href="<?php echo home_url("/chi-nhanh"); ?>" class="nav-top-link">Chi nhánh</a>
