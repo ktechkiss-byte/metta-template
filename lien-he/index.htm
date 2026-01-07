@@ -2357,6 +2357,141 @@
                 padding-bottom: 60px;
               }
             }
+
+            /* Success Modal CSS */
+            .metta-modal {
+              position: fixed;
+              z-index: 999999;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.6);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              backdrop-filter: blur(5px);
+              opacity: 0;
+              visibility: hidden;
+              transition: all 0.3s ease;
+            }
+
+            .metta-modal.active {
+              opacity: 1;
+              visibility: visible;
+            }
+
+            .metta-modal-content {
+              background: white;
+              padding: 0;
+              border-radius: 20px;
+              width: 90%;
+              max-width: 450px;
+              box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+              overflow: hidden;
+              transform: translateY(50px);
+              transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            .metta-modal.active .metta-modal-content {
+              transform: translateY(0);
+            }
+
+            .metta-modal-header {
+              background: linear-gradient(135deg, #9c5432 0%, #63331a 100%);
+              padding: 30px 20px;
+              text-align: center;
+              color: white;
+            }
+
+            .success-icon {
+              width: 60px;
+              height: 60px;
+              background: rgba(255, 255, 255, 0.2);
+              border: 2px solid white;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 30px;
+              margin: 0 auto 15px;
+            }
+
+            .metta-modal-header h2 {
+              margin: 0;
+              font-size: 24px;
+              color: white !important;
+              font-weight: 600;
+              font-family: inherit !important;
+            }
+
+            .metta-modal-body {
+              padding: 30px;
+              color: #333;
+            }
+
+            .metta-modal-body p {
+              margin-bottom: 20px;
+              font-size: 16px;
+              line-height: 1.5;
+            }
+
+            .modal-info {
+              list-style: none;
+              padding: 0;
+              margin: 0 0 20px 0;
+              background: #f9f6f3;
+              padding: 20px;
+              border-radius: 12px;
+              border-left: 4px solid #9c5432;
+            }
+
+            .modal-info li {
+              margin-bottom: 10px;
+              font-size: 15px;
+              color: #333;
+              text-align: left;
+            }
+
+            .modal-info li strong {
+              color: #63331a;
+            }
+
+            .modal-info li:last-child {
+              margin-bottom: 0;
+            }
+
+            .modal-footer-msg {
+              font-size: 14px !important;
+              color: #666 !important;
+              font-style: italic;
+              text-align: center;
+            }
+
+            .metta-modal-actions {
+              padding: 0 30px 30px;
+              text-align: center;
+            }
+
+            .metta-modal-btn {
+              background: #9c5432;
+              color: white !important;
+              border: none;
+              padding: 12px 40px;
+              border-radius: 30px;
+              font-size: 16px;
+              font-weight: 600;
+              cursor: pointer;
+              transition: all 0.3s;
+              box-shadow: 0 4px 10px rgba(156, 84, 50, 0.3);
+              display: inline-block;
+            }
+
+            .metta-modal-btn:hover {
+              background: #63331a;
+              transform: translateY(-2px);
+              box-shadow: 0 6px 15px rgba(156, 84, 50, 0.4);
+            }
           </style>
         </section>
       </div>
@@ -2453,8 +2588,9 @@
             if (!res.ok) {
               alert("Đặt lịch thất bại. Vui lòng thử lại sau.");
             } else {
-              alert("Đặt lịch thành công! Chúng tôi sẽ liên hệ sớm.");
-              // Optional: Redirect or clear form
+              showSuccessModal(branch, date, time);
+              // Clear form
+              document.getElementById('metta-booking-form').reset();
             }
 
           } catch (error) {
@@ -2465,7 +2601,53 @@
             btn.disabled = false;
           }
         }
+
+        const branchAddresses = {
+          'quan-1': '97 Nguyễn Cư Trinh, P. Nguyễn Cư Trinh, Quận 1, TP.HCM',
+          'ten-lua': '378 Tên Lửa, P. Bình Trị Đông B, Q. Bình Tân, TP. HCM',
+          'bien-hoa': 'LK23 Đường N1, KDC Bửu Long, Biên Hòa, Đồng Nai'
+        };
+
+        function showSuccessModal(branchKey, date, time) {
+          const address = branchAddresses[branchKey] || "Chi nhánh đã chọn";
+          const formattedDate = date.split('-').reverse().join('/') + ' ' + time;
+
+          document.getElementById('info-address').innerText = address;
+          document.getElementById('info-date').innerText = formattedDate;
+
+          const modal = document.getElementById('metta-success-modal');
+          modal.style.display = 'flex';
+          setTimeout(() => modal.classList.add('active'), 10);
+        }
+
+        function closeMettaModal() {
+          const modal = document.getElementById('metta-success-modal');
+          modal.classList.remove('active');
+          setTimeout(() => modal.style.display = 'none', 300);
+        }
       </script>
+
+      <!-- Success Modal HTML -->
+      <div id="metta-success-modal" class="metta-modal">
+        <div class="metta-modal-content">
+          <div class="metta-modal-header">
+            <div class="success-icon">✓</div>
+            <h2>Đặt lịch thành công!</h2>
+          </div>
+          <div class="metta-modal-body">
+            <p>Cảm ơn bạn đã chọn Metta. Thông tin lịch đặt:</p>
+            <ul class="modal-info">
+              <li><strong>Địa chỉ:</strong> <span id="info-address"></span></li>
+              <li><strong>Ngày:</strong> <span id="info-date"></span></li>
+            </ul>
+            <p class="modal-footer-msg">Chúng tôi sẽ liên hệ sớm để xác nhận lịch hẹn của bạn.</p>
+          </div>
+          <div class="metta-modal-actions">
+            <button onclick="closeMettaModal()" class="metta-modal-btn">Đóng</button>
+          </div>
+        </div>
+      </div>
+
     </main>
 
 
