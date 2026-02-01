@@ -3,30 +3,49 @@
  * Metta Theme functions and definitions
  */
 
+// Start session at the very beginning
+function metta_start_session() {
+    if ( !session_id() ) {
+        session_start();
+    }
+    
+    // Check for lang param and set cookie
+    if ( isset($_GET['lang']) && in_array($_GET['lang'], array('vi', 'en', 'zh')) ) {
+        $lang = $_GET['lang'];
+        // Set cookie for 30 days
+        setcookie('metta_lang', $lang, time() + (86400 * 30), "/");
+        $_SESSION['metta_lang'] = $lang;
+    }
+}
+add_action('init', 'metta_start_session', 1);
+
 function metta_theme_scripts() {
     // Enqueue main theme stylesheet
-    wp_enqueue_style( 'metta-theme-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'metta-theme-style', get_stylesheet_uri(), array(), '3.32.7' );
 
     // Enqueue Flatsome styles
-    wp_enqueue_style( 'flatsome-main', get_site_url() . '/wp-content/themes/flatsome/assets/css/flatsome.css', array(), '3.20.0' );
-    wp_enqueue_style( 'flatsome-home', get_site_url() . '/wp-content/themes/flatsome/assets/css/home.css', array('flatsome-main'), '3.20.0' );
-    wp_enqueue_style( 'flatsome-child-style', get_site_url() . '/wp-content/themes/flatsome-child/style.css', array('flatsome-main'), '3.0' );
+    wp_enqueue_style( 'flatsome-main', get_template_directory_uri() . '/../flatsome/assets/css/flatsome.css', array(), '3.32.6' );
+    wp_enqueue_style( 'swiper-bundle', get_template_directory_uri() . '/../flatsome-child/assets/css/swiper-bundle.min.css', array(), '1.0' );
+    wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/../flatsome-child/assets/css/fancybox.css', array(), '1.0' );
+    wp_enqueue_style( 'flatsome-home', get_template_directory_uri() . '/../flatsome/assets/css/home.css', array('flatsome-main'), '3.32.6' );
+    wp_enqueue_style( 'flatsome-child-style', get_template_directory_uri() . '/../flatsome-child/style.css', array('flatsome-main'), '3.32.6' );
     
     // Enqueue jQuery
     wp_enqueue_script('jquery');
     
     // Enqueue Flatsome dependencies
-    wp_enqueue_script( 'swiper-js', get_site_url() . '/wp-content/themes/flatsome-child/assets/js/swiper-bundle.min.js', array('jquery'), '1.0', true );
-    wp_enqueue_script( 'fancybox-js', get_site_url() . '/wp-content/themes/flatsome-child/assets/js/fancybox.umd.js', array('jquery'), '1.0', true );
-    wp_enqueue_script( 'flatsome-live-search', get_site_url() . '/wp-content/themes/flatsome/assets/js/extensions/flatsome-live-search.js', array('jquery'), '3.20.0', true );
-    wp_enqueue_script( 'flatsome-masonry', get_site_url() . '/wp-content/themes/flatsome/assets/libs/packery.pkgd.min.js', array('jquery'), '3.20.0', true );
+    wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/../flatsome-child/assets/js/swiper-bundle.min.js', array('jquery'), '1.0', true );
+    wp_enqueue_script( 'single-chi-nhanh-js', get_template_directory_uri() . '/../flatsome-child/assets/js/single-chi-nhanh.js', array('swiper-js', 'jquery'), '1.0', true );
+    wp_enqueue_script( 'fancybox-js', get_template_directory_uri() . '/../flatsome-child/assets/js/fancybox.umd.js', array('jquery'), '1.0', true );
+    wp_enqueue_script( 'flatsome-live-search', get_template_directory_uri() . '/../flatsome/assets/js/extensions/flatsome-live-search.js', array('jquery'), '3.32.0', true );
+    wp_enqueue_script( 'flatsome-masonry', get_template_directory_uri() . '/../flatsome/assets/libs/packery.pkgd.min.js', array('jquery'), '3.32.0', true );
 
     // Enqueue Flatsome main script
-    wp_enqueue_script( 'flatsome-js', get_site_url() . '/wp-content/themes/flatsome/assets/js/flatsome.js', array('jquery'), '3.20.0', true );
+    wp_enqueue_script( 'flatsome-js', get_template_directory_uri() . '/../flatsome/assets/js/flatsome.js', array('jquery'), '3.32.0', true );
 
     // Localize Flatsome variables
     wp_localize_script( 'flatsome-js', 'flatsomeVars', array(
-        'theme' => array( 'version' => '3.20.0' ),
+        'theme' => array( 'version' => '3.32.0' ),
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
         'rtl' => '',
         'sticky_height' => '70',
@@ -58,13 +77,269 @@ function metta_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'metta_theme_scripts' );
 
+// Include ACF fields
+require_once get_template_directory() . '/inc/acf-fields.php';
+require_once get_template_directory() . '/inc/acf-training-fields.php';
+
+
 function metta_theme_setup() {
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
     
     register_nav_menus( array(
-        'primary' => __( 'Primary Menu', 'metta-theme' ),
-        'footer'  => __( 'Footer Menu', 'metta-theme' ),
+        'primary_left'  => __( 'Primary Menu Left', 'metta-theme' ),
+        'primary_right' => __( 'Primary Menu Right', 'metta-theme' ),
+        'mobile'        => __( 'Mobile Menu', 'metta-theme' ),
+        'footer_links'  => __( 'Footer Links', 'metta-theme' ),
     ) );
 }
 add_action( 'after_setup_theme', 'metta_theme_setup' );
+
+/**
+ * Automatically translate menu titles using metta_static
+ */
+add_filter('nav_menu_item_title', function($title, $item) {
+    if (function_exists('metta_static')) {
+        return metta_static($title);
+    }
+    return $title;
+}, 10, 2);
+
+// ==========================================
+// CUSTOM MULTILANGUAGE HELPERS
+// ==========================================
+
+function metta_get_current_language() {
+    // Check URL param first (priority)
+    if ( isset($_GET['lang']) && in_array($_GET['lang'], array('vi', 'en', 'zh')) ) {
+        return $_GET['lang'];
+    }
+
+    // Check cookie
+    if ( isset($_COOKIE['metta_lang']) && in_array($_COOKIE['metta_lang'], array('vi', 'en', 'zh')) ) {
+        return $_COOKIE['metta_lang'];
+    }
+    
+    // Check session
+    if ( isset($_SESSION['metta_lang']) && in_array($_SESSION['metta_lang'], array('vi', 'en', 'zh')) ) {
+        return $_SESSION['metta_lang'];
+    }
+
+    // Default
+    return 'vi';
+}
+
+function metta_get_field($field_name, $post_id = false) {
+    if (!function_exists('get_field')) return '';
+
+    $lang = metta_get_current_language();
+
+    // If default language (vi), just use the original field name
+    if ( $lang == 'vi' ) {
+        return get_field($field_name, $post_id);
+    }
+    
+    // Attempt translated field
+    $suffix = '_' . $lang; // _en or _zh
+    $content = get_field($field_name . $suffix, $post_id);
+
+    // Fallback to default if empty
+    if ( empty($content) ) {
+        // Optional: strict mode? No, fallback to VI is safer.
+        return get_field($field_name, $post_id);
+    }
+
+    return $content;
+}
+
+function metta_t($text_vi, $text_en = '', $text_zh = '') {
+    $lang = metta_get_current_language();
+    if ($lang == 'en' && !empty($text_en)) return $text_en;
+    if ($lang == 'zh' && !empty($text_zh)) return $text_zh;
+    return $text_vi;
+}
+
+function metta_the_field($field_name, $post_id = false) {
+    echo metta_get_field($field_name, $post_id);
+}
+
+function metta_get_with_fallback($field_name, $default_vi) {
+    $lang = metta_get_current_language();
+    
+    // 1. Try to get the localized ACF field
+    if ($lang == 'vi') {
+        $val = get_field($field_name);
+        return $val ? $val : $default_vi;
+    }
+    
+    // For non-VI, try localized field first
+    $suffix = '_' . $lang;
+    $val = get_field($field_name . $suffix);
+    if (!empty($val)) {
+        return $val;
+    }
+    
+    // 2. If empty, check the hardcoded translation map
+    $translations = metta_get_translations();
+    if (isset($translations[$lang][$default_vi])) {
+        return $translations[$lang][$default_vi];
+    }
+    
+    // 3. Fallback to default (VI) if all else fails
+    return $default_vi;
+}
+
+function metta_static($text) {
+    if (empty($text)) return '';
+    $lang = metta_get_current_language();
+    if ($lang == 'vi') return $text; // Optimization
+    
+    $translations = metta_get_translations();
+    if (isset($translations[$lang][$text])) {
+        return $translations[$lang][$text];
+    }
+    return $text;
+}
+
+function metta_is_active($path = '') {
+    $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $target_url = home_url($path);
+    
+    // Normalize string by removing query parameters for comparison if needed, but keeping simple for now
+    // Handle home specifically
+    if ($path === '' || $path === '/') {
+        if (trim(parse_url($current_url, PHP_URL_PATH), '/') === trim(parse_url(home_url(), PHP_URL_PATH), '/')) {
+            return 'current-menu-item active';
+        }
+        return '';
+    }
+
+    if (strpos($current_url, $target_url) !== false) {
+        return 'current-menu-item active';
+    }
+    return '';
+}
+
+function metta_get_translations() {
+    return array(
+        'en' => array(
+            'Trang chủ' => 'Home',
+            'Giới thiệu' => 'About Us',
+            'Tin tức' => 'News',
+            'Khóa học' => 'Courses',
+            'Chi nhánh' => 'Branches',
+            'Menu' => 'Menu',
+            'Sản phẩm' => 'Products',
+            'Liên hệ' => 'Contact',
+            'Đặt Lịch' => 'Booking', 
+            'Hẹn lịch' => 'Booking',
+            'DƯỠNG SINH VAI – CỔ – GÁY CHUYÊN SÂU' => 'Intensive Neck & Shoulder Nourishing',
+            'Tại Metta Spa Có gì' => 'What is at Metta Spa?',
+            'Liệu pháp độc quyền tập trung đả thông Kinh Bàng Quang (đường kinh lạc dài nhất cơ thể) và các huyệt Du vùng lưng. Kết hợp với chườm thảo dược và ngâm chân bài hàn, giúp đào thải độc tố tích tụ trong tạng phủ ra ngoài qua đường bài tiết.' => 'Exclusive therapy focusing on unblocking the Bladder Meridian (the longest meridian) and Back Shu points. Combined with herbal compresses and foot soaking, it helps eliminate accumulated toxins through excretion.',
+            'Combo Nổi Bật' => 'Featured Combos',
+            'Bảo Trì Sức Khoẻ<br />Cùng Metta Spa' => 'Health Maintenance<br />With Metta Spa',
+            'Bảo Trì Sức Khoẻ\nCùng Metta Spa' => "Health Maintenance\nWith Metta Spa",
+            'Metta Spa cung cấp các sản phẩm chăm sóc sức khỏe chủ động từ thảo dược thiên nhiên, được tinh chế dựa trên nền tảng Đông y dưỡng sinh. Mỗi sản phẩm là một giải pháp giúp bạn nuôi dưỡng cơ thể, thư giãn tinh thần và duy trì sự cân bằng mỗi ngày ngay tại nhà.' => 'Metta Spa offers proactive healthcare products made from natural herbs, refined based on Oriental nourishing principles. Each product is a solution to nourish your body, relax your mind, and maintain daily balance at home.',
+            'Metta Spa Đông Y' => 'Metta Oriental Spa',
+            'Khách Hàng Nói Về Metta Spa' => 'What Customers Say About Metta Spa',
+            'Chọn Chi Nhánh' => 'Select Branch',
+            'Giải uất kết, thanh nhiệt, điều hòa cảm xúc. <br /><strong>Giúp giải tỏa nóng giận, mệt mỏi, mang lại sự bình hòa và sáng da, nhẹ người.</strong>' => 'Relieve stagnation, clear heat, regulate emotions. <br /><strong>Helps release anger and fatigue, improving peace of mind, brightening skin, and feeling light.</strong>',
+            'Gỡ bỏ "tảng đá" trên vai – Trả lại sự linh hoạt vốn có.' => 'Remove the "boulder" on your shoulder – Restore inherent flexibility.',
+            'Metta cùng bạn xây dựng' => 'Metta builds with you',
+            'lối sống dưỡng sinh.' => 'a nourishing lifestyle.',
+            'Tái tạo sức khoẻ từ gốc – lan toả giá trị dưỡng sinh Đông Y. Chúng tôi chọn con đường chậm, tự nhiên, chân thật – để sức khoẻ trở về đúng bản chất.' => 'Regenerate health from the root – Spread the value of Oriental Nourishing. We choose the slow, natural, authentic path – for health to return to its true nature.',
+            'KHỞI ĐẦU SỰ NGHIỆP\nVỮNG CHẮC TẠI METTA' => "START A SOLID\nCAREER AT METTA",
+            'Metta đông y Spa là nơi tái hiện nghệ thuật làm đẹp truyền thống của người Á Đông – kết hợp tinh hoa dưỡng sinh cổ truyền với liệu pháp chăm sóc hiện đại, giúp thanh lọc cơ thể, làm đẹp từ sâu bên trong và bão dưỡng sức khoẻ cho khách hàng chất lượng nhất.' => 'Metta Oriental Spa recreates the traditional Asian art of beauty – combining traditional nourishing essence with modern therapies, helping purify the body, beautify from within, and providing the highest quality health maintenance.',
+            'Gội Đầu Dưỡng Sinh & Khai Thông Huyệt Đạo' => 'Nourishing Shampoo & Meridian Opening',
+            'Hơn cả làm sạch, đó là liệu pháp "thay não" cho người bận rộn.' => 'More than cleaning, it is a "brain replacement" therapy for busy people.',
+            '"Trao nghề từ Tâm – Dựng nghiệp từ Tầm"\nVăn hóa Tây Nguyên hòa quyện tinh hoa Đông Y trong từng bài giảng.' => '"Teaching from the Heart – Building Career with Vision"\nHighland culture blends with Oriental Medicine essence in every lecture.',
+            'Giải Phóng Tắc Nghẽn Cổ Vai Gáy' => 'Relieve Neck & Shoulder Blockages',
+            'Sử dụng kỹ thuật day ấn sâu vào các huyệt đạo "vàng" (Phong Trì, Kiên Tỉnh, Đại Chùy) kết hợp với tinh dầu thảo dược ấm nóng. KTV Metta sẽ bóc tách từng bó cơ bị co cứng, giải phóng chèn ép dây thần kinh và khôi phục đường cong sinh lý.' => 'Using deep pressing techniques on "golden" acupoints (Feng Chi, Jian Jing, Da Zhui) combined with warm herbal oil. Metta technicians will separate each stiff muscle bundle, release nerve compression, and restore physiological curves.',
+            'DƯỠNG TIM AN THẦN' => 'HEART NOURISHING & CALMING',
+            'Thải độc tầng sâu – Hồi sinh năng lượng gốc.' => 'Deep detoxification – Revive original energy.',
+            'DƯỠNG THẬN AN NGUYÊN' => 'KIDNEY NOURISHING & VITALITY',
+            'Một liệu pháp dưỡng sinh - chăm sóc vùng đầu<br />Thang 1: Bài Độc (bạc hà,hương nhu, sả) <br />Thang 2: Kiện Tóc - Giảm Áp (ngải cứu, thục địa, hà thủ ô)<br />Thang 3: Hoạt huyết - Thư giãn (quế chỉ, gừng, bồ kết)' => 'A nourishing therapy - head care<br />Step 1: Detox (peppermint, holy basil, lemongrass) <br />Step 2: Hair Strengthening - Pressure Reduction (mugwort, rehmannia, polygonum)<br />Step 3: Blood Circulation - Relaxation (cinnamon twig, ginger, locust bean)',
+            'Trải nghiệm dưỡng sinh cao cấp' => 'Premium nourishing experience',
+            'DƯỠNG GAN GIẢI UẤT' => 'LIVER NOURISHING & STRESS RELIEF',
+            'Bảng giá dịch vụ' => 'Service Price List',
+            'Dưỡng Sinh Tạng Phủ (Gan - Thận - Phổi)' => 'Viscera Nourishing (Liver - Kidney - Lung)',
+            'Điều hòa khí huyết, an định thần trí. <br /><strong>Giúp giảm hồi hộp, lo âu, đưa tâm về trạng thái an nhiên – ngủ sâu giấc tự nhiên.</strong>' => 'Regulate Qi and blood, calm the mind. <br /><strong>Helps reduce palpitations, anxiety, brings the mind to a peaceful state – natural deep sleep.</strong>',
+            'Hình ảnh' => 'Gallery',
+            'GỘI ĐẦU THẢO DƯỢC DƯỠNG SINH' => 'HERBAL NOURISHING SHAMPOO',
+            'Kết hợp hài hòa các liệu trình dưỡng sinh đặc trưng của Metta Spa, mang đến sự thư giãn toàn diện, phục hồi năng lượng và nuôi dưỡng vẻ đẹp từ gốc rễ.' => 'Harmonious combination of Metta Spa\'s signature nourishing courses, bringing comprehensive relaxation, restoring energy, and nurturing beauty from the root.',
+            'Metta đông y Spa – nơi chăm sóc sức khỏe và sắc đẹp từ gốc rễ. Với liệu trình dưỡng sinh chuẩn mực, thảo dược tinh chọn và đội ngũ tận tâm, chúng tôi giúp bạn thư giãn, phục hồi năng lượng và nuôi dưỡng vẻ đẹp bền lâu.' => 'Metta Oriental Spa – a place for root health and beauty care. With standard nourishing regimens, selected herbs, and a dedicated team, we help you relax, recover energy, and nurture lasting beauty.',
+            'Thận là gốc của tiên thiên, sinh tinh , sinh tuỷ <br /><strong>Giúp ngủ sâu, cải thiện sinh lực – giữ gốc khỏe</strong>' => 'The kidney is the root of congenital constitution, generating essence and marrow <br /><strong>Helps sleep deeply, improve vitality – keep the root healthy</strong>',
+            'Khám phá Chi Nhánh' => 'Discover Branches',
+            'Cải thiện tình trạng khô rát , hàn lạnh tử cung lưu thông khí huyết, giảm đau bụng kinh, điều hòa kinh nguyệt , Tăng cường nội tiết' => 'Improve dryness, cold uterus, circulate Qi and blood, reduce menstrual pain, regulate menstruation, enhance hormones',
+            'CHĂM SÓC PHỤ KHOA' => 'GYNECOLOGICAL CARE',
+            'Quy trình 75 phút kết hợp giữa nước gội thảo dược được nấu tươi mỗi ngày (Bồ kết, Hà thủ ô, Gừng...) và kỹ thuật Ấn - Vuốt - Miết độc quyền vào vùng Bách Hội. Liệu pháp giúp đả thông kinh lạc vùng đầu, đưa dưỡng chất thấm sâu vào nang tóc.' => '75-minute process combining herbal shampoo cooked fresh daily (Locust bean, Polygonum, Ginger...) and exclusive Pressing - Stroking - Rubbing techniques on the Bai Hui area. The therapy helps unblock head meridians, delivering nutrients deep into hair follicles.',
+            'Khai thông huyệt đạo vùng cổ vai gáy – giải phóng khí trệ, đưa máu lên nuôi não. <br /><strong>Giúp thư giãn tâm trí, giảm đau mỏi, cải thiện giấc ngủ và tinh thần sáng suốt.</strong>' => 'Unblock neck and shoulder acupoints – release stagnant Qi, bring blood to nourish the brain. <br /><strong>Helps relax the mind, reduce pain and fatigue, improve sleep and mental clarity.</strong>',
+            'Bảo Dưỡng Sức Khoẻ<br />Ghé Metta Spa!' => 'Maintain Health<br />Visit Metta Spa!',
+            'Metta đông y Spa là nơi tái hiện nghệ thuật làm đẹp truyền thống của người Á Đông – kết hợp tinh hoa dưỡng sinh cổ truyền với liệu pháp chăm sóc hiện đại, giúp thanh lọc cơ thể, làm đẹp từ sâu bên trong và bão dưỡng sức khoẻ cho khách hàng chất lượng nhất.' => 'Metta Oriental Spa recreates the traditional Asian art of beauty – combining traditional nourishing essence with modern therapies, helping purify the body, beautify from within, and providing the highest quality health maintenance.',
+            '<p>Metta đông y Spa là nơi tái hiện nghệ thuật làm đẹp truyền thống của người Á Đông – kết hợp tinh hoa dưỡng sinh cổ truyền với liệu pháp chăm sóc hiện đại, giúp thanh lọc cơ thể, làm đẹp từ sâu bên trong. Giữa nhịp sống tất bật, Metta Spa không chỉ giúp bạn thư giãn, phục hồi năng lượng, mà còn nâng niu làn da, cơ thể và tâm hồn theo cách tự nhiên, hài hòa – như cách ông bà ta xưa từng làm đẹp bằng thảo mộc và hơi ấm. Tại Metta Spa, làm đẹp là một hành trình trở về với bản thể an nhiên và trọn vẹn hơn.</p>' => '<p>Metta Oriental Spa recreates the traditional Asian art of beauty, blending ancient nourishing essence with modern therapies to purify the body and beautify from deep within. Amidst the busy life, Metta Spa not only helps you relax and restore energy but also cherishes your skin, body, and soul in a natural, harmonious way – just as our ancestors used herbs and warmth. At Metta Spa, beauty is a journey back to a more peaceful and complete self.</p>',
+        ),
+        'zh' => array(
+            'Trang chủ' => '首页',
+            'Giới thiệu' => '关于我们',
+            'Tin tức' => '新闻',
+            'Khóa học' => '课程',
+            'Chi nhánh' => '分店',
+            'Menu' => '菜单',
+            'Sản phẩm' => '产品',
+            'Liên hệ' => '联系',
+            'Đặt Lịch' => '预约', 
+            'Hẹn lịch' => '预约',
+            'DƯỠNG SINH VAI – CỔ – GÁY CHUYÊN SÂU' => '深度肩颈养生',
+            'Tại Metta Spa Có gì' => 'Metta Spa 有什么？',
+            'Liệu pháp độc quyền tập trung đả thông Kinh Bàng Quang (đường kinh lạc dài nhất cơ thể) và các huyệt Du vùng lưng. Kết hợp với chườm thảo dược và ngâm chân bài hàn, giúp đào thải độc tố tích tụ trong tạng phủ ra ngoài qua đường bài tiết.' => '独家疗法专注于疏通膀胱经（人体最长的经络）和背俞穴。结合草药热敷和足浴，有助于通过排泄排出积聚的毒素。',
+            'Combo Nổi Bật' => '特色套餐',
+            'Bảo Trì Sức Khoẻ<br />Cùng Metta Spa' => '健康保养<br />与 Metta Spa 同行',
+            'Bảo Trì Sức Khoẻ\nCùng Metta Spa' => "健康保养\n与 Metta Spa 同行",
+            'Metta Spa cung cấp các sản phẩm chăm sóc sức khỏe chủ động từ thảo dược thiên nhiên, được tinh chế dựa trên nền tảng Đông y dưỡng sinh. Mỗi sản phẩm là một giải pháp giúp bạn nuôi dưỡng cơ thể, thư giãn tinh thần và duy trì sự cân bằng mỗi ngày ngay tại nhà.' => 'Metta Spa 提供基于东方医学基础精制的天然草药主动保健产品。每款产品都是帮助您在家中滋养身体、放松身心并保持日常平衡的解决方案。',
+            'Metta Spa Đông Y' => 'Metta 东方 Spa',
+            'Khách Hàng Nói Về Metta Spa' => '客户对 Metta Spa 的评价',
+            'Chọn Chi Nhánh' => '选择分店',
+            'Giải uất kết, thanh nhiệt, điều hòa cảm xúc. <br /><strong>Giúp giải tỏa nóng giận, mệt mỏi, mang lại sự bình hòa và sáng da, nhẹ người.</strong>' => '解郁结，清热，调节情绪。<br /><strong>有助于缓解愤怒、疲劳，带来平和、亮肤和轻松感。</strong>',
+            'Gỡ bỏ "tảng đá" trên vai – Trả lại sự linh hoạt vốn có.' => '卸下肩上的“巨石”——恢复固有的灵活性。',
+            'Metta cùng bạn xây dựng' => 'Metta 与您共建',
+            'lối sống dưỡng sinh.' => '养生生活方式。',
+            'Tái tạo sức khoẻ từ gốc – lan toả giá trị dưỡng sinh Đông Y. Chúng tôi chọn con đường chậm, tự nhiên, chân thật – để sức khoẻ trở về đúng bản chất.' => '从根本上通过再生健康——传播东方养生价值。我们选择缓慢、自然、真实的道路——让健康回归其本质。',
+            'KHỞI ĐẦU SỰ NGHIỆP\nVỮNG CHẮC TẠI METTA' => "在 METTA 开启\n稳固的事业",
+            'Metta đông y Spa là nơi tái hiện nghệ thuật làm đẹp truyền thống của người Á Đông – kết hợp tinh hoa dưỡng sinh cổ truyền với liệu pháp chăm sóc hiện đại, giúp thanh lọc cơ thể, làm đẹp từ sâu bên trong và bão dưỡng sức khoẻ cho khách hàng chất lượng nhất.' => 'Metta 东方 Spa 再现了亚洲人的传统美容艺术——结合传统养生精髓与现代护理疗法，帮助净化身体，由内而外美容，并为客户提供最优质的健康保养。',
+            'Gội Đầu Dưỡng Sinh & Khai Thông Huyệt Đạo' => '养生洗头 & 开通穴道',
+            'Hơn cả làm sạch, đó là liệu pháp "thay não" cho người bận rộn.' => '不仅仅是清洁，更是忙碌人群的“换脑”疗法。',
+            '"Trao nghề từ Tâm – Dựng nghiệp từ Tầm"\nVăn hóa Tây Nguyên hòa quyện tinh hoa Đông Y trong từng bài giảng.' => '“用心传授——以远见立业”\n西原文化与中医精髓融入每一堂课。',
+            'Giải Phóng Tắc Nghẽn Cổ Vai Gáy' => '缓解颈肩后颈堵塞',
+            'Sử dụng kỹ thuật day ấn sâu vào các huyệt đạo "vàng" (Phong Trì, Kiên Tỉnh, Đại Chùy) kết hợp với tinh dầu thảo dược ấm nóng. KTV Metta sẽ bóc tách từng bó cơ bị co cứng, giải phóng chèn ép dây thần kinh và khôi phục đường cong sinh lý.' => '运用深按“黄金”穴位（风池、肩井、大椎）的技术，结合温热草药油。Metta 技师将分离每一束僵硬的肌肉，缓解神经压迫，恢复生理曲线。',
+            'DƯỠNG TIM AN THẦN' => '养心安神',
+            'Thải độc tầng sâu – Hồi sinh năng lượng gốc.' => '深层排毒——复活原始能量。',
+            'DƯỠNG THẬN AN NGUYÊN' => '养肾安元',
+            'Một liệu pháp dưỡng sinh - chăm sóc vùng đầu<br />Thang 1: Bài Độc (bạc hà,hương nhu, sả) <br />Thang 2: Kiện Tóc - Giảm Áp (ngải cứu, thục địa, hà thủ ô)<br />Thang 3: Hoạt huyết - Thư giãn (quế chỉ, gừng, bồ kết)' => '一种养生疗法 - 头部护理<br />第一步：排毒（薄荷、罗勒、香茅）<br />第二步：健发 - 减压（艾草、熟地、何首乌）<br />第三步：活血 - 放松（桂枝、生姜、皂角）',
+            'Trải nghiệm dưỡng sinh cao cấp' => '高端养生体验',
+            'DƯỠNG GAN GIẢI UẤT' => '养肝解郁',
+            'Bảng giá dịch vụ' => '服务价目表',
+            'Dưỡng Sinh Tạng Phủ (Gan - Thận - Phổi)' => '脏腑养生（肝 - 肾 - 肺）',
+            'Điều hòa khí huyết, an định thần trí. <br /><strong>Giúp giảm hồi hộp, lo âu, đưa tâm về trạng thái an nhiên – ngủ sâu giấc tự nhiên.</strong>' => '调节气血，安神定志。<br /><strong>有助于减少心悸、焦虑，使心灵回归安宁状态——自然深睡眠。</strong>',
+            'Hình ảnh' => '图片',
+            'GỘI ĐẦU THẢO DƯỢC DƯỠNG SINH' => '草药养生洗头',
+            'Kết hợp hài hòa các liệu trình dưỡng sinh đặc trưng của Metta Spa, mang đến sự thư giãn toàn diện, phục hồi năng lượng và nuôi dưỡng vẻ đẹp từ gốc rễ.' => '和谐结合 Metta Spa 特色的养生疗程，带来全面放松，恢复能量，从根本上滋养美丽。',
+            'Metta đông y Spa – nơi chăm sóc sức khỏe và sắc đẹp từ gốc rễ. Với liệu trình dưỡng sinh chuẩn mực, thảo dược tinh chọn và đội ngũ tận tâm, chúng tôi giúp bạn thư giãn, phục hồi năng lượng và nuôi dưỡng vẻ đẹp bền lâu.' => 'Metta 东方 Spa —— 从根本上照顾健康和美丽的地方。凭借标准的养生方案、精选的草药和敬业的团队，我们帮助您放松、恢复能量并滋养持久的美丽。',
+            'Thận là gốc của tiên thiên, sinh tinh , sinh tuỷ <br /><strong>Giúp ngủ sâu, cải thiện sinh lực – giữ gốc khỏe</strong>' => '肾为先天之本，生精，生髓 <br /><strong>有助于深睡眠，改善活力——保持根本健康</strong>',
+            'Khám phá Chi Nhánh' => '探索分店',
+            'Cải thiện tình trạng khô rát , hàn lạnh tử cung lưu thông khí huyết, giảm đau bụng kinh, điều hòa kinh nguyệt , Tăng cường nội tiết' => '改善干燥、宫寒，流通气血，减轻痛经，调节月经，增强荷尔蒙',
+            'CHĂM SÓC PHỤ KHOA' => '妇科护理',
+            'Quy trình 75 phút kết hợp giữa nước gội thảo dược được nấu tươi mỗi ngày (Bồ kết, Hà thủ ô, Gừng...) và kỹ thuật Ấn - Vuốt - Miết độc quyền vào vùng Bách Hội. Liệu pháp giúp đả thông kinh lạc vùng đầu, đưa dưỡng chất thấm sâu vào nang tóc.' => '75分钟的流程，结合每天新鲜熬制的草药洗发水（皂角、何首乌、生姜……）和独家的百会穴按-抚-推技术。该疗法有助于疏通头部经络，将营养输送到毛囊深处。',
+            'Khai thông huyệt đạo vùng cổ vai gáy – giải phóng khí trệ, đưa máu lên nuôi não. <br /><strong>Giúp thư giãn tâm trí, giảm đau mỏi, cải thiện giấc ngủ và tinh thần sáng suốt.</strong>' => '疏通颈肩穴位——释放气滞，引血养脑。<br /><strong>有助于放松心灵，减轻疼痛和疲劳，改善睡眠和精神清晰度。</strong>',
+            'Bảo Dưỡng Sức Khoẻ<br />Ghé Metta Spa!' => 'Maintain Health<br />Visit Metta Spa!',
+            '<p>Metta đông y Spa là nơi tái hiện nghệ thuật làm đẹp truyền thống của người Á Đông – kết hợp tinh hoa dưỡng sinh cổ truyền với liệu pháp chăm sóc hiện đại, giúp thanh lọc cơ thể, làm đẹp từ sâu bên trong. Giữa nhịp sống tất bật, Metta Spa không chỉ giúp bạn thư giãn, phục hồi năng lượng, mà còn nâng niu làn da, cơ thể và tâm hồn theo cách tự nhiên, hài hòa – như cách ông bà ta xưa từng làm đẹp bằng thảo mộc và hơi ấm. Tại Metta Spa, làm đẹp là một hành trình trở về với bản thể an nhiên và trọn vẹn hơn.</p>' => '<p>Metta Oriental Spa recreates the traditional Asian art of beauty, blending ancient nourishing essence with modern therapies to purify the body and beautify from deep within. Amidst the busy life, Metta Spa not only helps you relax and restore energy but also cherishes your skin, body, and soul in a natural, harmonious way — just as our ancestors used herbs and warmth. At Metta Spa, beauty is a journey back to a more peaceful and complete self.</p>',
+        ),
+    );
+}
+
+// ==========================================
+// CUSTOM OG IMAGE
+// ==========================================
+add_filter( 'rank_math/opengraph/facebook/image', function( $attachment_url ) {
+    // Override with custom PNG logo for better social support
+    return 'https://mettaspadongy.vn/wp-content/uploads/2026/01/Screenshot-2025-12-18-at-07.23.48.png';
+});

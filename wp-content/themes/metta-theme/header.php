@@ -12,129 +12,17 @@
     })(document.documentElement);
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Tối ưu hóa công cụ tìm kiếm bởi Rank Math - https://rankmath.com/ -->
-  <title>
-    Metta Spa - cùng bạn xây dựng lối sống dưỡng sinh. | Chữa lành cơ thể -
-    Metta đông y Spa
-  </title>
-  <meta name="description"
-    content="Metta đông y Spa là nơi tái hiện nghệ thuật làm đẹp truyền thống của người Á Đông – kết hợp tinh hoa dưỡng sinh cổ truyền với liệu pháp chăm sóc hiện đại, giúp" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
-  <link rel="canonical" href="<?php echo home_url(); ?>" />
-  <meta property="og:locale" content="vi_VN" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Metta Spa - cùng bạn xây dựng
-lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
-  <meta property="og:description"
-    content="Metta đông y Spa là nơi tái hiện nghệ thuật làm đẹp truyền thống của người Á Đông – kết hợp tinh hoa dưỡng sinh cổ truyền với liệu pháp chăm sóc hiện đại, giúp" />
-  <meta property="og:url" content="/" />
-  <meta property="og:site_name" content="Metta đông y Spa" />
-  <meta property="og:updated_time" content="2025-09-02T03:35:04+00:00" />
-  <meta property="og:image" content="<?php echo get_site_url(); ?>/wp-content/uploads/2025/" />
-  <meta property="og:image:secure_url" content="<?php echo get_site_url(); ?>/wp-content/uploads/2025/" />
-  <meta property="og:image:width" content="696" />
-  <meta property="og:image:height" content="522" />
-  <meta property="og:image:alt" content="Spa Metta Spa Đông Y&#8211; Nâng Tầm Dưỡng Sinh Việt | Chữa lành cơ thể" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="article:published_time" content="2025-08-14T04:23:21+00:00" />
-  <meta property="article:modified_time" content="2025-09-02T03:35:04+00:00" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Metta Spa - cùng bạn xây dựng
-lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
-  <meta name="twitter:description"
-    content="Metta đông y Spa là nơi tái hiện nghệ thuật làm đẹp truyền thống của người Á Đông – kết hợp tinh hoa dưỡng sinh cổ truyền với liệu pháp chăm sóc hiện đại, giúp" />
-  <meta name="twitter:image" content="<?php echo get_site_url(); ?>/wp-content/uploads/2025/" />
-  <meta name="twitter:label1" content="Được viết bởi" />
-  <meta name="twitter:data1" content="adminnam" />
-  <meta name="twitter:label2" content="Thời gian để đọc" />
-  <meta name="twitter:data2" content="14 phút" />
-  <script type="application/ld+json" class="rank-math-schema">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": ["Person", "Organization"],
-            "@id": "/#person",
-            "name": "T\u1ea5m \u01a0i Spa"
-          },
-          {
-            "@type": "WebSite",
-            "@id": "/#website",
-            "url": "",
-            "name": "T\u1ea5m \u01a0i Spa",
-            "publisher": { "@id": "/#person" },
-            "inLanguage": "vi",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "/?s={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
-          },
-          {
-            "@type": "ImageObject",
-            "@id": "<?php echo get_site_url(); ?>/wp-content/uploads/2025/",
-            "url": "<?php echo get_site_url(); ?>/wp-content/uploads/2025/",
-            "width": "696",
-            "height": "522",
-            "inLanguage": "vi"
-          },
-          {
-            "@type": "WebPage",
-            "@id": "/#webpage",
-            "url": "/",
-            "name": "Spa T\u1ea5m \u01a0i - N\u00e2ng T\u1ea7m D\u01b0\u1ee1ng Sinh Vi\u1ec7t | Ch\u1eefa l\u00e0nh c\u01a1 th\u1ec3 - T\u1ea5m \u01a0i Spa",
-            "datePublished": "2025-08-14T04:23:21+00:00",
-            "dateModified": "2025-09-02T03:35:04+00:00",
-            "about": { "@id": "/#person" },
-            "isPartOf": { "@id": "/#website" },
-            "primaryImageOfPage": {
-              "@id": "<?php echo get_site_url(); ?>/wp-content/uploads/2025/"
-            },
-            "inLanguage": "vi"
-          },
-          {
-            "@type": "Person",
-            "@id": "/author/adminnam/",
-            "name": "adminnam",
-            "url": "/author/adminnam/",
-            "image": {
-              "@type": "ImageObject",
-              "@id": "https://secure.gravatar.com/avatar/0fb214c050965831779454322ce222837ed0ac8643e82911b3f2504928e9bd0d?s=96&amp;d=mm&amp;r=g",
-              "url": "https://secure.gravatar.com/avatar/0fb214c050965831779454322ce222837ed0ac8643e82911b3f2504928e9bd0d?s=96&amp;d=mm&amp;r=g",
-              "caption": "adminnam",
-              "inLanguage": "vi"
-            },
-            "sameAs": [""]
-          },
-          {
-            "@type": "Article",
-            "headline": "Spa T\u1ea5m \u01a0i - N\u00e2ng T\u1ea7m D\u01b0\u1ee1ng Sinh Vi\u1ec7t | Ch\u1eefa l\u00e0nh c\u01a1 th\u1ec3 - T\u1ea5m \u01a0i Spa",
-            "datePublished": "2025-08-14T04:23:21+00:00",
-            "dateModified": "2025-09-02T03:35:04+00:00",
-            "author": { "@id": "/author/adminnam/", "name": "adminnam" },
-            "publisher": { "@id": "/#person" },
-            "description": "T\u1ea5m \u01a0i Spa l\u00e0 n\u01a1i t\u00e1i hi\u1ec7n ngh\u1ec7 thu\u1eadt l\u00e0m \u0111\u1eb9p truy\u1ec1n th\u1ed1ng c\u1ee7a ng\u01b0\u1eddi \u00c1 \u0110\u00f4ng \u2013 k\u1ebft h\u1ee3p tinh hoa d\u01b0\u1edng sinh c\u1ed5 truy\u1ec1n v\u1edbi li\u1ec7u ph\u00e1p ch\u0103m s\u00f3c hi\u1ec7n \u0111\u1ea1i, gi\u00fap",
-            "name": "Spa T\u1ea5m \u01a0i - N\u00e2ng T\u1ea7m D\u01b0\u1ee1ng Sinh Vi\u1ec7t | Ch\u1eefa l\u00e0nh c\u01a1 th\u1ec3 - T\u1ea5m \u01a0i Spa",
-            "@id": "/#richSnippet",
-            "isPartOf": { "@id": "/#webpage" },
-            "image": { "@id": "<?php echo get_site_url(); ?>/wp-content/uploads/2025/" },
-            "inLanguage": "vi",
-            "mainEntityOfPage": { "@id": "/#webpage" }
-          }
-        ]
-      }
-    </script>
-  <!-- /Plugin SEO WordPress Rank Math -->
 
-  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/flatsome.js?ver=22889b626eb7ec03b5a4" />
-  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/chunk.slider.js?ver=3.20.0" />
-  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/chunk.popups.js?ver=3.20.0" />
-  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/chunk.tooltips.js?ver=3.20.0" />
-  <link rel="alternate" type="application/rss+xml" title="Dòng thông tin Metta đông y Spa &raquo;" href="feed" />
+
+  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/flatsome.js?ver=3.32.0" />
+  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/chunk.slider.js?ver=3.32.0" />
+  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/chunk.popups.js?ver=3.32.0" />
+  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/chunk.tooltips.js?ver=3.32.0" />
+  <link rel="alternate" type="application/rss+xml" title="Dòng thông tin Metta đông y Spa &raquo;" href="<?php echo get_site_url(); ?>/feed" />
   <link rel="alternate" title="oNhúng (JSON)" type="application/json+oembed"
-    href="wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmettaspadongy.vn%2F" />
+    href="<?php echo get_site_url(); ?>/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmettaspadongy.vn%2F" />
   <link rel="alternate" title="oNhúng (XML)" type="text/xml+oembed"
-    href="wp-json/oembed/1.0/embed-1?url=https%3A%2F%2Fmettaspadongy.vn%2F&#038;format=xml" />
+    href="<?php echo get_site_url(); ?>/wp-json/oembed/1.0/embed-1?url=https%3A%2F%2Fmettaspadongy.vn%2F&#038;format=xml" />
   <style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
     img:is([sizes="auto" i], [sizes^="auto," i]) {
       contain-intrinsic-size: 3000px 1500px;
@@ -846,7 +734,11 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
     /*# sourceURL=global-styles-inline-css */
   </style>
 
-
+  <link rel="stylesheet" id="dflip-style-css"
+    href="<?php echo get_site_url(); ?>/wp-content/plugins/3d-flipbook-dflip-lite/assets/css/dflip.min.css?ver=2.3.75" type="text/css" media="all" />
+  <link rel="stylesheet" id="flatsome-main-css" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/css/flatsome.css?ver=3.32.0"
+    type="text/css" media="all" />
+  <link rel="stylesheet" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/css/home.css?ver=3.32.0" type="text/css" media="all" />
   <style id="flatsome-main-inline-css" type="text/css">
     @font-face {
       font-family: "fl-icons";
@@ -861,9 +753,13 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
 
     /*# sourceURL=flatsome-main-inline-css */
   </style>
-
-  <link rel="https://api.w.org/" href="wp-json" />
-  <link rel="alternate" title="JSON" type="application/json" href="wp-json/wp/v2/pages/7" />
+  <link rel="stylesheet" id="flatsome-style-css" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-child/style.css?ver=3.32.0"
+    type="text/css" media="all" />
+  <script type="text/javascript" src="<?php echo get_site_url(); ?>/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+  <script type="text/javascript" src="<?php echo get_site_url(); ?>/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
+    id="jquery-migrate-js"></script>
+  <link rel="https://api.w.org/" href="<?php echo get_site_url(); ?>/wp-json" />
+  <link rel="alternate" title="JSON" type="application/json" href="<?php echo get_site_url(); ?>/wp-json/wp/v2/pages/7" />
   <link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
   <meta name="generator" content="WordPress 6.9" />
   <link rel="shortlink" href="<?php echo home_url(); ?>" />
@@ -939,7 +835,6 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
     .row {
       max-width: 1410px;
     }
-
     .row.row-collapse {
       max-width: 1380px;
     }
@@ -1084,7 +979,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       white-space: nowrap;
     }
 
-    .header-main .nav > li > a {
+    .header-main .nav>li>a {
       line-height: 16px;
       font-size: 0.9em;
     }
@@ -1688,7 +1583,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 400;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2) format("woff2");
       unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF,
         U+A640-A69F, U+FE2E-FE2F;
     }
@@ -1699,7 +1594,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 400;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2) format("woff2");
       unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
     }
 
@@ -1709,7 +1604,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 400;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2) format("woff2");
       unicode-range: U+1F00-1FFF;
     }
 
@@ -1719,7 +1614,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 400;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2) format("woff2");
       unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C,
         U+038E-03A1, U+03A3-03FF;
     }
@@ -1730,7 +1625,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 400;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2) format("woff2");
       unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
         U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
         U+0323, U+0329, U+1EA0-1EF9, U+20AB;
@@ -1742,7 +1637,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 400;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2) format("woff2");
       unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
         U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
         U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
@@ -1755,7 +1650,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 400;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format("woff2");
       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
         U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
         U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
@@ -1767,7 +1662,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 700;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2) format("woff2");
       unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF,
         U+A640-A69F, U+FE2E-FE2F;
     }
@@ -1778,7 +1673,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 700;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2) format("woff2");
       unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
     }
 
@@ -1788,7 +1683,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 700;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2) format("woff2");
       unicode-range: U+1F00-1FFF;
     }
 
@@ -1798,7 +1693,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 700;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2) format("woff2");
       unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C,
         U+038E-03A1, U+03A3-03FF;
     }
@@ -1809,7 +1704,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 700;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2) format("woff2");
       unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
         U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
         U+0323, U+0329, U+1EA0-1EF9, U+20AB;
@@ -1821,7 +1716,7 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 700;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2) format("woff2");
       unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
         U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
         U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
@@ -1834,28 +1729,76 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
       font-style: normal;
       font-weight: 700;
       font-display: swap;
-      src: url(wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format("woff2");
+      src: url(<?php echo get_site_url(); ?>/wp-content/fonts/inter/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format("woff2");
       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
         U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
         U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
   </style>
-  <!-- Fonts Plugin CSS - https://fontsplugin.com/ -->
   <style>
     @font-face {
       font-family: "1ftv-vip-medino";
       src: url("<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/1FTV-VIP-Medino.ttf") format("truetype");
     }
+
+    /* Standard Header Heights */
+    .header-main { height: 70px !important; }
+    .header-inner { height: 70px !important; }
+    #logo img { max-height: 70px !important; width: auto !important; padding: 2px 0; }
+
+    /* Transparent & Sticky Header Adjustments */
+    .header.transparent .header-main { height: 80px !important; background: transparent !important; }
+    .header.transparent .header-inner { height: 80px !important; }
+    .header.transparent #logo img { max-height: 80px !important; }
+
+    .header-wrapper.stuck {
+      background: var(--metta-bg) !important;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Navigation & Buttons */
+    .header-nav-main.nav > li > a { padding: 0 12px; font-weight: 700; color: var(--metta-main); }
+    .header-button .button {
+       background: linear-gradient(92deg, #9c4b00 1.53%, #c67427 93.65%) !important;
+       border-radius: 8px !important;
+       border: 0 !important;
+       text-transform: uppercase;
+       font-weight: 700;
+    }
+
+    #main { padding-top: 0px !important; }
   </style>
-  <!-- Fonts Plugin CSS -->
-<?php wp_head(); ?>
+    
+  <?php if(function_exists('metta_get_field')) metta_the_field('header_scripts', get_option('page_on_front')); ?>
+  <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
   <a class="skip-link screen-reader-text" href="#main">Bỏ qua nội dung</a>
 
   <div id="wrapper">
-    <header id="header" class="header transparent has-transparent has-sticky sticky-jump">
+    <style>
+        /* FORCE ICON FONT - FIX SQUARE BOX ISSUE */
+        .icon-menu:before { font-family: "fl-icons" !important; content: "\e800"; }
+        .icon-menu { font-family: "fl-icons" !important; }
+    </style>
+    <?php
+    $header_classes = array('header', 'has-sticky', 'sticky-jump');
+    // Add transparent header for Homepage, Course Page, AND Training Page
+    if ( is_front_page() 
+         || is_page_template('page-khoa-hoc-duong-sinh.php') 
+         || is_page('khoa-hoc-duong-sinh') 
+         || is_page(57)
+         || is_page_template('page-dao-tao.php')
+         || is_page('dao-tao')
+    ) {
+        $header_classes[] = 'transparent';
+        $header_classes[] = 'has-transparent';
+    }
+    ?>
+    <header id="header" class="<?php echo implode(' ', $header_classes); ?>">
       <div class="header-wrapper">
         <div id="masthead" class="header-main show-logo-center nav-dark toggle-nav-dark">
           <div class="header-inner flex-row container logo-center medium-logo-center" role="navigation">
@@ -1863,19 +1806,20 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
             <div id="logo" class="flex-col logo">
               <!-- Header logo -->
               <a href="<?php echo home_url(); ?>" title="Metta đông y Spa - Metta đông y Spa" rel="home">
-                <img width="1" height="1"
-                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                  class="header_logo header-logo lazyload" alt="Metta đông y Spa"
-                  data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/logo_meta.svg" decoding="async" data-eio-rwidth="1"
-                  data-eio-rheight="1" /><noscript><img width="1" height="1"
-                    src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/logo-tam.svg" class="header_logo header-logo" alt="Metta đông y Spa"
-                    data-eio="l" /></noscript><img width="1" height="1"
-                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                  class="header-logo-dark lazyload" alt="Metta đông y Spa"
-                  data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/logo_meta.svg" decoding="async" data-eio-rwidth="1"
-                  data-eio-rheight="1" /><noscript><img width="1" height="1"
-                    src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/logo_meta.svg" class="header-logo-dark" alt="Metta đông y Spa"
-                    data-eio="l" /></noscript></a>
+                <?php 
+                $f_id = get_option('page_on_front');
+                $custom_logo = function_exists('get_field') ? get_field('site_logo', $f_id) : '';
+                $logo_url = !empty($custom_logo) ? $custom_logo : get_site_url() . '/wp-content/uploads/2025/12/logo_meta.svg';
+                ?>
+                <img width="160" height="70"
+                  src="<?php echo $logo_url; ?>"
+                  class="header_logo header-logo" alt="Metta đông y Spa" 
+                  style="object-fit: contain;" />
+                <img width="160" height="70"
+                  src="<?php echo $logo_url; ?>"
+                  class="header-logo-dark" alt="Metta đông y Spa" 
+                  style="object-fit: contain;" />
+              </a>
             </div>
 
             <!-- Mobile Left Elements -->
@@ -1893,58 +1837,105 @@ lối sống dưỡng sinh. | Chữa lành cơ thể - Metta đông y Spa" />
 
             <!-- Left Elements -->
             <div class="flex-col hide-for-medium flex-left">
-              <ul class="header-nav header-nav-main nav nav-left nav-size-medium nav-spacing-small nav-uppercase">
-                <li id="menu-item-29"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item menu-item-29 active menu-item-design-default">
-                  <a href="<?php echo home_url(); ?>" aria-current="page" class="nav-top-link">Trang chủ</a>
-                </li>
-                <li id="menu-item-31"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31 menu-item-design-default">
-                  <a href="<?php echo home_url("/gioi-thieu"); ?>" class="nav-top-link">Giới thiệu</a>
-                </li>
-                <li id="menu-item-30"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30 menu-item-design-default">
-                  <a href="<?php echo home_url("/tin-tuc"); ?>" class="nav-top-link">Tin tức</a>
-                </li>
-                <li id="menu-item-course"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-design-default">
-                  <a href="<?php echo home_url("/khoa-hoc-duong-sinh"); ?>" class="nav-top-link">Khóa học</a>
-                </li>
-              </ul>
+              <?php
+              wp_nav_menu(array(
+                'theme_location' => 'primary_left',
+                'container'      => false,
+                'menu_class'     => 'header-nav header-nav-main nav nav-left nav-size-medium nav-spacing-small nav-uppercase',
+                'fallback_cb'    => false,
+                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+              ));
+              ?>
             </div>
 
             <!-- Right Elements -->
             <div class="flex-col hide-for-medium flex-right">
               <ul class="header-nav header-nav-main nav nav-right nav-size-medium nav-spacing-small nav-uppercase">
-                <li id="menu-item-1122"
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1122 menu-item-design-default">
-                  <a href="<?php echo home_url("/chi-nhanh"); ?>" class="nav-top-link">Chi nhánh</a>
-                </li>
-                <li id="menu-item-33"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33 menu-item-design-default">
-                  <a href="<?php echo home_url("/menu"); ?>" class="nav-top-link">Menu</a>
-                </li>
-                <li id="menu-item-33"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33 menu-item-design-default">
-                  <a href="san-pham/index.html" class="nav-top-link">Sản phẩm</a>
-                </li>
-                <li id="menu-item-32"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32 menu-item-design-default">
-                  <a href="<?php echo home_url("/lien-he"); ?>" class="nav-top-link">Liên hệ</a>
-                </li>
+                <?php
+                if (has_nav_menu('primary_right')) {
+                    wp_nav_menu(array(
+                        'theme_location' => 'primary_right',
+                        'container'      => false,
+                        'items_wrap'     => '%3$s',
+                        'fallback_cb'    => false,
+                    ));
+                }
+                ?>
                 <li class="html header-button-1">
                   <div class="header-button">
                     <a href="<?php echo home_url("/chi-nhanh"); ?>" class="button primary" style="border-radius: 8px">
-                      <span>Đặt Lịch</span>
+                      <span><?php echo metta_static('Đặt Lịch'); ?></span>
                     </a>
                   </div>
+                </li>
+                <!-- Language Switcher -->
+                <li class="html header-language-switcher">
+                    <div class="nav-lang" style="padding: 0 0 0 15px; cursor: pointer; position: relative; height: 100%; display: flex; align-items: center;">
+                        <?php 
+                        if(function_exists('metta_get_current_language')) {
+                            $current_lang = metta_get_current_language(); 
+                        } else {
+                            $current_lang = 'vi';
+                        }
+                        ?>
+                        <div class="lang-selected" style="font-weight: bold; color: var(--metta-main); display: flex; align-items: center; gap: 5px;">
+                             <span><?php echo strtoupper($current_lang); ?></span>
+                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <ul class="lang-dropdown" style="display: none; position: absolute; top: 100%; right: 0; background: #fffcf9; border: 1px solid #a87e09; list-style: none; padding: 10px; z-index: 999; border-radius: 8px; min-width: 120px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                            <li style="margin-bottom: 8px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;"><a href="?lang=vi" style="color: #603813; display: flex; align-items: center; gap: 8px;">🇻🇳 Tiếng Việt</a></li>
+                            <li style="margin-bottom: 8px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;"><a href="?lang=en" style="color: #603813; display: flex; align-items: center; gap: 8px;">🇺🇸 English</a></li>
+                            <li><a href="?lang=zh" style="color: #603813; display: flex; align-items: center; gap: 8px;">🇨🇳 中文</a></li>
+                        </ul>
+                    </div>
+                    <script>
+                        jQuery(document).ready(function($){
+                            $('.nav-lang').hover(function(){
+                                $(this).find('.lang-dropdown').stop(true, true).slideDown(200);
+                            }, function(){
+                                $(this).find('.lang-dropdown').stop(true, true).slideUp(200);
+                            });
+                        });
+                    </script>
                 </li>
               </ul>
             </div>
 
             <!-- Mobile Right Elements -->
             <div class="flex-col show-for-medium flex-right">
-              <ul class="mobile-nav nav nav-right"></ul>
+              <ul class="mobile-nav nav nav-right">
+                <li class="html header-language-switcher-mobile">
+                    <div class="nav-lang-mobile" style="padding: 0 10px; cursor: pointer; position: relative; height: 100%; display: flex; align-items: center;">
+                        <?php 
+                        if(function_exists('metta_get_current_language')) {
+                            $current_lang = metta_get_current_language(); 
+                        } else {
+                            $current_lang = 'vi';
+                        }
+                        ?>
+                        <div class="lang-selected-mobile" style="font-weight: bold; color: var(--metta-main); display: flex; align-items: center; gap: 5px;">
+                             <span><?php echo strtoupper($current_lang); ?></span>
+                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <ul class="lang-dropdown-mobile" style="display: none; position: absolute; top: 100%; right: 0; background: #fffcf9; border: 1px solid #a87e09; list-style: none; padding: 10px; z-index: 999; border-radius: 8px; min-width: 120px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                            <li style="margin-bottom: 8px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;"><a href="?lang=vi" style="color: #603813; display: flex; align-items: center; gap: 8px;">🇻🇳 Tiếng Việt</a></li>
+                            <li style="margin-bottom: 8px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;"><a href="?lang=en" style="color: #603813; display: flex; align-items: center; gap: 8px;">🇺🇸 English</a></li>
+                            <li><a href="?lang=zh" style="color: #603813; display: flex; align-items: center; gap: 8px;">🇨🇳 中文</a></li>
+                        </ul>
+                    </div>
+                    <script>
+                        jQuery(document).ready(function($){
+                            $('.nav-lang-mobile').on('click', function(e){
+                                e.stopPropagation();
+                                $(this).find('.lang-dropdown-mobile').fadeToggle(200);
+                            });
+                            $(document).on('click', function(){
+                                $('.lang-dropdown-mobile').fadeOut(200);
+                            });
+                        });
+                    </script>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
