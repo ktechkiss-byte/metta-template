@@ -1837,30 +1837,55 @@
 
             <!-- Left Elements -->
             <div class="flex-col hide-for-medium flex-left">
-              <?php
-              wp_nav_menu(array(
-                'theme_location' => 'primary_left',
-                'container'      => false,
-                'menu_class'     => 'header-nav header-nav-main nav nav-left nav-size-medium nav-spacing-small nav-uppercase',
-                'fallback_cb'    => false,
-                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-              ));
-              ?>
+              <?php if (has_nav_menu('primary_left')): ?>
+                <?php wp_nav_menu(array(
+                  'theme_location' => 'primary_left',
+                  'container'      => false,
+                  'menu_class'     => 'header-nav header-nav-main nav nav-left nav-size-medium nav-spacing-small nav-uppercase',
+                  'fallback_cb'    => false,
+                  'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                )); ?>
+              <?php else: ?>
+                <!-- Fallback hardcoded menu -->
+                <ul class="header-nav header-nav-main nav nav-left nav-size-medium nav-spacing-small nav-uppercase">
+                  <li class="menu-item <?php echo metta_is_active('/'); ?>">
+                    <a href="<?php echo home_url('/'); ?>"><span><?php echo metta_static('Trang chủ'); ?></span></a>
+                  </li>
+                  <li class="menu-item <?php echo metta_is_active('/gioi-thieu'); ?>">
+                    <a href="<?php echo home_url('/gioi-thieu'); ?>"><span><?php echo metta_static('Giới thiệu'); ?></span></a>
+                  </li>
+                  <li class="menu-item <?php echo metta_is_active('/menu'); ?>">
+                    <a href="<?php echo home_url('/menu'); ?>"><span><?php echo metta_static('Menu'); ?></span></a>
+                  </li>
+                </ul>
+              <?php endif; ?>
             </div>
 
             <!-- Right Elements -->
             <div class="flex-col hide-for-medium flex-right">
               <ul class="header-nav header-nav-main nav nav-right nav-size-medium nav-spacing-small nav-uppercase">
-                <?php
-                if (has_nav_menu('primary_right')) {
-                    wp_nav_menu(array(
-                        'theme_location' => 'primary_right',
-                        'container'      => false,
-                        'items_wrap'     => '%3$s',
-                        'fallback_cb'    => false,
-                    ));
-                }
-                ?>
+              <?php if (has_nav_menu('primary_right')): ?>
+                  <?php wp_nav_menu(array(
+                      'theme_location' => 'primary_right',
+                      'container'      => false,
+                      'items_wrap'     => '%3$s',
+                      'fallback_cb'    => false,
+                  )); ?>
+                <?php else: ?>
+                  <!-- Fallback hardcoded right menu -->
+                  <li class="menu-item <?php echo metta_is_active('/san-pham'); ?>">
+                    <a href="<?php echo home_url('/san-pham'); ?>"><span><?php echo metta_static('Sản phẩm'); ?></span></a>
+                  </li>
+                  <li class="menu-item <?php echo metta_is_active('/chi-nhanh'); ?>">
+                    <a href="<?php echo home_url('/chi-nhanh'); ?>"><span><?php echo metta_static('Chi nhánh'); ?></span></a>
+                  </li>
+                  <li class="menu-item <?php echo metta_is_active('/tin-tuc'); ?>">
+                    <a href="<?php echo home_url('/tin-tuc'); ?>"><span><?php echo metta_static('Tin tức'); ?></span></a>
+                  </li>
+                  <li class="menu-item <?php echo metta_is_active('/lien-he'); ?>">
+                    <a href="<?php echo home_url('/lien-he'); ?>"><span><?php echo metta_static('Liên hệ'); ?></span></a>
+                  </li>
+                <?php endif; ?>
                 <li class="html header-button-1">
                   <div class="header-button">
                     <a href="<?php echo home_url("/chi-nhanh"); ?>" class="button primary" style="border-radius: 8px">

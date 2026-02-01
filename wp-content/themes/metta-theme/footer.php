@@ -120,15 +120,25 @@
                   </style>
                 </div>
 
-                <?php
-                wp_nav_menu(array(
-                  'theme_location' => 'footer_links',
-                  'container'      => false,
-                  'menu_class'     => 'footer-links-list',
-                  'fallback_cb'    => false,
-                  'items_wrap'     => '<div class="footer-links-wrap">%3$s</div>',
-                ));
-                ?>
+                <?php if (has_nav_menu('footer_links')): ?>
+                  <?php wp_nav_menu(array(
+                    'theme_location' => 'footer_links',
+                    'container'      => false,
+                    'menu_class'     => 'footer-links-list',
+                    'fallback_cb'    => false,
+                    'items_wrap'     => '<div class="footer-links-wrap">%3$s</div>',
+                  )); ?>
+                <?php else: ?>
+                  <!-- Fallback hardcoded footer links -->
+                  <div class="footer-links-wrap">
+                    <a href="<?php echo home_url('/'); ?>"><?php echo metta_static('Trang chủ'); ?></a>
+                    <a href="<?php echo home_url('/gioi-thieu'); ?>"><?php echo metta_static('Giới thiệu'); ?></a>
+                    <a href="<?php echo home_url('/menu'); ?>"><?php echo metta_static('Menu'); ?></a>
+                    <a href="<?php echo home_url('/chi-nhanh'); ?>"><?php echo metta_static('Chi nhánh'); ?></a>
+                    <a href="<?php echo home_url('/tin-tuc'); ?>"><?php echo metta_static('Tin tức'); ?></a>
+                    <a href="<?php echo home_url('/lien-he'); ?>"><?php echo metta_static('Liên hệ'); ?></a>
+                  </div>
+                <?php endif; ?>
                 <style>
                     .footer-links-wrap a { display: block; margin-bottom: 5px; color: #fff; }
                     .footer-links-wrap a:hover { color: var(--metta-main); }
@@ -197,14 +207,39 @@
 
   <div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">
     <div class="sidebar-menu no-scrollbar">
-      <?php
-      wp_nav_menu(array(
-        'theme_location' => 'mobile',
-        'container'      => false,
-        'menu_class'     => 'nav nav-sidebar nav-vertical nav-uppercase',
-        'fallback_cb'    => false,
-      ));
-      ?>
+      <?php if (has_nav_menu('mobile')): ?>
+        <?php wp_nav_menu(array(
+          'theme_location' => 'mobile',
+          'container'      => false,
+          'menu_class'     => 'nav nav-sidebar nav-vertical nav-uppercase',
+          'fallback_cb'    => false,
+        )); ?>
+      <?php else: ?>
+        <!-- Fallback hardcoded mobile menu -->
+        <ul class="nav nav-sidebar nav-vertical nav-uppercase">
+          <li class="menu-item <?php echo metta_is_active('/'); ?>">
+            <a href="<?php echo home_url('/'); ?>"><?php echo metta_static('Trang chủ'); ?></a>
+          </li>
+          <li class="menu-item <?php echo metta_is_active('/gioi-thieu'); ?>">
+            <a href="<?php echo home_url('/gioi-thieu'); ?>"><?php echo metta_static('Giới thiệu'); ?></a>
+          </li>
+          <li class="menu-item <?php echo metta_is_active('/menu'); ?>">
+            <a href="<?php echo home_url('/menu'); ?>"><?php echo metta_static('Menu'); ?></a>
+          </li>
+          <li class="menu-item <?php echo metta_is_active('/san-pham'); ?>">
+            <a href="<?php echo home_url('/san-pham'); ?>"><?php echo metta_static('Sản phẩm'); ?></a>
+          </li>
+          <li class="menu-item <?php echo metta_is_active('/chi-nhanh'); ?>">
+            <a href="<?php echo home_url('/chi-nhanh'); ?>"><?php echo metta_static('Chi nhánh'); ?></a>
+          </li>
+          <li class="menu-item <?php echo metta_is_active('/tin-tuc'); ?>">
+            <a href="<?php echo home_url('/tin-tuc'); ?>"><?php echo metta_static('Tin tức'); ?></a>
+          </li>
+          <li class="menu-item <?php echo metta_is_active('/lien-he'); ?>">
+            <a href="<?php echo home_url('/lien-he'); ?>"><?php echo metta_static('Liên hệ'); ?></a>
+          </li>
+        </ul>
+      <?php endif; ?>
     </div>
   </div>
   <script type="speculationrules">
