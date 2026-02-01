@@ -242,6 +242,139 @@
       <?php endif; ?>
     </div>
   </div>
+  
+  <!-- Mobile Submenu Styles -->
+  <style>
+    /* Mobile Sidebar Menu Styles */
+    #main-menu .nav-sidebar {
+      padding: 20px 0;
+    }
+    
+    #main-menu .nav-sidebar > li {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    #main-menu .nav-sidebar > li > a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+    
+    #main-menu .nav-sidebar > li > a:hover {
+      background: rgba(244, 157, 33, 0.1);
+      color: var(--metta-main);
+    }
+    
+    /* Submenu toggle arrow */
+    #main-menu .nav-sidebar > li.menu-item-has-children > a::after {
+      content: '+';
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--metta-main);
+      transition: transform 0.3s ease;
+    }
+    
+    #main-menu .nav-sidebar > li.menu-item-has-children.submenu-open > a::after {
+      content: '−';
+    }
+    
+    /* Mobile Submenu */
+    #main-menu .nav-sidebar .sub-menu {
+      display: none;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background: rgba(0,0,0,0.2);
+    }
+    
+    #main-menu .nav-sidebar .sub-menu li {
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    #main-menu .nav-sidebar .sub-menu li:last-child {
+      border-bottom: none;
+    }
+    
+    #main-menu .nav-sidebar .sub-menu li a {
+      display: block;
+      padding: 12px 20px 12px 35px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-transform: none;
+      border-left: 3px solid transparent;
+      transition: all 0.2s ease;
+    }
+    
+    #main-menu .nav-sidebar .sub-menu li a:hover {
+      background: rgba(244, 157, 33, 0.15);
+      color: var(--metta-main);
+      border-left-color: var(--metta-main);
+    }
+    
+    /* Nested submenu (level 3) */
+    #main-menu .nav-sidebar .sub-menu .sub-menu li a {
+      padding-left: 50px;
+    }
+    
+    /* Animation for submenu open */
+    #main-menu .nav-sidebar .sub-menu.submenu-visible {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+    
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  
+  <!-- Mobile Submenu Toggle Script -->
+  <script>
+    jQuery(document).ready(function($) {
+      // Mobile submenu accordion
+      $('#main-menu .nav-sidebar > li.menu-item-has-children > a').on('click', function(e) {
+        var $parent = $(this).parent();
+        var $submenu = $parent.find('> .sub-menu');
+        
+        // If clicking on a parent with submenu, toggle it
+        if ($submenu.length) {
+          e.preventDefault();
+          
+          // Close other open submenus
+          $parent.siblings('.submenu-open').removeClass('submenu-open').find('.sub-menu').removeClass('submenu-visible');
+          
+          // Toggle current submenu
+          $parent.toggleClass('submenu-open');
+          $submenu.toggleClass('submenu-visible');
+        }
+      });
+      
+      // Allow clicking on submenu parent link icon to still toggle
+      // But clicking on the text goes to the page
+      $('#main-menu .nav-sidebar .sub-menu li.menu-item-has-children > a').on('click', function(e) {
+        var $parent = $(this).parent();
+        var $submenu = $parent.find('> .sub-menu');
+        
+        if ($submenu.length) {
+          e.preventDefault();
+          $parent.toggleClass('submenu-open');
+          $submenu.toggleClass('submenu-visible');
+        }
+      });
+    });
+  </script>
   <script type="speculationrules">
       {
         "prefetch": [
