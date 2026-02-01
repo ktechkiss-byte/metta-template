@@ -1768,6 +1768,105 @@
        font-weight: 700;
     }
 
+    /* ========== DROPDOWN SUBMENU STYLES ========== */
+    .header-nav-main.nav > li {
+      position: relative;
+    }
+    
+    /* Submenu container */
+    .header-nav-main.nav .sub-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: var(--metta-bg);
+      border: 1px solid rgba(168, 126, 9, 0.3);
+      border-radius: 10px;
+      padding: 10px 0;
+      margin-top: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    /* Show submenu on hover */
+    .header-nav-main.nav > li:hover > .sub-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Submenu items */
+    .header-nav-main.nav .sub-menu li {
+      display: block;
+      margin: 0;
+    }
+    
+    .header-nav-main.nav .sub-menu li a {
+      display: block;
+      padding: 10px 20px !important;
+      color: #fff !important;
+      font-size: 0.9rem;
+      font-weight: 500 !important;
+      text-transform: none !important;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      border-left: 3px solid transparent;
+    }
+    
+    .header-nav-main.nav .sub-menu li a:hover {
+      background: rgba(244, 157, 33, 0.15);
+      color: var(--metta-main) !important;
+      border-left-color: var(--metta-main);
+    }
+    
+    /* Arrow indicator for parent menu items */
+    .header-nav-main.nav > li.menu-item-has-children > a::after {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: 6px;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid var(--metta-main);
+      vertical-align: middle;
+    }
+    
+    /* Nested submenu (level 3+) */
+    .header-nav-main.nav .sub-menu .sub-menu {
+      left: 100%;
+      top: 0;
+      margin-top: 0;
+      margin-left: 5px;
+    }
+    
+    .header-nav-main.nav .sub-menu li:hover > .sub-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Mobile submenu adjustments */
+    @media (max-width: 849px) {
+      .header-nav-main.nav .sub-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: rgba(0,0,0,0.2);
+        margin-top: 0;
+        padding: 5px 0;
+        border-radius: 0;
+      }
+      
+      .header-nav-main.nav .sub-menu li a {
+        padding-left: 30px !important;
+      }
+    }
+
     #main { padding-top: 0px !important; }
   </style>
     
