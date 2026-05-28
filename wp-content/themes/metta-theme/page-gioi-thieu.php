@@ -303,6 +303,23 @@ get_header(); ?>
     .wpforms-container {
       margin: 0 !important;
     }
+
+    /* Metta Vision & Mission Cards styling */
+    .metta-vision-card, .metta-mission-card {
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    }
+    .metta-vision-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 15px 35px rgba(96, 56, 19, 0.12) !important;
+      background: rgba(96, 56, 19, 0.08) !important;
+      border-color: var(--metta-gold) !important;
+    }
+    .metta-mission-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 15px 35px rgba(7, 68, 4, 0.1) !important;
+      background: rgba(7, 68, 4, 0.06) !important;
+      border-color: var(--metta-green) !important;
+    }
   </style>
     <main id="main" class="">
       <div id="content" role="main" class="content-area">
@@ -342,7 +359,7 @@ get_header(); ?>
                       <div class="col-inner">
                         <div class="img has-hover about-intro-img x md-x lg-x y md-y lg-y" id="image_1811577849">
                           <div class="img-inner image-cover dark" style="padding-top: 75%">
-                            <img width="1920" height="1280" src="<?php echo metta_get_field('about_img_1') ?: get_site_url().'/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg'; ?>" class="attachment-original size-original" />
+                            <img width="1920" height="1280" src="<?php echo metta_get_field('about_img_1') ?: get_site_url().'/wp-content/uploads/2026/05/metta_spa_zen_corner.png'; ?>" class="attachment-original size-original" />
                           </div>
 
                           <style>
@@ -358,7 +375,7 @@ get_header(); ?>
                       <div class="col-inner">
                         <div class="img has-hover about-intro-img x md-x lg-x y md-y lg-y" id="image_935462736">
                           <div class="img-inner image-cover dark" style="padding-top: 75%">
-                            <img width="1920" height="1280" src="<?php echo metta_get_field('about_img_2') ?: get_site_url().'/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>" class="attachment-original size-original" />
+                            <img width="1920" height="1280" src="<?php echo metta_get_field('about_img_2') ?: get_site_url().'/wp-content/uploads/2026/05/metta_spa_tea_lounge.png'; ?>" class="attachment-original size-original" />
                           </div>
 
                           <style>
@@ -375,13 +392,13 @@ get_header(); ?>
                         <div class="img has-hover about-intro-img x md-x lg-x y md-y lg-y" id="image_496264494">
                           <div class="img-inner image-cover dark" style="padding-top: 75%">
                             <img decoding="async" width="1920" height="1536"
-  src="<?php echo metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321244104193_8316d0cd67c89088c05256e053a20b1d.jpg'; ?>"
+  src="<?php echo metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/05/metta_spa_empty_room.png'; ?>"
   class="attachment-original size-original" alt=""
   style="width:100%;height:100%;object-fit:cover;" /><noscript><img
                                 decoding="async" width="1920" height="1536"
-                                src="<?php echo metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321244104193_8316d0cd67c89088c05256e053a20b1d.jpg'; ?>"
+                                src="<?php echo metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/05/metta_spa_empty_room.png'; ?>"
                                  class="attachment-original size-original" alt="" srcset="
-                                     <?php echo metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321244104193_8316d0cd67c89088c05256e053a20b1d.jpg 1536w'; ?>
+                                     <?php echo metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/05/metta_spa_empty_room.png 1536w'; ?>
                                    " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
                           </div>
 
@@ -394,9 +411,6 @@ get_header(); ?>
                       </div>
                     </div>
                   </div>
-                  <a href="<?php echo home_url("/menu"); ?>" class="button primary is-link is-larger lowercase reveal-icon">
-                    <span>Xem menu</span>
-                    <i class="icon-angle-right" aria-hidden="true"></i></a>
                 </div>
               </div>
 
@@ -618,13 +632,6 @@ get_header(); ?>
                       Metta Spa đã và đang trở thành điểm tựa sức khỏe cho
                       hàng ngàn khách hàng tại TP.HCM, Biên Hòa và là cái nôi
                       khởi nghiệp cho hàng trăm học viên mỗi năm.
-                    </p>
-                    <p>
-                      <strong> Tầm nhìn:</strong> Trở thành hệ thống Dưỡng
-                      sinh Đông Y hàng đầu, nơi mỗi điểm chạm đều mang lại giá
-                      trị trị liệu thực chứng. <strong> Sứ mệnh:</strong> Giúp
-                      cộng đồng thoát khỏi những cơn đau mỏi thể xác và áp lực
-                      tinh thần bằng liệu pháp tự nhiên, an toàn.
                     </p>'; ?>
 
                     <style>
@@ -707,6 +714,40 @@ get_header(); ?>
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visually striking Zen Arched cards for Vision & Mission -->
+            <div class="row row-large align-center text-center metta-vision-mission-row" style="margin-top: 50px; margin-bottom: 20px;">
+              <!-- Vision Card -->
+              <div id="col-vision-card" class="col medium-6 small-12 large-5" data-animate="fadeInLeft">
+                <div class="col-inner metta-vision-card" style="padding: 45px 30px; background: rgba(96, 56, 19, 0.04); border: 1px solid var(--metta-gold); border-radius: 200px 200px 20px 20px; box-shadow: 0 4px 25px rgba(0,0,0,0.04);">
+                  <div class="icon-inner" style="width: 50px; margin: 0 auto 20px auto; color: var(--metta-gold-dark);">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 42px; height: 42px;">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                  </div>
+                  <h3 style="font-size: 1.6rem; color: var(--metta-primary); margin-bottom: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Tầm Nhìn</h3>
+                  <p style="font-size: 1rem; line-height: 1.7; color: var(--fs-color-base); font-style: italic; margin-bottom: 0;">
+                    Trở thành hệ thống Dưỡng sinh Đông Y hàng đầu, nơi mỗi điểm chạm đều mang lại giá trị trị liệu thực chứng cho sức khỏe và tinh thần khách hàng.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Mission Card -->
+              <div id="col-mission-card" class="col medium-6 small-12 large-5" data-animate="fadeInRight">
+                <div class="col-inner metta-mission-card" style="padding: 45px 30px; background: rgba(7, 68, 4, 0.02); border: 1px solid var(--metta-green-light); border-radius: 200px 200px 20px 20px; box-shadow: 0 4px 25px rgba(0,0,0,0.04);">
+                  <div class="icon-inner" style="width: 50px; margin: 0 auto 20px auto; color: var(--metta-green-light);">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 42px; height: 42px;">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                    </svg>
+                  </div>
+                  <h3 style="font-size: 1.6rem; color: var(--metta-green); margin-bottom: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Sứ Mệnh</h3>
+                  <p style="font-size: 1rem; line-height: 1.7; color: var(--fs-color-base); font-style: italic; margin-bottom: 0;">
+                    Giúp cộng đồng thoát khỏi những cơn đau mỏi thể xác và áp lực tinh thần bằng liệu pháp tự nhiên, an toàn, cùng lòng từ bi và sự tử tế chân thành.
+                  </p>
                 </div>
               </div>
             </div>
