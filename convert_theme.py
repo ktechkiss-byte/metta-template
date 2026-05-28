@@ -6,10 +6,10 @@ def convert():
         lines = f.readlines()
 
     # Split points based on analysis
-    header_end = 1966  # Ends at </header>
-    body_start = 1966  # Starts at <main
-    body_end = 3839    # Ends at </main>
-    footer_start = 3839 # Starts at <footer
+    header_end = 1971  # Ends at </header>
+    body_start = 1971  # Starts at <main
+    body_end = 3843    # Ends at </main>
+    footer_start = 3843 # Starts at <footer
 
     # 0 to header_end
     header_lines = lines[:header_end]

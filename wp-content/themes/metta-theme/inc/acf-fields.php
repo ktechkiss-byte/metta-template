@@ -1295,6 +1295,31 @@ acf_add_local_field_group(array(
             'default_value' => 'Hình ảnh',
             'wrapper' => array('width' => '100'),
 		),
+        array(
+			'key' => 'field_home_gallery_desc',
+			'label' => 'Mô tả (Description)',
+			'name' => 'gallery_desc',
+			'type' => 'textarea',
+            'rows' => 3,
+            'default_value' => 'Không phải lời nói Đây là những trải nghiệm thật tại Metta — Đừng để cơ thể mệt mỏi thêm nữa Hãy dành cho mình một khoảng thời gian để được chăm sóc đúng cách',
+            'wrapper' => array('width' => '100'),
+		),
+        array(
+			'key' => 'field_home_gallery_cta_text',
+			'label' => 'Nút CTA: Text',
+			'name' => 'gallery_cta_text',
+			'type' => 'text',
+            'default_value' => 'Đặt lịch trải nghiệm ngay',
+            'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_home_gallery_cta_url',
+			'label' => 'Nút CTA: Link',
+			'name' => 'gallery_cta_url',
+			'type' => 'url',
+            'default_value' => 'https://datlich.mettaspadongy.vn/',
+            'wrapper' => array('width' => '50'),
+		),
         // 12 Images for the grid
         array(
 			'key' => 'field_gal_img_1', 'label' => 'Hình 1 (Khổ dọc lớn)', 'name' => 'gal_img_1', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25'),
@@ -1310,39 +1335,31 @@ acf_add_local_field_group(array(
 		),
         array(
 			'key' => 'field_gal_img_4', 'label' => 'Hình 4 (Vuông nhỏ)', 'name' => 'gal_img_4', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25'),
-            'default_value' => get_site_url() . '/wp-content/uploads/2025/08/YAM01091.jpg',
+            'default_value' => get_site_url() . '/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg',
 		),
         array(
 			'key' => 'field_gal_img_5', 'label' => 'Hình 5 (Vuông nhỏ)', 'name' => 'gal_img_5', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25'),
-            'default_value' => get_site_url() . '/wp-content/uploads/2025/08/YAM01333.jpg',
+            'default_value' => get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg',
 		),
         array(
 			'key' => 'field_gal_img_6', 'label' => 'Hình 6 (Vuông nhỏ)', 'name' => 'gal_img_6', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25'),
-            'default_value' => get_site_url() . '/wp-content/uploads/2025/08/YAM01180.jpg',
+            'default_value' => get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg',
 		),
         array(
 			'key' => 'field_gal_img_7', 'label' => 'Hình 7 (Vuông nhỏ)', 'name' => 'gal_img_7', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25'),
-            'default_value' => get_site_url() . '/wp-content/uploads/2025/08/YAM01047-1.jpg',
+            'default_value' => get_site_url() . '/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg',
 		),
         array(
 			'key' => 'field_gal_img_8', 'label' => 'Hình 8 (Khổ dọc lớn)', 'name' => 'gal_img_8', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25'),
-            'default_value' => get_site_url() . '/wp-content/uploads/2025/08/YAM01155.jpg',
+            'default_value' => get_site_url() . '/wp-content/uploads/2026/03/z7321244104193_8316d0cd67c89088c05256e053a20b1d.jpg',
 		),
         array(
 			'key' => 'field_gal_img_9', 'label' => 'Hình 9 (Vuông nhỏ)', 'name' => 'gal_img_9', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25'),
-            'default_value' => get_site_url() . '/wp-content/uploads/2025/08/YAM01270-1.jpg',
+            'default_value' => get_site_url() . '/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg',
 		),
         array(
 			'key' => 'field_gal_img_10', 'label' => 'Hình 10 (Khổ dọc lớn)', 'name' => 'gal_img_10', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25'),
-            'default_value' => get_site_url() . '/wp-content/uploads/2025/08/YAM01125.jpg',
-		),
-        array(
-			'key' => 'field_gal_img_11', 'label' => 'Hình 11 (Vuông nhỏ)', 'name' => 'gal_img_11', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25'),
-            'default_value' => get_site_url() . '/wp-content/uploads/2025/08/YAM01194.jpg',
-		),
-        array(
-			'key' => 'field_gal_img_12', 'label' => 'Hình 12 (Vuông nhỏ)', 'name' => 'gal_img_12', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25'),
-            'default_value' => get_site_url() . '/wp-content/uploads/2025/08/YAM01454.jpg',
+            'default_value' => get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg',
 		),
 
         // TAB 6: GLOBAL INFO
@@ -1487,6 +1504,298 @@ acf_add_local_field_group(array(
                 'type' => 'accordion',
                 'endpoint' => 1,
             ),
+
+        // TAB 8: NÚT CTA (TRANG CHỦ)
+        array(
+			'key' => 'field_home_cta_tab',
+			'label' => '8. Nút CTA (Trang Chủ)',
+			'type' => 'tab',
+		),
+        array(
+            'key' => 'field_cta_info_msg',
+            'label' => 'Hướng dẫn',
+            'type' => 'message',
+            'message' => 'Quản lý nội dung và link cho tất cả các nút CTA trên trang chủ. Nếu để trống sẽ dùng giá trị mặc định.',
+        ),
+
+        // --- Hero CTA ---
+        array(
+            'key' => 'field_cta_hero_msg',
+            'label' => '① Nút CTA Hero (Đầu trang)',
+            'type' => 'message',
+            'message' => 'Nút CTA lớn ở phần hero banner đầu trang.',
+        ),
+        array(
+            'key' => 'field_cta_hero_text',
+            'label' => 'Nội dung nút Hero CTA',
+            'name' => 'hero_cta_text',
+            'type' => 'text',
+            'instructions' => 'Mặc định: "Bắt đầu hành trình dưỡng sinh"',
+            'wrapper' => array('width' => '50'),
+        ),
+        array(
+            'key' => 'field_cta_hero_text_en',
+            'label' => 'Nội dung nút Hero CTA (EN)',
+            'name' => 'hero_cta_text_en',
+            'type' => 'text',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_hero_text_zh',
+            'label' => 'Nội dung nút Hero CTA (ZH)',
+            'name' => 'hero_cta_text_zh',
+            'type' => 'text',
+            'wrapper' => array('width' => '25'),
+        ),
+
+        // --- Intro CTA ---
+        array(
+            'key' => 'field_cta_intro_msg',
+            'label' => '② Nút "Tìm hiểu thêm" (Giới thiệu)',
+            'type' => 'message',
+            'message' => 'Nút link ở phần giới thiệu Metta Spa.',
+        ),
+        array(
+            'key' => 'field_cta_intro_text',
+            'label' => 'Nội dung nút',
+            'name' => 'intro_cta_text',
+            'type' => 'text',
+            'instructions' => 'Mặc định: "Tìm hiểu thêm"',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_intro_link',
+            'label' => 'Link nút',
+            'name' => 'intro_cta_link',
+            'type' => 'text',
+            'instructions' => 'Mặc định: /gioi-thieu (đường dẫn tương đối hoặc URL đầy đủ)',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_intro_text_en',
+            'label' => 'Nội dung nút (EN)',
+            'name' => 'intro_cta_text_en',
+            'type' => 'text',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_intro_text_zh',
+            'label' => 'Nội dung nút (ZH)',
+            'name' => 'intro_cta_text_zh',
+            'type' => 'text',
+            'wrapper' => array('width' => '25'),
+        ),
+
+        // --- Feature Booking CTA ---
+        array(
+            'key' => 'field_cta_feature_msg',
+            'label' => '③ Nút "Đặt Lịch" (3 đặc điểm)',
+            'type' => 'message',
+            'message' => 'Nút đặt lịch dưới 3 card đặc điểm (Gội đầu, Cổ vai gáy, Tạng phủ). Dùng chung 1 nội dung + 1 link.',
+        ),
+        array(
+            'key' => 'field_cta_feature_text',
+            'label' => 'Nội dung nút',
+            'name' => 'feature_cta_text',
+            'type' => 'text',
+            'instructions' => 'Mặc định: "ĐẶT LỊCH"',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_feature_link',
+            'label' => 'Link nút',
+            'name' => 'feature_cta_link',
+            'type' => 'text',
+            'instructions' => 'Mặc định: https://datlich.mettaspadongy.vn/',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_feature_text_en',
+            'label' => 'Nội dung nút (EN)',
+            'name' => 'feature_cta_text_en',
+            'type' => 'text',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_feature_text_zh',
+            'label' => 'Nội dung nút (ZH)',
+            'name' => 'feature_cta_text_zh',
+            'type' => 'text',
+            'wrapper' => array('width' => '25'),
+        ),
+
+        // --- Xem Bảng Giá CTA (Features section) ---
+        array(
+            'key' => 'field_cta_menu_fea_msg',
+            'label' => '④ Nút "Xem bảng giá" (phần Đặc điểm)',
+            'type' => 'message',
+            'message' => 'Nút link "Xem bảng giá" ở cuối phần Tại Metta Spa.',
+        ),
+        array(
+            'key' => 'field_cta_menu_fea_text',
+            'label' => 'Nội dung nút',
+            'name' => 'menu_fea_cta_text',
+            'type' => 'text',
+            'instructions' => 'Mặc định: "Xem bảng giá"',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_menu_fea_link',
+            'label' => 'Link nút',
+            'name' => 'menu_fea_cta_link',
+            'type' => 'text',
+            'instructions' => 'Mặc định: /menu',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_menu_fea_text_en',
+            'label' => 'Nội dung nút (EN)',
+            'name' => 'menu_fea_cta_text_en',
+            'type' => 'text',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_menu_fea_text_zh',
+            'label' => 'Nội dung nút (ZH)',
+            'name' => 'menu_fea_cta_text_zh',
+            'type' => 'text',
+            'wrapper' => array('width' => '25'),
+        ),
+
+        // --- Xem Bảng Giá CTA (Combo section) ---
+        array(
+            'key' => 'field_cta_menu_combo_msg',
+            'label' => '⑤ Nút "Xem bảng giá" (phần Combo)',
+            'type' => 'message',
+            'message' => 'Nút link "Xem bảng giá" ở cuối phần Combo Nổi Bật.',
+        ),
+        array(
+            'key' => 'field_cta_menu_combo_text',
+            'label' => 'Nội dung nút',
+            'name' => 'menu_combo_cta_text',
+            'type' => 'text',
+            'instructions' => 'Mặc định: "Xem bảng giá"',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_menu_combo_link',
+            'label' => 'Link nút',
+            'name' => 'menu_combo_cta_link',
+            'type' => 'text',
+            'instructions' => 'Mặc định: /menu',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_menu_combo_text_en',
+            'label' => 'Nội dung nút (EN)',
+            'name' => 'menu_combo_cta_text_en',
+            'type' => 'text',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_menu_combo_text_zh',
+            'label' => 'Nội dung nút (ZH)',
+            'name' => 'menu_combo_cta_text_zh',
+            'type' => 'text',
+            'wrapper' => array('width' => '25'),
+        ),
+
+        // --- Xem Thêm Tin Tức CTA ---
+        array(
+            'key' => 'field_cta_news_msg',
+            'label' => '⑥ Nút "Xem thêm tin tức"',
+            'type' => 'message',
+            'message' => 'Nút link ở cuối phần Tin Tức.',
+        ),
+        array(
+            'key' => 'field_cta_news_text',
+            'label' => 'Nội dung nút',
+            'name' => 'news_cta_text',
+            'type' => 'text',
+            'instructions' => 'Mặc định: "Xem thêm tin tức"',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_news_link',
+            'label' => 'Link nút',
+            'name' => 'news_cta_link',
+            'type' => 'text',
+            'instructions' => 'Mặc định: /tin-tuc',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_news_text_en',
+            'label' => 'Nội dung nút (EN)',
+            'name' => 'news_cta_text_en',
+            'type' => 'text',
+            'wrapper' => array('width' => '25'),
+        ),
+        array(
+            'key' => 'field_cta_news_text_zh',
+            'label' => 'Nội dung nút (ZH)',
+            'name' => 'news_cta_text_zh',
+            'type' => 'text',
+            'wrapper' => array('width' => '25'),
+        ),
+
+        // TAB 9: ẢNH NỀN SECTIONS
+        array(
+            'key'   => 'field_home_bg_tab',
+            'label' => '9. Ảnh Nền Sections',
+            'type'  => 'tab',
+        ),
+        array(
+            'key'     => 'field_home_bg_info',
+            'label'   => 'Hướng dẫn',
+            'type'    => 'message',
+            'message' => 'Quản lý ảnh nền cho các section nâu tối trên trang chủ. Ảnh được áp dụng với hiệu ứng blur mờ tự động. Nếu để trống sẽ dùng ảnh Gemini mặc định.',
+        ),
+        array(
+            'key'     => 'field_home_bg_info_hero',
+            'label'   => '① Ảnh nền Hero (Đầu trang)',
+            'type'    => 'message',
+            'message' => 'Ảnh nền lớn phía sau hero banner với hiệu ứng blur.',
+        ),
+        array(
+            'key'           => 'field_home_hero_bg_image',
+            'label'         => 'Ảnh nền Hero',
+            'name'          => 'hero_bg_image',
+            'type'          => 'image',
+            'return_format' => 'url',
+            'instructions'  => 'Kích thước gợi ý: 2560×1707px. Ảnh sẽ tự động blur nhẹ.',
+            'wrapper'       => array('width' => '100'),
+        ),
+        array(
+            'key'     => 'field_home_bg_info_combo',
+            'label'   => '② Ảnh nền Section Liệu Trình / Hành trình phục hồi',
+            'type'    => 'message',
+            'message' => 'Ảnh nền phía sau phần Combo Nổi Bật với hiệu ứng blur + overlay nâu.',
+        ),
+        array(
+            'key'           => 'field_home_combo_bg_image',
+            'label'         => 'Ảnh nền Combo/Liệu trình',
+            'name'          => 'combo_bg_image',
+            'type'          => 'image',
+            'return_format' => 'url',
+            'instructions'  => 'Kích thước gợi ý: 2560×1707px. Ảnh sẽ tự động blur nhẹ.',
+            'wrapper'       => array('width' => '100'),
+        ),
+        array(
+            'key'     => 'field_home_bg_info_review',
+            'label'   => '③ Ảnh nền Section Đánh Giá Khách Hàng',
+            'type'    => 'message',
+            'message' => 'Ảnh nền phía sau phần review/đánh giá với hiệu ứng blur + overlay nâu.',
+        ),
+        array(
+            'key'           => 'field_home_review_bg_image',
+            'label'         => 'Ảnh nền Review/Đánh giá',
+            'name'          => 'review_bg_image',
+            'type'          => 'image',
+            'return_format' => 'url',
+            'instructions'  => 'Kích thước gợi ý: 2560×1707px. Ảnh sẽ tự động blur nhẹ.',
+            'wrapper'       => array('width' => '100'),
+        ),
+
 	),
 	'location' => array(
 		array(
@@ -1506,6 +1815,8 @@ acf_add_local_field_group(array(
 	'key' => 'group_about_page',
 	'title' => 'Cài đặt Trang Giới Thiệu',
 	'fields' => array(
+        // TAB: Phần Hero
+        array('key' => 'tab_about_hero', 'label' => 'Phần Hero', 'type' => 'tab'),
 		array('key' => 'field_about_hero_title', 'label' => 'Tiêu đề Hero', 'name' => 'about_hero_title', 'type' => 'textarea', 'rows' => 2),
 		array('key' => 'field_about_hero_title_en', 'label' => 'Tiêu đề Hero (EN)', 'name' => 'about_hero_title_en', 'type' => 'textarea', 'rows' => 2),
 		array('key' => 'field_about_hero_title_zh', 'label' => 'Tiêu đề Hero (ZH)', 'name' => 'about_hero_title_zh', 'type' => 'textarea', 'rows' => 2),
@@ -1515,6 +1826,81 @@ acf_add_local_field_group(array(
         array('key' => 'field_about_img_1', 'label' => 'Ảnh giới thiệu 1', 'name' => 'about_img_1', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
         array('key' => 'field_about_img_2', 'label' => 'Ảnh giới thiệu 2', 'name' => 'about_img_2', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
         array('key' => 'field_about_img_3', 'label' => 'Ảnh giới thiệu 3', 'name' => 'about_img_3', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+
+        // TAB: Phần Về Chúng Tôi
+        array('key' => 'tab_about_intro', 'label' => 'Phần Về Chúng Tôi', 'type' => 'tab'),
+        array('key' => 'field_about_intro_title', 'label' => 'Tiêu đề Về chúng tôi', 'name' => 'about_intro_title', 'type' => 'text'),
+        array('key' => 'field_about_intro_desc', 'label' => 'Nội dung Về chúng tôi', 'name' => 'about_intro_desc', 'type' => 'wysiwyg', 'media_upload' => 0),
+        array('key' => 'field_about_intro_img1', 'label' => 'Ảnh lớn Về chúng tôi', 'name' => 'about_intro_img1', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_intro_img2', 'label' => 'Ảnh nhỏ Về chúng tôi', 'name' => 'about_intro_img2', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_intro_img3', 'label' => 'Icon Về chúng tôi', 'name' => 'about_intro_img3', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_stat_1_num', 'label' => 'Thông số 1 (Số)', 'name' => 'about_stat_1_num', 'type' => 'text', 'wrapper' => array('width' => '50')),
+        array('key' => 'field_about_stat_1_text', 'label' => 'Thông số 1 (Chữ)', 'name' => 'about_stat_1_text', 'type' => 'text', 'wrapper' => array('width' => '50')),
+        array('key' => 'field_about_stat_2_num', 'label' => 'Thông số 2 (Số)', 'name' => 'about_stat_2_num', 'type' => 'text', 'wrapper' => array('width' => '50')),
+        array('key' => 'field_about_stat_2_text', 'label' => 'Thông số 2 (Chữ)', 'name' => 'about_stat_2_text', 'type' => 'text', 'wrapper' => array('width' => '50')),
+        array('key' => 'field_about_stat_3_num', 'label' => 'Thông số 3 (Số)', 'name' => 'about_stat_3_num', 'type' => 'text', 'wrapper' => array('width' => '50')),
+        array('key' => 'field_about_stat_3_text', 'label' => 'Thông số 3 (Chữ)', 'name' => 'about_stat_3_text', 'type' => 'text', 'wrapper' => array('width' => '50')),
+        array('key' => 'field_about_stat_4_num', 'label' => 'Thông số 4 (Số)', 'name' => 'about_stat_4_num', 'type' => 'text', 'wrapper' => array('width' => '50')),
+        array('key' => 'field_about_stat_4_text', 'label' => 'Thông số 4 (Chữ)', 'name' => 'about_stat_4_text', 'type' => 'text', 'wrapper' => array('width' => '50')),
+
+        // TAB: Phần Vì sao chọn chúng tôi
+        array('key' => 'tab_about_why', 'label' => 'Vì Sao Chọn', 'type' => 'tab'),
+        array('key' => 'field_about_why_bg', 'label' => 'Ảnh nền', 'name' => 'about_why_bg', 'type' => 'image', 'return_format' => 'url'),
+        array('key' => 'field_about_why_title', 'label' => 'Tiêu đề', 'name' => 'about_why_title', 'type' => 'text'),
+        array('key' => 'field_about_why_desc', 'label' => 'Mô tả', 'name' => 'about_why_desc', 'type' => 'textarea', 'rows' => 3),
+        array('key' => 'field_about_why_img_float', 'label' => 'Ảnh trang trí', 'name' => 'about_why_img_float', 'type' => 'image', 'return_format' => 'url'),
+        
+        array('key' => 'field_about_why_item1_img', 'label' => 'Ảnh item 1', 'name' => 'about_why_item1_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_why_item1_title', 'label' => 'Tiêu đề item 1', 'name' => 'about_why_item1_title', 'type' => 'text', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_why_item1_desc', 'label' => 'Mô tả item 1', 'name' => 'about_why_item1_desc', 'type' => 'textarea', 'rows' => 3, 'wrapper' => array('width' => '33')),
+        
+        array('key' => 'field_about_why_item2_img', 'label' => 'Ảnh item 2', 'name' => 'about_why_item2_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_why_item2_title', 'label' => 'Tiêu đề item 2', 'name' => 'about_why_item2_title', 'type' => 'text', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_why_item2_desc', 'label' => 'Mô tả item 2', 'name' => 'about_why_item2_desc', 'type' => 'textarea', 'rows' => 3, 'wrapper' => array('width' => '33')),
+        
+        array('key' => 'field_about_why_item3_img', 'label' => 'Ảnh item 3', 'name' => 'about_why_item3_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_why_item3_title', 'label' => 'Tiêu đề item 3', 'name' => 'about_why_item3_title', 'type' => 'text', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_why_item3_desc', 'label' => 'Mô tả item 3', 'name' => 'about_why_item3_desc', 'type' => 'textarea', 'rows' => 3, 'wrapper' => array('width' => '33')),
+
+        // TAB: Phần Giá Trị Cốt Lõi
+        array('key' => 'tab_about_core', 'label' => 'Giá Trị Cốt Lõi', 'type' => 'tab'),
+        array('key' => 'field_about_core_bg', 'label' => 'Ảnh nền', 'name' => 'about_core_bg', 'type' => 'image', 'return_format' => 'url'),
+        array('key' => 'field_about_core_title', 'label' => 'Tiêu đề Giá trị', 'name' => 'about_core_title', 'type' => 'text'),
+        array('key' => 'field_about_core_1_icon', 'label' => 'Icon 1', 'name' => 'about_core_1_icon', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_core_1_title', 'label' => 'Tiêu đề 1', 'name' => 'about_core_1_title', 'type' => 'text', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_core_1_desc', 'label' => 'Mô tả 1', 'name' => 'about_core_1_desc', 'type' => 'textarea', 'rows' => 3, 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_core_2_icon', 'label' => 'Icon 2', 'name' => 'about_core_2_icon', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_core_2_title', 'label' => 'Tiêu đề 2', 'name' => 'about_core_2_title', 'type' => 'text', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_core_2_desc', 'label' => 'Mô tả 2', 'name' => 'about_core_2_desc', 'type' => 'textarea', 'rows' => 3, 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_core_3_icon', 'label' => 'Icon 3', 'name' => 'about_core_3_icon', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_core_3_title', 'label' => 'Tiêu đề 3', 'name' => 'about_core_3_title', 'type' => 'text', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_core_3_desc', 'label' => 'Mô tả 3', 'name' => 'about_core_3_desc', 'type' => 'textarea', 'rows' => 3, 'wrapper' => array('width' => '33')),
+
+        // TAB: Hình Ảnh
+        array('key' => 'tab_about_gallery', 'label' => 'Phần Hình Ảnh', 'type' => 'tab'),
+        array('key' => 'field_about_gallery_title', 'label' => 'Tiêu đề Hình ảnh', 'name' => 'about_gallery_title', 'type' => 'text'),
+        array('key' => 'field_about_gallery_bg', 'label' => 'Ảnh nền Pattern', 'name' => 'about_gallery_bg', 'type' => 'image', 'return_format' => 'url'),
+        array('key' => 'field_about_gal_1', 'label' => 'Ảnh 1', 'name' => 'about_gal_1', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_gal_2', 'label' => 'Ảnh 2', 'name' => 'about_gal_2', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_gal_3', 'label' => 'Ảnh 3', 'name' => 'about_gal_3', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_gal_4', 'label' => 'Ảnh 4', 'name' => 'about_gal_4', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_gal_5', 'label' => 'Ảnh 5', 'name' => 'about_gal_5', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_gal_6', 'label' => 'Ảnh 6', 'name' => 'about_gal_6', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_gal_7', 'label' => 'Ảnh 7', 'name' => 'about_gal_7', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_gal_8', 'label' => 'Ảnh 8', 'name' => 'about_gal_8', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
+
+        // TAB: Khám Phá Chi Nhánh
+        array('key' => 'tab_about_branch', 'label' => 'Phần Chi Nhánh', 'type' => 'tab'),
+        array('key' => 'field_about_branch_bg', 'label' => 'Ảnh nền Pattern', 'name' => 'about_branch_bg', 'type' => 'image', 'return_format' => 'url'),
+        array('key' => 'field_about_branch_title', 'label' => 'Tiêu đề Chi Nhánh', 'name' => 'about_branch_title', 'type' => 'text'),
+        array('key' => 'field_about_branch_1_img', 'label' => 'Ảnh CN1', 'name' => 'about_branch_1_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_branch_1_name', 'label' => 'Tên CN1', 'name' => 'about_branch_1_name', 'type' => 'text', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_branch_1_hotline', 'label' => 'Hotline CN1', 'name' => 'about_branch_1_hotline', 'type' => 'text', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_branch_1_addr', 'label' => 'Địa chỉ CN1', 'name' => 'about_branch_1_addr', 'type' => 'text', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_branch_2_img', 'label' => 'Ảnh CN2', 'name' => 'about_branch_2_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_branch_2_name', 'label' => 'Tên CN2', 'name' => 'about_branch_2_name', 'type' => 'text', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_branch_2_hotline', 'label' => 'Hotline CN2', 'name' => 'about_branch_2_hotline', 'type' => 'text', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_branch_2_addr', 'label' => 'Địa chỉ CN2', 'name' => 'about_branch_2_addr', 'type' => 'text', 'wrapper' => array('width' => '25')),
 	),
 	'location' => array(
 		array(
@@ -1580,19 +1966,52 @@ acf_add_local_field_group(array(
 	'key' => 'group_product_page',
 	'title' => 'Cài đặt Trang Sản Phẩm',
 	'fields' => array(
-        array('key' => 'field_product_page_title', 'label' => 'Tiêu đề lớn', 'name' => 'product_page_title', 'type' => 'text', 'wrapper' => array('width' => '50')),
+        // TAB: Phần giới thiệu
+        array('key' => 'field_product_tab_intro', 'label' => 'Phần Giới Thiệu', 'type' => 'tab'),
+        array('key' => 'field_product_page_title', 'label' => 'Tiêu đề lớn (Intro)', 'name' => 'product_page_title', 'type' => 'text', 'instructions' => 'Dùng \\n để xuống dòng.', 'wrapper' => array('width' => '50')),
         array('key' => 'field_product_page_intro', 'label' => 'Nội dung giới thiệu', 'name' => 'product_page_intro', 'type' => 'textarea', 'wrapper' => array('width' => '50')),
         array('key' => 'field_product_page_img', 'label' => 'Ảnh minh họa đầu trang', 'name' => 'product_page_img', 'type' => 'image', 'return_format' => 'url'),
-        // Product 1
-        array('key' => 'field_prod_1_img', 'label' => 'Ảnh SP1', 'name' => 'prod_1_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
-        array('key' => 'field_prod_1_name', 'label' => 'Tên SP1', 'name' => 'prod_1_name', 'type' => 'text', 'wrapper' => array('width' => '25')),
-        array('key' => 'field_prod_1_price', 'label' => 'Giá SP1', 'name' => 'prod_1_price', 'type' => 'text', 'wrapper' => array('width' => '25')),
-        array('key' => 'field_prod_1_link', 'label' => 'Link SP1', 'name' => 'prod_1_link', 'type' => 'text', 'wrapper' => array('width' => '25')),
-        // Product 2
-        array('key' => 'field_prod_2_img', 'label' => 'Ảnh SP2', 'name' => 'prod_2_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
-        array('key' => 'field_prod_2_name', 'label' => 'Tên SP2', 'name' => 'prod_2_name', 'type' => 'text', 'wrapper' => array('width' => '25')),
-        array('key' => 'field_prod_2_price', 'label' => 'Giá SP2', 'name' => 'prod_2_price', 'type' => 'text', 'wrapper' => array('width' => '25')),
-        array('key' => 'field_prod_2_link', 'label' => 'Link SP2', 'name' => 'prod_2_link', 'type' => 'text', 'wrapper' => array('width' => '25')),
+
+        // TAB: Phần Sản Phẩm (tất cả gộp chung như Chi Nhánh)
+        array('key' => 'field_product_tab_listing', 'label' => 'Phần Sản Phẩm', 'type' => 'tab'),
+        array('key' => 'field_product_listing_title', 'label' => 'Tiêu đề danh sách SP', 'name' => 'product_listing_title', 'type' => 'text', 'default_value' => 'Sản Phẩm Của Chúng Tôi', 'wrapper' => array('width' => '50')),
+        array('key' => 'field_product_listing_subtitle', 'label' => 'Phụ đề danh sách SP', 'name' => 'product_listing_subtitle', 'type' => 'text', 'default_value' => 'Giải pháp chăm sóc sức khỏe & sắc đẹp từ thiên nhiên', 'wrapper' => array('width' => '50')),
+        // SP1
+        array('key' => 'field_sp1_img', 'label' => 'Ảnh SP1', 'name' => 'sp1_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp1_name', 'label' => 'Tên SP1', 'name' => 'sp1_name', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp1_price', 'label' => 'Giá SP1', 'name' => 'sp1_price', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp1_link', 'label' => 'Link SP1', 'name' => 'sp1_link', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp1_desc', 'label' => 'Mô tả SP1', 'name' => 'sp1_desc', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        // SP2
+        array('key' => 'field_sp2_img', 'label' => 'Ảnh SP2', 'name' => 'sp2_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp2_name', 'label' => 'Tên SP2', 'name' => 'sp2_name', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp2_price', 'label' => 'Giá SP2', 'name' => 'sp2_price', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp2_link', 'label' => 'Link SP2', 'name' => 'sp2_link', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp2_desc', 'label' => 'Mô tả SP2', 'name' => 'sp2_desc', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        // SP3
+        array('key' => 'field_sp3_img', 'label' => 'Ảnh SP3', 'name' => 'sp3_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp3_name', 'label' => 'Tên SP3', 'name' => 'sp3_name', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp3_price', 'label' => 'Giá SP3', 'name' => 'sp3_price', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp3_link', 'label' => 'Link SP3', 'name' => 'sp3_link', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp3_desc', 'label' => 'Mô tả SP3', 'name' => 'sp3_desc', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        // SP4
+        array('key' => 'field_sp4_img', 'label' => 'Ảnh SP4', 'name' => 'sp4_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp4_name', 'label' => 'Tên SP4', 'name' => 'sp4_name', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp4_price', 'label' => 'Giá SP4', 'name' => 'sp4_price', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp4_link', 'label' => 'Link SP4', 'name' => 'sp4_link', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp4_desc', 'label' => 'Mô tả SP4', 'name' => 'sp4_desc', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        // SP5
+        array('key' => 'field_sp5_img', 'label' => 'Ảnh SP5', 'name' => 'sp5_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp5_name', 'label' => 'Tên SP5', 'name' => 'sp5_name', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp5_price', 'label' => 'Giá SP5', 'name' => 'sp5_price', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp5_link', 'label' => 'Link SP5', 'name' => 'sp5_link', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp5_desc', 'label' => 'Mô tả SP5', 'name' => 'sp5_desc', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        // SP6
+        array('key' => 'field_sp6_img', 'label' => 'Ảnh SP6', 'name' => 'sp6_img', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp6_name', 'label' => 'Tên SP6', 'name' => 'sp6_name', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp6_price', 'label' => 'Giá SP6', 'name' => 'sp6_price', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp6_link', 'label' => 'Link SP6', 'name' => 'sp6_link', 'type' => 'text', 'wrapper' => array('width' => '20')),
+        array('key' => 'field_sp6_desc', 'label' => 'Mô tả SP6', 'name' => 'sp6_desc', 'type' => 'text', 'wrapper' => array('width' => '20')),
 	),
 	'location' => array(
 		array(
@@ -1830,10 +2249,26 @@ acf_add_local_field_group(array(
 			'return_format' => 'url',
 		),
         array(
+			'key' => 'field_contact_hero_badge',
+			'label' => 'Badge nhỏ (trên tiêu đề)',
+			'name' => 'contact_hero_badge',
+			'type' => 'text',
+			'default_value' => 'Metta Đông Y Spa',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
 			'key' => 'field_contact_hero_title',
 			'label' => 'Tiêu đề Hero',
 			'name' => 'contact_hero_title',
 			'type' => 'text',
+		),
+        array(
+			'key' => 'field_contact_hero_desc',
+			'label' => 'Mô tả Hero',
+			'name' => 'contact_hero_desc',
+			'type' => 'textarea',
+			'rows' => 2,
+			'default_value' => 'Nơi tái tạo năng lượng và cân bằng cuộc sống. Hãy để chúng tôi chăm sóc bạn.',
 		),
         array(
 			'key' => 'field_contact_hero_title_en',
@@ -1842,16 +2277,137 @@ acf_add_local_field_group(array(
 			'type' => 'text',
 		),
         array(
+			'key' => 'field_contact_hero_desc_en',
+			'label' => 'Mô tả Hero (EN)',
+			'name' => 'contact_hero_desc_en',
+			'type' => 'textarea',
+			'rows' => 2,
+		),
+        array(
 			'key' => 'field_contact_hero_title_zh',
 			'label' => 'Tiêu đề Hero (ZH)',
 			'name' => 'contact_hero_title_zh',
 			'type' => 'text',
 		),
+        array(
+			'key' => 'field_contact_hero_desc_zh',
+			'label' => 'Mô tả Hero (ZH)',
+			'name' => 'contact_hero_desc_zh',
+			'type' => 'textarea',
+			'rows' => 2,
+		),
 
-        // Tab 2: Form Section
+        // Tab 2: Thông tin liên hệ (Info Cards)
+        array(
+			'key' => 'field_contact_info_tab',
+			'label' => '2. Thông tin liên hệ',
+			'type' => 'tab',
+		),
+        array(
+			'key' => 'field_contact_hotline_1',
+			'label' => 'Hotline 1',
+			'name' => 'contact_hotline_1',
+			'type' => 'text',
+			'default_value' => '0911 535 339',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_hotline_2',
+			'label' => 'Hotline 2',
+			'name' => 'contact_hotline_2',
+			'type' => 'text',
+			'default_value' => '0938 431 234',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_email',
+			'label' => 'Email liên hệ',
+			'name' => 'contact_email',
+			'type' => 'text',
+			'default_value' => 'mettaspadongy@gmail.com',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_address',
+			'label' => 'Địa chỉ cơ sở chính',
+			'name' => 'contact_address',
+			'type' => 'text',
+			'default_value' => '378 Tên Lửa, Bình Tân, TP.HCM',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_hours',
+			'label' => 'Giờ mở cửa',
+			'name' => 'contact_hours',
+			'type' => 'text',
+			'default_value' => '08:00 – 21:00',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_hours_note',
+			'label' => 'Ghi chú giờ mở cửa',
+			'name' => 'contact_hours_note',
+			'type' => 'text',
+			'default_value' => 'Tất cả các ngày',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_facebook_url',
+			'label' => 'Link Facebook',
+			'name' => 'contact_facebook_url',
+			'type' => 'url',
+			'default_value' => 'https://www.facebook.com/mettaspadongy',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_facebook_label',
+			'label' => 'Tên hiển thị Facebook',
+			'name' => 'contact_facebook_label',
+			'type' => 'text',
+			'default_value' => 'Facebook Metta',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_map_url',
+			'label' => 'Google Map Embed URL',
+			'name' => 'contact_map_url',
+			'type' => 'url',
+			'instructions' => 'Dán URL embed từ Google Maps (bắt đầu bằng https://www.google.com/maps/embed...)',
+		),
+        array(
+			'key' => 'field_contact_social_title',
+			'label' => 'Tiêu đề mục mạng xã hội',
+			'name' => 'contact_social_title',
+			'type' => 'text',
+			'default_value' => 'Kết nối với chúng tôi',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_zalo_url',
+			'label' => 'Link Zalo',
+			'name' => 'contact_zalo_url',
+			'type' => 'url',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_instagram_url',
+			'label' => 'Link Instagram',
+			'name' => 'contact_instagram_url',
+			'type' => 'url',
+			'wrapper' => array('width' => '33'),
+		),
+        array(
+			'key' => 'field_contact_youtube_url',
+			'label' => 'Link YouTube',
+			'name' => 'contact_youtube_url',
+			'type' => 'url',
+			'wrapper' => array('width' => '33'),
+		),
+
+        // Tab 3: Form Section
         array(
 			'key' => 'field_contact_form_tab',
-			'label' => '2. Phần Form Liên Hệ',
+			'label' => '3. Phần Form Liên Hệ',
 			'type' => 'tab',
 		),
         array(
@@ -1860,6 +2416,14 @@ acf_add_local_field_group(array(
 			'name' => 'contact_side_img',
 			'type' => 'image',
 			'return_format' => 'url',
+		),
+        array(
+			'key' => 'field_contact_form_label',
+			'label' => 'Nhãn nhỏ trên tiêu đề Form',
+			'name' => 'contact_form_label',
+			'type' => 'text',
+			'default_value' => 'Đặt lịch ngay',
+			'wrapper' => array('width' => '50'),
 		),
         array(
 			'key' => 'field_contact_form_title',
@@ -1901,11 +2465,19 @@ acf_add_local_field_group(array(
 			'rows' => 3,
 		),
 
-        // Tab 3: Branch Section
+        // Tab 4: Branch Section
         array(
 			'key' => 'field_contact_branch_tab',
-			'label' => '3. Phần Chi Nhánh',
+			'label' => '4. Phần Chi Nhánh',
 			'type' => 'tab',
+		),
+        array(
+			'key' => 'field_contact_branch_label',
+			'label' => 'Nhãn nhỏ trên tiêu đề',
+			'name' => 'contact_branch_label',
+			'type' => 'text',
+			'default_value' => 'Hệ thống chuỗi spa',
+			'wrapper' => array('width' => '50'),
 		),
         array(
 			'key' => 'field_contact_branch_title',
@@ -1924,6 +2496,68 @@ acf_add_local_field_group(array(
 			'label' => 'Tiêu đề section chi nhánh (ZH)',
 			'name' => 'contact_branch_title_zh',
 			'type' => 'text',
+		),
+
+        // Tab 5: CTA Section
+        array(
+			'key' => 'field_contact_cta_tab',
+			'label' => '5. Phần CTA (Kêu gọi hành động)',
+			'type' => 'tab',
+		),
+        array(
+			'key' => 'field_contact_cta_label',
+			'label' => 'Nhãn nhỏ CTA',
+			'name' => 'contact_cta_label',
+			'type' => 'text',
+			'default_value' => 'Metta Đông Y Spa',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_cta_title',
+			'label' => 'Tiêu đề CTA',
+			'name' => 'contact_cta_title',
+			'type' => 'text',
+			'default_value' => 'Để Chúng Tôi Phục Vụ Bạn',
+		),
+        array(
+			'key' => 'field_contact_cta_desc',
+			'label' => 'Mô tả CTA',
+			'name' => 'contact_cta_desc',
+			'type' => 'textarea',
+			'rows' => 2,
+			'default_value' => 'Trải nghiệm liệu pháp dưỡng sinh Đông Y truyền thống – nơi thân và tâm được chăm sóc toàn diện.',
+		),
+        array(
+			'key' => 'field_contact_cta_btn1_text',
+			'label' => 'Nút 1: Text',
+			'name' => 'contact_cta_btn1_text',
+			'type' => 'text',
+			'default_value' => 'Đặt Lịch Ngay',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_cta_btn1_url',
+			'label' => 'Nút 1: Link',
+			'name' => 'contact_cta_btn1_url',
+			'type' => 'url',
+			'default_value' => 'https://datlich.mettaspadongy.vn/',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_cta_btn2_text',
+			'label' => 'Nút 2: Text',
+			'name' => 'contact_cta_btn2_text',
+			'type' => 'text',
+			'default_value' => 'Gọi Ngay',
+			'wrapper' => array('width' => '50'),
+		),
+        array(
+			'key' => 'field_contact_cta_btn2_url',
+			'label' => 'Nút 2: Link (tel: hoặc URL)',
+			'name' => 'contact_cta_btn2_url',
+			'type' => 'text',
+			'default_value' => 'tel:0911535339',
+			'wrapper' => array('width' => '50'),
 		),
 	),
 	'location' => array(

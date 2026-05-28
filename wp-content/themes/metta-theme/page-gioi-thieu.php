@@ -1,14 +1,313 @@
 <?php
 /* Template Name: page-gioi-thieu */
 get_header(); ?>
+  <style type="text/css" id="gioi-thieu-css">
+    /* ============================================
+       PAGE-SPECIFIC CSS: page-gioi-thieu
+       Global rules are in style.css
+       ============================================ */
 
+    /* Contact / booking form */
+    .wpforms-submit {
+      background: var(--metta-green) !important;
+      color: white !important;
+      padding: 0.5rem 2rem !important;
+    }
 
+    #wpforms-form-206 input,
+    #wpforms-form-206 textarea {
+      background: none;
+      border: 1px solid var(--metta-gold-dark) !important;
+    }
+
+    #wpforms-form-206 input::placeholder,
+    #wpforms-form-206 textarea::placeholder {
+      color: #361b01;
+    }
+
+    .contact-img img {
+      border-radius: var(--metta-radius-sm);
+      border: 1px solid var(--metta-gold-dark);
+    }
+
+    .contact-left-col > .col-inner {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(5px);
+      border-radius: var(--metta-radius-sm) !important;
+    }
+
+    .contact-left-col .is-border {
+      border-radius: var(--metta-radius-sm) !important;
+    }
+
+    .contact-img,
+    .contact-img .img-inner {
+      height: 100%;
+    }
+
+    /* Blog image borders */
+    .post-item img {
+      border-radius: var(--metta-radius-lg);
+      border: 1px solid var(--metta-gold-dark);
+    }
+
+    .blog-wrapper.blog-single.page-wrapper .entry-content img {
+      border-radius: var(--metta-radius-sm);
+      border: 1px solid var(--metta-gold-dark);
+      margin: 0.5em 0;
+    }
+
+    .entry-image {
+      border-radius: var(--metta-radius-sm);
+      border: 1px solid var(--metta-gold-dark);
+      overflow: hidden;
+    }
+
+    /* About-specific image layouts */
+    .about-img-box .box-image {
+      border-radius: var(--metta-radius-arch);
+      border: 1px solid var(--metta-gold-dark);
+      padding: 0.5rem;
+      overflow: visible;
+      position: relative;
+      z-index: 0;
+    }
+
+    .about-img-box .box-text {
+      position: relative;
+      z-index: 10;
+    }
+
+    .spa-img::before,
+    .about-img-box .box-image::before {
+      content: url("<?php echo get_site_url(); ?>data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
+      top: -3%;
+      position: absolute;
+      left: 50%;
+      transform: translatex(-50%);
+    }
+
+    .about-img-box .overlay {
+      border-radius: var(--metta-radius-arch);
+      background: linear-gradient(180deg, rgba(99, 73, 0, 0) 27.19%, rgba(80, 59, 0, 0.86) 71.41%, #402f00 100%);
+      z-index: 1;
+      position: absolute;
+    }
+
+    /* About page-specific image styles */
+    .about-first-img img {
+      border-radius: 175px 18px 10px 10px;
+      border: 1px solid var(--metta-gold-dark);
+    }
+
+    .about-second-img img {
+      border-radius: 156px 156px 10px 10px;
+      border: 10px solid #fff;
+    }
+
+    /* About intro section — arch shape like the main arch cards */
+    .about-intro-img .img-inner,
+    .about-intro-img img,
+    .about-intro-img .img-inner img {
+      border-radius: 500px 500px 10px 10px !important;
+      border: 1px solid var(--metta-gold-dark);
+    }
+
+    /* Spa image arch — used in About section small image blocks */
+    .spa-img,
+    .spa-img .img-inner {
+      border-radius: 500px 500px 10px 10px;
+      border: 1px solid var(--metta-gold-dark);
+      overflow: hidden;
+    }
+
+    /* About Vu chuong toi — overlapping images section */
+    /* First/main image: tall arch (top-rounded) */
+    .about-first-img .img-inner {
+      border-radius: 175px 175px 10px 10px !important;
+      overflow: hidden;
+      border: 1px solid var(--metta-gold-dark);
+    }
+
+    /* Second image: small square with white border */
+    .about-second-img .img-inner {
+      border-radius: 80px 80px 10px 10px !important;
+      overflow: hidden;
+      border: 6px solid #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .about-end-banner,
+    .about-end-banner .banner-bg {
+      border-radius: 0 94px 10px 0;
+      border: 1px solid var(--metta-gold-dark);
+    }
+
+    .about-end-banner .overlay {
+      background: linear-gradient(180deg, rgba(55, 41, 0, 0) 0%, #372900 100%);
+      border-radius: 0 94px 10px 0;
+    }
+
+    /* Cot loi section */
+    .about-cot-loi-col .is-border {
+      border-radius: var(--metta-radius-arch);
+    }
+
+    .about-cot-loi-col .col-inner {
+      box-shadow: 0 2px 20px 0 rgb(0 0 0 / 18%);
+      border-radius: var(--metta-radius-arch);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    /* Big banner text box */
+    .home-big-banner-textbox > div {
+      border-radius: 30px 30px 0 0;
+      border: 1px solid var(--metta-gold-dark);
+      background: linear-gradient(180deg, #4d3400 20.54%, rgb(77 52 0 / 85%) 52.95%, rgb(77 52 0 / 58%) 76.68%, rgb(77 52 0 / 0%) 94.94%);
+    }
+
+    /* Sticky header override (page-specific gradient) */
+    .header.transparent.has-transparent.has-sticky.sticky-jump .header-wrapper {
+      background: linear-gradient(0deg, rgba(96, 56, 19, 0.1) 0%, rgba(96, 56, 19, 0.5) 100%);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    /* Video play button — override Flatsome is-outline which renders transparent/white */
+    .bannergioithieu .video-button-wrapper a,
+    .bannergioithieu .button.is-outline.open-video {
+      border: 2px solid var(--metta-cream) !important;
+      background: linear-gradient(180deg, var(--metta-primary) 0%, var(--metta-gold) 100%) !important;
+      height: 50px;
+      width: 50px;
+      color: #fff !important;
+    }
+    .bannergioithieu .icon-play {
+      line-height: 48px;
+      color: #fff !important;
+    }
+
+    @media (max-width: 600px) {
+      .video-button-wrapper {
+        font-size: 150% !important;
+      }
+    }
+
+    .bannergioithieu .video-button-wrapper a::after,
+    .bannergioithieu .video-button-wrapper a::before {
+      position: absolute;
+      content: "";
+      bottom: -7px;
+      top: -7px;
+      left: -7px;
+      right: -7px;
+      background-color: transparent;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin: 0;
+      transform-origin: center;
+    }
+
+    .bannergioithieu .video-button-wrapper a::after {
+      opacity: 1;
+      animation: anim 800ms linear infinite;
+    }
+
+    .bannergioithieu .video-button-wrapper a::before {
+      opacity: 0.8;
+      animation: anim 800ms linear 400ms infinite;
+    }
+
+    /* Branch button */
+    .branch-button * {
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .branch-button {
+        flex-wrap: wrap;
+      }
+    }
+
+    /* Sliderow slider */
+    .sliderow .slider-style-container .flickity-slider > :not(.is-selected) {
+      opacity: 1;
+    }
+
+    .sliderow .col {
+      padding: 2em;
+    }
+
+    /* Banner grid overlay */
+    .banner-grid::before {
+      content: "";
+      background: linear-gradient(0deg, rgba(255, 252, 249, 0) 0%, rgba(255, 252, 249, 0.6) 60%, rgba(255, 252, 249, 0.9) 85%, var(--metta-cream) 100%);
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 10%;
+      z-index: 1;
+    }
+
+    .banner-grid::after {
+      content: "";
+      background: linear-gradient(0deg, var(--metta-cream) 0%, rgba(255, 252, 249, 0.9) 15%, rgba(255, 252, 249, 0.6) 40%, rgba(255, 252, 249, 0) 100%);
+      position: absolute;
+      bottom: 19px;
+      width: 100%;
+      height: 10%;
+      z-index: 1;
+    }
+
+    /* Blog archive */
+    .blog-archive .image-cover {
+      height: 350px;
+    }
+
+    @media (max-width: 600px) {
+      .blog-archive .image-cover {
+        height: 270px;
+      }
+    }
+
+    .home-slide-section .flickity-page-dots {
+      bottom: -10px;
+    }
+
+    /* Footer copy */
+    .footer-copy {
+      border-top: 1px dashed #ffffff7a;
+      padding-top: 1rem;
+    }
+
+    /* Video slider */
+    .videocs {
+      margin-top: 1em;
+    }
+
+    .videocs .slider-style-container .flickity-slider > :not(.is-selected) {
+      opacity: 1;
+    }
+
+    .videocs .col {
+      margin-right: 1em;
+    }
+
+    .videocs .flickity-page-dots .dot {
+      background: var(--metta-gradient-cta);
+      border: unset;
+    }
+
+    /* wpforms-container reset */
+    .wpforms-container {
+      margin: 0 !important;
+    }
+  </style>
     <main id="main" class="">
       <div id="content" role="main" class="content-area">
         <section class="section" id="section_1007473846">
           <div class="section-bg fill">
-            <img fetchpriority="high" decoding="async" width="1920" height="1111"
-              src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/Group-39711.png" class="bg attachment-original size-original" alt="" />
           </div>
 
           <div class="section-content relative">
@@ -16,7 +315,7 @@ get_header(); ?>
               <div id="col-222256718" class="col medium-6 small-12 large-6" data-animate="fadeInUp">
                 <div class="col-inner text-left">
                   <div id="text-3395665156" class="text text-heading">
-                    <h2>Bảo Dưỡng Sức Khoẻ<br />Ghé Metta Spa!</h2>
+                    <h2><?php echo nl2br(metta_get_field('about_hero_title')) ?: 'Bảo Dưỡng Sức Khoẻ<br />Ghé Metta Spa!'; ?></h2>
 
                     <style>
                       #text-3395665156 {
@@ -28,11 +327,7 @@ get_header(); ?>
 
                   <div id="text-3850920384" class="text">
                     <p>
-                      Metta đông y Spa là nơi tái hiện nghệ thuật làm đẹp
-                      truyền thống của người Á Đông – kết hợp tinh hoa dưỡng
-                      sinh cổ truyền với liệu pháp chăm sóc hiện đại, giúp
-                      thanh lọc cơ thể, làm đẹp từ sâu bên trong và bão dưỡng
-                      sức khoẻ cho khách hàng chất lượng nhất.
+                      <?php echo metta_get_with_fallback('about_hero_desc', 'Metta đông y Spa là nơi tái hiện nghệ thuật làm đẹp truyền thống của người Á Đông – kết hợp tinh hoa dưỡng sinh cổ truyền với liệu pháp chăm sóc hiện đại, giúp thanh lọc cơ thể, làm đẹp từ sâu bên trong và bão dưỡng sức khoẻ cho khách hàng chất lượng nhất.'); ?>
                     </p>
 
                     <style>
@@ -47,20 +342,7 @@ get_header(); ?>
                       <div class="col-inner">
                         <div class="img has-hover about-intro-img x md-x lg-x y md-y lg-y" id="image_1811577849">
                           <div class="img-inner image-cover dark" style="padding-top: 75%">
-                            <img decoding="async" width="1920" height="1280"
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-                              class="attachment-original size-original lazyload" alt=""
-                              data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01091.jpg"
-                              data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01091.jpg 1920w, /wp-content/uploads/2025/08/YAM01091-1024x683.jpg 1024w, /wp-content/uploads/2025/08/YAM01091-768x512.jpg 768w, /wp-content/uploads/2025/08/YAM01091-1536x1024.jpg 1536w"
-                              data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1280" /><noscript><img
-                                decoding="async" width="1920" height="1280"
-                                src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01091.jpg"
-                                class="attachment-original size-original" alt="" srcset="
-                                    ../wp-content/uploads/2025/08/YAM01091.jpg           1920w,
-                                    ../wp-content/uploads/2025/08/YAM01091-1024x683.jpg  1024w,
-                                    ../wp-content/uploads/2025/08/YAM01091-768x512.jpg    768w,
-                                    ../wp-content/uploads/2025/08/YAM01091-1536x1024.jpg 1536w
-                                  " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
+                            <img width="1920" height="1280" src="<?php echo metta_get_field('about_img_1') ?: get_site_url().'/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg'; ?>" class="attachment-original size-original" />
                           </div>
 
                           <style>
@@ -76,20 +358,7 @@ get_header(); ?>
                       <div class="col-inner">
                         <div class="img has-hover about-intro-img x md-x lg-x y md-y lg-y" id="image_935462736">
                           <div class="img-inner image-cover dark" style="padding-top: 75%">
-                            <img decoding="async" width="1920" height="1280"
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-                              class="attachment-original size-original lazyload" alt=""
-                              data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg"
-                              data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg 1920w, /wp-content/../uploads/2025/12/z7321243484724_b19209a250c378be5a9319c0e1ea40e4.jpg 1024w, /wp-content/uploads/2025/08/YAM01468-768x512.jpg 768w, /wp-content/uploads/2025/08/YAM01468-1536x1024.jpg 1536w"
-                              data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1280" /><noscript><img
-                                decoding="async" width="1920" height="1280"
-                                src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg"
-                                class="attachment-original size-original" alt="" srcset="
-                                    ../wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg    1920w,
-                                    ../wp-content/../uploads/2025/12/z7321243484724_b19209a250c378be5a9319c0e1ea40e4.jpg 1024w,
-                                    ../wp-content/uploads/2025/08/YAM01468-768x512.jpg                                    768w,
-                                    ../wp-content/uploads/2025/08/YAM01468-1536x1024.jpg                                 1536w
-                                  " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
+                            <img width="1920" height="1280" src="<?php echo metta_get_field('about_img_2') ?: get_site_url().'/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>" class="attachment-original size-original" />
                           </div>
 
                           <style>
@@ -106,19 +375,14 @@ get_header(); ?>
                         <div class="img has-hover about-intro-img x md-x lg-x y md-y lg-y" id="image_496264494">
                           <div class="img-inner image-cover dark" style="padding-top: 75%">
                             <img decoding="async" width="1920" height="1536"
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAYAAQMAAACtq8fpAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAX1JREFUGBntwQENAAAAwiD7p34PBwwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjgSmSwABoT1vUQAAAABJRU5ErkJggg=="
-                              class="attachment-original size-original lazyload" alt=""
-                              data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01270-1.jpg"
-                              data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01270-1.jpg 1920w, /wp-content/uploads/2025/08/YAM01270-1-1024x819.jpg 1024w, /wp-content/uploads/2025/08/YAM01270-1-768x614.jpg 768w, /wp-content/uploads/2025/08/YAM01270-1-1536x1229.jpg 1536w"
-                              data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1536" /><noscript><img
+  src="<?php echo metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321244104193_8316d0cd67c89088c05256e053a20b1d.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" /><noscript><img
                                 decoding="async" width="1920" height="1536"
-                                src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01270-1.jpg"
-                                class="attachment-original size-original" alt="" srcset="
-                                    ../wp-content/uploads/2025/08/YAM01270-1.jpg           1920w,
-                                    ../wp-content/uploads/2025/08/YAM01270-1-1024x819.jpg  1024w,
-                                    ../wp-content/uploads/2025/08/YAM01270-1-768x614.jpg    768w,
-                                    ../wp-content/uploads/2025/08/YAM01270-1-1536x1229.jpg 1536w
-                                  " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
+                                src="<?php echo metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321244104193_8316d0cd67c89088c05256e053a20b1d.jpg'; ?>"
+                                 class="attachment-original size-original" alt="" srcset="
+                                     <?php echo metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321244104193_8316d0cd67c89088c05256e053a20b1d.jpg 1536w'; ?>
+                                   " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
                           </div>
 
                           <style>
@@ -147,18 +411,9 @@ get_header(); ?>
                         <div class="img has-hover spa-img x0 md-x95 lg-x95 y5 md-y0 lg-y0" id="image_1944115804">
                           <div class="img-inner image-cover dark" style="padding-top: 110%">
                             <img decoding="async" width="1440" height="1920"
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAeAAQMAAAACXWKUAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAWZJREFUGBntwQEBAAAAgqD+r3ZIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOBYTcsAAbJmY88AAAAASUVORK5CYII="
-                              class="attachment-original size-original lazyload" alt=""
-                              data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg"
-                              data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg 1440w, /wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg 768w, /wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg 1152w"
-                              data-sizes="auto" data-eio-rwidth="1440" data-eio-rheight="1920" /><noscript><img
-                                decoding="async" width="1440" height="1920"
-                                src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg"
-                                class="attachment-original size-original" alt="" srcset="
-                                    ../wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg 1440w,
-                                    ../wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg  768w,
-                                    ../wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg 1152w
-                                  " sizes="(max-width: 1440px) 100vw, 1440px" data-eio="l" /></noscript>
+  src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                           </div>
 
                           <style>
@@ -245,13 +500,6 @@ get_header(); ?>
 
         <section class="section" id="section_1400089298">
           <div class="section-bg fill">
-            <img decoding="async" width="2029" height="738"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAK6AQMAAADitdPpAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAALdJREFUGBntwQEBAAAAgJD+r+4IAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGiROAABkFYDRgAAAABJRU5ErkJggg=="
-              class="bg attachment-original size-original lazyload" alt=""
-              data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/Group-39711-2.png" data-eio-rwidth="2029"
-              data-eio-rheight="738" /><noscript><img decoding="async" width="2029" height="738"
-                src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/Group-39711-2.png" class="bg attachment-original size-original"
-                alt="" data-eio="l" /></noscript>
           </div>
 
           <div class="section-content relative">
@@ -267,21 +515,9 @@ get_header(); ?>
                         <div class="img has-hover about-first-img x50 md-x0 lg-x0 y0 md-y0 lg-y0" id="image_1474311785">
                           <div class="img-inner image-cover dark" style="padding-top: 75%">
                             <img decoding="async" width="2560" height="1707"
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-                              class="attachment-original size-original lazyload" alt=""
-                              data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg"
-                              data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg 2560w, /wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg 300w, /wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg 1024w, /wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg 768w, /wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg 1536w, /wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg 2048w"
-                              data-sizes="auto" data-eio-rwidth="2560" data-eio-rheight="1707" /><noscript><img
-                                decoding="async" width="2560" height="1707"
-                                src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg"
-                                class="attachment-original size-original" alt="" srcset="
-                                    ../wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg    2560w,
-                                    ../wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg    300w,
-                                    ../wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg  1024w,
-                                    ../wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg    768w,
-                                    ../wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg 1536w,
-                                    ../wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg 2048w
-                                  " sizes="(max-width: 2560px) 100vw, 2560px" data-eio="l" /></noscript>
+                              src="<?php echo metta_get_field('about_intro_img1') ?: get_site_url() . '/wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg'; ?>"
+                              class="attachment-original size-original" alt=""
+                              style="width:100%;height:100%;object-fit:cover;" />
                           </div>
 
                           <style>
@@ -300,11 +536,9 @@ get_header(); ?>
                         <div class="img has-hover x50 md-x0 lg-x0 y95 md-y100 lg-y100" id="image_298351937">
                           <div class="img-inner dark">
                             <img decoding="async"
-                              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                              class="attachment-original size-original lazyload" alt=""
-                              data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/Frame-1321314646.svg" /><noscript><img
-                                decoding="async" src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/Frame-1321314646.svg"
-                                class="attachment-original size-original" alt="" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_intro_img3') ?: ''; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                           </div>
 
                           <style>
@@ -325,19 +559,9 @@ get_header(); ?>
                           id="image_1626772419">
                           <div class="img-inner image-cover dark" style="padding-top: 100%">
                             <img decoding="async" width="1920" height="1280"
-                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-                              class="attachment-original size-original lazyload" alt=""
-                              data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg"
-                              data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1920w, /wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1024w, /wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 768w, /wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1536w"
-                              data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1280" /><noscript><img
-                                decoding="async" width="1920" height="1280"
-                                src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg"
-                                class="attachment-original size-original" alt="" srcset="
-                                    ../wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg           1920w,
-                                    ../wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg  1024w,
-                                    ../wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg    768w,
-                                    ../wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1536w
-                                  " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
+                              src="<?php echo metta_get_field('about_intro_img2') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg'; ?>"
+                              class="attachment-original size-original" alt=""
+                              style="width:100%;height:100%;object-fit:cover;" />
                           </div>
 
                           <style>
@@ -368,7 +592,7 @@ get_header(); ?>
               <div id="col-636720991" class="col medium-6 small-12 large-6" data-animate="fadeInUp">
                 <div class="col-inner text-left">
                   <div id="text-3903669978" class="text text-heading">
-                    <h2>Về chúng tôi</h2>
+                    <h2><?php echo metta_get_field('about_intro_title') ?: 'Về chúng tôi'; ?></h2>
 
                     <style>
                       #text-3903669978 {
@@ -379,7 +603,7 @@ get_header(); ?>
                   </div>
 
                   <div id="text-3274210281" class="text">
-                    <p>
+                    <?php echo metta_get_field('about_intro_desc') ?: '<p>
                       <strong>
                         "Metta" không chỉ là một cái tên, đó là một lời cam
                         kết.</strong>
@@ -401,7 +625,7 @@ get_header(); ?>
                       trị trị liệu thực chứng. <strong> Sứ mệnh:</strong> Giúp
                       cộng đồng thoát khỏi những cơn đau mỏi thể xác và áp lực
                       tinh thần bằng liệu pháp tự nhiên, an toàn.
-                    </p>
+                    </p>'; ?>
 
                     <style>
                       #text-3274210281 {
@@ -415,7 +639,7 @@ get_header(); ?>
                       <div class="col-inner text-center">
                         <div id="text-2255748326" class="text mb-0">
                           <p>
-                            <strong><span>2</span></strong>
+                            <strong><span><?php echo metta_get_field('about_stat_1_num') ?: '2'; ?></span></strong>
                           </p>
 
                           <style>
@@ -425,7 +649,7 @@ get_header(); ?>
                           </style>
                         </div>
 
-                        <p><strong>Chi Nhánh</strong></p>
+                        <p><strong><?php echo metta_get_field('about_stat_1_text') ?: 'Chi Nhánh'; ?></strong></p>
                       </div>
                     </div>
 
@@ -433,7 +657,7 @@ get_header(); ?>
                       <div class="col-inner text-center">
                         <div id="text-167888686" class="text mb-0">
                           <p>
-                            <strong><span>50</span>+</strong>
+                            <strong><span><?php echo metta_get_field('about_stat_2_num') ?: '50+'; ?></span></strong>
                           </p>
 
                           <style>
@@ -443,7 +667,7 @@ get_header(); ?>
                           </style>
                         </div>
 
-                        <p><strong>Trị liệu viên</strong></p>
+                        <p><strong><?php echo metta_get_field('about_stat_2_text') ?: 'Trị liệu viên'; ?></strong></p>
                       </div>
                     </div>
 
@@ -451,7 +675,7 @@ get_header(); ?>
                       <div class="col-inner text-center">
                         <div id="text-1539258129" class="text mb-0">
                           <p>
-                            <strong><span>500</span>k</strong>
+                            <strong><span><?php echo metta_get_field('about_stat_3_num') ?: '500k'; ?></span></strong>
                           </p>
 
                           <style>
@@ -461,7 +685,7 @@ get_header(); ?>
                           </style>
                         </div>
 
-                        <p><strong>Khách hàng</strong></p>
+                        <p><strong><?php echo metta_get_field('about_stat_3_text') ?: 'Khách hàng'; ?></strong></p>
                       </div>
                     </div>
 
@@ -469,7 +693,7 @@ get_header(); ?>
                       <div class="col-inner text-center">
                         <div id="text-2674399885" class="text mb-0">
                           <p>
-                            <strong><span>1000</span>k</strong>
+                            <strong><span><?php echo metta_get_field('about_stat_4_num') ?: '1000k'; ?></span></strong>
                           </p>
 
                           <style>
@@ -518,13 +742,9 @@ get_header(); ?>
                     <div class="banner-inner fill">
                       <div class="banner-bg fill">
                         <img decoding="async" width="2560" height="1706"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-                          class="bg attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243450674_8d3238bb894d1985ed7e8f5af7ed3638.jpg"
-                          data-eio-rwidth="2560" data-eio-rheight="1706" /><noscript><img decoding="async" width="2560"
-                            height="1706"
-                            src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243450674_8d3238bb894d1985ed7e8f5af7ed3638.jpg"
-                            class="bg attachment-original size-original" alt="" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_why_bg') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243450674_8d3238bb894d1985ed7e8f5af7ed3638.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                         <div class="overlay"></div>
                       </div>
 
@@ -535,19 +755,19 @@ get_header(); ?>
                           <div class="text-box-content text dark">
                             <div class="text-inner text-left">
                               <div id="text-3760712084" class="text text-heading-light">
-                                <h2>Vì sao Chọn Chúng Tôi</h2>
+                                <h2><?php echo metta_get_field('about_why_title') ?: 'Vì sao Chọn Chúng Tôi'; ?></h2>
                               </div>
 
                               <div id="text-460083011" class="text">
                                 <p>
-                                  <em>Tiên phong trong việc kết hợp tinh hoa y
+                                  <?php echo metta_get_field('about_why_desc') ?: '<em>Tiên phong trong việc kết hợp tinh hoa y
                                     học cổ truyền và công nghệ hiện đại, mang
                                     lại sức khỏe toàn diện và vẻ đẹp tự nhiên
                                     cho khách hàng. Tấm mang đến trải nghiệm
                                     chăm sóc sức khỏe và sắc đẹp an toàn, hiệu
                                     quả, cá nhân hóa cho từng khách hàng, giúp
                                     cơ thể được phục hồi, tâm trí thư giãn và
-                                    tinh thần tái tạo năng lượng.</em>
+                                    tinh thần tái tạo năng lượng.</em>'; ?>
                                 </p>
 
                                 <style>
@@ -568,6 +788,8 @@ get_header(); ?>
                           <style>
                             #text-box-1901029386 {
                               width: 77%;
+                              position: relative;
+                              z-index: 10;
                             }
 
                             #text-box-1901029386 .text-box-content {
@@ -579,17 +801,24 @@ get_header(); ?>
                                 width: 60%;
                               }
                             }
+
+                            /* Fix z-index: banner-layers above overlay */
+                            #banner-1729592799 .banner-layers {
+                              position: relative;
+                              z-index: 5;
+                            }
+                            #banner-1729592799 .banner-bg {
+                              z-index: 1;
+                            }
                           </style>
                         </div>
 
                         <div class="img has-hover x0 md-x0 lg-x0 y100 md-y100 lg-y100" id="image_654226472">
                           <div class="img-inner dark">
                             <img decoding="async"
-                              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                              class="attachment-original size-original lazyload" alt=""
-                              data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/Frame-1321315070.svg" /><noscript><img
-                                decoding="async" src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/Frame-1321315070.svg"
-                                class="attachment-original size-original" alt="" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_why_img_float') ?: ''; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                           </div>
 
                           <style>
@@ -637,7 +866,7 @@ get_header(); ?>
                   <div class="row" id="row-807166794">
                     <div id="col-953690504" class="col small-12 large-12">
                       <div class="col-inner">
-                        <div class="slider-wrapper relative sliderow" id="slider-1373166469">
+                        <div class="slider-wrapper relative sliderow videocs" id="slider-1373166469">
                           <div
                             class="slider slider-nav-simple slider-nav-large slider-nav-light slider-style-container slider-show-nav"
                             data-flickity-options='{
@@ -666,28 +895,25 @@ get_header(); ?>
                                     <div class="box-image">
                                       <div class="image-cover" style="padding-top: 150%">
                                         <img decoding="async" width="1920" height="1920"
-                                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAeAAQMAAAAVbNiFAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAddJREFUGBntwTEBAAAAwiD7p14MH2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXAUP6QAB8caC6AAAAABJRU5ErkJggg=="
-                                          class="attachment-original size-original lazyload" alt=""
-                                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg"
-                                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg 1920w, /wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg 1024w, /wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg 768w, /wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg 1536w"
-                                          data-sizes="auto" data-eio-rwidth="1920"
-                                          data-eio-rheight="1920" /><noscript><img decoding="async" width="1920"
+  src="<?php echo metta_get_field('about_why_item1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" /><noscript><img decoding="async" width="1920"
                                             height="1920"
-                                            src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg"
+                                            src="<?php echo metta_get_field('about_why_item1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg'; ?>"
                                             class="attachment-original size-original" alt="" srcset="
-                                                ../wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg           1920w,
-                                                ../wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg 1024w,
-                                                ../wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg    768w,
-                                                ../wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg 1536w
+                                                <?php echo metta_get_field('about_why_item1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg'; ?>           1920w,
+                                                <?php echo metta_get_field('about_why_item1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg'; ?> 1024w,
+                                                <?php echo metta_get_field('about_why_item1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg'; ?>    768w,
+                                                <?php echo metta_get_field('about_why_item1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg'; ?> 1536w
                                               " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
-                                        <div class="overlay" style="background-color: 1"></div>
+                                        <div class="overlay" style="background-color: #3729007a"></div>
                                       </div>
                                     </div>
 
                                     <div class="box-text text-left">
                                       <div class="box-text-inner">
                                         <div id="text-1789850063" class="text text-vip">
-                                          <p>ĐÀO TẠO DƯỠNG SINH</p>
+                                          <p><?php echo metta_get_field('about_why_item1_title') ?: 'ĐÀO TẠO DƯỠNG SINH'; ?></p>
 
                                           <style>
                                             #text-1789850063 {
@@ -697,8 +923,7 @@ get_header(); ?>
                                         </div>
 
                                         <p>
-                                          Dưỡng sinh Đông y không chỉ là một cái nghề, đó là nghệ thuật chữa lành bằng
-                                          sự thấu hiểu cơ thể...
+                                          <?php echo metta_get_field('about_why_item1_desc') ?: 'Dưỡng sinh Đông y không chỉ là một cái nghề, đó là nghệ thuật chữa lành bằng sự thấu hiểu cơ thể...'; ?>
                                         </p>
                                       </div>
                                     </div>
@@ -713,28 +938,25 @@ get_header(); ?>
                                     <div class="box-image">
                                       <div class="image-cover" style="padding-top: 150%">
                                         <img decoding="async" width="1666" height="1920"
-                                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABoIAAAeAAQMAAADQF9d4AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAZ1JREFUGBntwQENAAAAwiD7p34PBwwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACOBCdaAAHaBS2MAAAAAElFTkSuQmCC"
-                                          class="attachment-original size-original lazyload" alt=""
-                                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp"
-                                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp 1666w, /wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp 889w, /wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp 768w, /wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp 1333w"
-                                          data-sizes="auto" data-eio-rwidth="1666"
-                                          data-eio-rheight="1920" /><noscript><img decoding="async" width="1666"
+  src="<?php echo metta_get_field('about_why_item2_img') ?: get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" /><noscript><img decoding="async" width="1666"
                                             height="1920"
-                                            src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp"
+                                            src="<?php echo metta_get_field('about_why_item2_img') ?: get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp'; ?>"
                                             class="attachment-original size-original" alt="" srcset="
-                                                ../wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp           1666w,
-                                                ../wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp   889w,
-                                                ../wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp    768w,
-                                                ../wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp 1333w
+                                                <?php echo metta_get_field('about_why_item2_img') ?: get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp'; ?>           1666w,
+                                                <?php echo metta_get_field('about_why_item2_img') ?: get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp'; ?>   889w,
+                                                <?php echo metta_get_field('about_why_item2_img') ?: get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp'; ?>    768w,
+                                                <?php echo metta_get_field('about_why_item2_img') ?: get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp'; ?> 1333w
                                               " sizes="(max-width: 1666px) 100vw, 1666px" data-eio="l" /></noscript>
-                                        <div class="overlay" style="background-color: 1"></div>
+                                        <div class="overlay" style="background-color: #3729007a"></div>
                                       </div>
                                     </div>
 
                                     <div class="box-text text-left">
                                       <div class="box-text-inner">
                                         <div id="text-3674499485" class="text text-vip">
-                                          <p>DƯỢC LIỆU METTA – TINH HOA THẢO MỘC VIỆT</p>
+                                          <p><?php echo metta_get_field('about_why_item2_title') ?: 'DƯỢC LIỆU METTA – TINH HOA THẢO MỘC VIỆT'; ?></p>
 
                                           <style>
                                             #text-3674499485 {
@@ -744,9 +966,7 @@ get_header(); ?>
                                         </div>
 
                                         <p>
-                                          Được chọn lọc khắt khe từ những vùng nguyên liệu sạch, sản phẩm dược liệu của
-                                          Metta giữ trọn vẹn "nhựa sống" của cỏ cây để phục vụ trị liệu và dưỡng sinh.
-                                          Hãy trải nghiệm sức mạnh chữa lành từ thiên nhiên cùng Metta!
+                                          <?php echo metta_get_field('about_why_item2_desc') ?: 'Được chọn lọc khắt khe từ những vùng nguyên liệu sạch, sản phẩm dược liệu của Metta giữ trọn vẹn "nhựa sống" của cỏ cây để phục vụ trị liệu và dưỡng sinh. Hãy trải nghiệm sức mạnh chữa lành từ thiên nhiên cùng Metta!'; ?>
                                         </p>
                                       </div>
                                     </div>
@@ -761,21 +981,18 @@ get_header(); ?>
                                     <div class="box-image">
                                       <div class="image-cover" style="padding-top: 150%">
                                         <img decoding="async" width="1920" height="1280"
-                                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-                                          class="attachment-original size-original lazyload" alt=""
-                                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg"
-                                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1920w, /wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1024w, /wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 768w, /wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1536w"
-                                          data-sizes="auto" data-eio-rwidth="1920"
-                                          data-eio-rheight="1280" /><noscript><img decoding="async" width="1920"
+  src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" /><noscript><img decoding="async" width="1920"
                                             height="1280"
                                             src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg"
                                             class="attachment-original size-original" alt="" srcset="
-                                                ../wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg           1920w,
-                                                ../wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg  1024w,
-                                                ../wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg    768w,
-                                                ../wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1536w
+                                                <?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg           1920w,
+                                                <?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg  1024w,
+                                                <?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg    768w,
+                                                <?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1536w
                                               " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
-                                        <div class="overlay" style="background-color: 1"></div>
+                                        <div class="overlay" style="background-color: #3729007a"></div>
                                       </div>
                                     </div>
 
@@ -783,8 +1000,7 @@ get_header(); ?>
                                       <div class="box-text-inner">
                                         <div id="text-3575440852" class="text text-vip">
                                           <p>
-                                            TRỊ LIỆU TỪ TÂM – NÂNG TẦM SỨC
-                                            KHỎE
+                                            <?php echo metta_get_field('about_why_item3_title') ?: 'TRỊ LIỆU TỪ TÂM – NÂNG TẦM SỨC KHỎE'; ?>
                                           </p>
 
                                           <style>
@@ -795,10 +1011,7 @@ get_header(); ?>
                                         </div>
 
                                         <p>
-                                          Tại Metta, mỗi KTV là một người thợ
-                                          lành nghề, kết hợp nhuần nhuyễn giữa
-                                          kỹ thuật bấm huyệt chính xác và y lý
-                                          Đông y cổ truyền...
+                                          <?php echo metta_get_field('about_why_item3_desc') ?: 'Tại Metta, mỗi KTV là một người thợ lành nghề, kết hợp nhuần nhuyễn giữa kỹ thuật bấm huyệt chính xác và y lý Đông y cổ truyền...'; ?>
                                         </p>
                                       </div>
                                     </div>
@@ -811,8 +1024,99 @@ get_header(); ?>
                           <div class="loading-spin dark large centered"></div>
 
                           <style>
-                            #slider-1373166469 .flickity-slider>* {
+                            /* === Slider Cards: match gioi-thieu_bak CSS exactly === */
+
+                            /* Card max-width (same as backup) */
+                            #slider-1373166469 .flickity-slider > * {
                               max-width: 405px !important;
+                            }
+
+                            /* Sliderow col padding - from .sliderow .col rule in backup */
+                            #slider-1373166469 .col {
+                              padding: 2em;
+                              margin-right: 1em;
+                            }
+
+                            /* Box-image: arch shape + border + inside padding (overflow visible for ::before decor) */
+                            #slider-1373166469 .about-img-box .box-image {
+                              border-radius: 500px 500px 5px 5px;
+                              border: 1px solid var(--metta-gold-dark, #a87e09);
+                              padding: 0.5rem;
+                              overflow: visible;
+                            }
+
+                            /* Decor SVG at top of each card arch */
+                            #slider-1373166469 .about-img-box .box-image::before {
+                              content: url("<?php echo get_site_url(); ?>data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
+                              top: -3%;
+                              position: absolute;
+                              left: 50%;
+                              transform: translateX(-50%);
+                            }
+
+                            /* Image inside arch */
+                            #slider-1373166469 .about-img-box img {
+                              border-radius: 500px 500px 5px 5px;
+                              border: 1px solid var(--metta-gold-dark, #a87e09);
+                            }
+
+                            /* Overlay gradient: dark from middle to bottom */
+                            #slider-1373166469 .about-img-box .overlay {
+                              border-radius: 500px 500px 5px 5px;
+                              background: linear-gradient(
+                                180deg,
+                                rgba(99, 73, 0, 0) 27.19%,
+                                rgba(80, 59, 0, 0.86) 71.41%,
+                                #402f00 100%
+                              ) !important;
+                              background-color: transparent !important;
+                            }
+
+                            /* FORCE TEXT BÊN TRONG hình (overlay) */
+                            #slider-1373166469 .about-img-box {
+                              position: relative;
+                            }
+                            #slider-1373166469 .about-img-box .box-text {
+                              position: absolute !important;
+                              bottom: 0 !important;
+                              left: 0 !important;
+                              right: 0 !important;
+                              top: auto !important;
+                              z-index: 10 !important;
+                              padding: 1rem !important;
+                              background: transparent !important;
+                            }
+
+                            /* WHITE TEXT — giống style "Giá Trị Cốt Lõi" */
+                            #slider-1373166469 .about-img-box .box-text,
+                            #slider-1373166469 .about-img-box .box-text p,
+                            #slider-1373166469 .about-img-box .box-text-inner > p,
+                            #slider-1373166469 .about-img-box .text-vip p {
+                              color: white !important;
+                            }
+
+                            /* Title: font vip-medino + bold, giống cột lõi */
+                            #slider-1373166469 .about-img-box .text-vip {
+                              font-size: 1.2rem;
+                              font-family: "1ftv-vip-medino" !important;
+                            }
+
+                            /* Description: italic nhẹ nhàng */
+                            #slider-1373166469 .about-img-box .box-text-inner > p {
+                              font-size: 0.85rem;
+                              font-style: italic;
+                              opacity: 0.9;
+                            }
+
+                            /* Dots style */
+                            #slider-1373166469 .flickity-page-dots .dot {
+                              background: linear-gradient(92deg, #9c4b00 1.53%, #c67427 93.65%);
+                              border: unset;
+                            }
+
+                            /* Non-selected cards fully visible */
+                            #slider-1373166469 .slider-style-container .flickity-slider > :not(.is-selected) {
+                              opacity: 1;
                             }
                           </style>
                         </div>
@@ -847,12 +1151,9 @@ get_header(); ?>
         <section class="section about-cot-loi-section" id="section_1967216007">
           <div class="section-bg fill">
             <img decoding="async" width="2560" height="1707"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-              class="bg attachment-original size-original lazyload" alt=""
-              data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg"
-              data-eio-rwidth="2560" data-eio-rheight="1707" /><noscript><img decoding="async" width="2560"
-                height="1707" src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg"
-                class="bg attachment-original size-original" alt="" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_core_bg') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
             <div class="section-bg-overlay absolute fill"></div>
           </div>
 
@@ -861,7 +1162,7 @@ get_header(); ?>
               <div id="col-901361912" class="col small-12 large-12" data-animate="fadeInUp">
                 <div class="col-inner text-center">
                   <div id="text-2919559352" class="text text-heading">
-                    <h2>Giá Trị Cốt Lõi</h2>
+                    <h2><?php echo metta_get_field('about_core_title') ?: 'Giá Trị Cốt Lõi'; ?></h2>
 
                     <style>
                       #text-2919559352 h2 {
@@ -889,18 +1190,16 @@ get_header(); ?>
                       <div class="icon">
                         <div class="icon-inner">
                           <img decoding="async"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            class="attachment-medium size-medium lazyload" alt=""
-                            data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/6390967.svg" /><noscript><img decoding="async"
-                              src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/6390967.svg" class="attachment-medium size-medium"
-                              alt="" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_core_1_icon') ?: ''; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                         </div>
                       </div>
                     </div>
                     <div class="icon-box-text last-reset">
                       <div id="text-1691817592" class="text text-vip mb-0">
                         <p>
-                          <strong data-start="341" data-end="364">Tận tâm &amp; Thấu hiểu</strong>
+                          <strong><?php echo metta_get_field('about_core_1_title') ?: 'Tận tâm &amp; Thấu hiểu'; ?></strong>
                         </p>
 
                         <style>
@@ -941,18 +1240,16 @@ get_header(); ?>
                       <div class="icon">
                         <div class="icon-inner">
                           <img decoding="async"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            class="attachment-medium size-medium lazyload" alt=""
-                            data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/887350.svg" /><noscript><img decoding="async"
-                              src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/887350.svg" class="attachment-medium size-medium"
-                              alt="" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_core_2_icon') ?: ''; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                         </div>
                       </div>
                     </div>
                     <div class="icon-box-text last-reset">
                       <div id="text-1405538694" class="text text-vip mb-0">
                         <p>
-                          <strong data-start="98" data-end="122">An toàn &amp; Chất lượng</strong>
+                          <strong><?php echo metta_get_field('about_core_2_title') ?: 'An toàn &amp; Chất lượng'; ?></strong>
                         </p>
 
                         <style>
@@ -993,17 +1290,15 @@ get_header(); ?>
                       <div class="icon">
                         <div class="icon-inner">
                           <img decoding="async"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            class="attachment-medium size-medium lazyload" alt=""
-                            data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/7713996.svg" /><noscript><img decoding="async"
-                              src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/7713996.svg" class="attachment-medium size-medium"
-                              alt="" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_core_3_icon') ?: ''; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                         </div>
                       </div>
                     </div>
                     <div class="icon-box-text last-reset">
                       <div id="text-3297103681" class="text text-vip mb-0">
-                        <p>Metta đông y Spa là nơi</p>
+                        <p><?php echo metta_get_field('about_core_3_title') ?: 'Metta đông y Spa là nơi'; ?></p>
 
                         <style>
                           #text-3297103681 {
@@ -1036,6 +1331,13 @@ get_header(); ?>
                 #row-317605118>.col>.col-inner {
                   padding: 100px 30px 100px 30px;
                   background-color: #4a2d2ed1;
+                  color: white;
+                }
+                /* White text for all descriptions in Giá Trị Cốt Lõi cards */
+                #row-317605118>.col>.col-inner p,
+                #row-317605118>.col>.col-inner em,
+                #row-317605118>.col>.col-inner span {
+                  color: white !important;
                 }
               </style>
             </div>
@@ -1062,11 +1364,6 @@ get_header(); ?>
 
         <section class="section" id="section_1127819252">
           <div class="section-bg fill">
-            <img decoding="async" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-              class="bg attachment-original size-original lazyload" alt=""
-              data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/bg44.svg" /><noscript><img decoding="async"
-                src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/bg44.svg" class="bg attachment-original size-original" alt=""
-                data-eio="l" /></noscript>
           </div>
 
           <div class="section-content relative">
@@ -1074,7 +1371,7 @@ get_header(); ?>
               <div id="col-883075985" class="col small-12 large-12">
                 <div class="col-inner">
                   <div id="text-3698214354" class="text text-heading">
-                    <h2>Hình ảnh</h2>
+                    <h2><?php echo metta_get_field('about_gallery_title') ?: 'Hình ảnh'; ?></h2>
 
                     <style>
                       #text-3698214354 {
@@ -1093,18 +1390,16 @@ get_header(); ?>
                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_552148750">
                       <div class="img-inner image-cover dark" style="padding-top: 100%">
                         <img decoding="async" width="1280" height="1920"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABQAAAAeAAQMAAACrBWhFAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwYEAAAAAw6D7U0/hANUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAQt7wAAQBHq34AAAAASUVORK5CYII="
-                          class="attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg"
-                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg 1280w, /wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg 683w, /wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg 768w, /wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg 1024w"
-                          data-sizes="auto" data-eio-rwidth="1280" data-eio-rheight="1920" /><noscript><img
+  src="<?php echo metta_get_field('about_gal_1') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" /><noscript><img
                             decoding="async" width="1280" height="1920"
-                            src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg"
+                            src="<?php echo metta_get_field('about_gal_1') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>"
                             class="attachment-original size-original" alt="" srcset="
-                                ../wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg           1280w,
-                                ../wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg   683w,
-                                ../wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg   768w,
-                                ../wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg 1024w
+                                <?php echo metta_get_field('about_gal_1') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>           1280w,
+                                <?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg   683w,
+                                <?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg   768w,
+                                <?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg 1024w
                               " sizes="(max-width: 1280px) 100vw, 1280px" data-eio="l" /></noscript>
                       </div>
 
@@ -1121,18 +1416,9 @@ get_header(); ?>
                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_2056187539">
                       <div class="img-inner image-cover dark" style="padding-top: 100%">
                         <img decoding="async" width="1920" height="1536"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAYAAQMAAACtq8fpAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAX1JREFUGBntwQENAAAAwiD7p34PBwwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjgSmSwABoT1vUQAAAABJRU5ErkJggg=="
-                          class="attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01180.jpg"
-                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01180.jpg 1920w, /wp-content/uploads/2025/08/YAM01180-1024x819.jpg 1024w, /wp-content/uploads/2025/08/YAM01180-768x614.jpg 768w, /wp-content/uploads/2025/08/YAM01180-1536x1229.jpg 1536w"
-                          data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1536" /><noscript><img
-                            decoding="async" width="1920" height="1536" src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01180.jpg"
-                            class="attachment-original size-original" alt="" srcset="
-                                ../wp-content/uploads/2025/08/YAM01180.jpg           1920w,
-                                ../wp-content/uploads/2025/08/YAM01180-1024x819.jpg  1024w,
-                                ../wp-content/uploads/2025/08/YAM01180-768x614.jpg    768w,
-                                ../wp-content/uploads/2025/08/YAM01180-1536x1229.jpg 1536w
-                              " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_gal_2') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321243484745_fbb90f387993aac5596753ef14adf2dd.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                       </div>
 
                       <style>
@@ -1148,18 +1434,9 @@ get_header(); ?>
                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1578574722">
                       <div class="img-inner image-cover dark" style="padding-top: 100%">
                         <img decoding="async" width="1280" height="1920"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABQAAAAeAAQMAAACrBWhFAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwYEAAAAAw6D7U0/hANUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAQt7wAAQBHq34AAAAASUVORK5CYII="
-                          class="attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01125.jpg"
-                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01125.jpg 1280w, /wp-content/uploads/2025/12/z7321243484724_b19209a250c378be5a9319c0e1ea40e4.jpg 683w, /wp-content/uploads/2025/12/z7321243484724_b19209a250c378be5a9319c0e1ea40e4.jpg 768w, /wp-content/uploads/2025/12/z7321243484724_b19209a250c378be5a9319c0e1ea40e4.jpg 1024w"
-                          data-sizes="auto" data-eio-rwidth="1280" data-eio-rheight="1920" /><noscript><img
-                            decoding="async" width="1280" height="1920" src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01125.jpg"
-                            class="attachment-original size-original" alt="" srcset="
-                                ../wp-content/uploads/2025/08/YAM01125.jpg           1280w,
-                                ../wp-content/uploads/2025/12/z7321243484724_b19209a250c378be5a9319c0e1ea40e4.jpg   683w,
-                                ../wp-content/uploads/2025/12/z7321243484724_b19209a250c378be5a9319c0e1ea40e4.jpg   768w,
-                                ../wp-content/uploads/2025/12/z7321243484724_b19209a250c378be5a9319c0e1ea40e4.jpg 1024w
-                              " sizes="(max-width: 1280px) 100vw, 1280px" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_gal_3') ?: get_site_url() . '/wp-content/uploads/2026/01/YAM01125.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                       </div>
 
                       <style>
@@ -1175,18 +1452,9 @@ get_header(); ?>
                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1297626852">
                       <div class="img-inner image-cover dark" style="padding-top: 100%">
                         <img decoding="async" width="1280" height="1920"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABQAAAAeAAQMAAACrBWhFAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwYEAAAAAw6D7U0/hANUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAQt7wAAQBHq34AAAAASUVORK5CYII="
-                          class="attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01155.jpg"
-                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01155.jpg 1280w, /wp-content/uploads/2025/08/YAM01155-683x1024.jpg 683w, /wp-content/uploads/2025/08/YAM01155-768x1152.jpg 768w, /wp-content/uploads/2025/08/YAM01155-1024x1536.jpg 1024w"
-                          data-sizes="auto" data-eio-rwidth="1280" data-eio-rheight="1920" /><noscript><img
-                            decoding="async" width="1280" height="1920" src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01155.jpg"
-                            class="attachment-original size-original" alt="" srcset="
-                                ../wp-content/uploads/2025/08/YAM01155.jpg           1280w,
-                                ../wp-content/uploads/2025/08/YAM01155-683x1024.jpg   683w,
-                                ../wp-content/uploads/2025/08/YAM01155-768x1152.jpg   768w,
-                                ../wp-content/uploads/2025/08/YAM01155-1024x1536.jpg 1024w
-                              " sizes="(max-width: 1280px) 100vw, 1280px" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_gal_4') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321243484744_de99b6c945834e80d926b1f02a195256.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                       </div>
 
                       <style>
@@ -1202,18 +1470,16 @@ get_header(); ?>
                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_775375094">
                       <div class="img-inner image-cover dark" style="padding-top: 100%">
                         <img decoding="async" width="1920" height="1280"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-                          class="attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg"
-                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg 1920w, /wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg 1024w, /wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg 768w, /wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg 1536w"
-                          data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1280" /><noscript><img
+  src="<?php echo metta_get_field('about_gal_5') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" /><noscript><img
                             decoding="async" width="1920" height="1280"
-                            src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg"
+                            src="<?php echo metta_get_field('about_gal_5') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>"
                             class="attachment-original size-original" alt="" srcset="
-                                ../wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg           1920w,
-                                ../wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg  1024w,
-                                ../wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg    768w,
-                                ../wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg 1536w
+                                <?php echo metta_get_field('about_gal_5') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>           1920w,
+                                <?php echo metta_get_field('about_gal_5') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>  1024w,
+                                <?php echo metta_get_field('about_gal_5') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>    768w,
+                                <?php echo metta_get_field('about_gal_5') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?> 1536w
                               " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
                       </div>
 
@@ -1230,18 +1496,16 @@ get_header(); ?>
                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_2060124709">
                       <div class="img-inner image-cover dark" style="padding-top: 100%">
                         <img decoding="async" width="1920" height="1280"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-                          class="attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg"
-                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg 1920w, /wp-content/../uploads/2025/12/z7321243484724_b19209a250c378be5a9319c0e1ea40e4.jpg 1024w, /wp-content/uploads/2025/08/YAM01468-768x512.jpg 768w, /wp-content/uploads/2025/08/YAM01468-1536x1024.jpg 1536w"
-                          data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1280" /><noscript><img
+  src="<?php echo metta_get_field('about_gal_5') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" /><noscript><img
                             decoding="async" width="1920" height="1280"
-                            src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg"
+                            src="<?php echo metta_get_field('about_gal_5') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>"
                             class="attachment-original size-original" alt="" srcset="
-                                ../wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg    1920w,
-                                ../wp-content/../uploads/2025/12/z7321243484724_b19209a250c378be5a9319c0e1ea40e4.jpg 1024w,
-                                ../wp-content/uploads/2025/08/YAM01468-768x512.jpg                                    768w,
-                                ../wp-content/uploads/2025/08/YAM01468-1536x1024.jpg                                 1536w
+                                <?php echo metta_get_field('about_gal_5') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg'; ?>    1920w,
+                                <?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484724_b19209a250c378be5a9319c0e1ea40e4.jpg 1024w,
+                                <?php echo get_site_url(); ?>/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633-768x512.jpg                                    768w,
+                                <?php echo get_site_url(); ?>/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg                                 1536w
                               " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
                       </div>
 
@@ -1258,18 +1522,16 @@ get_header(); ?>
                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1051070990">
                       <div class="img-inner image-cover dark" style="padding-top: 100%">
                         <img decoding="async" width="1920" height="1280"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-                          class="attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg"
-                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1920w, /wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1024w, /wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 768w, /wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1536w"
-                          data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1280" /><noscript><img
+  src="<?php echo metta_get_field('about_gal_6') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" /><noscript><img
                             decoding="async" width="1920" height="1280"
-                            src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg"
+                            src="<?php echo metta_get_field('about_gal_6') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg'; ?>"
                             class="attachment-original size-original" alt="" srcset="
-                                ../wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg           1920w,
-                                ../wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg  1024w,
-                                ../wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg    768w,
-                                ../wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg 1536w
+                                <?php echo metta_get_field('about_gal_6') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg'; ?>           1920w,
+                                <?php echo metta_get_field('about_gal_6') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg'; ?>  1024w,
+                                <?php echo metta_get_field('about_gal_6') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg'; ?>    768w,
+                                <?php echo metta_get_field('about_gal_6') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg'; ?> 1536w
                               " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
                       </div>
 
@@ -1286,19 +1548,9 @@ get_header(); ?>
                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_456224253">
                       <div class="img-inner image-cover dark" style="padding-top: 100%">
                         <img decoding="async" width="1920" height="1536"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAYAAQMAAACtq8fpAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAX1JREFUGBntwQENAAAAwiD7p34PBwwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjgSmSwABoT1vUQAAAABJRU5ErkJggg=="
-                          class="attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01270-1.jpg"
-                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01270-1.jpg 1920w, /wp-content/uploads/2025/08/YAM01270-1-1024x819.jpg 1024w, /wp-content/uploads/2025/08/YAM01270-1-768x614.jpg 768w, /wp-content/uploads/2025/08/YAM01270-1-1536x1229.jpg 1536w"
-                          data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1536" /><noscript><img
-                            decoding="async" width="1920" height="1536"
-                            src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01270-1.jpg" class="attachment-original size-original"
-                            alt="" srcset="
-                                ../wp-content/uploads/2025/08/YAM01270-1.jpg           1920w,
-                                ../wp-content/uploads/2025/08/YAM01270-1-1024x819.jpg  1024w,
-                                ../wp-content/uploads/2025/08/YAM01270-1-768x614.jpg    768w,
-                                ../wp-content/uploads/2025/08/YAM01270-1-1536x1229.jpg 1536w
-                              " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_gal_7') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321244104193_8316d0cd67c89088c05256e053a20b1d.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                       </div>
 
                       <style>
@@ -1314,18 +1566,9 @@ get_header(); ?>
                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1400607389">
                       <div class="img-inner image-cover dark" style="padding-top: 100%">
                         <img decoding="async" width="1920" height="1280"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-                          class="attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01428.jpg"
-                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01428.jpg 1920w, /wp-content/uploads/2025/12/z7321243484744_de99b6c945834e80d926b1f02a195256.jpg 1024w, /wp-content/uploads/2025/12/z7321243484744_de99b6c945834e80d926b1f02a195256.jpg 768w, /wp-content/uploads/2025/12/z7321243484744_de99b6c945834e80d926b1f02a195256.jpg 1536w"
-                          data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1280" /><noscript><img
-                            decoding="async" width="1920" height="1280" src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01428.jpg"
-                            class="attachment-original size-original" alt="" srcset="
-                                ../wp-content/uploads/2025/08/YAM01428.jpg           1920w,
-                                ../wp-content/uploads/2025/12/z7321243484744_de99b6c945834e80d926b1f02a195256.jpg  1024w,
-                                ../wp-content/uploads/2025/12/z7321243484744_de99b6c945834e80d926b1f02a195256.jpg    768w,
-                                ../wp-content/uploads/2025/12/z7321243484744_de99b6c945834e80d926b1f02a195256.jpg 1536w
-                              " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_gal_8') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                       </div>
 
                       <style>
@@ -1341,18 +1584,16 @@ get_header(); ?>
                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_965396434">
                       <div class="img-inner image-cover dark" style="padding-top: 100%">
                         <img decoding="async" width="1280" height="1920"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABQAAAAeAAQMAAACrBWhFAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwYEAAAAAw6D7U0/hANUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAQt7wAAQBHq34AAAAASUVORK5CYII="
-                          class="attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg"
-                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg 1280w, /wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg 683w, /wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg 768w, /wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg 1024w"
-                          data-sizes="auto" data-eio-rwidth="1280" data-eio-rheight="1920" /><noscript><img
+  src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" /><noscript><img
                             decoding="async" width="1280" height="1920"
                             src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg"
                             class="attachment-original size-original" alt="" srcset="
-                                ../wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg           1280w,
-                                ../wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg   683w,
-                                ../wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg   768w,
-                                ../wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg 1024w
+                                <?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg           1280w,
+                                <?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg   683w,
+                                <?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg   768w,
+                                <?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243502519_c0d2e952ab16d47afb000e48667dbdd2.jpg 1024w
                               " sizes="(max-width: 1280px) 100vw, 1280px" data-eio="l" /></noscript>
                       </div>
 
@@ -1369,18 +1610,9 @@ get_header(); ?>
                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_851970473">
                       <div class="img-inner image-cover dark" style="padding-top: 100%">
                         <img decoding="async" width="1920" height="1280"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-                          class="attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01194.jpg"
-                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01194.jpg 1920w, /wp-content/uploads/2025/08/YAM01194-1024x683.jpg 1024w, /wp-content/uploads/2025/08/YAM01194-768x512.jpg 768w, /wp-content/uploads/2025/08/YAM01194-1536x1024.jpg 1536w"
-                          data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1280" /><noscript><img
-                            decoding="async" width="1920" height="1280" src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01194.jpg"
-                            class="attachment-original size-original" alt="" srcset="
-                                ../wp-content/uploads/2025/08/YAM01194.jpg           1920w,
-                                ../wp-content/uploads/2025/08/YAM01194-1024x683.jpg  1024w,
-                                ../wp-content/uploads/2025/08/YAM01194-768x512.jpg    768w,
-                                ../wp-content/uploads/2025/08/YAM01194-1536x1024.jpg 1536w
-                              " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_gal_9') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321244104193_8316d0cd67c89088c05256e053a20b1d.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                       </div>
 
                       <style>
@@ -1396,18 +1628,9 @@ get_header(); ?>
                     <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_649537172">
                       <div class="img-inner image-cover dark" style="padding-top: 100%">
                         <img decoding="async" width="1920" height="1280"
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAUAAQMAAACcQ910AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAUJJREFUGBntwQENAAAAwiD7p34ON2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwI0AtTwAAb3/K1kAAAAASUVORK5CYII="
-                          class="attachment-original size-original lazyload" alt=""
-                          data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01189.jpg"
-                          data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01189.jpg 1920w, /wp-content/uploads/2025/08/YAM01189-1024x683.jpg 1024w, /wp-content/uploads/2025/08/YAM01189-768x512.jpg 768w, /wp-content/uploads/2025/08/YAM01189-1536x1024.jpg 1536w"
-                          data-sizes="auto" data-eio-rwidth="1920" data-eio-rheight="1280" /><noscript><img
-                            decoding="async" width="1920" height="1280" src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01189.jpg"
-                            class="attachment-original size-original" alt="" srcset="
-                                ../wp-content/uploads/2025/08/YAM01189.jpg           1920w,
-                                ../wp-content/uploads/2025/08/YAM01189-1024x683.jpg  1024w,
-                                ../wp-content/uploads/2025/08/YAM01189-768x512.jpg    768w,
-                                ../wp-content/uploads/2025/08/YAM01189-1536x1024.jpg 1536w
-                              " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
+  src="<?php echo metta_get_field('about_gal_10') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg'; ?>"
+  class="attachment-original size-original" alt=""
+  style="width:100%;height:100%;object-fit:cover;" />
                       </div>
 
                       <style>
@@ -1457,11 +1680,6 @@ get_header(); ?>
 
         <section class="section" id="section_1684955892">
           <div class="section-bg fill">
-            <img decoding="async" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-              class="bg attachment-original size-original lazyload" alt=""
-              data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/bg3.svg" /><noscript><img decoding="async"
-                src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/bg3.svg" class="bg attachment-original size-original" alt=""
-                data-eio="l" /></noscript>
           </div>
 
           <div class="section-content relative">
@@ -1469,7 +1687,7 @@ get_header(); ?>
               <div id="col-733732348" class="col small-12 large-12" data-animate="fadeInUp">
                 <div class="col-inner text-center">
                   <div id="text-2119337678" class="text text-heading">
-                    <h2>Khám phá Chi Nhánh</h2>
+                    <h2><?php echo metta_get_field('about_branch_title') ?: 'Khám phá Chi Nhánh'; ?></h2>
 
                     <style>
                       #text-2119337678 {
@@ -1490,25 +1708,16 @@ get_header(); ?>
                   <div id="text-3314873065" class="text">
                     <div class="row align-middle align-center branchs">
                       <div class="col large-3">
-                        <a href="../chi-nhanh/metta-spa-ten-lua">
+                        <a href="/chi-nhanh/metta-spa-ten-lua">
                           <div class="branch-item">
                             <div class="">
                               <div class="img has-hover section-service-main-img-1 x md-x lg-x y md-y lg-y"
                                 id="image_1666817933">
                                 <div class="img-inner image-cover dark" style="padding-top: 56.25%">
                                   <img decoding="async" width="1414" height="812"
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABYYAAAMsAQMAAADaj+SFAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAKNJREFUGBntwTEBAAAAwiD7p14Hb2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcANLYAAVdRCGgAAAAASUVORK5CYII="
-                                    class="attachment-original size-original lazyload" alt=""
-                                    data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg"
-                                    data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg 1414w, /wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg 1024w, /wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg 768w"
-                                    data-sizes="auto" data-eio-rwidth="1414" data-eio-rheight="812" /><noscript><img
-                                      decoding="async" width="1414" height="812"
-                                      src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg"
-                                      class="attachment-original size-original" alt="" srcset="
-                                          wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg 1414w,
-                                          wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg                                 1024w,
-                                          wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg                                   768w
-                                        " sizes="(max-width: 1414px) 100vw, 1414px" data-eio="l" /></noscript>
+                                    src="<?php echo metta_get_field('about_branch_1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg'; ?>"
+                                    class="attachment-original size-original" alt=""
+                                    style="width:100%;height:100%;object-fit:cover;" />
                                 </div>
 
                                 <style>
@@ -1524,11 +1733,11 @@ get_header(); ?>
                                     font-weight: bold;
                                     margin-bottom: 10px;
                                   ">
-                                Metta Spa Tên Lửa
+                                <?php echo metta_get_field('about_branch_1_name') ?: 'Metta Spa Tên Lửa'; ?>
                               </p>
                               <p class="" style="margin-bottom: 8px">
                                 <span style="font-weight: bold">Hotline:</span>
-                                0938431234
+                                <?php echo metta_get_field('about_branch_1_hotline') ?: '0938431234'; ?>
                               </p>
                               <p>
                                 <span style="font-weight: bold">Địa chỉ:</span>
@@ -1545,7 +1754,7 @@ get_header(); ?>
                                 <div class="button secondary is-small lowercase" style="border-radius: 99px">
                                   <span>Xem Chi tiết</span>
                                 </div>
-                                <a href="tel:0938431234">
+                                <a href="tel:<?php echo metta_get_field('about_branch_1_hotline') ?: '0938431234'; ?>">
                                   <div class="button secondary is-small lowercase" style="border-radius: 99px">
                                     <span>Gọi Đặt Lịch</span>
                                   </div>
@@ -1556,25 +1765,16 @@ get_header(); ?>
                         </a>
                       </div>
                       <div class="col large-3">
-                        <a href="../chi-nhanh/metta-spa-bien-hoa">
+                        <a href="/chi-nhanh/metta-spa-bien-hoa">
                           <div class="branch-item">
                             <div class="">
                               <div class="img has-hover section-service-main-img-1 x md-x lg-x y md-y lg-y"
                                 id="image_984473400">
                                 <div class="img-inner image-cover dark" style="padding-top: 56.25%">
                                   <img decoding="async" width="1413" height="812"
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABYUAAAMsAQMAAAAxuF+GAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAKNJREFUGBntwTEBAAAAwiD7p14Hb2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcANLYAAVdRCGgAAAAASUVORK5CYII="
-                                    class="attachment-original size-original lazyload" alt=""
-                                    data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/CS-3.jpg"
-                                    data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/CS-3.jpg 1413w, /wp-content/uploads/2025/12/bienhoa_bg.webp 1024w, /wp-content/uploads/2025/12/bienhoa_bg.webp 768w"
-                                    data-sizes="auto" data-eio-rwidth="1413" data-eio-rheight="812" /><noscript><img
-                                      decoding="async" width="1413" height="812"
-                                      src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/CS-3.jpg"
-                                      class="attachment-original size-original" alt="" srcset="
-                                          wp-content/uploads/2025/08/CS-3.jpg          1413w,
-                                          wp-content/uploads/2025/12/bienhoa_bg.webp 1024w,
-                                          wp-content/uploads/2025/12/bienhoa_bg.webp   768w
-                                        " sizes="(max-width: 1413px) 100vw, 1413px" data-eio="l" /></noscript>
+                                    src="<?php echo metta_get_field('about_branch_2_img') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg'; ?>"
+                                    class="attachment-original size-original" alt=""
+                                    style="width:100%;height:100%;object-fit:cover;" />
                                 </div>
 
                                 <style>
@@ -1590,11 +1790,11 @@ get_header(); ?>
                                     font-weight: bold;
                                     margin-bottom: 10px;
                                   ">
-                                Metta Spa Biên Hòa
+                                <?php echo metta_get_field('about_branch_2_name') ?: 'Metta Spa Biên Hòa'; ?>
                               </p>
                               <p class="" style="margin-bottom: 8px">
                                 <span style="font-weight: bold">Hotline:</span>
-                                0911535339
+                                <?php echo metta_get_field('about_branch_2_hotline') ?: '0911535339'; ?>
                               </p>
                               <p>
                                 <span style="font-weight: bold">Địa chỉ:</span>
@@ -1611,7 +1811,7 @@ get_header(); ?>
                                 <div class="button secondary is-small lowercase" style="border-radius: 99px">
                                   <span>Xem Chi tiết</span>
                                 </div>
-                                <a href="tel:0911535339">
+                                <a href="tel:<?php echo metta_get_field('about_branch_2_hotline') ?: '0911535339'; ?>">
                                   <div class="button secondary is-small lowercase" style="border-radius: 99px">
                                     <span>Gọi Đặt Lịch</span>
                                   </div>
@@ -1652,4 +1852,60 @@ get_header(); ?>
         </section>
       </div>
     </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      do_parallax("parallax-1", 0.3);
+      do_parallax("parallax-2", 0.1);
+      do_parallax("parallax-3", 0.2);
+      do_parallax("parallax-4", 0.3);
+
+      function do_parallax(className, depth) {
+        let parallaxClasses = document.querySelectorAll("." + className);
+
+        parallaxClasses.forEach((parallaxClass) => {
+          Array.from(parallaxClass.childNodes).forEach((child) => {
+            if (
+              child.nodeType === Node.ELEMENT_NODE &&
+              child.tagName !== "STYLE"
+            ) {
+              child.setAttribute("data-depth", depth);
+            }
+          });
+
+          let parallaxtext = new Parallax(parallaxClass, {
+            relativeInput: true,
+          });
+        });
+      }
+    });
+  </script>
+
+  <?php
+  // Explicitly load Flickity CSS from CDN for custom template slider support
+  // (flatsome's chunk.slider.js is a webpack bundle and does NOT expose Flickity globally)
+  ?>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script>
+  // Initialize all Flatsome-style Flickity sliders found in this custom template
+  document.addEventListener('DOMContentLoaded', function() {
+    function initSliders() {
+      var sliders = document.querySelectorAll('[data-flickity-options]');
+      sliders.forEach(function(el) {
+        if (el.classList.contains('flickity-enabled')) return;
+        try {
+          var opts = JSON.parse(el.getAttribute('data-flickity-options'));
+          new Flickity(el, opts);
+        } catch(e) {
+          console.warn('Slider init error:', e, el);
+        }
+      });
+    }
+
+    // Run after a short delay to allow lazyload images to settle
+    setTimeout(initSliders, 300);
+  });
+  </script>
+
 <?php get_footer(); ?>

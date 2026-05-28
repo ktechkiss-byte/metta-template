@@ -21,13 +21,13 @@ add_action('init', 'metta_start_session', 1);
 
 function metta_theme_scripts() {
     // Enqueue main theme stylesheet
-    wp_enqueue_style( 'metta-theme-style', get_stylesheet_uri(), array(), '3.32.7' );
+    wp_enqueue_style( 'metta-theme-style', get_stylesheet_uri(), array(), '3.35.2' );
 
     // Enqueue Flatsome styles
     wp_enqueue_style( 'flatsome-main', get_template_directory_uri() . '/../flatsome/assets/css/flatsome.css', array(), '3.32.6' );
     wp_enqueue_style( 'swiper-bundle', get_template_directory_uri() . '/../flatsome-child/assets/css/swiper-bundle.min.css', array(), '1.0' );
     wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/../flatsome-child/assets/css/fancybox.css', array(), '1.0' );
-    wp_enqueue_style( 'flatsome-home', get_template_directory_uri() . '/../flatsome/assets/css/home.css', array('flatsome-main'), '3.32.6' );
+    wp_enqueue_style( 'flatsome-home', get_template_directory_uri() . '/../flatsome/assets/css/home.css', array('flatsome-main'), '3.32.7' );
     wp_enqueue_style( 'flatsome-child-style', get_template_directory_uri() . '/../flatsome-child/style.css', array('flatsome-main'), '3.32.6' );
     
     // Enqueue jQuery
@@ -164,28 +164,43 @@ function metta_the_field($field_name, $post_id = false) {
 }
 
 function metta_get_with_fallback($field_name, $default_vi) {
+    if (!function_exists('get_field')) return $default_vi;
+    
     $lang = metta_get_current_language();
     
-    // 1. Try to get the localized ACF field
+    // 1. If Vietnamese, try current field
     if ($lang == 'vi') {
         $val = get_field($field_name);
         return $val ? $val : $default_vi;
     }
     
-    // For non-VI, try localized field first
+    // 2. For non-VI, try localized field first (_en, _zh)
     $suffix = '_' . $lang;
     $val = get_field($field_name . $suffix);
     if (!empty($val)) {
         return $val;
     }
     
-    // 2. If empty, check the hardcoded translation map
+    // 3. If localized field is empty, fallback to the base Vietnamese ACF field
+    $val_vi = get_field($field_name);
+    if (!empty($val_vi)) {
+        // Optional: Should we translate the base field content if it's text?
+        // For links, we definitely want the base field.
+        // For text, we can try to translate it using the map.
+        $translations = metta_get_translations();
+        if (isset($translations[$lang][$val_vi])) {
+            return $translations[$lang][$val_vi];
+        }
+        return $val_vi;
+    }
+    
+    // 4. If even the base field is empty, check the hardcoded translation map for the hardcoded $default_vi
     $translations = metta_get_translations();
     if (isset($translations[$lang][$default_vi])) {
         return $translations[$lang][$default_vi];
     }
     
-    // 3. Fallback to default (VI) if all else fails
+    // 5. Fallback to hardcoded default (VI) if all else fails
     return $default_vi;
 }
 

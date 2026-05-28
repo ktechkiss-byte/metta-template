@@ -63,7 +63,7 @@
                 $f_id = get_option('page_on_front');
                 $g_phone = metta_get_with_fallback('global_phone', '0931.323.268');
                 $g_email = metta_get_with_fallback('global_email', 'Mettaspadongy@gmail.com');
-                $g_fb = metta_get_with_fallback('link_facebook', 'https://www.facebook.com/mettaspadongy');
+                $g_fb = metta_get_with_fallback('link_facebook', 'https://www.facebook.com/profile.php?id=61573332995547');
                 $g_zalo = metta_get_with_fallback('link_zalo', 'https://zalo.me/0931323268');
                 ?>
                 <p>
@@ -103,21 +103,15 @@
 
                 <p>
                   Hotline: <?php echo $g_phone; ?> <br />Email:
-                  <?php echo $g_email; ?><br />Fanpage: Spa Metta Spa
+                  <?php echo $g_email; ?><br />Fanpage: <a href="<?php echo $g_fb; ?>" target="_blank">𝐌𝐄𝐓𝐓𝐀 𝐒𝐏𝐀 𝐕𝐈𝐄𝐓 𝐍𝐀𝐌</a>
                 </p>
               </div>
             </div>
 
             <div id="col-1968902255" class="col medium-4 small-12 large-2">
               <div class="col-inner">
-                <div id="text-1810080021" class="text text-vip">
-                  <p><strong>Liên kết nhanh</strong></p>
-
-                  <style>
-                    #text-1810080021 {
-                      font-size: 1.2rem;
-                    }
-                  </style>
+                <div id="text-1810080021" class="text text-vip footer-section-title">
+                  <p><strong>Liên kết nhanh</strong></p>
                 </div>
 
                 <?php if (has_nav_menu('footer_links')): ?>
@@ -126,43 +120,117 @@
                     'container'      => false,
                     'menu_class'     => 'footer-links-list',
                     'fallback_cb'    => false,
-                    'items_wrap'     => '<div class="footer-links-wrap">%3$s</div>',
+                    'items_wrap'     => '<ul class="footer-links-menu">%3$s</ul>',
                   )); ?>
                 <?php else: ?>
                   <!-- Fallback hardcoded footer links -->
-                  <div class="footer-links-wrap">
-                    <a href="<?php echo home_url('/'); ?>"><?php echo metta_static('Trang chủ'); ?></a>
-                    <a href="<?php echo home_url('/gioi-thieu'); ?>"><?php echo metta_static('Giới thiệu'); ?></a>
-                    <a href="<?php echo home_url('/menu'); ?>"><?php echo metta_static('Menu'); ?></a>
-                    <a href="<?php echo home_url('/chi-nhanh'); ?>"><?php echo metta_static('Chi nhánh'); ?></a>
-                    <a href="<?php echo home_url('/tin-tuc'); ?>"><?php echo metta_static('Tin tức'); ?></a>
-                    <a href="<?php echo home_url('/lien-he'); ?>"><?php echo metta_static('Liên hệ'); ?></a>
-                  </div>
+                  <ul class="footer-links-menu">
+                    <li><a href="<?php echo home_url('/'); ?>"><?php echo metta_static('Trang Chủ'); ?></a></li>
+                    <li><a href="<?php echo home_url('/gioi-thieu'); ?>"><?php echo metta_static('Giới thiệu'); ?></a></li>
+                    <li><a href="<?php echo home_url('/dao-tao'); ?>"><?php echo metta_static('Đào tạo'); ?></a></li>
+                    <li><a href="<?php echo home_url('/san-pham'); ?>"><?php echo metta_static('Sản phẩm'); ?></a></li>
+                    <li><a href="<?php echo home_url('/chi-nhanh'); ?>"><?php echo metta_static('Chi Nhánh'); ?></a></li>
+                    <li><a href="<?php echo home_url('/menu'); ?>"><?php echo metta_static('Bảng giá Menu'); ?></a></li>
+                    <li><a href="<?php echo home_url('/tin-tuc'); ?>"><?php echo metta_static('Tin Tức'); ?></a></li>
+                    <li><a href="<?php echo home_url('/lien-he'); ?>"><?php echo metta_static('Liên hệ'); ?></a></li>
+                  </ul>
                 <?php endif; ?>
-                <style>
-                    .footer-links-wrap a { display: block; margin-bottom: 5px; color: #fff; }
-                    .footer-links-wrap a:hover { color: var(--metta-main); }
-                </style>
               </div>
             </div>
 
             <div id="col-1468817730" class="col medium-4 small-12 large-3">
               <div class="col-inner">
-                <div id="text-332569118" class="text text-vip">
-                  <p><strong>Chính Sách</strong></p>
-
-                  <style>
-                    #text-332569118 {
-                      font-size: 1.2rem;
-                    }
-                  </style>
+                <div id="text-332569118" class="text text-vip footer-section-title">
+                  <p><strong>Chính Sách</strong></p>
                 </div>
 
-                <p>
-                  <a href="chinh-sach-bao-mat">Chính sách bảo mật</a><br />Chính sách thành viên
-                </p>
+                <ul class="footer-links-menu">
+                  <li><a href="<?php echo home_url('/chinh-sach-bao-mat'); ?>">Chính sách bảo mật</a></li>
+                  <li><a href="<?php echo home_url('/chinh-sach-thanh-vien'); ?>">Chính sách thành viên</a></li>
+                </ul>
               </div>
             </div>
+
+            <style>
+              /* Footer Section Titles */
+              .footer-section-title {
+                font-size: 1.15rem !important;
+                margin-bottom: 15px !important;
+              }
+              
+              .footer-section-title p {
+                margin: 0 !important;
+                color: #fff !important;
+              }
+              
+              .footer-section-title strong {
+                color: var(--metta-main, #f49d21) !important;
+                font-weight: 700 !important;
+                letter-spacing: 0.5px;
+              }
+              
+              /* Footer Links Menu */
+              .footer-links-menu {
+                list-style: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+              }
+              
+              .footer-links-menu li {
+                margin-bottom: 10px !important;
+                padding-left: 0 !important;
+              }
+              
+              .footer-links-menu li::before {
+                display: none !important;
+              }
+              
+              .footer-links-menu li a {
+                display: inline-flex !important;
+                align-items: center !important;
+                color: rgba(255,255,255,0.85) !important;
+                font-size: 0.95rem !important;
+                text-decoration: none !important;
+                transition: all 0.2s ease !important;
+                padding: 4px 0 !important;
+              }
+              
+              .footer-links-menu li a::before {
+                content: '→' !important;
+                margin-right: 8px !important;
+                font-size: 0.8rem !important;
+                color: var(--metta-main, #f49d21) !important;
+                opacity: 0.7 !important;
+                transition: all 0.2s ease !important;
+              }
+              
+              .footer-links-menu li a:hover {
+                color: var(--metta-main, #f49d21) !important;
+                transform: translateX(3px) !important;
+              }
+              
+              .footer-links-menu li a:hover::before {
+                opacity: 1 !important;
+                transform: translateX(2px) !important;
+              }
+              
+              /* Mobile adjustments */
+              @media (max-width: 849px) {
+                .footer-section-title {
+                  margin-top: 20px !important;
+                  margin-bottom: 12px !important;
+                }
+                
+                .footer-links-menu li {
+                  margin-bottom: 8px !important;
+                }
+                
+                .footer-links-menu li a {
+                  font-size: 0.9rem !important;
+                  padding: 3px 0 !important;
+                }
+              }
+            </style>
           </div>
           <div id="text-370269866" class="text footer-copy">
             <p>
@@ -206,68 +274,120 @@
   </div>
 
   <div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">
-    <div class="sidebar-menu no-scrollbar">
-      <?php if (has_nav_menu('mobile')): ?>
-        <?php wp_nav_menu(array(
-          'theme_location' => 'mobile',
-          'container'      => false,
-          'menu_class'     => 'nav nav-sidebar nav-vertical nav-uppercase',
-          'fallback_cb'    => false,
-        )); ?>
-      <?php else: ?>
-        <!-- Fallback hardcoded mobile menu -->
-        <ul class="nav nav-sidebar nav-vertical nav-uppercase">
+      <div class="sidebar-menu-text">
+        <ul class="nav-sidebar nav-vertical nav-uppercase">
+          <!-- FORCE HARDCODED MENU (Standardized Mobile) -->
           <li class="menu-item <?php echo metta_is_active('/'); ?>">
-            <a href="<?php echo home_url('/'); ?>"><?php echo metta_static('Trang chủ'); ?></a>
+            <a href="<?php echo home_url('/'); ?>"><span><?php echo metta_static('Trang chủ'); ?></span></a>
           </li>
           <li class="menu-item <?php echo metta_is_active('/gioi-thieu'); ?>">
-            <a href="<?php echo home_url('/gioi-thieu'); ?>"><?php echo metta_static('Giới thiệu'); ?></a>
+            <a href="<?php echo home_url('/gioi-thieu'); ?>"><span><?php echo metta_static('Giới thiệu'); ?></span></a>
           </li>
           <li class="menu-item <?php echo metta_is_active('/menu'); ?>">
-            <a href="<?php echo home_url('/menu'); ?>"><?php echo metta_static('Menu'); ?></a>
+             <a href="<?php echo home_url('/menu'); ?>"><span><?php echo metta_static('Menu'); ?></span></a>
+             <!-- Optional: Add submenu if needed later, currently flat for consistency with primary request -->
           </li>
           <li class="menu-item <?php echo metta_is_active('/san-pham'); ?>">
-            <a href="<?php echo home_url('/san-pham'); ?>"><?php echo metta_static('Sản phẩm'); ?></a>
+             <a href="<?php echo home_url('/san-pham'); ?>"><span><?php echo metta_static('Sản phẩm'); ?></span></a>
+          </li>
+           <li class="menu-item <?php echo metta_is_active('/dao-tao'); ?>">
+             <a href="<?php echo home_url('/dao-tao'); ?>"><span><?php echo metta_static('Khóa học'); ?></span></a>
           </li>
           <li class="menu-item <?php echo metta_is_active('/chi-nhanh'); ?>">
-            <a href="<?php echo home_url('/chi-nhanh'); ?>"><?php echo metta_static('Chi nhánh'); ?></a>
+             <a href="<?php echo home_url('/chi-nhanh'); ?>"><span><?php echo metta_static('Chi nhánh'); ?></span></a>
           </li>
           <li class="menu-item <?php echo metta_is_active('/tin-tuc'); ?>">
-            <a href="<?php echo home_url('/tin-tuc'); ?>"><?php echo metta_static('Tin tức'); ?></a>
+             <a href="<?php echo home_url('/tin-tuc'); ?>"><span><?php echo metta_static('Tin tức'); ?></span></a>
           </li>
           <li class="menu-item <?php echo metta_is_active('/lien-he'); ?>">
-            <a href="<?php echo home_url('/lien-he'); ?>"><?php echo metta_static('Liên hệ'); ?></a>
+             <a href="<?php echo home_url('/lien-he'); ?>"><span><?php echo metta_static('Liên hệ'); ?></span></a>
           </li>
+
+           <li class="menu-item header-button-mobile">
+              <a href="https://datlich.mettaspadongy.vn/" class="button primary" style="border-radius: 8px; margin-top: 10px; width: 100%;" target="_blank">
+                <span><?php echo metta_static('Đặt Lịch'); ?></span>
+              </a>
+           </li>
         </ul>
-      <?php endif; ?>
-    </div>
+      </div>
   </div>
   
   <!-- Mobile Submenu Styles -->
   <style>
-    /* Mobile Sidebar Menu Styles */
+    /* ============================================
+       MOBILE SIDEBAR MENU STYLES - SOLID BACKGROUND
+       Using high specificity to prevent overrides
+       ============================================ */
+    
+    /* Base mobile sidebar styling - SOLID BACKGROUND */
+    #main-menu.mobile-sidebar {
+      background-color: #4a2d2e !important;
+      opacity: 1 !important;
+      z-index: 999999 !important;
+    }
+    
+    #main-menu.mobile-sidebar .sidebar-menu {
+      background-color: #4a2d2e !important;
+      opacity: 1 !important;
+    }
+    
+    /* Magnific Popup - DARK SOLID overlay */
+    .mfp-bg {
+      background-color: rgba(0, 0, 0, 0.95) !important;
+      opacity: 1 !important;
+      backdrop-filter: blur(5px) !important;
+    }
+    
+    .mfp-wrap {
+      z-index: 999998 !important;
+    }
+    
+    .mfp-wrap #main-menu {
+      opacity: 1 !important;
+    }
+    
+    /* Override any Magnific Popup transparency */
+    .mfp-ready #main-menu.mobile-sidebar,
+    .mfp-ready .mobile-sidebar .sidebar-menu {
+      opacity: 1 !important;
+      background-color: #4a2d2e !important;
+    }
+    
     #main-menu .nav-sidebar {
       padding: 20px 0;
+      background-color: transparent !important;
     }
     
     #main-menu .nav-sidebar > li {
       border-bottom: 1px solid rgba(255,255,255,0.1);
+      background-color: transparent !important;
     }
     
     #main-menu .nav-sidebar > li > a {
-      display: flex;
+      display: flex !important;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 20px;
-      color: #fff;
-      font-weight: 600;
-      font-size: 1rem;
+      padding: 15px 20px !important;
+      color: #fff !important;
+      font-weight: 600 !important;
+      font-size: 1rem !important;
       text-transform: uppercase;
+      background-color: transparent !important;
     }
     
-    #main-menu .nav-sidebar > li > a:hover {
-      background: rgba(244, 157, 33, 0.1);
-      color: var(--metta-main);
+    #main-menu .nav-sidebar > li > a:hover,
+    #main-menu .nav-sidebar > li > a:focus {
+      background: rgba(244, 157, 33, 0.1) !important;
+      color: #f49d21 !important;
+    }
+    
+    /* Current/active menu item */
+    #main-menu .nav-sidebar > li.current-menu-item > a,
+    #main-menu .nav-sidebar > li.active > a,
+    #main-menu .nav-sidebar > li.current_page_item > a {
+      color: #f49d21 !important;
+      background: rgba(244, 157, 33, 0.15) !important;
+      border-left: 3px solid #f49d21 !important;
     }
     
     /* Submenu toggle arrow */
@@ -275,7 +395,7 @@
       content: '+';
       font-size: 1.2rem;
       font-weight: 300;
-      color: var(--metta-main);
+      color: #f49d21 !important;
       transition: transform 0.3s ease;
     }
     
@@ -286,14 +406,21 @@
     /* Mobile Submenu */
     #main-menu .nav-sidebar .sub-menu {
       display: none;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: rgba(0,0,0,0.2);
+      position: relative !important; /* CRITICAL: Fixed to relative to push content down */
+      top: auto !important;
+      left: auto !important;
+      width: 100% !important;
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      background: rgba(0,0,0,0.2) !important;
+      transform: none !important; /* Disable transform to avoid layer issues */
+      opacity: 1 !important;
     }
     
     #main-menu .nav-sidebar .sub-menu li {
       border-bottom: 1px solid rgba(255,255,255,0.05);
+      background-color: transparent !important;
     }
     
     #main-menu .nav-sidebar .sub-menu li:last-child {
@@ -301,42 +428,48 @@
     }
     
     #main-menu .nav-sidebar .sub-menu li a {
-      display: block;
-      padding: 12px 20px 12px 35px;
-      color: rgba(255,255,255,0.85);
-      font-size: 0.9rem;
-      font-weight: 400;
-      text-transform: none;
+      display: block !important;
+      padding: 12px 20px 12px 35px !important;
+      color: rgba(255,255,255,0.85) !important;
+      font-size: 0.9rem !important;
+      font-weight: 400 !important;
+      text-transform: none !important;
       border-left: 3px solid transparent;
       transition: all 0.2s ease;
+      background-color: transparent !important;
     }
     
-    #main-menu .nav-sidebar .sub-menu li a:hover {
-      background: rgba(244, 157, 33, 0.15);
-      color: var(--metta-main);
-      border-left-color: var(--metta-main);
+    #main-menu .nav-sidebar .sub-menu li a:hover,
+    #main-menu .nav-sidebar .sub-menu li a:focus {
+      background: rgba(244, 157, 33, 0.15) !important;
+      color: #f49d21 !important;
+      border-left-color: #f49d21 !important;
     }
     
     /* Nested submenu (level 3) */
     #main-menu .nav-sidebar .sub-menu .sub-menu li a {
-      padding-left: 50px;
+      padding-left: 50px !important;
     }
     
-    /* Animation for submenu open */
+    /* Animation for submenu open - REMOVED animation that causes overlap issues
+       Using jQuery slideDown/Up instead for proper height calculation */
     #main-menu .nav-sidebar .sub-menu.submenu-visible {
-      display: block;
-      animation: slideDown 0.3s ease;
+      display: block !important;
+      position: relative !important; /* Ensure it pushes content */
     }
     
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* Override any external theme styles that may conflict */
+    .mobile-sidebar .nav a,
+    .mobile-sidebar .nav li a,
+    .mobile-sidebar ul li a,
+    .mfp-content .nav a {
+      color: #fff !important;
+    }
+    
+    .mobile-sidebar .nav a:hover,
+    .mobile-sidebar .nav li a:hover,
+    .mfp-content .nav a:hover {
+      color: #f49d21 !important;
     }
   </style>
   
@@ -344,34 +477,59 @@
   <script>
     jQuery(document).ready(function($) {
       // Mobile submenu accordion
+      // Unbind any previous events to prevent duplicates if this script runs multiple times
+      $('#main-menu .nav-sidebar > li.menu-item-has-children > a').off('click');
+      
       $('#main-menu .nav-sidebar > li.menu-item-has-children > a').on('click', function(e) {
-        var $parent = $(this).parent();
+        var $link = $(this);
+        var $parent = $link.parent();
         var $submenu = $parent.find('> .sub-menu');
         
-        // If clicking on a parent with submenu, toggle it
+        // If clicking on a parent with submenu
         if ($submenu.length) {
           e.preventDefault();
-          
-          // Close other open submenus
-          $parent.siblings('.submenu-open').removeClass('submenu-open').find('.sub-menu').removeClass('submenu-visible');
+          e.stopPropagation(); // Stop event bubbling
           
           // Toggle current submenu
-          $parent.toggleClass('submenu-open');
-          $submenu.toggleClass('submenu-visible');
+          if ($parent.hasClass('submenu-open')) {
+             $submenu.slideUp(300, function(){
+                 $parent.removeClass('submenu-open');
+                 $submenu.removeClass('submenu-visible');
+                 $submenu.css('display', ''); // Clear inline display style after slideUp
+             });
+          } else {
+             // Close other open submenus at the same level
+             $parent.siblings('.submenu-open').removeClass('submenu-open').find('> .sub-menu').slideUp(300).removeClass('submenu-visible');
+             
+             $parent.addClass('submenu-open');
+             $submenu.addClass('submenu-visible').slideDown(300);
+          }
         }
       });
       
       // Allow clicking on submenu parent link icon to still toggle
-      // But clicking on the text goes to the page
+      // But clicking on the text goes to the page - For nested levels if any
       $('#main-menu .nav-sidebar .sub-menu li.menu-item-has-children > a').on('click', function(e) {
-        var $parent = $(this).parent();
-        var $submenu = $parent.find('> .sub-menu');
-        
-        if ($submenu.length) {
-          e.preventDefault();
-          $parent.toggleClass('submenu-open');
-          $submenu.toggleClass('submenu-visible');
-        }
+         // Logic for deeper levels if needed, currently same behavior
+         var $link = $(this);
+         var $parent = $link.parent();
+         var $submenu = $parent.find('> .sub-menu');
+
+         if ($submenu.length) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if ($parent.hasClass('submenu-open')) {
+                 $submenu.slideUp(300, function(){
+                     $parent.removeClass('submenu-open');
+                     $submenu.removeClass('submenu-visible');
+                     $submenu.css('display', '');
+                 });
+            } else {
+                 $parent.addClass('submenu-open');
+                 $submenu.addClass('submenu-visible').slideDown(300);
+            }
+         }
       });
     });
   </script>

@@ -29,12 +29,12 @@ get_header(); ?>
 											<img width="1020" height="680"
 												src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAKrAQMAAABV2G3XAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAGxJREFUGBntwTEBAAAAwiD7p14MH2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvAVYOgABiXISYgAAAABJRU5ErkJggg=="
 												class="attachment-large size-large wp-post-image lazyload" alt="" decoding="async"
-												fetchpriority="high" data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01189-1024x683.jpg"
-												data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01189-1024x683.jpg 1024w, /wp-content/uploads/2025/08/YAM01189-768x512.jpg 768w, /wp-content/uploads/2025/08/YAM01189-1536x1024.jpg 1536w, /wp-content/uploads/2025/08/YAM01189.jpg 1920w"
+												fetchpriority="high" data-src="<?php echo get_site_url(); ?>/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633-1024x683.jpg"
+												data-srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633-1024x683.jpg 1024w, /wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633-768x512.jpg 768w, /wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg 1536w, /wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg 1920w"
 												data-sizes="auto" data-eio-rwidth="1024" data-eio-rheight="683"><noscript><img width="1020"
-													height="680" src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01189-1024x683.jpg"
+													height="680" src="<?php echo get_site_url(); ?>/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633-1024x683.jpg"
 													class="attachment-large size-large wp-post-image" alt="" decoding="async" fetchpriority="high"
-													srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/YAM01189-1024x683.jpg 1024w, ../wp-content/uploads/2025/08/YAM01189-768x512.jpg 768w, ../wp-content/uploads/2025/08/YAM01189-1536x1024.jpg 1536w, ../wp-content/uploads/2025/08/YAM01189.jpg 1920w"
+													srcset="<?php echo get_site_url(); ?>/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633-1024x683.jpg 1024w, ../wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633-768x512.jpg 768w, ../wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg 1536w, ../wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg 1920w"
 													sizes="(max-width: 1020px) 100vw, 1020px" data-eio="l"></noscript></a>
 									</div>
 								</header>
@@ -106,7 +106,7 @@ get_header(); ?>
 												class="icon button circle is-outline tooltip email" title="Gửi email cho bạn bè"
 												aria-label="Gửi email cho bạn bè" rel="nofollow"><i class="icon-envelop"
 													aria-hidden="true"></i></a><a
-												href="https://pinterest.com/pin/create/button?url=/tu-cung-am-de-thu-thai/&media=/wp-content/uploads/2025/08/YAM01189-1024x683.jpg&description=T%E1%BB%AC%20CUNG%20%E1%BA%A4M%20%20D%E1%BB%84%20TH%E1%BB%A4%20THAI"
+												href="https://pinterest.com/pin/create/button?url=/tu-cung-am-de-thu-thai/&media=/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633-1024x683.jpg&description=T%E1%BB%AC%20CUNG%20%E1%BA%A4M%20%20D%E1%BB%84%20TH%E1%BB%A4%20THAI"
 												onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px'); return false;"
 												target="_blank" class="icon button circle is-outline tooltip pinterest"
 												title="Ghim trên Pinterest" aria-label="Ghim trên Pinterest" rel="noopener nofollow"><i
@@ -158,7 +158,7 @@ get_header(); ?>
 													<div class="flex-col mr-half">
 														<div class="badge post-date  badge-circle">
 															<div class="badge-inner bg-fill lazyload" style="background:; border:0;"
-																data-back="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/518283809_720489257543451_1086740051869937389_n.jpg">
+																data-back="<?php echo get_site_url(); ?>/wp-content/uploads/2026/03/z7321244104181_bedfed49556c8ab00e47b20edc544971-1.jpg">
 															</div>
 														</div>
 													</div>
@@ -179,7 +179,7 @@ get_header(); ?>
 													<div class="flex-col mr-half">
 														<div class="badge post-date  badge-circle">
 															<div class="badge-inner bg-fill lazyload" style="background:; border:0;"
-																data-back="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/506445861_122134994852770919_1591088415305652035_n.jpg">
+																data-back="<?php echo get_site_url(); ?>/wp-content/uploads/2026/03/z7321244104181_bedfed49556c8ab00e47b20edc544971.jpg">
 															</div>
 														</div>
 													</div>
@@ -198,7 +198,7 @@ get_header(); ?>
 													<div class="flex-col mr-half">
 														<div class="badge post-date  badge-circle">
 															<div class="badge-inner bg-fill lazyload" style="background:; border:0;"
-																data-back="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/509256411_122135904944770919_5203760544773351225_n.jpg">
+																data-back="<?php echo get_site_url(); ?>/wp-content/uploads/2026/03/z7321243484745_fbb90f387993aac5596753ef14adf2dd.jpg">
 															</div>
 														</div>
 													</div>
@@ -219,7 +219,7 @@ get_header(); ?>
 													<div class="flex-col mr-half">
 														<div class="badge post-date  badge-circle">
 															<div class="badge-inner bg-fill lazyload" style="background:; border:0;"
-																data-back="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/511312020_122137197512770919_7020743803730419381_n.jpg">
+																data-back="<?php echo get_site_url(); ?>/wp-content/uploads/2026/03/z7321243484744_de99b6c945834e80d926b1f02a195256.jpg">
 															</div>
 														</div>
 													</div>
@@ -239,7 +239,7 @@ get_header(); ?>
 													<div class="flex-col mr-half">
 														<div class="badge post-date  badge-circle">
 															<div class="badge-inner bg-fill lazyload" style="background:; border:0;"
-																data-back="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/514397418_122138927024770919_2731747557707270300_n.jpg">
+																data-back="<?php echo get_site_url(); ?>/wp-content/uploads/2026/03/z7321244104193_8316d0cd67c89088c05256e053a20b1d.jpg">
 															</div>
 														</div>
 													</div>

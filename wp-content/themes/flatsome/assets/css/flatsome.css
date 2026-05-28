@@ -772,11 +772,11 @@ body.framed {
 }
 
 .row.row-small {
-  max-width: 1065px
+  max-width: 1402.5px;
 }
 
 .row.row-large {
-  max-width: 1110px
+  max-width: 1402.5px;
 }
 
 body.boxed,

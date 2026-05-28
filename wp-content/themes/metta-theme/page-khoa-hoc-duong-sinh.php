@@ -2,252 +2,311 @@
 /* Template Name: page-khoa-hoc-duong-sinh */
 get_header(); ?>
 
-
-        <main id="main" class="">
-            <div id="content" role="main" class="content-area">
-
-                <!-- HERO BANNER (Using section-bg for authentic theme feel) -->
-                <section class="section" id="hero-banner">
-                    <div class="section-bg fill">
-                        <img class="bg attachment-original size-original" decoding="async"
-                            src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/Group-39711.png" alt="Banner Dưỡng Sinh"
-                            style="object-position: 50% 50%;">
-                    </div>
-                    <div class="section-content relative" style="padding-top: 60px; padding-bottom: 60px;">
-                        <!-- Reduced padding -->
-                        <div class="row row-large align-middle align-center">
-                            <div class="col medium-12 small-12 large-10 text-center">
-                                <div class="col-inner"
-                                    style="background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                                    <h1 class="text-vip" style="color: #603813; margin-bottom: 15px;">KHỞI ĐẦU SỰ
-                                        NGHIỆP<br>CÙNG NGHỀ DƯỠNG SINH</h1>
-                                    <h3 class="text-vip" style="color: #f49d21; margin-bottom: 20px;">"Trao nghề từ Tâm
-                                        – Dựng nghiệp từ Tầm"</h3>
-                                    <p style="font-size: 16px; color: #555; margin-bottom: 25px;">Metta Spa cam kết đào
-                                        tạo KTV chuyên nghiệp với 80% thực hành.</p>
-                                    <a href="https://m.me/61573332995547" target="_blank"
-                                        class="button primary is-larger register-btn">ĐĂNG KÝ TƯ VẤN</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- INTRO SECTION -->
-                <section class="section" style="padding-top: 40px; padding-bottom: 40px;">
-                    <div class="section-content relative">
-                        <div class="row row-large align-center">
-                            <div class="col medium-10 small-12 large-8 text-center">
-                                <div class="col-inner">
-                                    <div class="text-heading">
-                                        <h2 class="text-vip" style="color: #603813; margin-bottom: 20px;">TẠI SAO CHỌN
-                                            NGHỀ DƯỠNG SINH?</h2>
-                                    </div>
-                                    <div class="text">
-                                        <p style="color: #f49d21; font-weight: bold;">Sức khỏe tự nhiên là xu hướng toàn
-                                            cầu.</p>
-                                        <p>Tại Học viện Đào tạo Metta, chúng tôi không chỉ dạy bạn một cái nghề để mưu
-                                            sinh, mà còn truyền trao một sứ mệnh: Sứ mệnh chăm sóc sức khỏe cộng đồng
-                                            bằng đôi bàn tay và y lý cổ truyền.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- USP SECTION (Tighter grid) -->
-                <section class="section" style="background-color: #fcfcfc; padding-top: 40px; padding-bottom: 40px;">
-                    <div class="section-content relative">
-                        <div class="row align-center">
-                            <div class="col small-12 large-12 text-center">
-                                <h2 class="text-vip" style="margin-bottom: 30px; color: #603813;">ĐIỂM KHÁC BIỆT TẠI
-                                    METTA</h2>
-                            </div>
-                        </div>
-                        <div class="row row-small align-center" style="max-width: 1100px; margin: 0 auto;">
-                            <!-- Box 1 -->
-                            <div class="col medium-6 small-12 large-3">
-                                <div class="col-inner text-center usp-box" style="background: #fff; height: 100%;">
-                                    <h3 class="text-vip" style="color: #603813; font-size: 1.2rem;">Chuẩn Đông Y</h3>
-                                    <p style="font-size: 0.95rem;">Giáo trình bài bản, chắt lọc tinh hoa Y học cổ
-                                        truyền.</p>
-                                </div>
-                            </div>
-                            <!-- Box 2 -->
-                            <div class="col medium-6 small-12 large-3">
-                                <div class="col-inner text-center usp-box" style="background: #fff; height: 100%;">
-                                    <h3 class="text-vip" style="color: #603813; font-size: 1.2rem;">1 Kèm 1</h3>
-                                    <p style="font-size: 0.95rem;">Giảng viên sát sao chỉnh sửa từng tư thế, lực đạo.
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Box 3 -->
-                            <div class="col medium-6 small-12 large-3">
-                                <div class="col-inner text-center usp-box" style="background: #fff; height: 100%;">
-                                    <h3 class="text-vip" style="color: #603813; font-size: 1.2rem;">93% Thực Hành</h3>
-                                    <p style="font-size: 0.95rem;">Thực hành chéo liên tục để rèn luyện cảm giác tay.
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Box 4 -->
-                            <div class="col medium-6 small-12 large-3">
-                                <div class="col-inner text-center usp-box" style="background: #fff; height: 100%;">
-                                    <h3 class="text-vip" style="color: #603813; font-size: 1.2rem;">Kỹ Năng Mềm</h3>
-                                    <p style="font-size: 0.95rem;">Đào tạo tư duy phục vụ và kỹ năng giao tiếp.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- CURRICULUM SECTION -->
-                <section class="section" style="padding-top: 50px; padding-bottom: 50px;">
-                    <div class="section-content relative">
-                        <div class="row align-center">
-                            <div class="col small-12 large-12 text-center">
-                                <h2 class="text-vip" style="margin-bottom: 30px; color: #603813;">LỘ TRÌNH ĐÀO TẠO</h2>
-                            </div>
-                        </div>
-                        <div class="row row-small" style="max-width: 900px; margin: 0 auto;">
-                            <!-- Module 1 -->
-                            <div class="col medium-6 small-12 large-6">
-                                <div class="col-inner"
-                                    style="background: #fdfdfd; padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee;">
-                                    <h4 style="color: #a87e09; font-weight: bold; font-size: 1.1rem;">MODULE 1: NỀN TẢNG
-                                        Y LÝ</h4>
-                                    <ul style="font-size: 0.95rem; margin-bottom: 0;">
-                                        <li>Học thuyết Âm Dương – Ngũ Hành.</li>
-                                        <li>Hệ thống Kinh lạc & Huyệt đạo.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Module 2 -->
-                            <div class="col medium-6 small-12 large-6">
-                                <div class="col-inner"
-                                    style="background: #fdfdfd; padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee;">
-                                    <h4 style="color: #a87e09; font-weight: bold; font-size: 1.1rem;">MODULE 2: KỸ THUẬT
-                                        TRỊ LIỆU</h4>
-                                    <ul style="font-size: 0.95rem; margin-bottom: 0;">
-                                        <li>Massage bấm huyệt chuẩn Đông Y.</li>
-                                        <li>Trị liệu Cổ Vai Gáy.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Module 3 -->
-                            <div class="col medium-6 small-12 large-6">
-                                <div class="col-inner"
-                                    style="background: #fdfdfd; padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee;">
-                                    <h4 style="color: #a87e09; font-weight: bold; font-size: 1.1rem;">MODULE 3: LIỆU
-                                        PHÁP BỔ TRỢ</h4>
-                                    <ul style="font-size: 0.95rem; margin-bottom: 0;">
-                                        <li>Giác hơi, cạo gió, hỏa liệu pháp.</li>
-                                        <li>Sử dụng dược liệu, tinh dầu.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Module 4 -->
-                            <div class="col medium-6 small-12 large-6">
-                                <div class="col-inner"
-                                    style="background: #fdfdfd; padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee;">
-                                    <h4 style="color: #a87e09; font-weight: bold; font-size: 1.1rem;">MODULE 4: VẬN HÀNH
-                                    </h4>
-                                    <ul style="font-size: 0.95rem; margin-bottom: 0;">
-                                        <li>Quy trình đón tiếp khách hàng.</li>
-                                        <li>Setup không gian trị liệu.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Module 5 & 6 Combined for Space -->
-                            <div class="col medium-12 small-12 large-12">
-                                <div class="col-inner"
-                                    style="background: #fdfdfd; padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee;">
-                                    <h4 style="color: #a87e09; font-weight: bold; font-size: 1.1rem;">CHUYÊN SÂU & KINH
-                                        DOANH</h4>
-                                    <p style="font-size: 0.95rem;">Dưỡng sinh Tạng Phủ (Gan, Tim, Phổi, Thận) & Tư duy
-                                        Marketing thực chiến.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- BENEFITS SECTION -->
-                <section class="section" style="padding-top: 50px; padding-bottom: 50px; background-color: #f9f9f9;">
-                    <div class="section-content relative">
-                        <div class="row align-center">
-                            <div class="col medium-8 small-12 large-8">
-                                <h2 class="text-center text-vip" style="color: #603813; margin-bottom: 30px;">QUYỀN LỢI
-                                    HỌC VIÊN</h2>
-                                <div class="col-inner">
-                                    <div class="row row-small">
-                                        <div class="col medium-6 small-12 large-6">
-                                            <ul style="list-style: none; padding: 0;">
-                                                <li style="margin-bottom: 10px;">✔ <strong>Chứng nhận:</strong> Có giá
-                                                    trị hành nghề.</li>
-                                                <li style="margin-bottom: 10px;">✔ <strong>Việc làm:</strong> Cơ hội tại
-                                                    Metta Spa.</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col medium-6 small-12 large-6">
-                                            <ul style="list-style: none; padding: 0;">
-                                                <li style="margin-bottom: 10px;">✔ <strong>Bảo hành:</strong> Học lại
-                                                    miễn phí trọn đời.</li>
-                                                <li style="margin-bottom: 10px;">✔ <strong>Ký Túc Xá:</strong> Hỗ trợ
-                                                    học viên ở xa.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- REGISTER FORM -->
-                <section id="register-form" class="section dark"
-                    style="background-color: #603813; padding-top: 50px; padding-bottom: 50px;">
-                    <div class="section-content relative">
-                        <div class="row align-center">
-                            <div class="col medium-8 small-12 large-6 text-center">
-                                <h2 class="text-vip" style="color: #fff; margin-bottom: 15px;">ĐĂNG KÝ TƯ VẤN NGAY</h2>
-                                <p style="color: #ddd;">Để lại thông tin, Metta sẽ liên hệ sớm nhất.</p>
-
-                                <div class="col-inner"
-                                    style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; margin-top: 20px; border: 1px solid rgba(255,255,255,0.1);">
-                                    <form action="#" method="post" style="text-align: left;">
-                                        <div class="row row-small">
-                                            <div class="col medium-12 small-12 large-12">
-                                                <input type="text" name="hoten" placeholder="Họ và tên"
-                                                    class="form-input"
-                                                    style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 4px; border: none;">
-                                            </div>
-                                            <div class="col medium-12 small-12 large-12">
-                                                <input type="tel" name="sdt" placeholder="Số điện thoại"
-                                                    class="form-input"
-                                                    style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 4px; border: none;">
-                                            </div>
-                                            <div class="col medium-12 small-12 large-12">
-                                                <select name="nhucau" class="form-input"
-                                                    style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 4px; border: none; height: 45px;">
-                                                    <option value="">Nhu cầu</option>
-                                                    <option value="hocnghe">Học nghề</option>
-                                                    <option value="nangcao">Nâng cao</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <button type="button" class="button primary is-larger register-btn"
-                                                style="width: 100%;" onclick="alert('Cảm ơn bạn!');">GỬI THÔNG
-                                                TIN</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
+<main id="main" class="">
+  <div id="content" role="main">
+    <div class="banner has-hover" id="banner-1503614659">
+      <div class="banner-inner fill">
+        <div class="banner-bg fill">
+          <img fetchpriority="high" decoding="async" width="2560" height="1707"
+            src="https://mettaspadongy.vn/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg"
+            class="bg attachment-original size-original" alt="" />
+        </div>
+        <div class="hero-v2-container">
+          <div class="hero-v2-text">
+            <div class="hero-chip">
+              <span class="hero-chip-icon">✺</span>
+              <span><?php echo metta_get_with_fallback('course_hero_chip', 'TINH HOA DƯỠNG SINH VIỆT'); ?></span>
             </div>
-        </main>
+
+            <h1 class="hero-title">
+              <span class="hero-title-main"><?php echo metta_get_with_fallback('course_hero_h1', 'Khởi đầu sự nghiệp'); ?></span>
+              <span class="hero-title-sub"><?php echo metta_get_with_fallback('course_hero_h1_sub', 'vững chắc tại Metta'); ?></span>
+            </h1>
+
+            <p class="hero-desc">
+              <?php echo metta_get_with_fallback('course_hero_sub', '"Trao nghề từ Tâm – Dựng nghiệp từ Tầm"<br>Văn hóa Tây Nguyên hòa quyện tinh hoa Đông Y trong từng bài giảng.'); ?>
+            </p>
+
+            <a href="<?php echo metta_get_with_fallback('course_hero_cta_link', '#register'); ?>" class="hero-booking-link">
+              <?php echo metta_get_with_fallback('course_hero_cta_text', 'Nhận lộ trình tư vấn'); ?>
+            </a>
+          </div>
+
+          <div class="hero-v2-image-card">
+            <div class="swiper hero-swiper">
+              <div class="swiper-wrapper">
+                <?php 
+                $intro_img = metta_get_field('course_intro_img');
+                if(is_numeric($intro_img)) $intro_img = wp_get_attachment_url($intro_img);
+                if(!$intro_img) $intro_img = get_site_url().'/wp-content/uploads/2025/12/course_intro_img.png';
+                ?>
+                <div class="swiper-slide hero-slide-item">
+                  <img src="<?php echo $intro_img; ?>" alt="Khóa học Dưỡng sinh" />
+                  <div class="hero-image-label">Metta Academy</div>
+                </div>
+              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
+              <!-- Add Navigation -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="banner-bg blur"></div>
+        <div class="banner-layers container">
+          <div class="fill banner-link"></div>
+        </div>
+      </div>
+
+      <style>
+        #banner-1503614659 {
+          padding-top: 99.99%;
+        }
+
+        #banner-1503614659 .banner-bg img {
+          object-position: 59% 29%;
+        }
+
+        @media (min-width: 550px) {
+          #banner-1503614659 {
+            padding-top: 900px;
+          }
+        }
+      </style>
+    </div>
+
+    <!-- CONTENT SECTIONS -->
+    <!-- 2. GIỚI THIỆU -->
+    <section class="section section-padding" style="background: #fffcf9; padding-top: 80px; padding-bottom: 80px;">
+      <div class="container relative">
+        <div class="row align-middle col-equal-box">
+          <div class="col medium-6 small-12">
+            <div class="col-inner">
+              <div class="intro-badge" style="color: var(--vang-dat); font-weight: 700; letter-spacing: 2px; margin-bottom: 15px; font-size: 0.9rem;">
+                <?php echo metta_get_with_fallback('course_intro_badge', 'VỀ CHÚNG TÔI'); ?>
+              </div>
+              <div class="text-heading" style="text-align: left;">
+                <h2 style="color: var(--primary-color); font-size: 2.8rem; margin-bottom: 25px;">
+                  <?php echo metta_get_with_fallback('course_intro_title', 'SỨ MỆNH ĐÀO TẠO TỪ TÂM'); ?>
+                </h2>
+              </div>
+              <div class="is-divider" style="background-color: var(--vang-dat); width: 80px; height: 4px; margin-bottom: 35px;"></div>
+              
+              <div class="content-body" style="color: #444; font-size: 1.1rem; line-height: 1.9;">
+                <?php echo metta_get_field('course_intro_content') ?: '<p>Nội dung đang cập nhật...</p>'; ?>
+              </div>
+            </div>
+          </div>
+          <div class="col medium-6 small-12">
+            <?php 
+            $intro_img = metta_get_field('course_intro_img');
+            if(is_numeric($intro_img)) $intro_img = wp_get_attachment_url($intro_img);
+            if(!$intro_img) $intro_img = get_site_url().'/wp-content/uploads/2025/12/course_intro_img.png';
+            ?>
+            <div class="col-inner">
+              <div class="img has-hover" style="border-radius: 40px; overflow: hidden; box-shadow: 0 25px 50px rgba(96, 56, 19, 0.2); border: 1px solid var(--vang-dat);">
+                <img src="<?php echo $intro_img; ?>" alt="Giới thiệu Metta" style="width: 100%; display: block;" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. USP -->
+    <section class="section section-padding" style="background: #fff; padding: 80px 0;">
+      <div class="container">
+        <div class="text-center mb-50">
+          <div class="text-heading">
+            <h2 style="color: var(--primary-color);"><?php echo metta_get_with_fallback('course_usp_title', 'ĐIỂM KHÁC BIỆT TẠI METTA'); ?></h2>
+          </div>
+          <div class="is-divider small mx-auto" style="background-color: var(--vang-dat);"></div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+          <?php if(have_rows('course_usp_list')): while(have_rows('course_usp_list')): the_row(); ?>
+          <div class="col medium-6 large-3 mb-30">
+            <div class="usp-card text-center" style="padding: 30px; background: #fffcf9; border-radius: 20px; border: 1px solid #eee; transition: all 0.3s ease; height: 100%;">
+              <div class="icon-box" style="margin-bottom: 25px;">
+                <i class="<?php echo get_sub_field('icon_class'); ?>" style="font-size: 3rem; color: var(--vang-dat);"></i>
+              </div>
+              <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 15px;"><?php echo get_sub_field('title'); ?></h3>
+              <p style="color: #777; font-size: 0.95rem; line-height: 1.6;"><?php echo get_sub_field('desc'); ?></p>
+            </div>
+          </div>
+          <?php endwhile; endif; ?>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 4. LỘ TRÌNH -->
+    <section class="section section-padding" style="background: #fdfaf7; padding: 100px 0;">
+      <div class="container relative">
+        <div class="text-center mb-50">
+          <div class="text-heading">
+            <h2 style="color: var(--primary-color);"><?php echo metta_get_with_fallback('course_curr_title', 'LỘ TRÌNH PHÁT TRIỂN TOÀN DIỆN'); ?></h2>
+          </div>
+          <div class="is-divider small mx-auto" style="background-color: var(--vang-dat);"></div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+          <?php if(have_rows('course_curr_list')): while(have_rows('course_curr_list')): the_row(); ?>
+          <div class="col medium-4 mb-30">
+            <div class="module-item" style="background: #fff; border-radius: 20px; padding: 40px; border-left: 6px solid var(--vang-dat); box-shadow: 0 15px 40px rgba(0,0,0,0.05); height: 100%;">
+              <h4 style="color: var(--primary-color); margin-bottom: 20px; font-weight: 700; font-size: 1.25rem;"><?php echo get_sub_field('title'); ?></h4>
+              <div class="module-body" style="color: #666; font-size: 1rem; line-height: 1.8;">
+                <?php echo get_sub_field('content'); ?>
+              </div>
+            </div>
+          </div>
+          <?php endwhile; endif; ?>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. BENEFITS -->
+    <section class="section section-padding bg-white" style="padding: 100px 0;">
+      <div class="container">
+        <div class="row align-middle">
+          <div class="col medium-6 mb-30">
+            <div class="text-heading" style="text-align: left;">
+              <h2 style="color: var(--primary-color);"><?php echo metta_get_with_fallback('course_benefit_title', 'QUYỀN LỢI ĐẶC QUYỀN'); ?></h2>
+            </div>
+            <div class="is-divider small" style="background-color: var(--vang-dat);"></div>
+            <div class="benefit-list" style="margin-top: 40px;">
+              <?php if(have_rows('course_benefit_list')): while(have_rows('course_benefit_list')): the_row(); ?>
+              <div style="display: flex; margin-bottom: 30px;">
+                <div style="width: 55px; height: 55px; background: #fffcf9; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 25px; flex-shrink: 0; border: 1px solid #ebd9c5;">
+                  <i class="<?php echo get_sub_field('icon_class'); ?>" style="color: var(--vang-dat); font-size: 1.5rem;"></i>
+                </div>
+                <div>
+                  <h4 style="margin: 0 0 8px; color: var(--primary-color); font-size: 1.2rem;"><?php echo get_sub_field('title'); ?></h4>
+                  <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;"><?php echo get_sub_field('desc'); ?></p>
+                </div>
+              </div>
+              <?php endwhile; endif; ?>
+            </div>
+          </div>
+          <div class="col medium-6">
+            <?php 
+            $ben_img = metta_get_field('course_benefit_img');
+            if(is_numeric($ben_img)) $ben_img = wp_get_attachment_url($ben_img);
+            if(!$ben_img) $ben_img = get_site_url().'/wp-content/uploads/2025/12/course_benefit_img.png';
+            ?>
+            <div class="img-inner" style="border-radius: 40px; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,0.15); border: 1px solid var(--vang-dat);">
+              <img src="<?php echo $ben_img; ?>" alt="Thực hành nghề" style="width: 100%; display: block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. TARGET -->
+    <?php if(have_rows('course_target_list')): ?>
+    <section class="section section-padding" style="background: var(--metta-bg); color: #fff; padding: 100px 0;">
+      <div class="container text-center">
+        <div class="text-heading-light">
+          <h2 style="color: var(--metta-main); font-size: 2.8rem; margin-bottom: 60px;"><?php echo metta_get_with_fallback('course_target_title', 'KHÓA HỌC DÀNH CHO AI?'); ?></h2>
+        </div>
+        <div class="row">
+          <?php while(have_rows('course_target_list')): the_row(); ?>
+          <div class="col medium-4 mb-30">
+            <div style="background: rgba(255,255,255,0.04); padding: 50px 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.08); height: 100%; transition: all 0.3s ease;">
+              <i class="<?php echo get_sub_field('icon_class'); ?>" style="font-size: 3.5rem; color: var(--metta-main); margin-bottom: 30px;"></i>
+              <div style="font-size: 1.15rem; line-height: 1.7; font-weight: 400;"><?php echo get_sub_field('content'); ?></div>
+            </div>
+          </div>
+          <?php endwhile; ?>
+        </div>
+      </div>
+    </section>
+    <?php endif; ?>
+
+    <!-- 7. TESTIMONIALS -->
+    <?php if(have_rows('course_testi_list')): ?>
+    <section class="section section-padding" style="background: #fffcf9; padding: 100px 0;">
+      <div class="container">
+        <div class="text-center mb-60">
+          <div class="text-heading">
+            <h2 style="color: var(--primary-color);"><?php echo metta_get_with_fallback('course_testi_title', 'CHIA SẺ TỪ HÀNH TRÌNH HỌC VIÊN'); ?></h2>
+          </div>
+          <div class="is-divider small mx-auto" style="background-color: var(--vang-dat);"></div>
+        </div>
+        <div class="row align-center">
+          <?php while(have_rows('course_testi_list')): the_row(); ?>
+          <div class="col medium-5 mb-30">
+            <div class="testimonial-card"
+              style="background: #fff; padding: 50px; border-radius: 30px; box-shadow: 0 25px 60px rgba(96, 56, 19, 0.08); position: relative; height: 100%; border: 1px solid #efefef;">
+              <i class="fas fa-quote-left" style="position: absolute; top: 30px; left: 30px; font-size: 2.5rem; color: var(--metta-main); opacity: 0.15;"></i>
+              <p style="font-style: italic; margin-bottom: 35px; color: #555; font-size: 1.1rem; line-height: 1.8; position: relative; z-index: 2;">"<?php echo get_sub_field('content'); ?>"</p>
+              <div style="display: flex; align-items: center;">
+                <?php if($img = get_sub_field('image')): ?>
+                <img src="<?php echo $img; ?>" style="width: 70px; height: 70px; border-radius: 50%; margin-right: 20px; object-fit: cover; border: 2px solid var(--metta-main);">
+                <?php endif; ?>
+                <div>
+                  <strong style="color: var(--primary-color); font-size: 1.25rem;"><?php echo get_sub_field('name'); ?></strong><br>
+                  <small style="color: #999; font-weight: 500; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;"><?php echo get_sub_field('role'); ?></small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php endwhile; ?>
+        </div>
+      </div>
+    </section>
+    <?php endif; ?>
+
+    <!-- 8. FORM -->
+    <section id="register" class="section section-padding" style="background: #fff; padding: 120px 0;">
+      <div class="container">
+        <div class="reg-wrapper" style="background: var(--metta-bg); border-radius: 40px; overflow: hidden; padding: 80px 60px; position: relative; box-shadow: 0 30px 80px rgba(0,0,0,0.4);">
+          <div class="row align-middle relative" style="z-index: 2;">
+            <div class="col medium-6 text-white" style="color: white; padding-right: 40px;">
+              <div class="text-heading-light" style="text-align: left;">
+                <h2 style="color: var(--metta-main); font-size: 3.2rem; margin-bottom: 25px; line-height: 1.1;">
+                  <?php echo metta_get_with_fallback('course_reg_title', 'GHI DANH HÔM NAY'); ?>
+                </h2>
+              </div>
+              <h3 style="color: #fff; margin-bottom: 35px; font-weight: 300; font-size: 1.8rem; opacity: 0.9;">
+                <?php echo metta_get_with_fallback('course_reg_sub', 'NHẬN ƯU ĐÃI ĐẾN 30%'); ?>
+              </h3>
+              <p style="font-size: 1.15rem; opacity: 0.8; margin-bottom: 50px; line-height: 1.8;">Đừng bỏ lỡ cơ hội thay đổi sự nghiệp của bạn với bí quyết dưỡng sinh độc quyền từ Metta. Hỗ trợ việc làm sau khóa học!</p>
+              <div style="font-weight: 600; font-size: 1.1rem;">
+                <p style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-phone-alt" style="color: var(--metta-main); margin-right: 20px; font-size: 1.3rem;"></i> 0931.323.268</p>
+                <p style="display: flex; align-items: center;"><i class="fas fa-envelope" style="color: var(--metta-main); margin-right: 20px; font-size: 1.3rem;"></i> Mettaspadongy@gmail.com</p>
+              </div>
+            </div>
+            <div class="col medium-6">
+              <form class="bg-vip-form" style="background: rgba(255,255,255,0.08); padding: 50px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px);">
+                <div style="margin-bottom: 20px;">
+                  <label style="display:block; color:#fff; margin-bottom: 8px; font-size: 0.9rem;">Họ và tên học viên *</label>
+                  <input type="text" placeholder="Nguyễn Văn A" style="width: 100%; border:none; background: #fff; padding: 18px; border-radius: 12px; color: #333;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                  <label style="display:block; color:#fff; margin-bottom: 8px; font-size: 0.9rem;">Số điện thoại liên hệ *</label>
+                  <input type="tel" placeholder="090x xxx xxx" style="width: 100%; border:none; background: #fff; padding: 18px; border-radius: 12px; color: #333;">
+                </div>
+                <div style="margin-bottom: 35px;">
+                  <label style="display:block; color:#fff; margin-bottom: 8px; font-size: 0.9rem;">Khóa học quan tâm</label>
+                  <select style="width: 100%; border:none; background: #fff; padding: 18px; border-radius: 12px; color: #333; appearance: none; -webkit-appearance: none;">
+                    <option value="">Chọn khóa học...</option>
+                    <option value="k1">Chuyên gia Dưỡng sinh Đông Y</option>
+                    <option value="k2">Kỹ thuật viên Gội đầu Dưỡng sinh</option>
+                  </select>
+                </div>
+                <button type="button" class="button primary expand"
+                  style="width: 100%; border-radius: 12px; font-weight: 700; font-size: 1.2rem; background: var(--metta-main) !important; padding: 15px; border: 0; text-transform: uppercase;"
+                  onclick="alert('Cảm ơn bạn! Metta sẽ liên hệ tư vấn trong 24h tới.')">
+                  ĐĂNG KÝ TƯ VẤN NGAY
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
 <?php get_footer(); ?>

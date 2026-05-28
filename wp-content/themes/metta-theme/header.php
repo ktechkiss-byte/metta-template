@@ -795,9 +795,13 @@
     }
   </style>
   <link rel="icon" href="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/favicon.ico" sizes="32x32" />
-  <link rel="icon" href="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/cropped-Frame-1321315069-192x192.png" sizes="192x192" />
-  <link rel="apple-touch-icon" href="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/cropped-Frame-1321315069-180x180.png" />
-  <meta name="msapplication-TileImage" content="<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/cropped-Frame-1321315069-270x270.png" />
+  <link rel="icon" href="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/favicon.ico" sizes="192x192" />
+  <link rel="apple-touch-icon" href="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/logo_meta.svg" />
+  <meta name="msapplication-TileImage" content="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/logo_meta.svg" />
+  
+  <!-- Font Awesome 6 CDN - Required for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <style id="custom-css" type="text/css">
     :root {
       --metta-bg: #4a2d2e;
@@ -822,6 +826,8 @@
     .off-canvas-right .mfp-content,
     .off-canvas-left .mfp-content {
       --drawer-width: 300px;
+      background-color: #4a2d2e !important;
+      color: #fff !important;
     }
 
     html {
@@ -1169,7 +1175,7 @@
     }
 
     .text-heading h2::before {
-      content: url("<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/Group-15.svg");
+      content: url("<?php echo get_site_url(); ?>data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
       position: relative;
       margin-right: 1rem;
       top: 5px;
@@ -1182,7 +1188,7 @@
     }
 
     .text-heading-light h2::before {
-      content: url("<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/Group-16.svg");
+      content: url("<?php echo get_site_url(); ?>data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
       position: relative;
       margin-right: 1rem;
       top: 5px;
@@ -1252,7 +1258,7 @@
 
     .spa-img::before,
     .about-img-box .box-image::before {
-      content: url("<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/Frame-1321314647.svg");
+      content: url("<?php echo get_site_url(); ?>data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
       top: -3%;
       position: absolute;
       left: 50%;
@@ -1736,10 +1742,7 @@
     }
   </style>
   <style>
-    @font-face {
-      font-family: "1ftv-vip-medino";
-      src: url("<?php echo get_site_url(); ?>/wp-content/uploads/2025/08/1FTV-VIP-Medino.ttf") format("truetype");
-    }
+    /* Note: 1FTV-VIP-Medino font was removed (file deleted) */
 
     /* Standard Header Heights */
     .header-main { height: 70px !important; }
@@ -1768,102 +1771,114 @@
        font-weight: 700;
     }
 
-    /* ========== DROPDOWN SUBMENU STYLES ========== */
-    .header-nav-main.nav > li {
-      position: relative;
-    }
-    
-    /* Submenu container */
-    .header-nav-main.nav .sub-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 220px;
-      background: var(--metta-bg);
-      border: 1px solid rgba(168, 126, 9, 0.3);
-      border-radius: 10px;
-      padding: 10px 0;
-      margin-top: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      z-index: 9999;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    
-    /* Show submenu on hover */
-    .header-nav-main.nav > li:hover > .sub-menu {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    /* Submenu items */
-    .header-nav-main.nav .sub-menu li {
-      display: block;
-      margin: 0;
-    }
-    
-    .header-nav-main.nav .sub-menu li a {
-      display: block;
-      padding: 10px 20px !important;
-      color: #fff !important;
-      font-size: 0.9rem;
-      font-weight: 500 !important;
-      text-transform: none !important;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-      border-left: 3px solid transparent;
-    }
-    
-    .header-nav-main.nav .sub-menu li a:hover {
-      background: rgba(244, 157, 33, 0.15);
-      color: var(--metta-main) !important;
-      border-left-color: var(--metta-main);
-    }
-    
-    /* Arrow indicator for parent menu items */
-    .header-nav-main.nav > li.menu-item-has-children > a::after {
-      content: '';
-      display: inline-block;
-      width: 0;
-      height: 0;
-      margin-left: 6px;
-      border-left: 4px solid transparent;
-      border-right: 4px solid transparent;
-      border-top: 5px solid var(--metta-main);
-      vertical-align: middle;
-    }
-    
-    /* Nested submenu (level 3+) */
-    .header-nav-main.nav .sub-menu .sub-menu {
-      left: 100%;
-      top: 0;
-      margin-top: 0;
-      margin-left: 5px;
-    }
-    
-    .header-nav-main.nav .sub-menu li:hover > .sub-menu {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
+    /* ========== DROPDOWN SUBMENU STYLES (DESKTOP) ========== */
+    @media (min-width: 850px) {
+        .header-nav-main.nav > li {
+          position: relative;
+        }
+        
+        /* Submenu container */
+        .header-nav-main.nav .sub-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          min-width: 220px;
+          background: var(--metta-bg);
+          border: 1px solid rgba(168, 126, 9, 0.3);
+          border-radius: 10px;
+          padding: 10px 0;
+          padding-top: 10px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+          z-index: 9999;
+          opacity: 0;
+          transform: translateY(10px);
+          transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* Show submenu on hover */
+        .header-nav-main.nav > li:hover > .sub-menu {
+          display: block;
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        /* Submenu items */
+        .header-nav-main.nav .sub-menu li {
+          display: block;
+          margin: 0;
+        }
+        
+        .header-nav-main.nav .sub-menu li a {
+          display: block;
+          padding: 10px 20px !important;
+          color: #fff !important;
+          font-size: 0.9rem;
+          font-weight: 500 !important;
+          text-transform: none !important;
+          white-space: nowrap;
+          transition: all 0.2s ease;
+          border-left: 3px solid transparent;
+        }
+        
+        .header-nav-main.nav .sub-menu li a:hover {
+          background: rgba(244, 157, 33, 0.15);
+          color: var(--metta-main) !important;
+          border-left-color: var(--metta-main);
+        }
+        
+        /* Arrow indicator for parent menu items */
+        .header-nav-main.nav > li.menu-item-has-children > a::after {
+          content: '';
+          display: inline-block;
+          width: 0;
+          height: 0;
+          margin-left: 6px;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 5px solid var(--metta-main);
+          vertical-align: middle;
+        }
+        
+        /* Nested submenu (level 3+) */
+        .header-nav-main.nav .sub-menu .sub-menu {
+          left: 100%;
+          top: 0;
+          margin-top: 0;
+          margin-left: 5px;
+        }
+        
+        .header-nav-main.nav .sub-menu li:hover > .sub-menu {
+          display: block;
+          opacity: 1;
+          transform: translateY(0);
+        }
     }
     
     /* Mobile submenu adjustments */
     @media (max-width: 849px) {
       .header-nav-main.nav .sub-menu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        background: rgba(0,0,0,0.2);
+        position: static !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: rgba(0,0,0,0.15) !important; /* Slight darkening for hierarchy */
         margin-top: 0;
-        padding: 5px 0;
+        padding: 0 !important;
         border-radius: 0;
+        display: block !important; /* Ensure it takes space */
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        height: auto !important;
+      }
+      
+      .header-nav-main.nav .sub-menu li {
+          border-top: 1px solid rgba(255,255,255,0.05);
       }
       
       .header-nav-main.nav .sub-menu li a {
-        padding-left: 30px !important;
+        padding: 12px 20px 12px 30px !important;
+        color: #e5d3bd !important; /* Softer color for contrast */
       }
     }
 
@@ -1925,7 +1940,7 @@
             <div class="flex-col show-for-medium flex-left">
               <ul class="mobile-nav nav nav-left">
                 <li class="nav-icon has-icon">
-                  <a href="#" class="is-small" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay"
+                  <a href="#" class="is-small" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay" data-color="dark"
                     role="button" aria-label="Menu" aria-controls="main-menu" aria-expanded="false"
                     aria-haspopup="dialog" data-flatsome-role-button="">
                     <i class="icon-menu" aria-hidden="true"></i>
@@ -1936,17 +1951,9 @@
 
             <!-- Left Elements -->
             <div class="flex-col hide-for-medium flex-left">
-              <?php if (has_nav_menu('primary_left')): ?>
-                <?php wp_nav_menu(array(
-                  'theme_location' => 'primary_left',
-                  'container'      => false,
-                  'menu_class'     => 'header-nav header-nav-main nav nav-left nav-size-medium nav-spacing-small nav-uppercase',
-                  'fallback_cb'    => false,
-                  'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                )); ?>
-              <?php else: ?>
-                <!-- Fallback hardcoded menu -->
-                <ul class="header-nav header-nav-main nav nav-left nav-size-medium nav-spacing-small nav-uppercase">
+              <!-- FORCE HARDCODED MENU (Standardized) -->
+              <!-- Left Menu: Trang chủ, Giới thiệu, Menu, Sản phẩm -->
+               <ul class="header-nav header-nav-main nav nav-left nav-size-medium nav-spacing-small nav-uppercase">
                   <li class="menu-item <?php echo metta_is_active('/'); ?>">
                     <a href="<?php echo home_url('/'); ?>"><span><?php echo metta_static('Trang chủ'); ?></span></a>
                   </li>
@@ -1956,24 +1963,18 @@
                   <li class="menu-item <?php echo metta_is_active('/menu'); ?>">
                     <a href="<?php echo home_url('/menu'); ?>"><span><?php echo metta_static('Menu'); ?></span></a>
                   </li>
+                  <li class="menu-item <?php echo metta_is_active('/san-pham'); ?>">
+                    <a href="<?php echo home_url('/san-pham'); ?>"><span><?php echo metta_static('Sản phẩm'); ?></span></a>
+                  </li>
                 </ul>
-              <?php endif; ?>
             </div>
 
             <!-- Right Elements -->
             <div class="flex-col hide-for-medium flex-right">
               <ul class="header-nav header-nav-main nav nav-right nav-size-medium nav-spacing-small nav-uppercase">
-              <?php if (has_nav_menu('primary_right')): ?>
-                  <?php wp_nav_menu(array(
-                      'theme_location' => 'primary_right',
-                      'container'      => false,
-                      'items_wrap'     => '%3$s',
-                      'fallback_cb'    => false,
-                  )); ?>
-                <?php else: ?>
-                  <!-- Fallback hardcoded right menu -->
-                  <li class="menu-item <?php echo metta_is_active('/san-pham'); ?>">
-                    <a href="<?php echo home_url('/san-pham'); ?>"><span><?php echo metta_static('Sản phẩm'); ?></span></a>
+                  <!-- Right Menu: Khóa học, Chi nhánh, Tin tức, Liên hệ -->
+                  <li class="menu-item <?php echo metta_is_active('/dao-tao'); ?>">
+                    <a href="<?php echo home_url('/dao-tao'); ?>"><span><?php echo metta_static('Khóa học'); ?></span></a>
                   </li>
                   <li class="menu-item <?php echo metta_is_active('/chi-nhanh'); ?>">
                     <a href="<?php echo home_url('/chi-nhanh'); ?>"><span><?php echo metta_static('Chi nhánh'); ?></span></a>
@@ -1984,10 +1985,9 @@
                   <li class="menu-item <?php echo metta_is_active('/lien-he'); ?>">
                     <a href="<?php echo home_url('/lien-he'); ?>"><span><?php echo metta_static('Liên hệ'); ?></span></a>
                   </li>
-                <?php endif; ?>
                 <li class="html header-button-1">
                   <div class="header-button">
-                    <a href="<?php echo home_url("/chi-nhanh"); ?>" class="button primary" style="border-radius: 8px">
+                    <a href="https://datlich.mettaspadongy.vn/" class="button primary" style="border-radius: 8px" target="_blank">
                       <span><?php echo metta_static('Đặt Lịch'); ?></span>
                     </a>
                   </div>

@@ -9,15 +9,19 @@ jQuery(document).ready(function($) {
 		totalGallery.html('+' + numberShow);
 	}
 
-	galleryBtn.click(function () {
-		const galleryItems = $('#gallery a').map(function () {
-			return {
-				src: $(this).attr('href'),
-				thumb: $(this).find('img').attr('src'),
-			};
-		}).get();
-		Fancybox.show(galleryItems);
-	});
+	if (galleryBtn.length > 0) {
+		galleryBtn.click(function () {
+			const galleryItems = $('#gallery a').map(function () {
+				return {
+					src: $(this).attr('href'),
+					thumb: $(this).find('img').attr('src'),
+				};
+			}).get();
+			if (typeof Fancybox !== 'undefined') {
+				Fancybox.show(galleryItems);
+			}
+		});
+	}
 	
 	
 	document.querySelectorAll('.about-header').forEach(function(link) {
@@ -42,10 +46,13 @@ jQuery(document).ready(function($) {
 
 	function toggleReadMore() {
 		const container = document.getElementById("description");
-		container.classList.toggle("expanded");
-
-		const button = document.querySelector(".read-more-button");
-		button.innerText = container.classList.contains("expanded") ? "Thu gọn" : "Xem thêm";
+		if (container) {
+			container.classList.toggle("expanded");
+			const button = document.querySelector(".read-more-button");
+			if (button) {
+				button.innerText = container.classList.contains("expanded") ? "Thu gọn" : "Xem thêm";
+			}
+		}
 	}
 
 	$('.read-more-button').on('click', toggleReadMore);
@@ -101,6 +108,26 @@ jQuery(document).ready(function($) {
 			},
 		},
 		
+	});
+	
+	var heroSwiper = new Swiper(".hero-swiper", {
+		loop: true,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true
+		},
 	});
 
 });
