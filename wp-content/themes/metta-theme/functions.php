@@ -82,8 +82,16 @@ function metta_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'metta_theme_scripts' );
 
 // Include ACF fields
-require_once get_template_directory() . '/inc/acf-fields.php';
-require_once get_template_directory() . '/inc/acf-training-fields.php';
+$metta_acf_fields = get_template_directory() . '/inc/acf-fields.php';
+$metta_training_fields = get_template_directory() . '/inc/acf-training-fields.php';
+
+if ( file_exists( $metta_acf_fields ) ) {
+    require_once $metta_acf_fields;
+}
+
+if ( file_exists( $metta_training_fields ) ) {
+    require_once $metta_training_fields;
+}
 
 
 function metta_theme_setup() {

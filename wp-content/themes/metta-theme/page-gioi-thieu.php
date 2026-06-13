@@ -1,5 +1,21 @@
 <?php
 /* Template Name: page-gioi-thieu */
+if ( ! function_exists( 'metta_about_image_url' ) ) {
+  function metta_about_image_url( $field_name, $fallback = '' ) {
+    $image = metta_get_field( $field_name );
+
+    if ( is_array( $image ) && ! empty( $image['url'] ) ) {
+      return $image['url'];
+    }
+
+    if ( is_numeric( $image ) ) {
+      $image_url = wp_get_attachment_image_url( (int) $image, 'full' );
+      return $image_url ?: $fallback;
+    }
+
+    return $image ?: $fallback;
+  }
+}
 get_header(); ?>
   <style type="text/css" id="gioi-thieu-css">
 	    /* ============================================
@@ -39,29 +55,43 @@ get_header(); ?>
 	    }
 
 	    #section_1007473846 #text-3395665156 h2 {
-	      color: #ffd47a !important;
+	      color: #ffe2a0 !important;
+	      -webkit-text-fill-color: #ffe2a0 !important;
 	      font-size: clamp(2rem, 4vw, 3.2rem);
 	      font-weight: 700;
 	      line-height: 1.08;
 	      letter-spacing: 0;
+	      opacity: 1 !important;
+	      filter: none !important;
+	      mix-blend-mode: normal !important;
 	      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 8px 28px rgba(0, 0, 0, 0.9);
 	    }
 
 	    #section_1007473846 #text-3395665156 h2::before {
-	      content: '🪷';
-	      display: inline-block;
-	      margin-right: 13px;
-	      color: var(--metta-main);
-	      font-size: 0.48em;
-	      vertical-align: 0.1em;
-	      filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.55));
+	      content: none !important;
+	      display: none !important;
 	    }
 
 	    #section_1007473846 #text-3850920384 p {
-	      color: #fffaf0 !important;
-	      font-weight: 600;
+	      color: #ffffff !important;
+	      -webkit-text-fill-color: #ffffff !important;
+	      font-weight: 700;
 	      line-height: 1.75;
+	      opacity: 1 !important;
+	      filter: none !important;
+	      mix-blend-mode: normal !important;
 	      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 8px 26px rgba(0, 0, 0, 0.88);
+	    }
+
+	    #section_1007473846 #text-3395665156,
+	    #section_1007473846 #text-3850920384,
+	    .metta-belief-heading {
+	      width: fit-content;
+	      max-width: 100%;
+	      padding: 12px 16px;
+	      margin-left: -16px;
+	      background: linear-gradient(90deg, rgba(20, 6, 2, 0.9), rgba(20, 6, 2, 0.58), rgba(20, 6, 2, 0));
+	      border-radius: 8px;
 	    }
 
     /* Contact / booking form */
@@ -385,30 +415,30 @@ get_header(); ?>
 	      align-items: center;
 	      gap: 13px;
 	      margin: 0 0 14px;
-	      color: #ffd47a !important;
+	      color: #ffe2a0 !important;
+	      -webkit-text-fill-color: #ffe2a0 !important;
 	      font-size: clamp(2rem, 4vw, 3.2rem);
 	      font-weight: 700;
 	      line-height: 1.08;
 	      letter-spacing: 0;
 	      text-transform: uppercase;
+	      opacity: 1 !important;
+	      filter: none !important;
+	      mix-blend-mode: normal !important;
 	      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 8px 28px rgba(0, 0, 0, 0.9);
-	    }
-
-	    .metta-belief-title .belief-icon {
-	      color: var(--metta-main);
-	      font-size: 1.45rem;
-	      line-height: 1;
-	      filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.55));
-	      flex: 0 0 auto;
 	    }
 
 	    .metta-belief-desc {
 	      max-width: 900px;
 	      margin: 0;
-	      color: #fffaf0 !important;
+	      color: #ffffff !important;
+	      -webkit-text-fill-color: #ffffff !important;
 	      font-size: 1.08rem;
-	      font-weight: 600;
+	      font-weight: 700;
 	      line-height: 1.75;
+	      opacity: 1 !important;
+	      filter: none !important;
+	      mix-blend-mode: normal !important;
 	      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 8px 26px rgba(0, 0, 0, 0.88);
 	    }
 
@@ -453,11 +483,6 @@ get_header(); ?>
 	        align-items: flex-start;
 	        gap: 9px;
 	        font-size: 1.72rem;
-	      }
-
-	      .metta-belief-title .belief-icon {
-	        font-size: 1.18rem;
-	        padding-top: 5px;
 	      }
 
 	      .metta-belief-desc {
@@ -636,6 +661,31 @@ get_header(); ?>
                         }
                       }
                     </style>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="metta-belief-section metta-mission-section" data-animate="fadeInUp">
+              <div class="metta-belief-inner">
+                <div class="metta-belief-heading">
+                  <h2 class="metta-belief-title">
+                    <?php echo metta_get_field('about_mission_title') ?: 'SỨ MỆNH METTA SPA'; ?>
+                  </h2>
+                  <p class="metta-belief-desc">
+                    <?php echo metta_get_field('about_mission_desc') ?: 'Giúp cộng đồng thoát khỏi những cơn đau mỏi thể xác và áp lực tinh thần bằng liệu pháp tự nhiên, an toàn, cùng lòng từ bi và sự tử tế chân thành.'; ?>
+                  </p>
+                </div>
+
+                <div class="metta-belief-gallery">
+                  <div class="metta-belief-image">
+                    <img src="<?php echo esc_url( metta_about_image_url( 'about_mission_img_1', metta_about_image_url( 'about_img_1', get_site_url() . '/wp-content/uploads/2026/05/metta_spa_zen_corner.png' ) ) ); ?>" alt="Không gian dưỡng sinh Metta Spa" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="metta-belief-image">
+                    <img src="<?php echo esc_url( metta_about_image_url( 'about_mission_img_2', metta_about_image_url( 'about_img_2', get_site_url() . '/wp-content/uploads/2026/05/metta_spa_tea_lounge.png' ) ) ); ?>" alt="Không gian trị liệu Metta Spa" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="metta-belief-image">
+                    <img src="<?php echo esc_url( metta_about_image_url( 'about_mission_img_3', metta_about_image_url( 'about_img_3', get_site_url() . '/wp-content/uploads/2026/05/metta_spa_empty_room.png' ) ) ); ?>" alt="Phòng trị liệu Metta Spa" loading="lazy" decoding="async" />
                   </div>
                 </div>
               </div>
@@ -867,32 +917,6 @@ get_header(); ?>
               </div>
             </div>
 
-            <div class="metta-belief-section metta-mission-section" data-animate="fadeInUp">
-              <div class="metta-belief-inner">
-                <div class="metta-belief-heading">
-                  <h2 class="metta-belief-title">
-                    <span class="belief-icon">🪷</span>
-                    <span class="belief-icon">🌿</span>
-                    <?php echo metta_get_field('about_mission_title') ?: 'SỨ MỆNH METTA SPA'; ?>
-                  </h2>
-                  <p class="metta-belief-desc">
-                    <?php echo metta_get_field('about_mission_desc') ?: 'Giúp cộng đồng thoát khỏi những cơn đau mỏi thể xác và áp lực tinh thần bằng liệu pháp tự nhiên, an toàn, cùng lòng từ bi và sự tử tế chân thành.'; ?>
-                  </p>
-                </div>
-
-                <div class="metta-belief-gallery">
-                  <div class="metta-belief-image">
-                    <img src="<?php echo metta_get_field('about_mission_img_1') ?: metta_get_field('about_img_1') ?: get_site_url() . '/wp-content/uploads/2026/05/metta_spa_zen_corner.png'; ?>" alt="Không gian dưỡng sinh Metta Spa" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="metta-belief-image">
-                    <img src="<?php echo metta_get_field('about_mission_img_2') ?: metta_get_field('about_img_2') ?: get_site_url() . '/wp-content/uploads/2026/05/metta_spa_tea_lounge.png'; ?>" alt="Không gian trị liệu Metta Spa" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="metta-belief-image">
-                    <img src="<?php echo metta_get_field('about_mission_img_3') ?: metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/05/metta_spa_empty_room.png'; ?>" alt="Phòng trị liệu Metta Spa" loading="lazy" decoding="async" />
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           <style>

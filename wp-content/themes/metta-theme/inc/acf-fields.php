@@ -1845,6 +1845,53 @@ acf_add_local_field_group(array(
         array('key' => 'field_about_img_2', 'label' => 'Ảnh giới thiệu 2', 'name' => 'about_img_2', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
         array('key' => 'field_about_img_3', 'label' => 'Ảnh giới thiệu 3', 'name' => 'about_img_3', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
 
+        // TAB: Phần Sứ Mệnh đầu trang
+        array('key' => 'tab_about_mission', 'label' => 'Phần Sứ Mệnh', 'type' => 'tab'),
+        array(
+            'key' => 'field_about_mission_title',
+            'label' => 'Tiêu đề Sứ mệnh',
+            'name' => 'about_mission_title',
+            'type' => 'text',
+            'default_value' => 'SỨ MỆNH METTA SPA',
+        ),
+        array(
+            'key' => 'field_about_mission_title_en',
+            'label' => 'Tiêu đề Sứ mệnh (EN)',
+            'name' => 'about_mission_title_en',
+            'type' => 'text',
+        ),
+        array(
+            'key' => 'field_about_mission_title_zh',
+            'label' => 'Tiêu đề Sứ mệnh (ZH)',
+            'name' => 'about_mission_title_zh',
+            'type' => 'text',
+        ),
+        array(
+            'key' => 'field_about_mission_desc',
+            'label' => 'Mô tả Sứ mệnh',
+            'name' => 'about_mission_desc',
+            'type' => 'textarea',
+            'rows' => 3,
+            'default_value' => 'Giúp cộng đồng thoát khỏi những cơn đau mỏi thể xác và áp lực tinh thần bằng liệu pháp tự nhiên, an toàn, cùng lòng từ bi và sự tử tế chân thành.',
+        ),
+        array(
+            'key' => 'field_about_mission_desc_en',
+            'label' => 'Mô tả Sứ mệnh (EN)',
+            'name' => 'about_mission_desc_en',
+            'type' => 'textarea',
+            'rows' => 3,
+        ),
+        array(
+            'key' => 'field_about_mission_desc_zh',
+            'label' => 'Mô tả Sứ mệnh (ZH)',
+            'name' => 'about_mission_desc_zh',
+            'type' => 'textarea',
+            'rows' => 3,
+        ),
+        array('key' => 'field_about_mission_img_1', 'label' => 'Ảnh Sứ mệnh 1', 'name' => 'about_mission_img_1', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_mission_img_2', 'label' => 'Ảnh Sứ mệnh 2', 'name' => 'about_mission_img_2', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+        array('key' => 'field_about_mission_img_3', 'label' => 'Ảnh Sứ mệnh 3', 'name' => 'about_mission_img_3', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '33')),
+
         // TAB: Phần Về Chúng Tôi
         array('key' => 'tab_about_intro', 'label' => 'Phần Về Chúng Tôi', 'type' => 'tab'),
         array('key' => 'field_about_intro_title', 'label' => 'Tiêu đề Về chúng tôi', 'name' => 'about_intro_title', 'type' => 'text'),
@@ -1906,6 +1953,8 @@ acf_add_local_field_group(array(
         array('key' => 'field_about_gal_6', 'label' => 'Ảnh 6', 'name' => 'about_gal_6', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
         array('key' => 'field_about_gal_7', 'label' => 'Ảnh 7', 'name' => 'about_gal_7', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
         array('key' => 'field_about_gal_8', 'label' => 'Ảnh 8', 'name' => 'about_gal_8', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_gal_9', 'label' => 'Ảnh 9', 'name' => 'about_gal_9', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
+        array('key' => 'field_about_gal_10', 'label' => 'Ảnh 10', 'name' => 'about_gal_10', 'type' => 'image', 'return_format' => 'url', 'wrapper' => array('width' => '25')),
 
         // TAB: Khám Phá Chi Nhánh
         array('key' => 'tab_about_branch', 'label' => 'Phần Chi Nhánh', 'type' => 'tab'),

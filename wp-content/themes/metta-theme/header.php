@@ -1914,7 +1914,9 @@
       max-height: 52px !important;
       object-fit: contain !important;
       z-index: 2 !important;
-      position: relative !important;
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
       margin: 0 !important;
       padding: 0 !important;
       animation: logoStaticPulse 5s ease-in-out infinite !important;
@@ -1953,11 +1955,11 @@
     @keyframes logoStaticPulse {
       0%, 100% {
         filter: drop-shadow(0 0 1px rgba(244, 157, 33, 0.25));
-        transform: scale(1);
+        transform: translate(-50%, -50%) scale(1) !important;
       }
       50% {
         filter: drop-shadow(0 0 10px rgba(244, 157, 33, 0.65));
-        transform: scale(1.03);
+        transform: translate(-50%, -50%) scale(1.03) !important;
       }
     }
 
