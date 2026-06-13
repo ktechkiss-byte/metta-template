@@ -1884,6 +1884,59 @@
     }
 
     #main { padding-top: 0px !important; }
+
+    /* ROTATING LOGO SYSTEM */
+    .logo-rotate-wrapper {
+      position: relative !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .logo-rotate-wrapper img {
+      z-index: 2 !important;
+      position: relative !important;
+      animation: logoStaticPulse 5s ease-in-out infinite !important;
+    }
+
+    .logo-rotate-wrapper .overlay-ring-svg {
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      width: 90px !important;
+      height: 90px !important;
+      z-index: 1 !important;
+      pointer-events: none !important;
+      transform-origin: center !important;
+      animation: rotateRingSvg 50s linear infinite !important;
+      margin-top: -11px !important;
+    }
+
+    @keyframes rotateRingSvg {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @keyframes logoStaticPulse {
+      0%, 100% {
+        filter: drop-shadow(0 0 1px rgba(244, 157, 33, 0.25));
+        transform: scale(1);
+      }
+      50% {
+        filter: drop-shadow(0 0 10px rgba(244, 157, 33, 0.65));
+        transform: scale(1.03);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logo-rotate-wrapper .overlay-ring-svg {
+        animation: none !important;
+      }
+      .logo-rotate-wrapper img {
+        animation: none !important;
+      }
+    }
   </style>
     
   <?php if(function_exists('metta_get_field')) metta_the_field('header_scripts', get_option('page_on_front')); ?>
