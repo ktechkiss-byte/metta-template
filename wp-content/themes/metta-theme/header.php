@@ -1903,7 +1903,7 @@
       position: absolute !important;
       top: 50% !important;
       left: 50% !important;
-      transform: translate(-50%, -50%) !important;
+      transform: translate(-50%, -50%);
       width: 90px !important;
       height: 90px !important;
       z-index: 1 !important;
