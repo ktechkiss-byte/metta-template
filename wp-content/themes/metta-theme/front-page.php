@@ -370,6 +370,17 @@ $_review_bg  = metta_get_field('review_bg_image') ?: $_default_bg;
               object-position: 59% 29%;
             }
 
+            @media (min-width: 550px) {
+              #banner-1503614659 {
+                padding-top: 0 !important;
+                height: auto !important;
+              }
+              #banner-1503614659 .banner-inner {
+                position: relative !important;
+                height: auto !important;
+              }
+            }
+
           </style>
         </div>
 
