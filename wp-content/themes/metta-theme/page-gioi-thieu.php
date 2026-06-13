@@ -38,6 +38,32 @@ get_header(); ?>
 	      background: transparent !important;
 	    }
 
+	    #section_1007473846 #text-3395665156 h2 {
+	      color: #ffd47a !important;
+	      font-size: clamp(2rem, 4vw, 3.2rem);
+	      font-weight: 700;
+	      line-height: 1.08;
+	      letter-spacing: 0;
+	      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 8px 28px rgba(0, 0, 0, 0.9);
+	    }
+
+	    #section_1007473846 #text-3395665156 h2::before {
+	      content: '🪷';
+	      display: inline-block;
+	      margin-right: 13px;
+	      color: var(--metta-main);
+	      font-size: 0.48em;
+	      vertical-align: 0.1em;
+	      filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.55));
+	    }
+
+	    #section_1007473846 #text-3850920384 p {
+	      color: #fffaf0 !important;
+	      font-weight: 600;
+	      line-height: 1.75;
+	      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 8px 26px rgba(0, 0, 0, 0.88);
+	    }
+
     /* Contact / booking form */
     .wpforms-submit {
       background: var(--metta-green) !important;
@@ -335,96 +361,112 @@ get_header(); ?>
       margin: 0 !important;
     }
 
-	    .metta-belief-stack {
-	      margin: 56px auto 10px;
-	      padding: 0 15px;
+	    .metta-belief-section {
+	      padding: 58px 15px 48px;
 	    }
 
-	    .metta-belief-row {
-	      margin-top: 0;
-	      margin-bottom: 28px;
+	    .metta-belief-section + .metta-belief-section {
+	      padding-top: 18px;
 	    }
 
-	    .metta-vision-card,
-	    .metta-mission-card {
-	      position: relative;
-	      overflow: hidden;
-	      padding: 46px 36px;
-	      background: linear-gradient(150deg, rgba(35, 14, 5, 0.94), rgba(78, 36, 12, 0.82)) !important;
-	      border: 1px solid rgba(244, 157, 33, 0.55);
-	      border-radius: 200px 200px 18px 18px;
-	      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
-	      backdrop-filter: blur(4px);
-	      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+	    .metta-belief-inner {
+	      max-width: 1040px;
+	      margin: 0 auto;
 	    }
 
-	    .metta-vision-card::before,
-	    .metta-mission-card::before {
-	      content: '';
-	      position: absolute;
-	      inset: 10px;
-	      border: 1px solid rgba(229, 211, 189, 0.18);
-	      border-radius: 190px 190px 12px 12px;
-	      pointer-events: none;
+	    .metta-belief-heading {
+	      max-width: 940px;
+	      margin: 0 auto 28px;
+	      text-align: left;
 	    }
 
-	    .metta-vision-card:hover,
-	    .metta-mission-card:hover {
-	      transform: translateY(-6px);
-	      border-color: var(--metta-gold);
-	      box-shadow: 0 22px 58px rgba(0, 0, 0, 0.42);
-	    }
-
-	    .metta-belief-icon {
-	      width: 54px;
-	      margin: 0 auto 20px;
-	      color: var(--metta-main);
-	    }
-
-	    .metta-belief-icon svg {
-	      width: 46px;
-	      height: 46px;
-	      filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.35));
-	    }
-
-	    .metta-belief-card h3 {
-	      margin-bottom: 15px;
-	      color: var(--metta-main) !important;
-	      font-size: 1.6rem;
-	      font-weight: 600;
+	    .metta-belief-title {
+	      display: flex;
+	      align-items: center;
+	      gap: 13px;
+	      margin: 0 0 14px;
+	      color: #ffd47a !important;
+	      font-size: clamp(2rem, 4vw, 3.2rem);
+	      font-weight: 700;
+	      line-height: 1.08;
 	      letter-spacing: 0;
 	      text-transform: uppercase;
-	      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
+	      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 8px 28px rgba(0, 0, 0, 0.9);
 	    }
 
-	    .metta-belief-card p {
-	      max-width: 680px;
-	      margin: 0 auto;
-	      color: #fff1da !important;
-	      font-size: 1rem;
-	      font-style: italic;
+	    .metta-belief-title .belief-icon {
+	      color: var(--metta-main);
+	      font-size: 1.45rem;
+	      line-height: 1;
+	      filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.55));
+	      flex: 0 0 auto;
+	    }
+
+	    .metta-belief-desc {
+	      max-width: 900px;
+	      margin: 0;
+	      color: #fffaf0 !important;
+	      font-size: 1.08rem;
+	      font-weight: 600;
 	      line-height: 1.75;
-	      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+	      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 8px 26px rgba(0, 0, 0, 0.88);
+	    }
+
+	    .metta-belief-gallery {
+	      display: grid;
+	      grid-template-columns: repeat(3, minmax(0, 1fr));
+	      gap: 28px;
+	      max-width: 940px;
+	      margin: 0 auto;
+	    }
+
+	    .metta-belief-image {
+	      aspect-ratio: 1.32 / 1;
+	      overflow: hidden;
+	      border: 1px solid var(--metta-gold-dark);
+	      border-radius: 999px 999px 8px 8px;
+	      background: rgba(31, 12, 4, 0.68);
+	      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.34);
+	    }
+
+	    .metta-belief-image img {
+	      width: 100%;
+	      height: 100%;
+	      display: block;
+	      object-fit: cover;
 	    }
 
 	    @media (max-width: 768px) {
-	      .metta-belief-stack {
-	        margin-top: 38px;
+	      .metta-belief-section {
+	        padding: 38px 18px 34px;
 	      }
 
-	      .metta-vision-card,
-	      .metta-mission-card {
-	        padding: 38px 24px;
-	        border-radius: 150px 150px 16px 16px;
+	      .metta-belief-section + .metta-belief-section {
+	        padding-top: 8px;
 	      }
 
-	      .metta-belief-card h3 {
-	        font-size: 1.32rem;
+	      .metta-belief-heading {
+	        margin-bottom: 22px;
 	      }
 
-	      .metta-vision-card::before,
-	      .metta-mission-card::before {
-	        border-radius: 140px 140px 10px 10px;
+	      .metta-belief-title {
+	        align-items: flex-start;
+	        gap: 9px;
+	        font-size: 1.72rem;
+	      }
+
+	      .metta-belief-title .belief-icon {
+	        font-size: 1.18rem;
+	        padding-top: 5px;
+	      }
+
+	      .metta-belief-desc {
+	        font-size: 0.98rem;
+	      }
+
+	      .metta-belief-gallery {
+	        grid-template-columns: repeat(3, minmax(0, 1fr));
+	        gap: 10px;
 	      }
 	    }
 	  </style>
@@ -825,36 +867,28 @@ get_header(); ?>
               </div>
             </div>
 
-            <div class="metta-belief-stack">
-              <div class="row row-large align-center text-center metta-belief-row metta-vision-row">
-                <div id="col-vision-card" class="col medium-10 small-12 large-8" data-animate="fadeInUp">
-                  <div class="col-inner metta-belief-card metta-vision-card">
-                    <div class="metta-belief-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                      </svg>
-                    </div>
-                    <h3>Tầm Nhìn</h3>
-                    <p>
-                      Trở thành hệ thống Dưỡng sinh Đông Y hàng đầu, nơi mỗi điểm chạm đều mang lại giá trị trị liệu thực chứng cho sức khỏe và tinh thần khách hàng.
-                    </p>
-                  </div>
+            <div class="metta-belief-section metta-mission-section" data-animate="fadeInUp">
+              <div class="metta-belief-inner">
+                <div class="metta-belief-heading">
+                  <h2 class="metta-belief-title">
+                    <span class="belief-icon">🪷</span>
+                    <span class="belief-icon">🌿</span>
+                    <?php echo metta_get_field('about_mission_title') ?: 'SỨ MỆNH METTA SPA'; ?>
+                  </h2>
+                  <p class="metta-belief-desc">
+                    <?php echo metta_get_field('about_mission_desc') ?: 'Giúp cộng đồng thoát khỏi những cơn đau mỏi thể xác và áp lực tinh thần bằng liệu pháp tự nhiên, an toàn, cùng lòng từ bi và sự tử tế chân thành.'; ?>
+                  </p>
                 </div>
-              </div>
 
-              <div class="row row-large align-center text-center metta-belief-row metta-mission-row">
-                <div id="col-mission-card" class="col medium-10 small-12 large-8" data-animate="fadeInUp">
-                  <div class="col-inner metta-belief-card metta-mission-card">
-                    <div class="metta-belief-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                      </svg>
-                    </div>
-                    <h3>Sứ Mệnh</h3>
-                    <p>
-                      Giúp cộng đồng thoát khỏi những cơn đau mỏi thể xác và áp lực tinh thần bằng liệu pháp tự nhiên, an toàn, cùng lòng từ bi và sự tử tế chân thành.
-                    </p>
+                <div class="metta-belief-gallery">
+                  <div class="metta-belief-image">
+                    <img src="<?php echo metta_get_field('about_mission_img_1') ?: metta_get_field('about_img_1') ?: get_site_url() . '/wp-content/uploads/2026/05/metta_spa_zen_corner.png'; ?>" alt="Không gian dưỡng sinh Metta Spa" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="metta-belief-image">
+                    <img src="<?php echo metta_get_field('about_mission_img_2') ?: metta_get_field('about_img_2') ?: get_site_url() . '/wp-content/uploads/2026/05/metta_spa_tea_lounge.png'; ?>" alt="Không gian trị liệu Metta Spa" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="metta-belief-image">
+                    <img src="<?php echo metta_get_field('about_mission_img_3') ?: metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/05/metta_spa_empty_room.png'; ?>" alt="Phòng trị liệu Metta Spa" loading="lazy" decoding="async" />
                   </div>
                 </div>
               </div>
