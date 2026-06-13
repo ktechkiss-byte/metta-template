@@ -1888,15 +1888,21 @@
     /* ROTATING LOGO SYSTEM */
     #header,
     .header-wrapper,
-    #logo,
-    #logo .logo-rotate-wrapper,
+    #masthead,
     .header-main,
-    .header-inner {
+    .header-inner,
+    #logo,
+    #logo .logo-rotate-wrapper {
       overflow: visible !important;
     }
 
     #header {
-      z-index: 999 !important;
+      position: relative !important;
+      z-index: 9999 !important;
+    }
+
+    .header-wrapper {
+      z-index: 9999 !important;
     }
 
     #logo a.logo-rotate-wrapper {
@@ -1945,7 +1951,7 @@
       z-index: 1 !important;
       pointer-events: none !important;
       transform-origin: center !important;
-      animation: rotateRingSvg 25s linear infinite !important;
+      animation: rotateRingSvg 20s linear infinite !important;
       margin: 0 !important;
     }
 
