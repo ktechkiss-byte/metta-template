@@ -1934,11 +1934,6 @@
       margin: 0 auto !important;
     }
 
-    .header.transparent #logo a.logo-rotate-wrapper {
-      width: 80px !important;
-      height: 80px !important;
-    }
-
     #logo a.logo-rotate-wrapper img {
       width: 70px !important;
       height: 70px !important;
@@ -1952,12 +1947,6 @@
       margin: 0 !important;
       padding: 0 !important;
       animation: logoStaticPulse 5s ease-in-out infinite !important;
-    }
-
-    .header.transparent #logo a.logo-rotate-wrapper img {
-      width: 80px !important;
-      height: 80px !important;
-      max-height: 80px !important;
     }
 
     #logo a.logo-rotate-wrapper .overlay-ring-svg {
@@ -1974,9 +1963,23 @@
       margin: 0 !important;
     }
 
-    .header.transparent #logo a.logo-rotate-wrapper .overlay-ring-svg {
-      width: 108px !important;
-      height: 108px !important;
+    /* Desktop-only transparent logo adjustments to prevent oversized logo/ring on mobile */
+    @media (min-width: 850px) {
+      .header.transparent #logo a.logo-rotate-wrapper {
+        width: 80px !important;
+        height: 80px !important;
+      }
+
+      .header.transparent #logo a.logo-rotate-wrapper img {
+        width: 80px !important;
+        height: 80px !important;
+        max-height: 80px !important;
+      }
+
+      .header.transparent #logo a.logo-rotate-wrapper .overlay-ring-svg {
+        width: 108px !important;
+        height: 108px !important;
+      }
     }
 
     @keyframes rotateRingSvg {
