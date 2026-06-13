@@ -1886,11 +1886,17 @@
     #main { padding-top: 0px !important; }
 
     /* ROTATING LOGO SYSTEM */
+    #header,
+    .header-wrapper,
     #logo,
     #logo .logo-rotate-wrapper,
     .header-main,
     .header-inner {
       overflow: visible !important;
+    }
+
+    #header {
+      z-index: 999 !important;
     }
 
     #logo a.logo-rotate-wrapper {
