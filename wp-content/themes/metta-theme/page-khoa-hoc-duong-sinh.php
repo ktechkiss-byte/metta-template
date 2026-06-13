@@ -69,11 +69,6 @@ get_header(); ?>
           object-position: 59% 29%;
         }
 
-        @media (min-width: 550px) {
-          #banner-1503614659 {
-            padding-top: 900px;
-          }
-        }
       </style>
     </div>
 
