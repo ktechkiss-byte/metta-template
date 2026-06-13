@@ -1961,6 +1961,24 @@
       }
     }
 
+    @media (max-width: 849px) {
+      #logo a.logo-rotate-wrapper {
+        width: 50px !important;
+        height: 50px !important;
+      }
+
+      #logo a.logo-rotate-wrapper img {
+        width: 36px !important;
+        height: 36px !important;
+        max-height: 36px !important;
+      }
+
+      #logo a.logo-rotate-wrapper .overlay-ring-svg {
+        width: 54px !important;
+        height: 54px !important;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       #logo a.logo-rotate-wrapper .overlay-ring-svg {
         animation: none !important;
