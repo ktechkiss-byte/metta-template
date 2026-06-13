@@ -350,7 +350,7 @@ get_header(); ?>
 	      position: relative;
 	      overflow: hidden;
 	      padding: 46px 36px;
-	      background: linear-gradient(150deg, rgba(43, 18, 7, 0.9), rgba(84, 43, 16, 0.72)) !important;
+	      background: linear-gradient(150deg, rgba(35, 14, 5, 0.94), rgba(78, 36, 12, 0.82)) !important;
 	      border: 1px solid rgba(244, 157, 33, 0.55);
 	      border-radius: 200px 200px 18px 18px;
 	      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
@@ -392,7 +392,7 @@ get_header(); ?>
 	      color: var(--metta-main) !important;
 	      font-size: 1.6rem;
 	      font-weight: 600;
-	      letter-spacing: 1px;
+	      letter-spacing: 0;
 	      text-transform: uppercase;
 	      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
 	    }
@@ -400,10 +400,11 @@ get_header(); ?>
 	    .metta-belief-card p {
 	      max-width: 680px;
 	      margin: 0 auto;
-	      color: #f0dfc0 !important;
+	      color: #fff1da !important;
 	      font-size: 1rem;
 	      font-style: italic;
 	      line-height: 1.75;
+	      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
 	    }
 
 	    @media (max-width: 768px) {
@@ -415,6 +416,10 @@ get_header(); ?>
 	      .metta-mission-card {
 	        padding: 38px 24px;
 	        border-radius: 150px 150px 16px 16px;
+	      }
+
+	      .metta-belief-card h3 {
+	        font-size: 1.32rem;
 	      }
 
 	      .metta-vision-card::before,
@@ -830,7 +835,7 @@ get_header(); ?>
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                       </svg>
                     </div>
-                    <h3>Tầm Nhìn Metta Spa</h3>
+                    <h3>Tầm Nhìn</h3>
                     <p>
                       Trở thành hệ thống Dưỡng sinh Đông Y hàng đầu, nơi mỗi điểm chạm đều mang lại giá trị trị liệu thực chứng cho sức khỏe và tinh thần khách hàng.
                     </p>
@@ -846,7 +851,7 @@ get_header(); ?>
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                       </svg>
                     </div>
-                    <h3>Sứ Mệnh Metta Spa</h3>
+                    <h3>Sứ Mệnh</h3>
                     <p>
                       Giúp cộng đồng thoát khỏi những cơn đau mỏi thể xác và áp lực tinh thần bằng liệu pháp tự nhiên, an toàn, cùng lòng từ bi và sự tử tế chân thành.
                     </p>
