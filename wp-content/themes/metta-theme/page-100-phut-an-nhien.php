@@ -153,7 +153,7 @@ get_header(); ?>
 											</div>
 											<div class="x14z9mp xat24cr x1lziwak x1vvkbs xtlvy1s x126k92a">
 												<div dir="auto">100 phút tạm biệt mọi ưu phiền</div>
-												<div dir="auto">Đặt lịch ngay để an nhiên cùng Tấm!</div>
+												<div dir="auto">Đặt lịch ngay để an nhiên cùng Metta Spa!</div>
 											</div>
 										</div>
 									</div>
@@ -206,7 +206,7 @@ get_header(); ?>
 										</div>
 										<div class="flex-col flex-grow nav-next text-right">
 											<div class="nav-next"><a
-													href="../tam-oi-spa-chin-chu-tu-tac-phong-tinh-te-trong-tung-le-nghi-don-tiep"
+													href="../metta-spa-chin-chu-tu-tac-phong-tinh-te-trong-tung-le-nghi-don-tiep"
 													rel="next">Metta đông y Spa Chỉn chu từ tác phong, tinh tế trong từng lễ nghi đón tiếp <span
 														class="hide-for-small"><i class="icon-angle-right" aria-hidden="true"></i></span></a></div>
 										</div>
@@ -278,7 +278,7 @@ get_header(); ?>
 														</div>
 													</div>
 													<div class="flex-col flex-grow">
-														<a href="../tam-oi-spa-chon-binh-yen-giua-pho-phuong-tap-nap"
+														<a href="../metta-spa-chon-binh-yen-giua-pho-phuong-tap-nap"
 															title="Metta đông y Spa  Chốn bình yên giữa phố phường tấp nập">Metta đông y Spa Chốn bình
 															yên giữa phố phường tấp nập</a>
 														<span class="post_comments op-8 block is-xsmall"><span>Chức năng bình luận bị tắt<span
@@ -319,12 +319,12 @@ get_header(); ?>
 														</div>
 													</div>
 													<div class="flex-col flex-grow">
-														<a href="../khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-tam"
-															title="Không ngại bí bách khi massage  vì đã có tinh dầu thảo mộc đặc chế riêng từ Tấm!">Không
-															ngại bí bách khi massage vì đã có tinh dầu thảo mộc đặc chế riêng từ Tấm!</a>
+														<a href="../khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-metta-spa"
+															title="Không ngại bí bách khi massage  vì đã có tinh dầu thảo mộc đặc chế riêng từ Metta Spa!">Không
+															ngại bí bách khi massage vì đã có tinh dầu thảo mộc đặc chế riêng từ Metta Spa!</a>
 														<span class="post_comments op-8 block is-xsmall"><span>Chức năng bình luận bị tắt<span
 																	class="screen-reader-text"> ở Không ngại bí bách khi massage vì đã có tinh dầu thảo
-																	mộc đặc chế riêng từ Tấm!</span></span></span>
+																	mộc đặc chế riêng từ Metta Spa!</span></span></span>
 													</div>
 												</div>
 											</li>

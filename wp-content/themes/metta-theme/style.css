@@ -137,8 +137,66 @@ body .blog-single {
    ============================================ */
 .header-main {
   height: 70px;
-  background: rgba(74, 45, 46, 0.66);
+  background: var(--metta-bg);
   color: var(--metta-main);
+}
+
+/* ============================================
+   ROTATING LOGO SYSTEM
+   ============================================ */
+.logo-rotate-wrapper {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-rotate-wrapper img {
+  z-index: 2;
+  position: relative;
+  /* Nhịp thở nhẹ 5 giây */
+  animation: logoStaticPulse 5s ease-in-out infinite;
+}
+
+.logo-rotate-wrapper .overlay-ring-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px; /* Thích ứng với chiều cao logo 70px */
+  height: 90px;
+  z-index: 1;
+  pointer-events: none;
+  transform-origin: center;
+  /* Vòng ngoài xoay tròn liên tục tốc độ level 2 (50s) */
+  animation: rotateRingSvg 50s linear infinite;
+  margin-top: -11px; /* Điều chỉnh tâm lệch của logo để khớp với hoa sen ở trên */
+}
+
+@keyframes rotateRingSvg {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes logoStaticPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 1px rgba(244, 157, 33, 0.25));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(244, 157, 33, 0.65));
+    transform: scale(1.03);
+  }
+}
+
+/* Hỗ trợ chế độ hạn chế chuyển động (prefers-reduced-motion) */
+@media (prefers-reduced-motion: reduce) {
+  .logo-rotate-wrapper .overlay-ring-svg {
+    animation: none !important;
+  }
+  .logo-rotate-wrapper img {
+    animation: none !important;
+  }
 }
 
 #logo {
@@ -160,11 +218,12 @@ body .blog-single {
 }
 
 .header.transparent.has-transparent.has-sticky.sticky-jump .header-wrapper {
-  background: var(--metta-bg);
+  background: var(--metta-bg) !important;
+  background-color: var(--metta-bg) !important;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: var(--metta-shadow-md);
-  border-bottom: 1px solid rgba(244, 157, 33, 0.4);
+  box-shadow: var(--metta-shadow-md) !important;
+  border-bottom: 1px solid rgba(244, 157, 33, 0.4) !important;
 }
 
 .header-button .button {

@@ -290,29 +290,24 @@ body::after {
         <p><?php echo metta_get_with_fallback('product_listing_subtitle', 'Giải pháp chăm sóc sức khỏe & sắc đẹp từ thiên nhiên'); ?></p>
       </div>
 
-      <!-- Product grid — chỉ hiện sp có tên -->
+      <!-- Product grid -->
       <div class="sp-grid">
         <?php
         $btn_label = metta_get_with_fallback('product_btn_label', 'Xem chi tiết');
+        $products = metta_get_product_items();
+        $default_product_img = get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg';
 
-        for ($i = 1; $i <= 6; $i++):
-            $p_name = metta_get_field('sp'.$i.'_name');
-            if (empty($p_name)) continue; // Bỏ qua slot trống
-
-            $p_img   = metta_get_field('sp'.$i.'_img');
-            $p_price = metta_get_field('sp'.$i.'_price');
-            $p_link  = metta_get_field('sp'.$i.'_link') ?: '#';
-            $p_desc  = metta_get_field('sp'.$i.'_desc');
+        foreach ($products as $product):
+            $p_name = $product['name'];
+            $p_img   = !empty($product['image']) ? $product['image'] : $default_product_img;
+            $p_price = $product['price'];
+            $p_link  = $product['link'] ?: '#';
+            $p_desc  = $product['desc'];
         ?>
         <div class="sp-card">
           <div class="sp-card-img">
             <a href="<?php echo esc_url($p_link); ?>" <?php echo ($p_link !== '#') ? 'target="_blank"' : ''; ?>>
-              <?php if ($p_img): ?>
-                <img src="<?php echo esc_url($p_img); ?>" alt="<?php echo esc_attr($p_name); ?>">
-              <?php else: ?>
-                <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg"
-                  alt="<?php echo esc_attr($p_name); ?>">
-              <?php endif; ?>
+              <img src="<?php echo esc_url($p_img); ?>" alt="<?php echo esc_attr($p_name); ?>">
             </a>
           </div>
 
@@ -340,7 +335,7 @@ body::after {
             </div>
           </div>
         </div>
-        <?php endfor; ?>
+        <?php endforeach; ?>
       </div>
 
     </div>

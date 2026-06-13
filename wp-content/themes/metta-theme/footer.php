@@ -549,8 +549,8 @@
                       "<?php echo get_site_url(); ?>/wp-content/uploads/*",
                       "<?php echo get_site_url(); ?>/wp-content/*",
                       "*<?php echo get_site_url(); ?>/wp-content/plugins/*",
-                      "<?php echo get_site_url(); ?>/wp-content/themes/flatsome-child/*",
-                      "<?php echo get_site_url(); ?>/wp-content/themes/flatsome/*",
+                      "<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome-child/*",
+                      "<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/*",
                       "/*\\?(.+)"
                     ]
                   }
@@ -599,63 +599,6 @@
     }
       });
   </script>
-  <script data-cfasync="false">
-    var dFlipLocation =
-      "<?php echo get_site_url(); ?>/wp-content/plugins/3d-flipbook-dflip-lite/assets/";
-    var dFlipWPGlobal = {
-      text: {
-        toggleSound: "Turn on\/off Sound",
-        toggleThumbnails: "Toggle Thumbnails",
-        toggleOutline: "Toggle Outline\/Bookmark",
-        previousPage: "Previous Page",
-        nextPage: "Next Page",
-        toggleFullscreen: "Toggle Fullscreen",
-        zoomIn: "Zoom In",
-        zoomOut: "Zoom Out",
-        toggleHelp: "Toggle Help",
-        singlePageMode: "Single Page Mode",
-        doublePageMode: "Double Page Mode",
-        downloadPDFFile: "Download PDF File",
-        gotoFirstPage: "Goto First Page",
-        gotoLastPage: "Goto Last Page",
-        share: "Share",
-        mailSubject: "I wanted you to see this FlipBook",
-        mailBody: "Check out this site {{url}}",
-        loading: "DearFlip: Loading ",
-      },
-      viewerType: "flipbook",
-      moreControls: "download,pageMode,startPage,endPage,sound",
-      hideControls: "",
-      scrollWheel: "false",
-      backgroundColor: "#777",
-      backgroundImage: "",
-      height: "auto",
-      paddingLeft: "20",
-      paddingRight: "20",
-      controlsPosition: "bottom",
-      duration: 800,
-      soundEnable: "true",
-      enableDownload: "true",
-      showSearchControl: "false",
-      showPrintControl: "false",
-      enableAnnotation: false,
-      enableAnalytics: "false",
-      webgl: "true",
-      hard: "none",
-      maxTextureSize: "1600",
-      rangeChunkSize: "524288",
-      zoomRatio: 1.5,
-      stiffness: 3,
-      pageMode: "0",
-      singlePageMode: "0",
-      pageSize: "0",
-      autoPlay: "false",
-      autoPlayDuration: 5000,
-      autoPlayStart: "false",
-      linkTarget: "2",
-      sharePrefix: "flipbook-",
-    };
-  </script>
   <script type="text/javascript" id="eio-lazy-load-js-before">
     /* <![CDATA[ */
     var eio_lazy_vars = {
@@ -670,10 +613,8 @@
   <script type="text/javascript" src="<?php echo get_site_url(); ?>/wp-content/plugins/ewww-image-optimizer/includes/lazysizes.min.js?ver=820"
     id="eio-lazy-load-js" async="async" data-wp-strategy="async"></script>
   <script type="text/javascript"
-    src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/extensions/flatsome-live-search.js?ver=3.32.0"
+    src="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/js/extensions/flatsome-live-search.js?ver=3.32.0"
     id="flatsome-live-search-js"></script>
-  <script type="text/javascript" src="<?php echo get_site_url(); ?>/wp-content/plugins/3d-flipbook-dflip-lite/assets/js/dflip.min.js?ver=2.3.75"
-    id="dflip-script-js"></script>
   <script type="text/javascript" src="<?php echo get_site_url(); ?>/wp-includes/js/hoverIntent.min.js?ver=1.10.2" id="hoverIntent-js"></script>
   <script type="text/javascript" id="flatsome-js-js-extra">
     /* <![CDATA[ */
@@ -684,7 +625,7 @@
       sticky_height: "70",
       stickyHeaderHeight: "0",
       scrollPaddingTop: "0",
-      assets_url: "<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/",
+      assets_url: "<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/",
       lightbox: {
         close_markup:
           '\u003Cbutton title="%title%" type="button" class="mfp-close"\u003E\u003Csvg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"\u003E\u003Cline x1="18" y1="6" x2="6" y2="18"\u003E\u003C/line\u003E\u003Cline x1="6" y1="6" x2="18" y2="18"\u003E\u003C/line\u003E\u003C/svg\u003E\u003C/button\u003E',
@@ -713,9 +654,9 @@
     //# sourceURL=flatsome-js-js-extra
     /* ]]> */
   </script>
-  <script type="text/javascript" src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/flatsome.js?ver=3.32.0"
+  <script type="text/javascript" src="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/js/flatsome.js?ver=3.32.0"
     id="flatsome-js-js"></script>
-  <script type="text/javascript" src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/libs/packery.pkgd.min.js?ver=3.32.0"
+  <script type="text/javascript" src="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/libs/packery.pkgd.min.js?ver=3.32.0"
     id="flatsome-masonry-js-js"></script>
   <script id="wp-emoji-settings" type="application/json">
       {

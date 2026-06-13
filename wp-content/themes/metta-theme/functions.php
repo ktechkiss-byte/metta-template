@@ -3,45 +3,49 @@
  * Metta Theme functions and definitions
  */
 
-// Start session at the very beginning
-function metta_start_session() {
-    if ( !session_id() ) {
-        session_start();
+function metta_handle_language_cookie() {
+    if ( empty($_GET['lang']) ) {
+        return;
     }
-    
-    // Check for lang param and set cookie
-    if ( isset($_GET['lang']) && in_array($_GET['lang'], array('vi', 'en', 'zh')) ) {
-        $lang = $_GET['lang'];
-        // Set cookie for 30 days
-        setcookie('metta_lang', $lang, time() + (86400 * 30), "/");
-        $_SESSION['metta_lang'] = $lang;
+
+    $lang = sanitize_key(wp_unslash($_GET['lang']));
+    if ( ! in_array($lang, array('vi', 'en', 'zh'), true) ) {
+        return;
     }
+
+    setcookie('metta_lang', $lang, time() + (DAY_IN_SECONDS * 30), COOKIEPATH ?: '/');
+    $_COOKIE['metta_lang'] = $lang;
 }
-add_action('init', 'metta_start_session', 1);
+add_action('init', 'metta_handle_language_cookie', 1);
 
 function metta_theme_scripts() {
+    $theme_uri = get_template_directory_uri();
+    $asset = function($local_path) use ($theme_uri) {
+        return $theme_uri . '/' . ltrim($local_path, '/');
+    };
+
     // Enqueue main theme stylesheet
     wp_enqueue_style( 'metta-theme-style', get_stylesheet_uri(), array(), '3.35.2' );
 
-    // Enqueue Flatsome styles
-    wp_enqueue_style( 'flatsome-main', get_template_directory_uri() . '/../flatsome/assets/css/flatsome.css', array(), '3.32.6' );
-    wp_enqueue_style( 'swiper-bundle', get_template_directory_uri() . '/../flatsome-child/assets/css/swiper-bundle.min.css', array(), '1.0' );
-    wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/../flatsome-child/assets/css/fancybox.css', array(), '1.0' );
-    wp_enqueue_style( 'flatsome-home', get_template_directory_uri() . '/../flatsome/assets/css/home.css', array('flatsome-main'), '3.32.7' );
-    wp_enqueue_style( 'flatsome-child-style', get_template_directory_uri() . '/../flatsome-child/style.css', array('flatsome-main'), '3.32.6' );
+    // Vendor assets are bundled with metta-theme. The fallback URLs keep legacy installs usable.
+    wp_enqueue_style( 'flatsome-main', $asset('vendor/flatsome/assets/css/flatsome.css'), array(), '3.32.6' );
+    wp_enqueue_style( 'swiper-bundle', $asset('vendor/flatsome-child/assets/css/swiper-bundle.min.css'), array(), '1.0' );
+    wp_enqueue_style( 'fancybox-css', $asset('vendor/flatsome-child/assets/css/fancybox.css'), array(), '1.0' );
+    wp_enqueue_style( 'flatsome-home', $asset('vendor/flatsome/assets/css/home.css'), array('flatsome-main'), '3.32.7' );
+    wp_enqueue_style( 'flatsome-child-style', $asset('vendor/flatsome-child/style.css'), array('flatsome-main'), '3.32.6' );
     
     // Enqueue jQuery
     wp_enqueue_script('jquery');
     
-    // Enqueue Flatsome dependencies
-    wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/../flatsome-child/assets/js/swiper-bundle.min.js', array('jquery'), '1.0', true );
-    wp_enqueue_script( 'single-chi-nhanh-js', get_template_directory_uri() . '/../flatsome-child/assets/js/single-chi-nhanh.js', array('swiper-js', 'jquery'), '1.0', true );
-    wp_enqueue_script( 'fancybox-js', get_template_directory_uri() . '/../flatsome-child/assets/js/fancybox.umd.js', array('jquery'), '1.0', true );
-    wp_enqueue_script( 'flatsome-live-search', get_template_directory_uri() . '/../flatsome/assets/js/extensions/flatsome-live-search.js', array('jquery'), '3.32.0', true );
-    wp_enqueue_script( 'flatsome-masonry', get_template_directory_uri() . '/../flatsome/assets/libs/packery.pkgd.min.js', array('jquery'), '3.32.0', true );
+    // Enqueue vendor dependencies
+    wp_enqueue_script( 'swiper-js', $asset('vendor/flatsome-child/assets/js/swiper-bundle.min.js'), array('jquery'), '1.0', true );
+    wp_enqueue_script( 'single-chi-nhanh-js', $asset('vendor/flatsome-child/assets/js/single-chi-nhanh.js'), array('swiper-js', 'jquery'), '1.0', true );
+    wp_enqueue_script( 'fancybox-js', $asset('vendor/flatsome-child/assets/js/fancybox.umd.js'), array('jquery'), '1.0', true );
+    wp_enqueue_script( 'flatsome-live-search', $asset('vendor/flatsome/assets/js/extensions/flatsome-live-search.js'), array('jquery'), '3.32.0', true );
+    wp_enqueue_script( 'flatsome-masonry', $asset('vendor/flatsome/assets/libs/packery.pkgd.min.js'), array('jquery'), '3.32.0', true );
 
-    // Enqueue Flatsome main script
-    wp_enqueue_script( 'flatsome-js', get_template_directory_uri() . '/../flatsome/assets/js/flatsome.js', array('jquery'), '3.32.0', true );
+    // Enqueue vendor main script
+    wp_enqueue_script( 'flatsome-js', $asset('vendor/flatsome/assets/js/flatsome.js'), array('jquery'), '3.32.0', true );
 
     // Localize Flatsome variables
     wp_localize_script( 'flatsome-js', 'flatsomeVars', array(
@@ -49,7 +53,7 @@ function metta_theme_scripts() {
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
         'rtl' => '',
         'sticky_height' => '70',
-        'assets_url' => get_site_url() . '/wp-content/themes/flatsome/assets/',
+        'assets_url' => $asset('vendor/flatsome/assets/'),
         'lightbox' => array(
             'close_markup' => '<button title="%title%" type="button" class="mfp-close"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>',
             'close_btn_inside' => false,
@@ -116,13 +120,11 @@ function metta_get_current_language() {
     }
 
     // Check cookie
-    if ( isset($_COOKIE['metta_lang']) && in_array($_COOKIE['metta_lang'], array('vi', 'en', 'zh')) ) {
-        return $_COOKIE['metta_lang'];
-    }
-    
-    // Check session
-    if ( isset($_SESSION['metta_lang']) && in_array($_SESSION['metta_lang'], array('vi', 'en', 'zh')) ) {
-        return $_SESSION['metta_lang'];
+    if ( isset($_COOKIE['metta_lang']) ) {
+        $cookie_lang = sanitize_key(wp_unslash($_COOKIE['metta_lang']));
+        if ( in_array($cookie_lang, array('vi', 'en', 'zh'), true) ) {
+            return $cookie_lang;
+        }
     }
 
     // Default
@@ -161,6 +163,218 @@ function metta_t($text_vi, $text_en = '', $text_zh = '') {
 
 function metta_the_field($field_name, $post_id = false) {
     echo metta_get_field($field_name, $post_id);
+}
+
+function metta_get_repeater_rows($field_name, $post_id = false) {
+    if (!function_exists('get_field')) {
+        return array();
+    }
+
+    $rows = metta_get_field($field_name, $post_id);
+    if (!is_array($rows)) {
+        return array();
+    }
+
+    return array_values(array_filter($rows, 'is_array'));
+}
+
+function metta_row_value($row, $key, $fallback = '') {
+    $lang = metta_get_current_language();
+    if ($lang !== 'vi') {
+        $localized_key = $key . '_' . $lang;
+        if (!empty($row[$localized_key])) {
+            return $row[$localized_key];
+        }
+    }
+
+    return !empty($row[$key]) ? $row[$key] : $fallback;
+}
+
+function metta_default_branches() {
+    return array(
+        array(
+            'image' => get_site_url() . '/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg',
+            'name' => 'Metta Spa Tên Lửa',
+            'hotline' => '0938431234',
+            'address' => '378 Tên Lửa, P. Bình Trị Đông B, Q. Bình Tân, TP. HCM',
+            'link' => home_url('/chi-nhanh/metta-spa-ten-lua/'),
+        ),
+        array(
+            'image' => get_site_url() . '/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg',
+            'name' => 'Metta Spa Biên Hòa',
+            'hotline' => '0911535339',
+            'address' => 'LK23 Đường N1, KDC Bửu Long, Biên Hòa, Đồng Nai',
+            'link' => home_url('/chi-nhanh/metta-spa-bien-hoa/'),
+        ),
+    );
+}
+
+function metta_get_branch_items($field_name = 'branch_items', $legacy_prefix = 'branch', $post_id = false) {
+    $rows = metta_get_repeater_rows($field_name, $post_id);
+    $items = array();
+
+    foreach ($rows as $row) {
+        $name = metta_row_value($row, 'name');
+        if (empty($name)) {
+            continue;
+        }
+
+        $items[] = array(
+            'image' => !empty($row['image']) ? $row['image'] : '',
+            'name' => $name,
+            'hotline' => metta_row_value($row, 'hotline'),
+            'address' => metta_row_value($row, 'address'),
+            'link' => !empty($row['link']) ? $row['link'] : '#',
+        );
+    }
+
+    if (!empty($items)) {
+        return $items;
+    }
+
+    for ($i = 1; $i <= 6; $i++) {
+        $name_key = $legacy_prefix === 'about_branch' ? "about_branch_{$i}_name" : "{$legacy_prefix}_{$i}_name";
+        $img_key = $legacy_prefix === 'about_branch' ? "about_branch_{$i}_img" : "{$legacy_prefix}_{$i}_img";
+        $hotline_key = $legacy_prefix === 'about_branch' ? "about_branch_{$i}_hotline" : "{$legacy_prefix}_{$i}_hotline";
+        $address_key = $legacy_prefix === 'about_branch' ? "about_branch_{$i}_addr" : "{$legacy_prefix}_{$i}_address";
+        $link_key = $legacy_prefix === 'about_branch' ? "about_branch_{$i}_link" : "{$legacy_prefix}_{$i}_link";
+
+        $name = metta_get_field($name_key);
+        if (empty($name)) {
+            continue;
+        }
+
+        $items[] = array(
+            'image' => metta_get_field($img_key),
+            'name' => $name,
+            'hotline' => metta_get_field($hotline_key),
+            'address' => metta_get_field($address_key),
+            'link' => metta_get_field($link_key) ?: '#',
+        );
+    }
+
+    return !empty($items) ? $items : metta_default_branches();
+}
+
+function metta_get_product_items($post_id = false) {
+    $rows = metta_get_repeater_rows('product_items', $post_id);
+    $items = array();
+
+    foreach ($rows as $row) {
+        $name = metta_row_value($row, 'name');
+        if (empty($name)) {
+            continue;
+        }
+
+        $items[] = array(
+            'image' => !empty($row['image']) ? $row['image'] : '',
+            'name' => $name,
+            'desc' => metta_row_value($row, 'desc'),
+            'price' => metta_row_value($row, 'price'),
+            'link' => !empty($row['link']) ? $row['link'] : '#',
+        );
+    }
+
+    if (!empty($items)) {
+        return $items;
+    }
+
+    for ($i = 1; $i <= 6; $i++) {
+        $name = metta_get_field('sp' . $i . '_name');
+        if (empty($name)) {
+            continue;
+        }
+
+        $items[] = array(
+            'image' => metta_get_field('sp' . $i . '_img'),
+            'name' => $name,
+            'desc' => metta_get_field('sp' . $i . '_desc'),
+            'price' => metta_get_field('sp' . $i . '_price'),
+            'link' => metta_get_field('sp' . $i . '_link') ?: '#',
+        );
+    }
+
+    return $items;
+}
+
+function metta_default_combos() {
+    return array(
+        array(
+            'image' => get_site_url() . '/wp-content/uploads/2025/12/z7321243484722_8e5bf710651f64d00645fa318ab562e4.jpg',
+            'title' => 'GỘI ĐẦU THẢO DƯỢC DƯỠNG SINH',
+            'desc' => 'Một liệu pháp dưỡng sinh - chăm sóc vùng đầu<br />Thang 1: Bài Độc (bạc hà,hương nhu, sả) <br />Thang 2: Kiện Tóc - Giảm Áp (ngải cứu, thục địa, hà thủ ô)<br />Thang 3: Hoạt huyết - Thư giãn (quế chỉ, gừng, bồ kết)',
+        ),
+        array(
+            'image' => get_site_url() . '/wp-content/uploads/2025/12/co_vai_gay.png',
+            'title' => 'DƯỠNG SINH VAI – CỔ – GÁY CHUYÊN SÂU',
+            'desc' => 'Khai thông huyệt đạo vùng cổ vai gáy – giải phóng khí trệ, đưa máu lên nuôi não. <br /><strong>Giúp thư giãn tâm trí, giảm đau mỏi, cải thiện giấc ngủ và tinh thần sáng suốt.</strong>',
+        ),
+        array(
+            'image' => get_site_url() . '/wp-content/uploads/2025/12/duong_gan_gia_uat.png',
+            'title' => 'DƯỠNG GAN GIẢI UẤT',
+            'desc' => 'Giải uất kết, thanh nhiệt, điều hòa cảm xúc. <br /><strong>Giúp giải tỏa nóng giận, mệt mỏi, mang lại sự bình hòa và sáng da, nhẹ người.</strong>',
+        ),
+        array(
+            'image' => get_site_url() . '/wp-content/uploads/2025/12/duong_tim_an_than.png',
+            'title' => 'DƯỠNG TIM AN THẦN',
+            'desc' => 'Điều hòa khí huyết, an định thần trí. <br /><strong>Giúp giảm hồi hộp, lo âu, đưa tâm về trạng thái an nhiên – ngủ sâu giấc tự nhiên.</strong>',
+        ),
+        array(
+            'image' => get_site_url() . '/wp-content/uploads/2025/12/cham_soc_phu_san.png',
+            'title' => 'CHĂM SÓC PHỤ KHOA',
+            'desc' => 'Cải thiện tình trạng khô rát , hàn lạnh tử cung lưu thông khí huyết, giảm đau bụng kinh, điều hòa kinh nguyệt , Tăng cường nội tiết',
+        ),
+        array(
+            'image' => get_site_url() . '/wp-content/uploads/2025/12/duong_than_an_nguyen.png',
+            'title' => 'DƯỠNG THẬN AN NGUYÊN',
+            'desc' => 'Thận là gốc của tiên thiên, sinh tinh , sinh tuỷ <br /><strong>Giúp ngủ sâu, cải thiện sinh lực – giữ gốc khỏe</strong>',
+        ),
+        array(
+            'image' => get_site_url() . '/wp-content/uploads/2025/12/duong_phoi_ich_khi.png',
+            'title' => 'DƯỠNG PHỔI ÍCH KHÍ',
+            'desc' => 'Thanh phế, bổ khí, khai thông hô hấp.<br /><strong>Giúp nhẹ ngực, cải thiện hô hấp.</strong>',
+        ),
+        array(
+            'image' => get_site_url() . '/wp-content/uploads/2025/12/duong_ty_vi_metta.png',
+            'title' => 'DƯỠNG TỲ VỊ METTA',
+            'desc' => 'Bổ trung ích khí, điều hóa tiêu hóa – hấp thu.<br /><strong>Giúp cơ thể khỏe từ ruột, da hồng hào, tinh thần minh mẫn và tăng miễn dịch.</strong>',
+        ),
+    );
+}
+
+function metta_get_combo_items($post_id = false) {
+    $rows = metta_get_repeater_rows('combo_items', $post_id);
+    $items = array();
+
+    foreach ($rows as $row) {
+        $title = metta_row_value($row, 'title');
+        if (empty($title)) {
+            continue;
+        }
+
+        $items[] = array(
+            'image' => !empty($row['image']) ? $row['image'] : '',
+            'title' => $title,
+            'desc' => metta_row_value($row, 'desc'),
+        );
+    }
+
+    if (!empty($items)) {
+        return $items;
+    }
+
+    $defaults = metta_default_combos();
+    foreach ($defaults as $index => $default) {
+        $i = $index + 1;
+        if ($i <= 6) {
+            $default['image'] = metta_get_field('combo_' . $i . '_img') ?: $default['image'];
+            $default['title'] = metta_get_with_fallback('combo_' . $i . '_title', $default['title']);
+            $default['desc'] = metta_get_with_fallback('combo_' . $i . '_desc', $default['desc']);
+        }
+        $items[] = $default;
+    }
+
+    return $items;
 }
 
 function metta_get_with_fallback($field_name, $default_vi) {
@@ -358,3 +572,107 @@ add_filter( 'rank_math/opengraph/facebook/image', function( $attachment_url ) {
     // Override with custom PNG logo for better social support
     return 'https://mettaspadongy.vn/wp-content/uploads/2026/01/Screenshot-2025-12-18-at-07.23.48.png';
 });
+
+/**
+ * DearFlip is only needed for the Menu PDF viewer.
+ */
+function metta_enqueue_menu_flipbook_assets() {
+    if ( ! metta_is_menu_flipbook_page() ) {
+        metta_dequeue_dflip_outside_menu();
+        return;
+    }
+
+    $asset_path = WP_CONTENT_DIR . '/plugins/3d-flipbook-dflip-lite/assets';
+    $asset_url  = content_url( '/plugins/3d-flipbook-dflip-lite/assets/' );
+
+    if ( ! file_exists( $asset_path . '/js/dflip.min.js' ) || ! file_exists( $asset_path . '/css/dflip.min.css' ) ) {
+        return;
+    }
+
+    wp_enqueue_style( 'metta-dflip-style', $asset_url . 'css/dflip.min.css', array(), '2.4.30' );
+    wp_enqueue_script( 'metta-dflip-script', $asset_url . 'js/dflip.min.js', array( 'jquery' ), '2.4.30', true );
+
+    $dflip_global = array(
+        'text' => array(
+            'toggleSound' => 'Bật/tắt âm thanh',
+            'toggleThumbnails' => 'Ẩn/hiện trang thu nhỏ',
+            'toggleOutline' => 'Ẩn/hiện mục lục',
+            'previousPage' => 'Trang trước',
+            'nextPage' => 'Trang sau',
+            'toggleFullscreen' => 'Toàn màn hình',
+            'zoomIn' => 'Phóng to',
+            'zoomOut' => 'Thu nhỏ',
+            'toggleHelp' => 'Trợ giúp',
+            'singlePageMode' => 'Một trang',
+            'doublePageMode' => 'Hai trang',
+            'downloadPDFFile' => 'Tải PDF',
+            'gotoFirstPage' => 'Trang đầu',
+            'gotoLastPage' => 'Trang cuối',
+            'share' => 'Chia sẻ',
+            'mailSubject' => 'Bảng giá Metta Spa',
+            'mailBody' => 'Xem bảng giá tại {{url}}',
+            'loading' => 'Đang tải bảng giá ',
+        ),
+        'viewerType' => 'flipbook',
+        'moreControls' => 'download,pageMode,startPage,endPage,sound',
+        'hideControls' => '',
+        'scrollWheel' => 'false',
+        'backgroundColor' => '#777',
+        'height' => 'auto',
+        'paddingLeft' => '20',
+        'paddingRight' => '20',
+        'controlsPosition' => 'bottom',
+        'duration' => 800,
+        'soundEnable' => 'true',
+        'enableDownload' => 'true',
+        'showSearchControl' => 'false',
+        'showPrintControl' => 'false',
+        'enableAnnotation' => false,
+        'enableAnalytics' => 'false',
+        'webgl' => 'true',
+        'hard' => 'none',
+        'maxTextureSize' => '1600',
+        'rangeChunkSize' => '524288',
+        'zoomRatio' => 1.5,
+        'pageMode' => '0',
+        'singlePageMode' => '0',
+        'pageSize' => '0',
+        'autoPlay' => 'false',
+        'autoPlayDuration' => 5000,
+        'autoPlayStart' => 'false',
+        'linkTarget' => '2',
+        'sharePrefix' => 'flipbook-',
+    );
+
+    wp_add_inline_script(
+        'metta-dflip-script',
+        'window.dFlipLocation = ' . wp_json_encode( $asset_url ) . '; window.dFlipWPGlobal = ' . wp_json_encode( $dflip_global ) . ';',
+        'before'
+    );
+}
+add_action( 'wp_enqueue_scripts', 'metta_enqueue_menu_flipbook_assets', 30 );
+
+function metta_is_menu_flipbook_page() {
+    return is_page_template( 'page-menu.php' ) || is_page( 'menu' );
+}
+
+function metta_dequeue_dflip_outside_menu() {
+    if ( metta_is_menu_flipbook_page() ) {
+        return;
+    }
+
+    wp_dequeue_style( 'dflip-style' );
+    wp_deregister_style( 'dflip-style' );
+    wp_dequeue_script( 'dflip-script' );
+    wp_deregister_script( 'dflip-script' );
+    wp_dequeue_style( 'metta-dflip-style' );
+    wp_deregister_style( 'metta-dflip-style' );
+    wp_dequeue_script( 'metta-dflip-script' );
+    wp_deregister_script( 'metta-dflip-script' );
+
+    if ( isset( $GLOBALS['dflip'] ) && is_object( $GLOBALS['dflip'] ) ) {
+        remove_action( 'wp_print_footer_scripts', array( $GLOBALS['dflip'], 'hook_script' ) );
+    }
+}
+add_action( 'wp_print_styles', 'metta_dequeue_dflip_outside_menu', 100 );
+add_action( 'wp_print_footer_scripts', 'metta_dequeue_dflip_outside_menu', 0 );

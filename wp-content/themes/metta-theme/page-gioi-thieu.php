@@ -2,10 +2,41 @@
 /* Template Name: page-gioi-thieu */
 get_header(); ?>
   <style type="text/css" id="gioi-thieu-css">
-    /* ============================================
-       PAGE-SPECIFIC CSS: page-gioi-thieu
-       Global rules are in style.css
-       ============================================ */
+	    /* ============================================
+	       PAGE-SPECIFIC CSS: page-gioi-thieu
+	       Global rules are in style.css
+	       ============================================ */
+
+	    body::before {
+	      content: '';
+	      position: fixed;
+	      inset: 0;
+	      z-index: -2;
+	      background: url('<?php echo get_site_url(); ?>/wp-content/uploads/2026/05/Gemini_Generated_Image_12ahia12ahia12ah-scaled.png') center center / cover no-repeat;
+	      filter: blur(3px) brightness(0.72);
+	      transform: scale(1.04);
+	    }
+
+	    body::after {
+	      content: '';
+	      position: fixed;
+	      inset: 0;
+	      z-index: -1;
+	      background: rgba(52, 22, 8, 0.52);
+	      pointer-events: none;
+	    }
+
+	    #wrapper,
+	    #main,
+	    #content,
+	    #main.dark,
+	    body {
+	      background: transparent !important;
+	    }
+
+	    #content > .section:not(#section_1967216007):not(#section_467763596):not(#section_1684955892) > .section-bg {
+	      background: transparent !important;
+	    }
 
     /* Contact / booking form */
     .wpforms-submit {
@@ -304,23 +335,94 @@ get_header(); ?>
       margin: 0 !important;
     }
 
-    /* Metta Vision & Mission Cards styling */
-    .metta-vision-card, .metta-mission-card {
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    }
-    .metta-vision-card:hover {
-      transform: translateY(-8px) !important;
-      box-shadow: 0 15px 35px rgba(96, 56, 19, 0.12) !important;
-      background: rgba(96, 56, 19, 0.08) !important;
-      border-color: var(--metta-gold) !important;
-    }
-    .metta-mission-card:hover {
-      transform: translateY(-8px) !important;
-      box-shadow: 0 15px 35px rgba(7, 68, 4, 0.1) !important;
-      background: rgba(7, 68, 4, 0.06) !important;
-      border-color: var(--metta-green) !important;
-    }
-  </style>
+	    .metta-belief-stack {
+	      margin: 56px auto 10px;
+	      padding: 0 15px;
+	    }
+
+	    .metta-belief-row {
+	      margin-top: 0;
+	      margin-bottom: 28px;
+	    }
+
+	    .metta-vision-card,
+	    .metta-mission-card {
+	      position: relative;
+	      overflow: hidden;
+	      padding: 46px 36px;
+	      background: linear-gradient(150deg, rgba(43, 18, 7, 0.9), rgba(84, 43, 16, 0.72)) !important;
+	      border: 1px solid rgba(244, 157, 33, 0.55);
+	      border-radius: 200px 200px 18px 18px;
+	      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+	      backdrop-filter: blur(4px);
+	      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+	    }
+
+	    .metta-vision-card::before,
+	    .metta-mission-card::before {
+	      content: '';
+	      position: absolute;
+	      inset: 10px;
+	      border: 1px solid rgba(229, 211, 189, 0.18);
+	      border-radius: 190px 190px 12px 12px;
+	      pointer-events: none;
+	    }
+
+	    .metta-vision-card:hover,
+	    .metta-mission-card:hover {
+	      transform: translateY(-6px);
+	      border-color: var(--metta-gold);
+	      box-shadow: 0 22px 58px rgba(0, 0, 0, 0.42);
+	    }
+
+	    .metta-belief-icon {
+	      width: 54px;
+	      margin: 0 auto 20px;
+	      color: var(--metta-main);
+	    }
+
+	    .metta-belief-icon svg {
+	      width: 46px;
+	      height: 46px;
+	      filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.35));
+	    }
+
+	    .metta-belief-card h3 {
+	      margin-bottom: 15px;
+	      color: var(--metta-main) !important;
+	      font-size: 1.6rem;
+	      font-weight: 600;
+	      letter-spacing: 1px;
+	      text-transform: uppercase;
+	      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
+	    }
+
+	    .metta-belief-card p {
+	      max-width: 680px;
+	      margin: 0 auto;
+	      color: #f0dfc0 !important;
+	      font-size: 1rem;
+	      font-style: italic;
+	      line-height: 1.75;
+	    }
+
+	    @media (max-width: 768px) {
+	      .metta-belief-stack {
+	        margin-top: 38px;
+	      }
+
+	      .metta-vision-card,
+	      .metta-mission-card {
+	        padding: 38px 24px;
+	        border-radius: 150px 150px 16px 16px;
+	      }
+
+	      .metta-vision-card::before,
+	      .metta-mission-card::before {
+	        border-radius: 140px 140px 10px 10px;
+	      }
+	    }
+	  </style>
     <main id="main" class="">
       <div id="content" role="main" class="content-area">
         <section class="section" id="section_1007473846">
@@ -718,36 +820,37 @@ get_header(); ?>
               </div>
             </div>
 
-            <!-- Visually striking Zen Arched cards for Vision & Mission -->
-            <div class="row row-large align-center text-center metta-vision-mission-row" style="margin-top: 50px; margin-bottom: 20px;">
-              <!-- Vision Card -->
-              <div id="col-vision-card" class="col medium-6 small-12 large-5" data-animate="fadeInLeft">
-                <div class="col-inner metta-vision-card" style="padding: 45px 30px; background: rgba(96, 56, 19, 0.04); border: 1px solid var(--metta-gold); border-radius: 200px 200px 20px 20px; box-shadow: 0 4px 25px rgba(0,0,0,0.04);">
-                  <div class="icon-inner" style="width: 50px; margin: 0 auto 20px auto; color: var(--metta-gold-dark);">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 42px; height: 42px;">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>
+            <div class="metta-belief-stack">
+              <div class="row row-large align-center text-center metta-belief-row metta-vision-row">
+                <div id="col-vision-card" class="col medium-10 small-12 large-8" data-animate="fadeInUp">
+                  <div class="col-inner metta-belief-card metta-vision-card">
+                    <div class="metta-belief-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                      </svg>
+                    </div>
+                    <h3>Tầm Nhìn Metta Spa</h3>
+                    <p>
+                      Trở thành hệ thống Dưỡng sinh Đông Y hàng đầu, nơi mỗi điểm chạm đều mang lại giá trị trị liệu thực chứng cho sức khỏe và tinh thần khách hàng.
+                    </p>
                   </div>
-                  <h3 style="font-size: 1.6rem; color: var(--metta-primary); margin-bottom: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Tầm Nhìn</h3>
-                  <p style="font-size: 1rem; line-height: 1.7; color: var(--fs-color-base); font-style: italic; margin-bottom: 0;">
-                    Trở thành hệ thống Dưỡng sinh Đông Y hàng đầu, nơi mỗi điểm chạm đều mang lại giá trị trị liệu thực chứng cho sức khỏe và tinh thần khách hàng.
-                  </p>
                 </div>
               </div>
 
-              <!-- Mission Card -->
-              <div id="col-mission-card" class="col medium-6 small-12 large-5" data-animate="fadeInRight">
-                <div class="col-inner metta-mission-card" style="padding: 45px 30px; background: rgba(7, 68, 4, 0.02); border: 1px solid var(--metta-green-light); border-radius: 200px 200px 20px 20px; box-shadow: 0 4px 25px rgba(0,0,0,0.04);">
-                  <div class="icon-inner" style="width: 50px; margin: 0 auto 20px auto; color: var(--metta-green-light);">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 42px; height: 42px;">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                    </svg>
+              <div class="row row-large align-center text-center metta-belief-row metta-mission-row">
+                <div id="col-mission-card" class="col medium-10 small-12 large-8" data-animate="fadeInUp">
+                  <div class="col-inner metta-belief-card metta-mission-card">
+                    <div class="metta-belief-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                      </svg>
+                    </div>
+                    <h3>Sứ Mệnh Metta Spa</h3>
+                    <p>
+                      Giúp cộng đồng thoát khỏi những cơn đau mỏi thể xác và áp lực tinh thần bằng liệu pháp tự nhiên, an toàn, cùng lòng từ bi và sự tử tế chân thành.
+                    </p>
                   </div>
-                  <h3 style="font-size: 1.6rem; color: var(--metta-green); margin-bottom: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Sứ Mệnh</h3>
-                  <p style="font-size: 1rem; line-height: 1.7; color: var(--fs-color-base); font-style: italic; margin-bottom: 0;">
-                    Giúp cộng đồng thoát khỏi những cơn đau mỏi thể xác và áp lực tinh thần bằng liệu pháp tự nhiên, an toàn, cùng lòng từ bi và sự tử tế chân thành.
-                  </p>
                 </div>
               </div>
             </div>
@@ -1746,8 +1849,56 @@ get_header(); ?>
                     </style>
                   </div>
 
-                  <div id="text-3314873065" class="text">
-                    <div class="row align-middle align-center branchs">
+	                  <div id="text-3314873065" class="text">
+                      <?php $about_branches = metta_get_branch_items('about_branch_items', 'about_branch'); ?>
+                      <?php if (!empty($about_branches)): ?>
+                      <div class="row align-middle align-center branchs">
+                        <?php foreach ($about_branches as $branch): ?>
+                        <?php $branch_link = !empty($branch['link']) ? $branch['link'] : '#'; ?>
+                        <div class="col large-3">
+                            <div class="branch-item">
+                              <div class="">
+                                <div class="img has-hover section-service-main-img-1 x md-x lg-x y md-y lg-y">
+                                  <div class="img-inner image-cover dark" style="padding-top: 56.25%">
+                                    <img decoding="async"
+                                      src="<?php echo esc_url($branch['image']); ?>"
+                                      class="attachment-original size-original"
+                                      alt="<?php echo esc_attr($branch['name']); ?>"
+                                      style="width:100%;height:100%;object-fit:cover;" />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="" style="padding: 1rem; background-color: white">
+                                <p class="newest-title text-center text-vip" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">
+                                  <?php echo esc_html($branch['name']); ?>
+                                </p>
+                                <p class="" style="margin-bottom: 8px">
+                                  <span style="font-weight: bold">Hotline:</span>
+                                  <?php echo esc_html($branch['hotline']); ?>
+                                </p>
+                                <p>
+                                  <span style="font-weight: bold">Địa chỉ:</span>
+                                  <?php echo esc_html($branch['address']); ?>
+                                </p>
+                                <div class="branch-button" style="display: flex; align-items: center; justify-content: center; width: 100%; gap: 1rem;">
+                                  <a href="<?php echo esc_url($branch_link); ?>">
+                                    <div class="button secondary is-small lowercase" style="border-radius: 99px">
+                                      <span>Xem Chi tiết</span>
+                                    </div>
+                                  </a>
+                                  <a href="tel:<?php echo esc_attr($branch['hotline']); ?>">
+                                    <div class="button secondary is-small lowercase" style="border-radius: 99px">
+                                      <span>Gọi Đặt Lịch</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
+                      </div>
+                      <?php else: ?>
+	                    <div class="row align-middle align-center branchs">
                       <div class="col large-3">
                         <a href="/chi-nhanh/metta-spa-ten-lua">
                           <div class="branch-item">
@@ -1861,10 +2012,11 @@ get_header(); ?>
                             </div>
                           </div>
                         </a>
-                      </div>
-                    </div>
+	                      </div>
+	                    </div>
+                      <?php endif; ?>
 
-                    <style>
+	                    <style>
                       #text-3314873065 {
                         text-align: center;
                         color: rgb(0, 0, 0);

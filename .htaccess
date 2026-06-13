@@ -1,3 +1,44 @@
+# Security hardening: deny internal/source artifacts that must never be public.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule (^|/)\.(git|agent)(/|$) - [F,L]
+RewriteRule (^|/)(app/sql|conf|logs)(/|$) - [F,L]
+RewriteRule (^|/)(GEMINI\.md|head_content\.html|hero_context\.html|index\.html\.bak|post_template_raw\.txt|missing_css\.txt|missing_js\.txt|ref_.*)$ - [F,L]
+RewriteRule \.(sql|py|bak|log|tmp|md)$ - [F,L]
+</IfModule>
+
+<FilesMatch "(^\.|\.sql$|\.py$|\.bak$|\.log$|\.tmp$|\.md$)">
+Require all denied
+</FilesMatch>
+
+# Force REST API through WordPress if a stale static /wp-json directory exists.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^wp-json/?(.*)$ /index.php [L]
+</IfModule>
+
+# Redirect legacy static URLs to canonical WordPress routes.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^chi-nhanh/index\.htm$ https://mettaspadongy.vn/chi-nhanh/ [R=301,L]
+RewriteRule ^menu/index\.htm$ https://mettaspadongy.vn/menu/ [R=301,L]
+RewriteRule ^chinh-sach-bao-mat/index\.htm$ https://mettaspadongy.vn/chinh-sach-bao-mat/ [R=301,L]
+RewriteRule ^su-kien/index\.htm$ https://mettaspadongy.vn/tin-tuc/ [R=301,L]
+RewriteRule ^khoa-hoc-duong-sinh/index\.htm$ https://mettaspadongy.vn/dao-tao/ [R=301,L]
+RewriteRule ^khoa-hoc-duong-sinh/gioi-thieu-khoa-hoc\.html$ https://mettaspadongy.vn/dao-tao/ [R=301,L]
+RewriteRule ^san-pham/detail-dau-goi\.html$ https://mettaspadongy.vn/dau-goi-duoc-lieu-metta-1/ [R=301,L]
+RewriteRule ^san-pham/detail-dau-xa\.html$ https://mettaspadongy.vn/dau-xa-duoc-lieu-metta-1-500ml/ [R=301,L]
+RewriteRule ^san-pham/detail-dau-massage\.html$ https://mettaspadongy.vn/dau-massage-metta-duoc-lieu/ [R=301,L]
+RewriteRule ^su-kien/?$ https://mettaspadongy.vn/tin-tuc/ [R=301,L]
+RewriteRule ^khoa-hoc-duong-sinh/?$ https://mettaspadongy.vn/dao-tao/ [R=301,L]
+</IfModule>
+
+# Force WordPress routes that have leftover legacy directories.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^chi-nhanh/?$ /index.php [L]
+</IfModule>
+
 # Force /menu/ through WordPress (bypass static index.htm in /menu/ folder)
 <IfModule mod_rewrite.c>
 RewriteEngine On

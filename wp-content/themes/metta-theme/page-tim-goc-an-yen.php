@@ -135,7 +135,7 @@ get_header(); ?>
 									<div class="blog-share text-center">
 										<div class="is-divider medium"></div>
 										<div class="social-icons share-icons share-row relative icon-style-outline"><a
-												href="whatsapp://send?text=T%C3%ACm%20g%C3%B3c%20an%20y%C3%AAn%3F%20H%E1%BA%B9n%20nhau%20%E1%BB%9F%20T%E1%BA%A5m%20%C6%A0i%20Spa%20Qu%E1%BA%ADn%204 - /tim-goc-an-yen-hen-nhau-o-metta-spa-bien-hoa/"
+												href="whatsapp://send?text=T%C3%ACm%20g%C3%B3c%20an%20y%C3%AAn%3F%20H%E1%BA%B9n%20nhau%20%E1%BB%9F%20Metta%20Spa%20Qu%E1%BA%ADn%204 - /tim-goc-an-yen-hen-nhau-o-metta-spa-bien-hoa/"
 												data-action="share/whatsapp/share"
 												class="icon button circle is-outline tooltip whatsapp show-for-medium"
 												title="Chia sẻ trên WhatsApp" aria-label="Chia sẻ trên WhatsApp"><i class="icon-whatsapp"
@@ -151,16 +151,16 @@ get_header(); ?>
 												target="_blank" class="icon button circle is-outline tooltip twitter"
 												title="Chia sẻ trên Twitter" aria-label="Chia sẻ trên Twitter" rel="noopener nofollow"><i
 													class="icon-twitter" aria-hidden="true"></i></a><a
-												href="mailto:?subject=T%C3%ACm%20g%C3%B3c%20an%20y%C3%AAn%3F%20H%E1%BA%B9n%20nhau%20%E1%BB%9F%20T%E1%BA%A5m%20%C6%A0i%20Spa%20Qu%E1%BA%ADn%204&body=Xem%20n%C3%A0y%3A%20https%3A%2F%2Fmettaspadongy.vn%2Ftim-goc-an-yen-hen-nhau-o-metta-spa-bien-hoa%2F"
+												href="mailto:?subject=T%C3%ACm%20g%C3%B3c%20an%20y%C3%AAn%3F%20H%E1%BA%B9n%20nhau%20%E1%BB%9F%20Metta%20Spa%20Qu%E1%BA%ADn%204&body=Xem%20n%C3%A0y%3A%20https%3A%2F%2Fmettaspadongy.vn%2Ftim-goc-an-yen-hen-nhau-o-metta-spa-bien-hoa%2F"
 												class="icon button circle is-outline tooltip email" title="Gửi email cho bạn bè"
 												aria-label="Gửi email cho bạn bè" rel="nofollow"><i class="icon-envelop"
 													aria-hidden="true"></i></a><a
-												href="https://pinterest.com/pin/create/button?url=/tim-goc-an-yen-hen-nhau-o-metta-spa-bien-hoa/&media=/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633-1024x683.jpg&description=T%C3%ACm%20g%C3%B3c%20an%20y%C3%AAn%3F%20H%E1%BA%B9n%20nhau%20%E1%BB%9F%20T%E1%BA%A5m%20%C6%A0i%20Spa%20Qu%E1%BA%ADn%204"
+												href="https://pinterest.com/pin/create/button?url=/tim-goc-an-yen-hen-nhau-o-metta-spa-bien-hoa/&media=/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633-1024x683.jpg&description=T%C3%ACm%20g%C3%B3c%20an%20y%C3%AAn%3F%20H%E1%BA%B9n%20nhau%20%E1%BB%9F%20Metta%20Spa%20Qu%E1%BA%ADn%204"
 												onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px'); return false;"
 												target="_blank" class="icon button circle is-outline tooltip pinterest"
 												title="Ghim trên Pinterest" aria-label="Ghim trên Pinterest" rel="noopener nofollow"><i
 													class="icon-pinterest" aria-hidden="true"></i></a><a
-												href="https://www.linkedin.com/shareArticle?mini=true&url=/tim-goc-an-yen-hen-nhau-o-metta-spa-bien-hoa/&title=T%C3%ACm%20g%C3%B3c%20an%20y%C3%AAn%3F%20H%E1%BA%B9n%20nhau%20%E1%BB%9F%20T%E1%BA%A5m%20%C6%A0i%20Spa%20Qu%E1%BA%ADn%204"
+												href="https://www.linkedin.com/shareArticle?mini=true&url=/tim-goc-an-yen-hen-nhau-o-metta-spa-bien-hoa/&title=T%C3%ACm%20g%C3%B3c%20an%20y%C3%AAn%3F%20H%E1%BA%B9n%20nhau%20%E1%BB%9F%20Metta%20Spa%20Qu%E1%BA%ADn%204"
 												onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px'); return false;"
 												target="_blank" class="icon button circle is-outline tooltip linkedin"
 												title="Chia sẻ trên LinkedIn" aria-label="Chia sẻ trên LinkedIn" rel="noopener nofollow"><i
@@ -250,7 +250,7 @@ get_header(); ?>
 														</div>
 													</div>
 													<div class="flex-col flex-grow">
-														<a href="../tam-oi-spa-chon-binh-yen-giua-pho-phuong-tap-nap"
+														<a href="../metta-spa-chon-binh-yen-giua-pho-phuong-tap-nap"
 															title="Metta đông y Spa  Chốn bình yên giữa phố phường tấp nập">Metta đông y Spa Chốn bình
 															yên giữa phố phường tấp nập</a>
 														<span class="post_comments op-8 block is-xsmall"><span>Chức năng bình luận bị tắt<span
@@ -291,12 +291,12 @@ get_header(); ?>
 														</div>
 													</div>
 													<div class="flex-col flex-grow">
-														<a href="../khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-tam"
-															title="Không ngại bí bách khi massage  vì đã có tinh dầu thảo mộc đặc chế riêng từ Tấm!">Không
-															ngại bí bách khi massage vì đã có tinh dầu thảo mộc đặc chế riêng từ Tấm!</a>
+														<a href="../khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-metta-spa"
+															title="Không ngại bí bách khi massage  vì đã có tinh dầu thảo mộc đặc chế riêng từ Metta Spa!">Không
+															ngại bí bách khi massage vì đã có tinh dầu thảo mộc đặc chế riêng từ Metta Spa!</a>
 														<span class="post_comments op-8 block is-xsmall"><span>Chức năng bình luận bị tắt<span
 																	class="screen-reader-text"> ở Không ngại bí bách khi massage vì đã có tinh dầu thảo
-																	mộc đặc chế riêng từ Tấm!</span></span></span>
+																	mộc đặc chế riêng từ Metta Spa!</span></span></span>
 													</div>
 												</div>
 											</li>

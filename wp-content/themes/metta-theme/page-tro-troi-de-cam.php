@@ -109,7 +109,7 @@ get_header(); ?>
 													data-eio-rwidth="16" data-eio-rheight="16"><noscript><img decoding="async"
 														class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw"
 														src="../images/emoji.php/v9/t5c/3/16/1f33f.png" alt="🌿" width="16" height="16"
-														data-eio="l"></noscript></span> VÌ SAO DOANH NGHIỆP NÊN CHỌN TẤM</div>
+														data-eio="l"></noscript></span> VÌ SAO DOANH NGHIỆP NÊN CHỌN METTA SPA</div>
 										<div dir="auto">&#8211; KTV tay nghề cao, tác phong chuẩn mực</div>
 										<div dir="auto">&#8211; Đầy đủ trang thiết bị massage chuyên dụng</div>
 										<div dir="auto">&#8211; Chi phí hợp lý, có chính sách ưu đãi đặc biệt</div>
@@ -164,13 +164,13 @@ get_header(); ?>
 									<div class="flex-row next-prev-nav bt bb">
 										<div class="flex-col flex-grow nav-prev text-left">
 											<div class="nav-previous"><a
-													href="../khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-tam"
+													href="../khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-metta-spa"
 													rel="prev"><span class="hide-for-small"><i class="icon-angle-left"
 															aria-hidden="true"></i></span> Không ngại bí bách khi massage vì đã có tinh dầu thảo mộc
-													đặc chế riêng từ Tấm!</a></div>
+													đặc chế riêng từ Metta Spa!</a></div>
 										</div>
 										<div class="flex-col flex-grow nav-next text-right">
-											<div class="nav-next"><a href="../tam-oi-spa-chon-binh-yen-giua-pho-phuong-tap-nap"
+											<div class="nav-next"><a href="../metta-spa-chon-binh-yen-giua-pho-phuong-tap-nap"
 													rel="next">Metta đông y Spa Chốn bình yên giữa phố phường tấp nập <span
 														class="hide-for-small"><i class="icon-angle-right" aria-hidden="true"></i></span></a></div>
 										</div>
@@ -242,7 +242,7 @@ get_header(); ?>
 														</div>
 													</div>
 													<div class="flex-col flex-grow">
-														<a href="../tam-oi-spa-chon-binh-yen-giua-pho-phuong-tap-nap"
+														<a href="../metta-spa-chon-binh-yen-giua-pho-phuong-tap-nap"
 															title="Metta đông y Spa  Chốn bình yên giữa phố phường tấp nập">Metta đông y Spa Chốn bình
 															yên giữa phố phường tấp nập</a>
 														<span class="post_comments op-8 block is-xsmall"><span>Chức năng bình luận bị tắt<span
@@ -283,12 +283,12 @@ get_header(); ?>
 														</div>
 													</div>
 													<div class="flex-col flex-grow">
-														<a href="../khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-tam"
-															title="Không ngại bí bách khi massage  vì đã có tinh dầu thảo mộc đặc chế riêng từ Tấm!">Không
-															ngại bí bách khi massage vì đã có tinh dầu thảo mộc đặc chế riêng từ Tấm!</a>
+														<a href="../khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-metta-spa"
+															title="Không ngại bí bách khi massage  vì đã có tinh dầu thảo mộc đặc chế riêng từ Metta Spa!">Không
+															ngại bí bách khi massage vì đã có tinh dầu thảo mộc đặc chế riêng từ Metta Spa!</a>
 														<span class="post_comments op-8 block is-xsmall"><span>Chức năng bình luận bị tắt<span
 																	class="screen-reader-text"> ở Không ngại bí bách khi massage vì đã có tinh dầu thảo
-																	mộc đặc chế riêng từ Tấm!</span></span></span>
+																	mộc đặc chế riêng từ Metta Spa!</span></span></span>
 													</div>
 												</div>
 											</li>

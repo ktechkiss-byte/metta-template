@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi" prefix="og: https://ogp.me/ns#" class="loading-site no-js">
 
 <head>
@@ -14,10 +14,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
-  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/flatsome.js?ver=3.32.0" />
-  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/chunk.slider.js?ver=3.32.0" />
-  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/chunk.popups.js?ver=3.32.0" />
-  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/js/chunk.tooltips.js?ver=3.32.0" />
+  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/js/flatsome.js?ver=3.32.0" />
+  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/js/chunk.slider.js?ver=3.32.0" />
+  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/js/chunk.popups.js?ver=3.32.0" />
+  <link rel="prefetch" href="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/js/chunk.tooltips.js?ver=3.32.0" />
   <link rel="alternate" type="application/rss+xml" title="Dòng thông tin Metta đông y Spa &raquo;" href="<?php echo get_site_url(); ?>/feed" />
   <link rel="alternate" title="oNhúng (JSON)" type="application/json+oembed"
     href="<?php echo get_site_url(); ?>/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmettaspadongy.vn%2F" />
@@ -734,26 +734,24 @@
     /*# sourceURL=global-styles-inline-css */
   </style>
 
-  <link rel="stylesheet" id="dflip-style-css"
-    href="<?php echo get_site_url(); ?>/wp-content/plugins/3d-flipbook-dflip-lite/assets/css/dflip.min.css?ver=2.3.75" type="text/css" media="all" />
-  <link rel="stylesheet" id="flatsome-main-css" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/css/flatsome.css?ver=3.32.0"
+  <link rel="stylesheet" id="flatsome-main-css" href="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/css/flatsome.css?ver=3.32.0"
     type="text/css" media="all" />
-  <link rel="stylesheet" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/css/home.css?ver=3.32.0" type="text/css" media="all" />
+  <link rel="stylesheet" href="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/css/home.css?ver=3.32.0" type="text/css" media="all" />
   <style id="flatsome-main-inline-css" type="text/css">
     @font-face {
       font-family: "fl-icons";
       font-display: block;
-      src: url(<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/css/icons/fl-icons.eot);
-      src: url(<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/css/icons/fl-icons-1.eot) format("embedded-opentype"),
-        url(<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/css/icons/fl-icons.woff2) format("woff2"),
-        url(<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/css/icons/fl-icons.ttf) format("truetype"),
-        url(<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/css/icons/fl-icons.woff) format("woff"),
-        url(<?php echo get_site_url(); ?>/wp-content/themes/flatsome/assets/css/icons/fl-icons.svg) format("svg");
+      src: url(<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/css/icons/fl-icons.eot);
+      src: url(<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/css/icons/fl-icons-1.eot) format("embedded-opentype"),
+        url(<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/css/icons/fl-icons.woff2) format("woff2"),
+        url(<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/css/icons/fl-icons.ttf) format("truetype"),
+        url(<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/css/icons/fl-icons.woff) format("woff"),
+        url(<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/css/icons/fl-icons.svg) format("svg");
     }
 
     /*# sourceURL=flatsome-main-inline-css */
   </style>
-  <link rel="stylesheet" id="flatsome-style-css" href="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-child/style.css?ver=3.32.0"
+  <link rel="stylesheet" id="flatsome-style-css" href="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome-child/style.css?ver=3.32.0"
     type="text/css" media="all" />
   <script type="text/javascript" src="<?php echo get_site_url(); ?>/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
   <script type="text/javascript" src="<?php echo get_site_url(); ?>/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
@@ -880,7 +878,7 @@
 
     .header-main {
       height: 70px;
-      background: #4a2d2ea8;
+      background: var(--metta-bg);
       color: var(--metta-main);
     }
 
@@ -1750,7 +1748,10 @@
     #logo img { max-height: 70px !important; width: auto !important; padding: 2px 0; }
 
     /* Transparent & Sticky Header Adjustments */
-    .header.transparent .header-main { height: 80px !important; background: transparent !important; }
+    .header.transparent .header-main,
+    .header.transparent .header-wrapper,
+    .header.transparent .header-bg-color { background: var(--metta-bg) !important; background-color: var(--metta-bg) !important; }
+    .header.transparent .header-main { height: 80px !important; }
     .header.transparent .header-inner { height: 80px !important; }
     .header.transparent #logo img { max-height: 80px !important; }
 
@@ -1919,7 +1920,7 @@
             <!-- Logo -->
             <div id="logo" class="flex-col logo">
               <!-- Header logo -->
-              <a href="<?php echo home_url(); ?>" title="Metta đông y Spa - Metta đông y Spa" rel="home">
+              <a href="<?php echo home_url(); ?>" title="Metta đông y Spa - Metta đông y Spa" rel="home" class="logo-rotate-wrapper">
                 <?php 
                 $f_id = get_option('page_on_front');
                 $custom_logo = function_exists('get_field') ? get_field('site_logo', $f_id) : '';
@@ -1932,7 +1933,16 @@
                 <img width="160" height="70"
                   src="<?php echo $logo_url; ?>"
                   class="header-logo-dark" alt="Metta đông y Spa" 
-                  style="object-fit: contain;" />
+                  style="object-fit: contain; display: none;" />
+                <!-- Vòng tròn hoa văn xoay bên ngoài -->
+                <svg class="overlay-ring-svg" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="44" stroke="#F49D21" stroke-width="1.2" fill="none" stroke-dasharray="10 5 4 5" opacity="0.85"/>
+                  <circle cx="50" cy="50" r="39" stroke="#F49D21" stroke-width="0.6" fill="none" stroke-dasharray="2 3" opacity="0.5"/>
+                  <circle cx="50" cy="6" r="2.5" fill="#F49D21" />
+                  <circle cx="50" cy="94" r="2.5" fill="#F49D21" />
+                  <circle cx="6" cy="50" r="2.5" fill="#F49D21" />
+                  <circle cx="94" cy="50" r="2.5" fill="#F49D21" />
+                </svg>
               </a>
             </div>
 
@@ -2070,4 +2080,3 @@
         </div>
       </div>
     </header>
-

@@ -1,8 +1,17 @@
 # WordPress
 wp-config.php
+wp-config.local.php
+.env
+.env.*
 wp-content/uploads/
+app/sql/
+feed/
+wp-json/
+su-kien/
+chi-nhanh/index.htm
 *.tmp
 *.log
+*.sql
 *.mp4
 *.zip
 *.gz

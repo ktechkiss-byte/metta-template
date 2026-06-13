@@ -723,6 +723,35 @@ $_review_bg  = metta_get_field('review_bg_image') ?: $_default_bg;
                 </div>
               </div>
             </div>
+            <?php $combo_items = metta_get_combo_items(); ?>
+            <?php if (!empty($combo_items)): ?>
+            <div class="row row-small align-equal align-center hoverzoom" id="row-643826839">
+              <?php foreach ($combo_items as $index => $combo): ?>
+              <div class="col home-combo-col medium-11 small-12 large-6" data-animate="fadeInUp">
+                <div class="col-inner">
+                  <div class="box has-hover has-hover box-vertical box-text-bottom">
+                    <div class="box-image" style="width: 30%">
+                      <div class="image-cover" style="padding-top: 100%">
+                        <img src="<?php echo esc_url($combo['image']); ?>" class="attachment-original size-original lazyload" alt="<?php echo esc_attr($combo['title']); ?>" />
+                      </div>
+                    </div>
+
+                    <div class="box-text text-left" style="background: transparent; padding: 20px;">
+                      <div class="box-text-inner">
+                        <div class="text">
+                          <p><strong><?php echo esc_html($combo['title']); ?></strong></p>
+                          <p style="color: black;">
+                            <?php echo wp_kses_post($combo['desc']); ?>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <?php endforeach; ?>
+            </div>
+            <?php else: ?>
             <div class="row row-small align-equal align-center hoverzoom" id="row-643826839">
               <div id="col-1492201594" class="col home-combo-col medium-11 small-12 large-6" data-animate="fadeInUp">
                 <div class="col-inner">
@@ -973,6 +1002,7 @@ $_review_bg  = metta_get_field('review_bg_image') ?: $_default_bg;
                 </div>
               </div>
             </div>
+            <?php endif; ?>
             <div class="row row-collapse align-center" id="row-1679077685">
               <div id="col-1429906400" class="col small-12 large-12" data-animate="flipInX">
                 <div class="col-inner text-center">

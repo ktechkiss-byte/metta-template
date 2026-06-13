@@ -22,7 +22,7 @@ get_header(); ?>
 									<div class="entry-header-text entry-header-text-top text-left">
 										<h6 class="entry-category is-xsmall"><a href="../su-kien" rel="category tag">Sự kiện</a></h6>
 										<h1 class="entry-title">Không ngại bí bách khi massage vì đã có tinh dầu thảo mộc đặc chế riêng từ
-											Tấm!</h1>
+											Metta Spa!</h1>
 										<div class="entry-divider is-divider small"></div>
 									</div>
 									<div class="entry-image relative">
@@ -53,7 +53,7 @@ get_header(); ?>
 													data-eio-rwidth="16" data-eio-rheight="16"><noscript><img decoding="async"
 														class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw"
 														src="../images/emoji.php/v9/td/3/16/1f645.png" alt="🙅" width="16" height="16"
-														data-eio="l"></noscript></span> vì đã có tinh dầu thảo mộc đặc chế riêng từ Tấm!</div>
+														data-eio="l"></noscript></span> vì đã có tinh dầu thảo mộc đặc chế riêng từ Metta Spa!</div>
 										<div dir="auto">Một buổi massage không chỉ để thư giãn mà còn là bí quyết nuôi dưỡng làn da bóng
 											mượt, trẻ trung. Tại Metta, bạn được chăm sóc bằng tinh dầu thảo mộc cao cấp &#8211; sản xuất độc
 											quyền chiết xuất từ jojoba, argan, hạt táo, cám gạo, hướng dương, saffron&#8230; giúp thấm nhanh,
@@ -128,39 +128,39 @@ get_header(); ?>
 														class="xz74otr x15mokao x1ga7v0g x16uus16 xbiv7yw"
 														src="../images/emoji.php/v9/tf6/3/16/2728.png" alt="✨" width="16" height="16"
 														data-eio="l"></noscript></span> Đặt lịch ngay hôm nay, tận hưởng một buổi massage trị liệu
-											đỉnh cao, để làn da và tinh thần được hồi sinh cùng tinh dầu thảo mộc độc quyền từ Tấm!</div>
+											đỉnh cao, để làn da và tinh thần được hồi sinh cùng tinh dầu thảo mộc độc quyền từ Metta Spa!</div>
 									</div>
 
 
 									<div class="blog-share text-center">
 										<div class="is-divider medium"></div>
 										<div class="social-icons share-icons share-row relative icon-style-outline"><a
-												href="whatsapp://send?text=Kh%C3%B4ng%20ng%E1%BA%A1i%20b%C3%AD%20b%C3%A1ch%20khi%20massage%20%20v%C3%AC%20%C4%91%C3%A3%20c%C3%B3%20tinh%20d%E1%BA%A7u%20th%E1%BA%A3o%20m%E1%BB%99c%20%C4%91%E1%BA%B7c%20ch%E1%BA%BF%20ri%C3%AAng%20t%E1%BB%AB%20T%E1%BA%A5m%21 - /khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-tam/"
+												href="whatsapp://send?text=Kh%C3%B4ng%20ng%E1%BA%A1i%20b%C3%AD%20b%C3%A1ch%20khi%20massage%20%20v%C3%AC%20%C4%91%C3%A3%20c%C3%B3%20tinh%20d%E1%BA%A7u%20th%E1%BA%A3o%20m%E1%BB%99c%20%C4%91%E1%BA%B7c%20ch%E1%BA%BF%20ri%C3%AAng%20t%E1%BB%AB%20Metta%20Spa%21 - /khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-metta-spa/"
 												data-action="share/whatsapp/share"
 												class="icon button circle is-outline tooltip whatsapp show-for-medium"
 												title="Chia sẻ trên WhatsApp" aria-label="Chia sẻ trên WhatsApp"><i class="icon-whatsapp"
 													aria-hidden="true"></i></a><a
-												href="https://www.facebook.com/sharer.php?u=/khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-tam/"
+												href="https://www.facebook.com/sharer.php?u=/khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-metta-spa/"
 												data-label="Facebook"
 												onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px'); return false;"
 												target="_blank" class="icon button circle is-outline tooltip facebook"
 												title="Chia sẻ trên Facebook" aria-label="Chia sẻ trên Facebook" rel="noopener nofollow"><i
 													class="icon-facebook" aria-hidden="true"></i></a><a
-												href="https://twitter.com/share?url=/khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-tam/"
+												href="https://twitter.com/share?url=/khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-metta-spa/"
 												onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px'); return false;"
 												target="_blank" class="icon button circle is-outline tooltip twitter"
 												title="Chia sẻ trên Twitter" aria-label="Chia sẻ trên Twitter" rel="noopener nofollow"><i
 													class="icon-twitter" aria-hidden="true"></i></a><a
-												href="mailto:?subject=Kh%C3%B4ng%20ng%E1%BA%A1i%20b%C3%AD%20b%C3%A1ch%20khi%20massage%20%20v%C3%AC%20%C4%91%C3%A3%20c%C3%B3%20tinh%20d%E1%BA%A7u%20th%E1%BA%A3o%20m%E1%BB%99c%20%C4%91%E1%BA%B7c%20ch%E1%BA%BF%20ri%C3%AAng%20t%E1%BB%AB%20T%E1%BA%A5m%21&body=Xem%20n%C3%A0y%3A%20https%3A%2F%2Fmettaspadongy.vn%2Fkhong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-tam%2F"
+												href="mailto:?subject=Kh%C3%B4ng%20ng%E1%BA%A1i%20b%C3%AD%20b%C3%A1ch%20khi%20massage%20%20v%C3%AC%20%C4%91%C3%A3%20c%C3%B3%20tinh%20d%E1%BA%A7u%20th%E1%BA%A3o%20m%E1%BB%99c%20%C4%91%E1%BA%B7c%20ch%E1%BA%BF%20ri%C3%AAng%20t%E1%BB%AB%20Metta%20Spa%21&body=Xem%20n%C3%A0y%3A%20https%3A%2F%2Fmettaspadongy.vn%2Fkhong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-metta-spa%2F"
 												class="icon button circle is-outline tooltip email" title="Gửi email cho bạn bè"
 												aria-label="Gửi email cho bạn bè" rel="nofollow"><i class="icon-envelop"
 													aria-hidden="true"></i></a><a
-												href="https://pinterest.com/pin/create/button?url=/khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-tam/&media=/wp-content/uploads/2026/03/z7321244104193_8316d0cd67c89088c05256e053a20b1d-1024x683.jpg&description=Kh%C3%B4ng%20ng%E1%BA%A1i%20b%C3%AD%20b%C3%A1ch%20khi%20massage%20%20v%C3%AC%20%C4%91%C3%A3%20c%C3%B3%20tinh%20d%E1%BA%A7u%20th%E1%BA%A3o%20m%E1%BB%99c%20%C4%91%E1%BA%B7c%20ch%E1%BA%BF%20ri%C3%AAng%20t%E1%BB%AB%20T%E1%BA%A5m%21"
+												href="https://pinterest.com/pin/create/button?url=/khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-metta-spa/&media=/wp-content/uploads/2026/03/z7321244104193_8316d0cd67c89088c05256e053a20b1d-1024x683.jpg&description=Kh%C3%B4ng%20ng%E1%BA%A1i%20b%C3%AD%20b%C3%A1ch%20khi%20massage%20%20v%C3%AC%20%C4%91%C3%A3%20c%C3%B3%20tinh%20d%E1%BA%A7u%20th%E1%BA%A3o%20m%E1%BB%99c%20%C4%91%E1%BA%B7c%20ch%E1%BA%BF%20ri%C3%AAng%20t%E1%BB%AB%20Metta%20Spa%21"
 												onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px'); return false;"
 												target="_blank" class="icon button circle is-outline tooltip pinterest"
 												title="Ghim trên Pinterest" aria-label="Ghim trên Pinterest" rel="noopener nofollow"><i
 													class="icon-pinterest" aria-hidden="true"></i></a><a
-												href="https://www.linkedin.com/shareArticle?mini=true&url=/khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-tam/&title=Kh%C3%B4ng%20ng%E1%BA%A1i%20b%C3%AD%20b%C3%A1ch%20khi%20massage%20%20v%C3%AC%20%C4%91%C3%A3%20c%C3%B3%20tinh%20d%E1%BA%A7u%20th%E1%BA%A3o%20m%E1%BB%99c%20%C4%91%E1%BA%B7c%20ch%E1%BA%BF%20ri%C3%AAng%20t%E1%BB%AB%20T%E1%BA%A5m%21"
+												href="https://www.linkedin.com/shareArticle?mini=true&url=/khong-ngai-bi-bach-khi-massage-vi-da-co-tinh-dau-thao-moc-dac-che-rieng-tu-metta-spa/&title=Kh%C3%B4ng%20ng%E1%BA%A1i%20b%C3%AD%20b%C3%A1ch%20khi%20massage%20%20v%C3%AC%20%C4%91%C3%A3%20c%C3%B3%20tinh%20d%E1%BA%A7u%20th%E1%BA%A3o%20m%E1%BB%99c%20%C4%91%E1%BA%B7c%20ch%E1%BA%BF%20ri%C3%AAng%20t%E1%BB%AB%20Metta%20Spa%21"
 												onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px'); return false;"
 												target="_blank" class="icon button circle is-outline tooltip linkedin"
 												title="Chia sẻ trên LinkedIn" aria-label="Chia sẻ trên LinkedIn" rel="noopener nofollow"><i
@@ -250,7 +250,7 @@ get_header(); ?>
 														</div>
 													</div>
 													<div class="flex-col flex-grow">
-														<a href="../tam-oi-spa-chon-binh-yen-giua-pho-phuong-tap-nap"
+														<a href="../metta-spa-chon-binh-yen-giua-pho-phuong-tap-nap"
 															title="Metta đông y Spa  Chốn bình yên giữa phố phường tấp nập">Metta đông y Spa Chốn bình
 															yên giữa phố phường tấp nập</a>
 														<span class="post_comments op-8 block is-xsmall"><span>Chức năng bình luận bị tắt<span
@@ -292,11 +292,11 @@ get_header(); ?>
 													</div>
 													<div class="flex-col flex-grow">
 														<a href="<?php echo home_url(); ?>"
-															title="Không ngại bí bách khi massage  vì đã có tinh dầu thảo mộc đặc chế riêng từ Tấm!">Không
-															ngại bí bách khi massage vì đã có tinh dầu thảo mộc đặc chế riêng từ Tấm!</a>
+															title="Không ngại bí bách khi massage  vì đã có tinh dầu thảo mộc đặc chế riêng từ Metta Spa!">Không
+															ngại bí bách khi massage vì đã có tinh dầu thảo mộc đặc chế riêng từ Metta Spa!</a>
 														<span class="post_comments op-8 block is-xsmall"><span>Chức năng bình luận bị tắt<span
 																	class="screen-reader-text"> ở Không ngại bí bách khi massage vì đã có tinh dầu thảo
-																	mộc đặc chế riêng từ Tấm!</span></span></span>
+																	mộc đặc chế riêng từ Metta Spa!</span></span></span>
 													</div>
 												</div>
 											</li>
