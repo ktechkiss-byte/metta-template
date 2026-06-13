@@ -1769,6 +1769,23 @@
       }
     }
 
+    /* Mobile Header Heights & Overrides (max-width: 849px) */
+    @media (max-width: 849px) {
+      .header-main { height: 72px !important; }
+      .header-inner { height: 72px !important; }
+
+      /* Transparent Header Adjustments */
+      .header.transparent .header-main { height: 80px !important; }
+      .header.transparent .header-inner { height: 80px !important; }
+
+      /* Stuck / Sticky Header Heights */
+      .header.show-on-scroll,
+      .stuck .header-main,
+      .stuck .header-inner {
+        height: 72px !important;
+      }
+    }
+
     /* Transparent & Sticky Header Backgrounds */
     .header.transparent .header-main,
     .header.transparent .header-wrapper,
