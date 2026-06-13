@@ -1742,18 +1742,37 @@
   <style>
     /* Note: 1FTV-VIP-Medino font was removed (file deleted) */
 
-    /* Standard Header Heights */
-    .header-main { height: 70px !important; }
-    .header-inner { height: 70px !important; }
-    #logo img { max-height: 70px !important; width: auto !important; padding: 2px 0; }
+    /* Standard Header Heights & Banner Spacing (Desktop only) */
+    @media (min-width: 850px) {
+      .header-main { height: 108px !important; }
+      .header-inner { height: 108px !important; }
+      #logo img { max-height: 70px !important; width: auto !important; padding: 2px 0; }
 
-    /* Transparent & Sticky Header Adjustments */
+      /* Transparent Header Adjustments */
+      .header.transparent .header-main { height: 120px !important; }
+      .header.transparent .header-inner { height: 120px !important; }
+      .header.transparent #logo img { max-height: 80px !important; }
+
+      /* Stuck / Sticky Header Heights */
+      .header.show-on-scroll,
+      .stuck .header-main,
+      .stuck .header-inner {
+        height: 108px !important;
+      }
+      .stuck #logo img {
+        max-height: 70px !important;
+      }
+
+      /* Adjust hero banner padding-top for the taller header */
+      .hero-v2-container {
+        padding-top: 160px !important;
+      }
+    }
+
+    /* Transparent & Sticky Header Backgrounds */
     .header.transparent .header-main,
     .header.transparent .header-wrapper,
     .header.transparent .header-bg-color { background: var(--metta-bg) !important; background-color: var(--metta-bg) !important; }
-    .header.transparent .header-main { height: 80px !important; }
-    .header.transparent .header-inner { height: 80px !important; }
-    .header.transparent #logo img { max-height: 80px !important; }
 
     .header-wrapper.stuck {
       background: var(--metta-bg) !important;
