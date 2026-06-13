@@ -1917,6 +1917,7 @@
       position: absolute !important;
       top: 50% !important;
       left: 50% !important;
+      transform: translate(-50%, -50%) !important;
       margin: 0 !important;
       padding: 0 !important;
       animation: logoStaticPulse 5s ease-in-out infinite !important;
@@ -1955,29 +1956,29 @@
     @keyframes logoStaticPulse {
       0%, 100% {
         filter: drop-shadow(0 0 1px rgba(244, 157, 33, 0.25));
-        transform: translate(-50%, -50%) scale(1) !important;
+        transform: translate(-50%, -50%) scale(1);
       }
       50% {
         filter: drop-shadow(0 0 10px rgba(244, 157, 33, 0.65));
-        transform: translate(-50%, -50%) scale(1.03) !important;
+        transform: translate(-50%, -50%) scale(1.03);
       }
     }
 
     @media (max-width: 849px) {
       #logo a.logo-rotate-wrapper {
-        width: 50px !important;
-        height: 50px !important;
+        width: 44px !important;
+        height: 44px !important;
       }
 
       #logo a.logo-rotate-wrapper img {
-        width: 36px !important;
-        height: 36px !important;
-        max-height: 36px !important;
+        width: 32px !important;
+        height: 32px !important;
+        max-height: 32px !important;
       }
 
       #logo a.logo-rotate-wrapper .overlay-ring-svg {
-        width: 54px !important;
-        height: 54px !important;
+        width: 48px !important;
+        height: 48px !important;
       }
     }
 

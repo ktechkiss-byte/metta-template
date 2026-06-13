@@ -24,60 +24,26 @@ function metta_theme_scripts() {
         return $theme_uri . '/' . ltrim($local_path, '/');
     };
 
-    // Enqueue main theme stylesheet
+    // Main theme stylesheet. Flatsome CSS/JS are already hard-coded in header.php/footer.php.
     wp_enqueue_style( 'metta-theme-style', get_stylesheet_uri(), array(), '3.35.2' );
 
-    // Vendor assets are bundled with metta-theme. The fallback URLs keep legacy installs usable.
-    wp_enqueue_style( 'flatsome-main', $asset('vendor/flatsome/assets/css/flatsome.css'), array(), '3.32.6' );
-    wp_enqueue_style( 'swiper-bundle', $asset('vendor/flatsome-child/assets/css/swiper-bundle.min.css'), array(), '1.0' );
-    wp_enqueue_style( 'fancybox-css', $asset('vendor/flatsome-child/assets/css/fancybox.css'), array(), '1.0' );
-    wp_enqueue_style( 'flatsome-home', $asset('vendor/flatsome/assets/css/home.css'), array('flatsome-main'), '3.32.7' );
-    wp_enqueue_style( 'flatsome-child-style', $asset('vendor/flatsome-child/style.css'), array('flatsome-main'), '3.32.6' );
-    
-    // Enqueue jQuery
-    wp_enqueue_script('jquery');
-    
-    // Enqueue vendor dependencies
-    wp_enqueue_script( 'swiper-js', $asset('vendor/flatsome-child/assets/js/swiper-bundle.min.js'), array('jquery'), '1.0', true );
-    wp_enqueue_script( 'single-chi-nhanh-js', $asset('vendor/flatsome-child/assets/js/single-chi-nhanh.js'), array('swiper-js', 'jquery'), '1.0', true );
-    wp_enqueue_script( 'fancybox-js', $asset('vendor/flatsome-child/assets/js/fancybox.umd.js'), array('jquery'), '1.0', true );
-    wp_enqueue_script( 'flatsome-live-search', $asset('vendor/flatsome/assets/js/extensions/flatsome-live-search.js'), array('jquery'), '3.32.0', true );
-    wp_enqueue_script( 'flatsome-masonry', $asset('vendor/flatsome/assets/libs/packery.pkgd.min.js'), array('jquery'), '3.32.0', true );
+    $uses_swiper = is_front_page()
+        || is_page_template( 'page-khoa-hoc-duong-sinh.php' )
+        || is_page_template( 'page-chi-nhanh.php' )
+        || is_singular( 'chi-nhanh' );
 
-    // Enqueue vendor main script
-    wp_enqueue_script( 'flatsome-js', $asset('vendor/flatsome/assets/js/flatsome.js'), array('jquery'), '3.32.0', true );
+    if ( $uses_swiper ) {
+        wp_enqueue_style( 'swiper-bundle', $asset('vendor/flatsome-child/assets/css/swiper-bundle.min.css'), array(), '1.0' );
+        wp_enqueue_script( 'swiper-js', $asset('vendor/flatsome-child/assets/js/swiper-bundle.min.js'), array(), '1.0', true );
+        wp_enqueue_script( 'single-chi-nhanh-js', $asset('vendor/flatsome-child/assets/js/single-chi-nhanh.js'), array('swiper-js'), '1.0', true );
+    }
 
-    // Localize Flatsome variables
-    wp_localize_script( 'flatsome-js', 'flatsomeVars', array(
-        'theme' => array( 'version' => '3.32.0' ),
-        'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        'rtl' => '',
-        'sticky_height' => '70',
-        'assets_url' => $asset('vendor/flatsome/assets/'),
-        'lightbox' => array(
-            'close_markup' => '<button title="%title%" type="button" class="mfp-close"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>',
-            'close_btn_inside' => false,
-        ),
-        'user' => array( 'can_edit_pages' => false ),
-        'i18n' => array(
-            'mainMenu' => 'Menu chính',
-            'toggleButton' => 'Chuyển đổi',
-        ),
-        'options' => array(
-            'cookie_notice_version' => '1',
-            'swatches_layout' => false,
-            'swatches_disable_deselect' => false,
-            'swatches_box_select_event' => false,
-            'swatches_box_behavior_selected' => false,
-            'swatches_box_update_urls' => '1',
-            'swatches_box_reset' => false,
-            'swatches_box_reset_limited' => false,
-            'swatches_box_reset_extent' => false,
-            'swatches_box_reset_time' => 300,
-            'search_result_latency' => '0',
-            'header_nav_vertical_fly_out_frontpage' => 1,
-        ),
-    ) );
+    $uses_fancybox = is_page_template( 'page-chi-nhanh.php' ) || is_singular( 'chi-nhanh' );
+
+    if ( $uses_fancybox ) {
+        wp_enqueue_style( 'fancybox-css', $asset('vendor/flatsome-child/assets/css/fancybox.css'), array(), '1.0' );
+        wp_enqueue_script( 'fancybox-js', $asset('vendor/flatsome-child/assets/js/fancybox.umd.js'), array(), '1.0', true );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'metta_theme_scripts' );
 

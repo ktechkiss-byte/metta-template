@@ -72,6 +72,28 @@ body::after {
   transform: scale(1.06) !important;
   transition: none !important;
 }
+
+#banner-1503614659,
+#banner-1503614659 .banner-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+#banner-1503614659 .banner-bg.blur {
+  position: absolute !important;
+  inset: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  background-color: rgba(42, 18, 8, 0.6) !important;
+  pointer-events: none;
+}
+
+#banner-1503614659 .hero-v2-container,
+#banner-1503614659 .banner-layers {
+  position: relative;
+  z-index: 2;
+}
+
 #section_2082777772 .section-bg,
 #section_2082777772 .banner-bg.fill {
   display: block !important;
