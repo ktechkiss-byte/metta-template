@@ -1909,9 +1909,9 @@
     }
 
     #logo a.logo-rotate-wrapper img {
-      width: 52px !important;
-      height: 52px !important;
-      max-height: 52px !important;
+      width: 70px !important;
+      height: 70px !important;
+      max-height: 70px !important;
       object-fit: contain !important;
       z-index: 2 !important;
       position: absolute !important;
@@ -1924,9 +1924,9 @@
     }
 
     .header.transparent #logo a.logo-rotate-wrapper img {
-      width: 60px !important;
-      height: 60px !important;
-      max-height: 60px !important;
+      width: 80px !important;
+      height: 80px !important;
+      max-height: 80px !important;
     }
 
     #logo a.logo-rotate-wrapper .overlay-ring-svg {
@@ -1934,8 +1934,8 @@
       top: 50% !important;
       left: 50% !important;
       transform: translate(-50%, -50%);
-      width: 76px !important;
-      height: 76px !important;
+      width: 96px !important;
+      height: 96px !important;
       z-index: 1 !important;
       pointer-events: none !important;
       transform-origin: center !important;
@@ -1944,8 +1944,8 @@
     }
 
     .header.transparent #logo a.logo-rotate-wrapper .overlay-ring-svg {
-      width: 88px !important;
-      height: 88px !important;
+      width: 108px !important;
+      height: 108px !important;
     }
 
     @keyframes rotateRingSvg {
@@ -1971,14 +1971,14 @@
       }
 
       #logo a.logo-rotate-wrapper img {
-        width: 32px !important;
-        height: 32px !important;
-        max-height: 32px !important;
+        width: 40px !important;
+        height: 40px !important;
+        max-height: 40px !important;
       }
 
       #logo a.logo-rotate-wrapper .overlay-ring-svg {
-        width: 48px !important;
-        height: 48px !important;
+        width: 52px !important;
+        height: 52px !important;
       }
     }
 
