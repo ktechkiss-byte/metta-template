@@ -1807,6 +1807,20 @@
        text-transform: uppercase;
        font-weight: 700;
     }
+    .header-nav-main.nav > li.metta-booking-menu-item > a {
+       background: linear-gradient(92deg, #9c4b00 1.53%, #c67427 93.65%) !important;
+       border-radius: 8px !important;
+       color: #fff !important;
+       min-height: 38px;
+       line-height: 38px;
+       padding: 0 18px !important;
+       text-transform: uppercase;
+       font-weight: 700;
+    }
+    .header-nav-main.nav > li.metta-booking-menu-item > a:hover {
+       filter: brightness(1.06);
+       color: #fff !important;
+    }
 
     /* ========== DROPDOWN SUBMENU STYLES (DESKTOP) ========== */
     @media (min-width: 850px) {
@@ -2118,47 +2132,15 @@
 
             <!-- Left Elements -->
             <div class="flex-col hide-for-medium flex-left">
-              <!-- FORCE HARDCODED MENU (Standardized) -->
-              <!-- Left Menu: Trang chủ, Giới thiệu, Menu, Sản phẩm -->
-               <ul class="header-nav header-nav-main nav nav-left nav-size-medium nav-spacing-small nav-uppercase">
-                  <li class="menu-item <?php echo metta_is_active('/'); ?>">
-                    <a href="<?php echo home_url('/'); ?>"><span><?php echo metta_static('Trang chủ'); ?></span></a>
-                  </li>
-                  <li class="menu-item <?php echo metta_is_active('/gioi-thieu'); ?>">
-                    <a href="<?php echo home_url('/gioi-thieu'); ?>"><span><?php echo metta_static('Giới thiệu'); ?></span></a>
-                  </li>
-                  <li class="menu-item <?php echo metta_is_active('/menu'); ?>">
-                    <a href="<?php echo home_url('/menu'); ?>"><span><?php echo metta_static('Menu'); ?></span></a>
-                  </li>
-                  <li class="menu-item <?php echo metta_is_active('/san-pham'); ?>">
-                    <a href="<?php echo home_url('/san-pham'); ?>"><span><?php echo metta_static('Sản phẩm'); ?></span></a>
-                  </li>
-                </ul>
+              <ul class="header-nav header-nav-main nav nav-left nav-size-medium nav-spacing-small nav-uppercase">
+                <?php metta_render_nav_menu_items('primary_left'); ?>
+              </ul>
             </div>
 
             <!-- Right Elements -->
             <div class="flex-col hide-for-medium flex-right">
               <ul class="header-nav header-nav-main nav nav-right nav-size-medium nav-spacing-small nav-uppercase">
-                  <!-- Right Menu: Khóa học, Chi nhánh, Tin tức, Liên hệ -->
-                  <li class="menu-item <?php echo metta_is_active('/dao-tao'); ?>">
-                    <a href="<?php echo home_url('/dao-tao'); ?>"><span><?php echo metta_static('Khóa học'); ?></span></a>
-                  </li>
-                  <li class="menu-item <?php echo metta_is_active('/chi-nhanh'); ?>">
-                    <a href="<?php echo home_url('/chi-nhanh'); ?>"><span><?php echo metta_static('Chi nhánh'); ?></span></a>
-                  </li>
-                  <li class="menu-item <?php echo metta_is_active('/tin-tuc'); ?>">
-                    <a href="<?php echo home_url('/tin-tuc'); ?>"><span><?php echo metta_static('Tin tức'); ?></span></a>
-                  </li>
-                  <li class="menu-item <?php echo metta_is_active('/lien-he'); ?>">
-                    <a href="<?php echo home_url('/lien-he'); ?>"><span><?php echo metta_static('Liên hệ'); ?></span></a>
-                  </li>
-                <li class="html header-button-1">
-                  <div class="header-button">
-                    <a href="https://datlich.mettaspadongy.vn/" class="button primary" style="border-radius: 8px" target="_blank">
-                      <span><?php echo metta_static('Đặt Lịch'); ?></span>
-                    </a>
-                  </div>
-                </li>
+                <?php metta_render_nav_menu_items('primary_right'); ?>
                 <!-- Language Switcher -->
                 <li class="html header-language-switcher">
                     <div class="nav-lang" style="padding: 0 0 0 15px; cursor: pointer; position: relative; height: 100%; display: flex; align-items: center;">

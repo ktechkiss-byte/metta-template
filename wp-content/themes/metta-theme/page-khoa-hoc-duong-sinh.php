@@ -1,6 +1,186 @@
 <?php
 /* Template Name: page-khoa-hoc-duong-sinh */
-get_header(); ?>
+get_header();
+
+$course_contact_url = 'https://www.facebook.com/people/METTA-SPA-VIET-NAM/61573332995547/';
+
+$course_text = function($field_name, $default, $legacy_values = array()) {
+  $value = function_exists('metta_get_field') ? metta_get_field($field_name) : '';
+  $plain_value = is_string($value) ? preg_replace('/\s+/', ' ', trim(wp_strip_all_tags($value))) : '';
+  $legacy_values = array_map(function($legacy_value) {
+    return preg_replace('/\s+/', ' ', trim(wp_strip_all_tags($legacy_value)));
+  }, $legacy_values);
+
+  if ($plain_value === '' || in_array($plain_value, $legacy_values, true)) {
+    return $default;
+  }
+
+  return $value;
+};
+
+$course_rows = function($field_name, $defaults, $required_key = 'title', $legacy_first_values = array()) {
+  $rows = function_exists('metta_get_field') ? metta_get_field($field_name) : array();
+
+  if (!is_array($rows) || empty($rows)) {
+    return $defaults;
+  }
+
+  $rows = array_values(array_filter($rows, 'is_array'));
+  if (count($rows) < count($defaults)) {
+    return $defaults;
+  }
+
+  $first_value = '';
+  foreach (array('title', 'name', 'content', 'desc') as $key) {
+    if (!empty($rows[0][$key])) {
+      $first_value = preg_replace('/\s+/', ' ', trim(wp_strip_all_tags($rows[0][$key])));
+      break;
+    }
+  }
+  $legacy_first_values = array_map(function($legacy_value) {
+    return preg_replace('/\s+/', ' ', trim(wp_strip_all_tags($legacy_value)));
+  }, $legacy_first_values);
+
+  if ($first_value !== '' && in_array($first_value, $legacy_first_values, true)) {
+    return $defaults;
+  }
+
+  $items = array();
+  foreach ($rows as $index => $row) {
+    $base = isset($defaults[$index]) ? $defaults[$index] : array();
+    $clean_row = array();
+
+    foreach ($row as $key => $value) {
+      if ($value !== '' && $value !== null && $value !== false && !(is_array($value) && empty($value))) {
+        $clean_row[$key] = $value;
+      }
+    }
+
+    $item = array_merge($base, $clean_row);
+    if ($required_key === '' || !empty($item[$required_key])) {
+      $items[] = $item;
+    }
+  }
+
+  return !empty($items) ? $items : $defaults;
+};
+
+$course_usp_items = $course_rows('course_usp_list', array(
+  array(
+    'icon_class' => 'fas fa-book-medical',
+    'title' => 'Chương trình chuẩn Đông Y & Thực chiến',
+    'desc' => 'Giáo trình được biên soạn bài bản, chắt lọc tinh hoa Y học cổ truyền, loại bỏ lý thuyết sáo rỗng, tập trung vào kỹ thuật trị liệu thực tế tại Spa.',
+  ),
+  array(
+    'icon_class' => 'fas fa-hands-helping',
+    'title' => 'Cầm tay chỉ việc - 1 kèm 1',
+    'desc' => 'Không đào tạo đại trà. Giảng viên tại Metta sát sao chỉnh sửa từng tư thế đứng, từng lực đạo ngón tay để đảm bảo học viên làm đúng, làm chuẩn ngay từ đầu.',
+  ),
+  array(
+    'icon_class' => 'fas fa-user-friends',
+    'title' => 'Thực hành trên người thật (93%)',
+    'desc' => 'Học viên được thực hành chéo và thực hành trên mẫu thật liên tục để rèn luyện cảm giác tay - yếu tố sống còn của một KTV giỏi.',
+  ),
+  array(
+    'icon_class' => 'fas fa-lightbulb',
+    'title' => 'Tư duy làm nghề & Kỹ năng mềm',
+    'desc' => 'Không chỉ dạy kỹ thuật, Metta đào tạo tư duy phục vụ từ tâm (Metta), kỹ năng giao tiếp, xử lý tình huống và tư vấn khách hàng chuyên nghiệp.',
+  ),
+), 'title', array('Y Lý Bản Sắc'));
+
+$course_curr_items = $course_rows('course_curr_list', array(
+  array(
+    'title' => 'MODULE 1: NỀN TẢNG Y LÝ ĐÔNG Y',
+    'content' => '<ul><li>Học thuyết Âm Dương - Ngũ Hành ứng dụng trong dưỡng sinh.</li><li>Hệ thống Kinh lạc & Huyệt đạo cơ bản trên cơ thể người.</li><li>Cách chẩn đoán sức khỏe sơ bộ qua quan sát và sờ nắn (Vọng - Văn - Vấn - Thiết).</li></ul>',
+  ),
+  array(
+    'title' => 'MODULE 2: KỸ THUẬT TRỊ LIỆU CƠ BẢN & CHUYÊN SÂU',
+    'content' => '<ul><li>Kỹ thuật Massage bấm huyệt: Các thủ thuật xoa, xát, day, ấn, bấm chuẩn Đông Y.</li><li>Trị liệu Cổ Vai Gáy: Phác đồ đả thông kinh lạc vùng cổ vai gáy (Dịch vụ "quốc dân" tại mọi Spa).</li><li>Trị liệu Thắt lưng & Cột sống: Kỹ thuật giải cơ, giảm đau mỏi thắt lưng eo.</li><li>Gội đầu Dưỡng sinh Đông y: Quy trình gội, massage đầu, bấm huyệt vùng mặt - đầu giúp thư giãn sâu.</li></ul>',
+  ),
+  array(
+    'title' => 'MODULE 3: CÁC LIỆU PHÁP BỔ TRỢ',
+    'content' => '<ul><li>Giác hơi, cạo gió, hỏa liệu pháp đúng kỹ thuật và an toàn.</li><li>Cách sử dụng các loại dược liệu, tinh dầu Metta trong trị liệu.</li></ul>',
+  ),
+  array(
+    'title' => 'MODULE 4: QUẢN TRỊ & VẬN HÀNH (Dành cho khóa chủ Spa)',
+    'content' => '<ul><li>Quy trình đón tiếp và tư vấn khách hàng.</li><li>Setup phòng, giường và không gian trị liệu chuẩn.</li></ul>',
+  ),
+  array(
+    'title' => 'MODULE 5: DƯỠNG SINH CHUYÊN SÂU THEO TẠNG PHỦ',
+    'content' => '<p>Học viên sẽ nắm vững kỹ thuật tác động sâu vào hệ thống tạng phủ, giúp khách hàng phục hồi gốc rễ sức khỏe, cân bằng âm dương:</p><ul><li>Trị liệu Vai - Cổ - Gáy chuyên sâu</li><li>Dưỡng Gan Giải Uất: Thao tác bài độc, thanh nhiệt, giúp khách hàng thư thái, giảm nóng giận.</li><li>Dưỡng Tim An Thần</li><li>Dưỡng Phổi Ích Khí</li><li>Dưỡng Tỳ Vị (Dạ dày): Kỹ thuật xoa bóp vùng bụng giúp điều hòa tiêu hóa, hấp thu dinh dưỡng.</li><li>Dưỡng Thận An Nguyên</li><li>Chăm sóc Phụ Khoa (Bảo dưỡng Tử cung)</li></ul>',
+  ),
+  array(
+    'title' => 'MODULE 6: TƯ DUY KINH DOANH - MARKETING & SETUP SPA',
+    'content' => '<p>Không chỉ dạy nghề, Metta trao cho bạn công thức vận hành spa thành công đã được kiểm chứng:</p><ul><li>Tư vấn Setup & Vận hành</li><li>Marketing Thực Chiến (Dành cho người không chuyên)</li><li>Kỹ năng Chốt Sale & Giữ chân khách</li></ul>',
+  ),
+), 'title', array('CHƯƠNG 1: LÝ THUYẾT NỀN TẢNG'));
+
+$course_benefit_items = $course_rows('course_benefit_list', array(
+  array(
+    'icon_class' => 'fas fa-certificate',
+    'title' => 'Chứng nhận',
+    'desc' => 'Được cấp chứng nhận hoàn thành khóa học có giá trị hành nghề.',
+  ),
+  array(
+    'icon_class' => 'fas fa-briefcase',
+    'title' => 'Việc làm',
+    'desc' => 'Cơ hội được giữ lại làm việc tại hệ thống Metta Spa hoặc giới thiệu việc làm tại các đối tác uy tín với mức thu nhập hấp dẫn.',
+  ),
+  array(
+    'icon_class' => 'fas fa-redo-alt',
+    'title' => 'Bảo hành',
+    'desc' => 'Được học lại miễn phí nếu chưa vững tay nghề. Hỗ trợ cập nhật kiến thức mới trọn đời.',
+  ),
+  array(
+    'icon_class' => 'fas fa-toolbox',
+    'title' => 'Dụng cụ',
+    'desc' => 'Được hỗ trợ đầy đủ dược liệu, khăn, áo đồng phục trong quá trình học.',
+  ),
+  array(
+    'icon_class' => 'fas fa-home',
+    'title' => 'Có Ký Túc Xá Cho Học Viên',
+    'desc' => 'Nếu bạn ở xa hay tỉnh khác, Metta chuẩn bị nơi ở chỉnh chu để đảm bảo quá trình học của bạn chất lượng nhất.',
+  ),
+), 'title', array('Chứng chỉ nghề'));
+
+$course_target_items = $course_rows('course_target_list', array(
+  array(
+    'icon_class' => 'fas fa-user-plus',
+    'content' => 'Người mới bắt đầu, muốn tìm một nghề ổn định, thu nhập tốt và nhân văn.',
+  ),
+  array(
+    'icon_class' => 'fas fa-spa',
+    'content' => 'KTV Spa muốn nâng cao tay nghề, học thêm về Đông y trị liệu chuyên sâu.',
+  ),
+  array(
+    'icon_class' => 'fas fa-store',
+    'content' => 'Chủ Spa muốn chuẩn hóa quy trình kỹ thuật cho cơ sở của mình.',
+  ),
+  array(
+    'icon_class' => 'fas fa-heart',
+    'content' => 'Người muốn học để tự chăm sóc sức khỏe cho bản thân và gia đình.',
+  ),
+  array(
+    'icon_class' => 'fas fa-plane-departure',
+    'content' => 'Các anh chị đi định cư NƯỚC NGOÀI muốn mở 1 tiệm dưỡng sinh thu hút khách quốc tế.',
+  ),
+), 'content', array('Người mới bắt đầu muốn tìm kiếm một nghề nghiệp ổn định, nhân văn.'));
+
+$course_testi_items = $course_rows('course_testi_list', array(
+  array(
+    'name' => 'Nguyễn Thúy',
+    'role' => 'Khóa K12',
+    'content' => 'Trước khi đến Metta, mình rất sợ học không vào vì không biết gì về huyệt đạo. Nhưng giáo viên dạy rất nhiệt tình, cầm tay chỉ huyệt từng chút một. Giờ mình đã tự tin đi làm và có thu nhập ổn định.',
+    'image' => '',
+  ),
+  array(
+    'name' => 'Minh Tuấn',
+    'role' => 'Chủ Spa tại Bình Dương',
+    'content' => 'Khóa học giúp mình hệ thống lại toàn bộ kiến thức để về đào tạo lại cho nhân viên. Quy trình tại Metta rất chuẩn và thực tế.',
+    'image' => '',
+  ),
+), 'content');
+?>
 
 <main id="main" class="">
   <div id="content" role="main">
@@ -19,17 +199,22 @@ get_header(); ?>
             </div>
 
             <h1 class="hero-title">
-              <span class="hero-title-main"><?php echo metta_get_with_fallback('course_hero_h1', 'Khởi đầu sự nghiệp'); ?></span>
-              <span class="hero-title-sub"><?php echo metta_get_with_fallback('course_hero_h1_sub', 'vững chắc tại Metta'); ?></span>
+              <span class="hero-title-main"><?php echo esc_html($course_text('course_hero_h1', 'KHỞI ĐẦU SỰ NGHIỆP VỮNG CHẮC', array('KHỞI ĐẦU SỰ NGHIỆP'))); ?></span>
+              <span class="hero-title-sub"><?php echo esc_html($course_text('course_hero_h1_sub', 'CÙNG NGHỀ DƯỠNG SINH ĐÔNG Y', array('VỮNG CHẮC TẠI METTA', 'vững chắc tại Metta'))); ?></span>
             </h1>
 
             <p class="hero-desc">
-              <?php echo metta_get_with_fallback('course_hero_sub', '"Trao nghề từ Tâm – Dựng nghiệp từ Tầm"<br>Văn hóa Tây Nguyên hòa quyện tinh hoa Đông Y trong từng bài giảng.'); ?>
+              <?php echo wp_kses_post($course_text('course_hero_sub', '"Trao nghề từ Tâm - Dựng nghiệp từ Tầm". Metta Spa cam kết đào tạo KTV chuyên nghiệp với 80% thời lượng thực hành thực chiến.', array('"Trao nghề từ Tâm – Dựng nghiệp từ Tầm" Văn hóa Tây Nguyên hòa quyện tinh hoa Đông Y trong từng bài giảng.'))); ?>
             </p>
 
-            <a href="<?php echo metta_get_with_fallback('course_hero_cta_link', '#register'); ?>" class="hero-booking-link">
-              <?php echo metta_get_with_fallback('course_hero_cta_text', 'Nhận lộ trình tư vấn'); ?>
-            </a>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+              <a href="<?php echo esc_url($course_contact_url); ?>" class="hero-booking-link" target="_blank" rel="noopener">
+                <?php echo esc_html($course_text('course_hero_cta_text', 'ĐĂNG KÝ TƯ VẤN LỘ TRÌNH', array('NHẬN LỘ TRÌNH TƯ VẤN', 'Nhận lộ trình tư vấn'))); ?>
+              </a>
+              <a href="<?php echo esc_url($course_contact_url); ?>" class="hero-booking-link" target="_blank" rel="noopener" style="background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.55);">
+                <?php echo esc_html($course_text('course_hero_cta_2_text', 'NHẬN ƯU ĐÃI KHÓA HỌC', array('NHẬN ƯU ĐÃI LÊN ĐẾN 30% HỌC PHÍ'))); ?>
+              </a>
+            </div>
           </div>
 
           <div class="hero-v2-image-card">
@@ -95,13 +280,13 @@ get_header(); ?>
               </div>
               <div class="text-heading" style="text-align: left;">
                 <h2 style="color: var(--primary-color); font-size: 2.8rem; margin-bottom: 25px;">
-                  <?php echo metta_get_with_fallback('course_intro_title', 'SỨ MỆNH ĐÀO TẠO TỪ TÂM'); ?>
+                  <?php echo esc_html($course_text('course_intro_title', 'TẠI SAO NGHỀ DƯỠNG SINH LÀ "CHÌA KHÓA VÀNG" TRONG THỜI ĐẠI MỚI?', array('SỨ MỆNH ĐÀO TẠO TỪ TÂM'))); ?>
                 </h2>
               </div>
               <div class="is-divider" style="background-color: var(--vang-dat); width: 80px; height: 4px; margin-bottom: 35px;"></div>
               
               <div class="content-body" style="color: #444; font-size: 1.1rem; line-height: 1.9;">
-                <?php echo metta_get_field('course_intro_content') ?: '<p>Nội dung đang cập nhật...</p>'; ?>
+                <?php echo wp_kses_post($course_text('course_intro_content', '<p>Sức khỏe tự nhiên đang là xu hướng toàn cầu. Khi con người ngày càng tìm về các phương pháp chữa lành không dùng thuốc, nhu cầu về nhân lực ngành Dưỡng sinh Đông y tăng trưởng mạnh mẽ hơn bao giờ hết.</p><p>Tại Học viện Đào tạo Metta, chúng tôi không chỉ dạy bạn một cái nghề để mưu sinh, mà còn truyền trao một sứ mệnh: <strong>Sứ mệnh chăm sóc sức khỏe cộng đồng bằng đôi bàn tay và y lý cổ truyền.</strong></p>', array('Tại Metta Spa, chúng tôi coi mỗi học viên là một viên ngọc quý cần được mài dũa. Không chỉ là kỹ thuật, chúng tôi truyền dạy cái Đạo của người làm nghề y – sự tận tâm, thấu cảm và lòng trắc ẩn. Với không gian đậm chất Tây Nguyên Đại Ngàn, khóa học mang đến trải nghiệm học tập an nhiên và sâu sắc.'))); ?>
               </div>
             </div>
           </div>
@@ -126,22 +311,22 @@ get_header(); ?>
       <div class="container">
         <div class="text-center mb-50">
           <div class="text-heading">
-            <h2 style="color: var(--primary-color);"><?php echo metta_get_with_fallback('course_usp_title', 'ĐIỂM KHÁC BIỆT TẠI METTA'); ?></h2>
+            <h2 style="color: var(--primary-color);"><?php echo esc_html($course_text('course_usp_title', 'ĐIỂM KHÁC BIỆT CỦA CHƯƠNG TRÌNH ĐÀO TẠO TẠI METTA', array('ĐIỂM KHÁC BIỆT TẠI METTA'))); ?></h2>
           </div>
           <div class="is-divider small mx-auto" style="background-color: var(--vang-dat);"></div>
         </div>
         <div class="row" style="margin-top: 50px;">
-          <?php if(have_rows('course_usp_list')): while(have_rows('course_usp_list')): the_row(); ?>
+          <?php foreach($course_usp_items as $usp): ?>
           <div class="col medium-6 large-3 mb-30">
             <div class="usp-card text-center" style="padding: 30px; background: #fffcf9; border-radius: 20px; border: 1px solid #eee; transition: all 0.3s ease; height: 100%;">
               <div class="icon-box" style="margin-bottom: 25px;">
-                <i class="<?php echo get_sub_field('icon_class'); ?>" style="font-size: 3rem; color: var(--vang-dat);"></i>
+                <i class="<?php echo esc_attr($usp['icon_class']); ?>" style="font-size: 3rem; color: var(--vang-dat);"></i>
               </div>
-              <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 15px;"><?php echo get_sub_field('title'); ?></h3>
-              <p style="color: #777; font-size: 0.95rem; line-height: 1.6;"><?php echo get_sub_field('desc'); ?></p>
+              <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 15px;"><?php echo esc_html($usp['title']); ?></h3>
+              <p style="color: #777; font-size: 0.95rem; line-height: 1.6;"><?php echo esc_html($usp['desc']); ?></p>
             </div>
           </div>
-          <?php endwhile; endif; ?>
+          <?php endforeach; ?>
         </div>
       </div>
     </section>
@@ -151,21 +336,21 @@ get_header(); ?>
       <div class="container relative">
         <div class="text-center mb-50">
           <div class="text-heading">
-            <h2 style="color: var(--primary-color);"><?php echo metta_get_with_fallback('course_curr_title', 'LỘ TRÌNH PHÁT TRIỂN TOÀN DIỆN'); ?></h2>
+            <h2 style="color: var(--primary-color);"><?php echo esc_html($course_text('course_curr_title', 'LỘ TRÌNH ĐÀO TẠO CHI TIẾT', array('LỘ TRÌNH PHÁT TRIỂN TOÀN DIỆN'))); ?></h2>
           </div>
           <div class="is-divider small mx-auto" style="background-color: var(--vang-dat);"></div>
         </div>
         <div class="row" style="margin-top: 50px;">
-          <?php if(have_rows('course_curr_list')): while(have_rows('course_curr_list')): the_row(); ?>
+          <?php foreach($course_curr_items as $module): ?>
           <div class="col medium-4 mb-30">
             <div class="module-item" style="background: #fff; border-radius: 20px; padding: 40px; border-left: 6px solid var(--vang-dat); box-shadow: 0 15px 40px rgba(0,0,0,0.05); height: 100%;">
-              <h4 style="color: var(--primary-color); margin-bottom: 20px; font-weight: 700; font-size: 1.25rem;"><?php echo get_sub_field('title'); ?></h4>
+              <h4 style="color: var(--primary-color); margin-bottom: 20px; font-weight: 700; font-size: 1.25rem;"><?php echo esc_html($module['title']); ?></h4>
               <div class="module-body" style="color: #666; font-size: 1rem; line-height: 1.8;">
-                <?php echo get_sub_field('content'); ?>
+                <?php echo wp_kses_post($module['content']); ?>
               </div>
             </div>
           </div>
-          <?php endwhile; endif; ?>
+          <?php endforeach; ?>
         </div>
       </div>
     </section>
@@ -176,21 +361,21 @@ get_header(); ?>
         <div class="row align-middle">
           <div class="col medium-6 mb-30">
             <div class="text-heading" style="text-align: left;">
-              <h2 style="color: var(--primary-color);"><?php echo metta_get_with_fallback('course_benefit_title', 'QUYỀN LỢI ĐẶC QUYỀN'); ?></h2>
+              <h2 style="color: var(--primary-color);"><?php echo esc_html($course_text('course_benefit_title', 'QUYỀN LỢI CỦA HỌC VIÊN', array('QUYỀN LỢI ĐẶC QUYỀN'))); ?></h2>
             </div>
             <div class="is-divider small" style="background-color: var(--vang-dat);"></div>
             <div class="benefit-list" style="margin-top: 40px;">
-              <?php if(have_rows('course_benefit_list')): while(have_rows('course_benefit_list')): the_row(); ?>
+              <?php foreach($course_benefit_items as $benefit): ?>
               <div style="display: flex; margin-bottom: 30px;">
                 <div style="width: 55px; height: 55px; background: #fffcf9; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 25px; flex-shrink: 0; border: 1px solid #ebd9c5;">
-                  <i class="<?php echo get_sub_field('icon_class'); ?>" style="color: var(--vang-dat); font-size: 1.5rem;"></i>
+                  <i class="<?php echo esc_attr($benefit['icon_class']); ?>" style="color: var(--vang-dat); font-size: 1.5rem;"></i>
                 </div>
                 <div>
-                  <h4 style="margin: 0 0 8px; color: var(--primary-color); font-size: 1.2rem;"><?php echo get_sub_field('title'); ?></h4>
-                  <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;"><?php echo get_sub_field('desc'); ?></p>
+                  <h4 style="margin: 0 0 8px; color: var(--primary-color); font-size: 1.2rem;"><?php echo esc_html($benefit['title']); ?></h4>
+                  <p style="color: #666; margin: 0; font-size: 1rem; line-height: 1.6;"><?php echo esc_html($benefit['desc']); ?></p>
                 </div>
               </div>
-              <?php endwhile; endif; ?>
+              <?php endforeach; ?>
             </div>
           </div>
           <div class="col medium-6">
@@ -208,59 +393,55 @@ get_header(); ?>
     </section>
 
     <!-- 6. TARGET -->
-    <?php if(have_rows('course_target_list')): ?>
     <section class="section section-padding" style="background: var(--metta-bg); color: #fff; padding: 100px 0;">
       <div class="container text-center">
         <div class="text-heading-light">
-          <h2 style="color: var(--metta-main); font-size: 2.8rem; margin-bottom: 60px;"><?php echo metta_get_with_fallback('course_target_title', 'KHÓA HỌC DÀNH CHO AI?'); ?></h2>
+          <h2 style="color: var(--metta-main); font-size: 2.8rem; margin-bottom: 60px;"><?php echo esc_html($course_text('course_target_title', 'ĐỐI TƯỢNG PHÙ HỢP', array('KHÓA HỌC DÀNH CHO AI?'))); ?></h2>
         </div>
         <div class="row">
-          <?php while(have_rows('course_target_list')): the_row(); ?>
+          <?php foreach($course_target_items as $target): ?>
           <div class="col medium-4 mb-30">
             <div style="background: rgba(255,255,255,0.04); padding: 50px 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.08); height: 100%; transition: all 0.3s ease;">
-              <i class="<?php echo get_sub_field('icon_class'); ?>" style="font-size: 3.5rem; color: var(--metta-main); margin-bottom: 30px;"></i>
-              <div style="font-size: 1.15rem; line-height: 1.7; font-weight: 400;"><?php echo get_sub_field('content'); ?></div>
+              <i class="<?php echo esc_attr($target['icon_class']); ?>" style="font-size: 3.5rem; color: var(--metta-main); margin-bottom: 30px;"></i>
+              <div style="font-size: 1.15rem; line-height: 1.7; font-weight: 400;"><?php echo esc_html($target['content']); ?></div>
             </div>
           </div>
-          <?php endwhile; ?>
+          <?php endforeach; ?>
         </div>
       </div>
     </section>
-    <?php endif; ?>
 
     <!-- 7. TESTIMONIALS -->
-    <?php if(have_rows('course_testi_list')): ?>
     <section class="section section-padding" style="background: #fffcf9; padding: 100px 0;">
       <div class="container">
         <div class="text-center mb-60">
           <div class="text-heading">
-            <h2 style="color: var(--primary-color);"><?php echo metta_get_with_fallback('course_testi_title', 'CHIA SẺ TỪ HÀNH TRÌNH HỌC VIÊN'); ?></h2>
+            <h2 style="color: var(--primary-color);"><?php echo esc_html($course_text('course_testi_title', 'CẢM NHẬN HỌC VIÊN', array('CHIA SẺ TỪ HÀNH TRÌNH HỌC VIÊN'))); ?></h2>
           </div>
           <div class="is-divider small mx-auto" style="background-color: var(--vang-dat);"></div>
         </div>
         <div class="row align-center">
-          <?php while(have_rows('course_testi_list')): the_row(); ?>
+          <?php foreach($course_testi_items as $testimonial): ?>
           <div class="col medium-5 mb-30">
             <div class="testimonial-card"
               style="background: #fff; padding: 50px; border-radius: 30px; box-shadow: 0 25px 60px rgba(96, 56, 19, 0.08); position: relative; height: 100%; border: 1px solid #efefef;">
               <i class="fas fa-quote-left" style="position: absolute; top: 30px; left: 30px; font-size: 2.5rem; color: var(--metta-main); opacity: 0.15;"></i>
-              <p style="font-style: italic; margin-bottom: 35px; color: #555; font-size: 1.1rem; line-height: 1.8; position: relative; z-index: 2;">"<?php echo get_sub_field('content'); ?>"</p>
+              <p style="font-style: italic; margin-bottom: 35px; color: #555; font-size: 1.1rem; line-height: 1.8; position: relative; z-index: 2;">"<?php echo esc_html($testimonial['content']); ?>"</p>
               <div style="display: flex; align-items: center;">
-                <?php if($img = get_sub_field('image')): ?>
-                <img src="<?php echo $img; ?>" style="width: 70px; height: 70px; border-radius: 50%; margin-right: 20px; object-fit: cover; border: 2px solid var(--metta-main);">
+                <?php if(!empty($testimonial['image'])): ?>
+                <img src="<?php echo esc_url($testimonial['image']); ?>" style="width: 70px; height: 70px; border-radius: 50%; margin-right: 20px; object-fit: cover; border: 2px solid var(--metta-main);">
                 <?php endif; ?>
                 <div>
-                  <strong style="color: var(--primary-color); font-size: 1.25rem;"><?php echo get_sub_field('name'); ?></strong><br>
-                  <small style="color: #999; font-weight: 500; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;"><?php echo get_sub_field('role'); ?></small>
+                  <strong style="color: var(--primary-color); font-size: 1.25rem;"><?php echo esc_html($testimonial['name']); ?></strong><br>
+                  <small style="color: #999; font-weight: 500; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;"><?php echo esc_html($testimonial['role']); ?></small>
                 </div>
               </div>
             </div>
           </div>
-          <?php endwhile; ?>
+          <?php endforeach; ?>
         </div>
       </div>
     </section>
-    <?php endif; ?>
 
     <!-- 8. FORM -->
     <section id="register" class="section section-padding" style="background: #fff; padding: 120px 0;">
@@ -270,42 +451,35 @@ get_header(); ?>
             <div class="col medium-6 text-white" style="color: white; padding-right: 40px;">
               <div class="text-heading-light" style="text-align: left;">
                 <h2 style="color: var(--metta-main); font-size: 3.2rem; margin-bottom: 25px; line-height: 1.1;">
-                  <?php echo metta_get_with_fallback('course_reg_title', 'GHI DANH HÔM NAY'); ?>
+                  <?php echo esc_html($course_text('course_reg_title', 'ĐỪNG BỎ LỠ CƠ HỘI TRỞ THÀNH "BÀN TAY VÀNG" TRONG LÀNG DƯỠNG SINH', array('GHI DANH HÔM NAY'))); ?>
                 </h2>
               </div>
               <h3 style="color: #fff; margin-bottom: 35px; font-weight: 300; font-size: 1.8rem; opacity: 0.9;">
-                <?php echo metta_get_with_fallback('course_reg_sub', 'NHẬN ƯU ĐÃI ĐẾN 30%'); ?>
+                Liên hệ tư vấn lộ trình học qua fanpage Metta Spa
               </h3>
               <p style="font-size: 1.15rem; opacity: 0.8; margin-bottom: 50px; line-height: 1.8;">Đừng bỏ lỡ cơ hội thay đổi sự nghiệp của bạn với bí quyết dưỡng sinh độc quyền từ Metta. Hỗ trợ việc làm sau khóa học!</p>
               <div style="font-weight: 600; font-size: 1.1rem;">
                 <p style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-phone-alt" style="color: var(--metta-main); margin-right: 20px; font-size: 1.3rem;"></i> 0931.323.268</p>
                 <p style="display: flex; align-items: center;"><i class="fas fa-envelope" style="color: var(--metta-main); margin-right: 20px; font-size: 1.3rem;"></i> Mettaspadongy@gmail.com</p>
+                <div style="margin-top: 35px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.15);">
+                  <h4 style="color: #fff; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px;">Địa điểm đào tạo:</h4>
+                  <p style="margin-bottom: 12px; display: flex; align-items: flex-start;"><i class="fas fa-map-marker-alt" style="color: var(--metta-main); margin-right: 20px; font-size: 1.2rem; margin-top: 4px;"></i><span><strong style="color: var(--metta-main);">Cơ sở 1: Metta Tên Lửa</strong><br>Bình Tân, TP. HCM</span></p>
+                  <p style="display: flex; align-items: flex-start;"><i class="fas fa-map-marker-alt" style="color: var(--metta-main); margin-right: 20px; font-size: 1.2rem; margin-top: 4px;"></i><span><strong style="color: var(--metta-main);">Cơ sở 2: Metta Biên Hòa</strong><br>Đồng Nai</span></p>
+                </div>
               </div>
             </div>
             <div class="col medium-6">
-              <form class="bg-vip-form" style="background: rgba(255,255,255,0.08); padding: 50px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px);">
-                <div style="margin-bottom: 20px;">
-                  <label style="display:block; color:#fff; margin-bottom: 8px; font-size: 0.9rem;">Họ và tên học viên *</label>
-                  <input type="text" placeholder="Nguyễn Văn A" style="width: 100%; border:none; background: #fff; padding: 18px; border-radius: 12px; color: #333;">
+              <div class="bg-vip-form" style="background: rgba(255,255,255,0.08); padding: 50px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px);">
+                <div style="width: 78px; height: 78px; border-radius: 24px; background: rgba(244,157,33,0.16); display: flex; align-items: center; justify-content: center; margin-bottom: 28px;">
+                  <i class="fas fa-comments" style="color: var(--metta-main); font-size: 2.4rem;"></i>
                 </div>
-                <div style="margin-bottom: 20px;">
-                  <label style="display:block; color:#fff; margin-bottom: 8px; font-size: 0.9rem;">Số điện thoại liên hệ *</label>
-                  <input type="tel" placeholder="090x xxx xxx" style="width: 100%; border:none; background: #fff; padding: 18px; border-radius: 12px; color: #333;">
-                </div>
-                <div style="margin-bottom: 35px;">
-                  <label style="display:block; color:#fff; margin-bottom: 8px; font-size: 0.9rem;">Khóa học quan tâm</label>
-                  <select style="width: 100%; border:none; background: #fff; padding: 18px; border-radius: 12px; color: #333; appearance: none; -webkit-appearance: none;">
-                    <option value="">Chọn khóa học...</option>
-                    <option value="k1">Chuyên gia Dưỡng sinh Đông Y</option>
-                    <option value="k2">Kỹ thuật viên Gội đầu Dưỡng sinh</option>
-                  </select>
-                </div>
-                <button type="button" class="button primary expand"
-                  style="width: 100%; border-radius: 12px; font-weight: 700; font-size: 1.2rem; background: var(--metta-main) !important; padding: 15px; border: 0; text-transform: uppercase;"
-                  onclick="alert('Cảm ơn bạn! Metta sẽ liên hệ tư vấn trong 24h tới.')">
-                  ĐĂNG KÝ TƯ VẤN NGAY
-                </button>
-              </form>
+                <h3 style="color: #fff; font-size: 2rem; line-height: 1.25; margin-bottom: 18px;">Nhắn tin để được tư vấn khóa học</h3>
+                <p style="color: rgba(255,255,255,0.78); font-size: 1rem; line-height: 1.8; margin-bottom: 34px;">Metta sẽ tư vấn lộ trình học nghề, khóa nâng cao hoặc hướng mở tiệm phù hợp với nhu cầu của bạn.</p>
+                <a href="<?php echo esc_url($course_contact_url); ?>" target="_blank" rel="noopener" class="button primary expand"
+                  style="width: 100%; border-radius: 12px; font-weight: 700; font-size: 1.1rem; background: var(--metta-main) !important; padding: 15px; border: 0; text-transform: uppercase; text-align: center;">
+                  NHẮN TIN FANPAGE
+                </a>
+              </div>
             </div>
           </div>
         </div>

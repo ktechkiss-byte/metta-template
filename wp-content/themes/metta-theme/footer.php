@@ -276,38 +276,7 @@
   <div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">
       <div class="sidebar-menu-text">
         <ul class="nav-sidebar nav-vertical nav-uppercase">
-          <!-- FORCE HARDCODED MENU (Standardized Mobile) -->
-          <li class="menu-item <?php echo metta_is_active('/'); ?>">
-            <a href="<?php echo home_url('/'); ?>"><span><?php echo metta_static('Trang chủ'); ?></span></a>
-          </li>
-          <li class="menu-item <?php echo metta_is_active('/gioi-thieu'); ?>">
-            <a href="<?php echo home_url('/gioi-thieu'); ?>"><span><?php echo metta_static('Giới thiệu'); ?></span></a>
-          </li>
-          <li class="menu-item <?php echo metta_is_active('/menu'); ?>">
-             <a href="<?php echo home_url('/menu'); ?>"><span><?php echo metta_static('Menu'); ?></span></a>
-             <!-- Optional: Add submenu if needed later, currently flat for consistency with primary request -->
-          </li>
-          <li class="menu-item <?php echo metta_is_active('/san-pham'); ?>">
-             <a href="<?php echo home_url('/san-pham'); ?>"><span><?php echo metta_static('Sản phẩm'); ?></span></a>
-          </li>
-           <li class="menu-item <?php echo metta_is_active('/dao-tao'); ?>">
-             <a href="<?php echo home_url('/dao-tao'); ?>"><span><?php echo metta_static('Khóa học'); ?></span></a>
-          </li>
-          <li class="menu-item <?php echo metta_is_active('/chi-nhanh'); ?>">
-             <a href="<?php echo home_url('/chi-nhanh'); ?>"><span><?php echo metta_static('Chi nhánh'); ?></span></a>
-          </li>
-          <li class="menu-item <?php echo metta_is_active('/tin-tuc'); ?>">
-             <a href="<?php echo home_url('/tin-tuc'); ?>"><span><?php echo metta_static('Tin tức'); ?></span></a>
-          </li>
-          <li class="menu-item <?php echo metta_is_active('/lien-he'); ?>">
-             <a href="<?php echo home_url('/lien-he'); ?>"><span><?php echo metta_static('Liên hệ'); ?></span></a>
-          </li>
-
-           <li class="menu-item header-button-mobile">
-              <a href="https://datlich.mettaspadongy.vn/" class="button primary" style="border-radius: 8px; margin-top: 10px; width: 100%;" target="_blank">
-                <span><?php echo metta_static('Đặt Lịch'); ?></span>
-              </a>
-           </li>
+          <?php metta_render_mobile_nav_menu_items(); ?>
         </ul>
       </div>
   </div>
@@ -379,6 +348,23 @@
     #main-menu .nav-sidebar > li > a:focus {
       background: rgba(244, 157, 33, 0.1) !important;
       color: #f49d21 !important;
+    }
+
+    #main-menu .nav-sidebar > li.metta-booking-menu-item > a {
+      display: flex !important;
+      justify-content: center !important;
+      margin: 10px 20px 0 !important;
+      border-radius: 8px !important;
+      background: linear-gradient(92deg, #9c4b00 1.53%, #c67427 93.65%) !important;
+      color: #fff !important;
+      font-weight: 700 !important;
+      text-align: center !important;
+    }
+
+    #main-menu .nav-sidebar > li.metta-booking-menu-item > a:hover,
+    #main-menu .nav-sidebar > li.metta-booking-menu-item > a:focus {
+      color: #fff !important;
+      filter: brightness(1.06);
     }
     
     /* Current/active menu item */

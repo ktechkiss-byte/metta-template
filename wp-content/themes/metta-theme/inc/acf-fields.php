@@ -2151,13 +2151,18 @@ acf_add_local_field_group(array(
             'instructions' => 'Dòng chữ nhỏ trên tiêu đề (vd: TINH HOA DƯỠNG SINH VIỆT)'
         ),
 		array('key' => 'field_course_hero_h1', 'label' => 'Tiêu đề Hero (H1)', 'name' => 'course_hero_h1', 'type' => 'textarea', 'rows' => 2),
+		array('key' => 'field_course_hero_h1_sub', 'label' => 'Tiêu đề Hero (Dòng phụ)', 'name' => 'course_hero_h1_sub', 'type' => 'textarea', 'rows' => 2),
 		array('key' => 'field_course_hero_h1_en', 'label' => 'Tiêu đề Hero (H1) (EN)', 'name' => 'course_hero_h1_en', 'type' => 'textarea', 'rows' => 2),
+		array('key' => 'field_course_hero_h1_sub_en', 'label' => 'Tiêu đề Hero (Dòng phụ) (EN)', 'name' => 'course_hero_h1_sub_en', 'type' => 'textarea', 'rows' => 2),
 		array('key' => 'field_course_hero_h1_zh', 'label' => 'Tiêu đề Hero (H1) (ZH)', 'name' => 'course_hero_h1_zh', 'type' => 'textarea', 'rows' => 2),
+		array('key' => 'field_course_hero_h1_sub_zh', 'label' => 'Tiêu đề Hero (Dòng phụ) (ZH)', 'name' => 'course_hero_h1_sub_zh', 'type' => 'textarea', 'rows' => 2),
         array('key' => 'field_course_hero_sub', 'label' => 'Mô tả Hero', 'name' => 'course_hero_sub', 'type' => 'textarea', 'rows' => 2),
         array('key' => 'field_course_hero_sub_en', 'label' => 'Mô tả Hero (EN)', 'name' => 'course_hero_sub_en', 'type' => 'textarea', 'rows' => 2),
         array('key' => 'field_course_hero_sub_zh', 'label' => 'Mô tả Hero (ZH)', 'name' => 'course_hero_sub_zh', 'type' => 'textarea', 'rows' => 2),
         array('key' => 'field_course_hero_cta_text', 'label' => 'Nút CTA Text', 'name' => 'course_hero_cta_text', 'type' => 'text', 'default_value' => 'NHẬN LỘ TRÌNH TƯ VẤN'),
         array('key' => 'field_course_hero_cta_link', 'label' => 'Nút CTA Link', 'name' => 'course_hero_cta_link', 'type' => 'text', 'default_value' => '#register'),
+        array('key' => 'field_course_hero_cta_2_text', 'label' => 'Nút CTA 2 Text', 'name' => 'course_hero_cta_2_text', 'type' => 'text', 'default_value' => 'NHẬN ƯU ĐÃI KHÓA HỌC'),
+        array('key' => 'field_course_hero_cta_2_link', 'label' => 'Nút CTA 2 Link', 'name' => 'course_hero_cta_2_link', 'type' => 'text', 'default_value' => '#register'),
 
         // TAB 2: INTRO
         array('key' => 'field_c_tab_2', 'label' => '2. Giới thiệu', 'type' => 'tab'),

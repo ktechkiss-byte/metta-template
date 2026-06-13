@@ -423,6 +423,135 @@ function metta_is_active($path = '') {
     return '';
 }
 
+function metta_get_booking_url() {
+    return apply_filters('metta_booking_url', 'https://datlich.mettaspadongy.vn/');
+}
+
+function metta_default_nav_items($location) {
+    $items = array(
+        'primary_left' => array(
+            array('label' => 'Trang chủ', 'url' => '/'),
+            array('label' => 'Giới thiệu', 'url' => '/gioi-thieu'),
+            array('label' => 'Menu', 'url' => '/menu'),
+            array('label' => 'Sản phẩm', 'url' => '/san-pham'),
+        ),
+        'primary_right' => array(
+            array('label' => 'Khóa học', 'url' => '/dao-tao'),
+            array('label' => 'Chi nhánh', 'url' => '/chi-nhanh'),
+            array('label' => 'Tin tức', 'url' => '/tin-tuc'),
+            array('label' => 'Liên hệ', 'url' => '/lien-he'),
+            array('label' => 'Đặt Lịch', 'url' => metta_get_booking_url(), 'classes' => 'metta-booking-menu-item'),
+        ),
+    );
+
+    if ($location === 'mobile') {
+        return array_merge($items['primary_left'], $items['primary_right']);
+    }
+
+    return isset($items[$location]) ? $items[$location] : array();
+}
+
+function metta_fallback_nav_menu_items_html($location) {
+    $html = '';
+
+    foreach (metta_default_nav_items($location) as $item) {
+        $url = isset($item['url']) ? $item['url'] : '#';
+        $is_external = preg_match('#^https?://#i', $url);
+        $href = $is_external ? $url : home_url($url);
+        $classes = array('menu-item');
+
+        if (!$is_external) {
+            $active_class = metta_is_active($url);
+            if ($active_class) {
+                $classes = array_merge($classes, explode(' ', $active_class));
+            }
+        }
+
+        if (!empty($item['classes'])) {
+            $classes = array_merge($classes, explode(' ', $item['classes']));
+        }
+
+        $target = $is_external ? ' target="_blank" rel="noopener"' : '';
+
+        $html .= sprintf(
+            '<li class="%1$s"><a href="%2$s"%3$s><span>%4$s</span></a></li>',
+            esc_attr(implode(' ', array_unique(array_filter($classes)))),
+            esc_url($href),
+            $target,
+            esc_html(metta_static($item['label']))
+        );
+    }
+
+    return $html;
+}
+
+function metta_nav_menu_items_html($theme_location) {
+    if (has_nav_menu($theme_location)) {
+        $menu_html = wp_nav_menu(array(
+            'theme_location' => $theme_location,
+            'container'      => false,
+            'items_wrap'     => '%3$s',
+            'depth'          => 3,
+            'echo'           => false,
+            'fallback_cb'    => false,
+        ));
+
+        if (!empty($menu_html)) {
+            return $menu_html;
+        }
+    }
+
+    return metta_fallback_nav_menu_items_html($theme_location);
+}
+
+function metta_render_nav_menu_items($theme_location) {
+    echo metta_nav_menu_items_html($theme_location);
+}
+
+function metta_render_mobile_nav_menu_items() {
+    if (has_nav_menu('mobile')) {
+        echo metta_nav_menu_items_html('mobile');
+        return;
+    }
+
+    if (has_nav_menu('primary_left') || has_nav_menu('primary_right')) {
+        echo metta_nav_menu_items_html('primary_left');
+        echo metta_nav_menu_items_html('primary_right');
+        return;
+    }
+
+    echo metta_fallback_nav_menu_items_html('mobile');
+}
+
+function metta_menu_item_is_booking($url = '', $title = '') {
+    $haystack = strtolower(remove_accents(wp_strip_all_tags($url . ' ' . $title)));
+
+    return strpos($haystack, 'datlich.mettaspadongy.vn') !== false
+        || strpos($haystack, '/dat-lich') !== false
+        || strpos($haystack, 'dat lich') !== false;
+}
+
+function metta_nav_menu_item_classes($classes, $menu_item, $args, $depth) {
+    if (metta_menu_item_is_booking($menu_item->url, $menu_item->title)) {
+        $classes[] = 'metta-booking-menu-item';
+    }
+
+    return array_unique($classes);
+}
+add_filter('nav_menu_css_class', 'metta_nav_menu_item_classes', 10, 4);
+
+function metta_nav_menu_link_attributes($atts, $menu_item, $args, $depth) {
+    if (!metta_menu_item_is_booking($menu_item->url, $menu_item->title)) {
+        return $atts;
+    }
+
+    $atts['target'] = '_blank';
+    $atts['rel'] = trim((isset($atts['rel']) ? $atts['rel'] : '') . ' noopener');
+
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'metta_nav_menu_link_attributes', 10, 4);
+
 function metta_get_translations() {
     return array(
         'en' => array(

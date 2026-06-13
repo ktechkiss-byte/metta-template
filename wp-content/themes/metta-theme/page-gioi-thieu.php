@@ -494,6 +494,51 @@ get_header(); ?>
 	        gap: 10px;
 	      }
 	    }
+
+	    /* Custom CSS to fix overlapping/invisible text colors */
+	    #text-3903669978 h2,
+	    #text-3274210281 h2,
+	    #text-3698214354 h2,
+	    #text-2119337678 h2 {
+	      color: #ffe2a0 !important;
+	      -webkit-text-fill-color: #ffe2a0 !important;
+	      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 8px 28px rgba(0, 0, 0, 0.9);
+	    }
+
+	    #text-3274210281,
+	    #text-3274210281 p,
+	    #text-3274210281 li,
+	    #text-3274210281 strong {
+	      color: #ffffff !important;
+	      -webkit-text-fill-color: #ffffff !important;
+	      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 8px 26px rgba(0, 0, 0, 0.88);
+	    }
+
+	    #text-2255748326,
+	    #text-167888686,
+	    #text-1539258129,
+	    #text-2674399885,
+	    #text-2255748326 *,
+	    #text-167888686 *,
+	    #text-1539258129 *,
+	    #text-2674399885 * {
+	      color: #ffe2a0 !important;
+	      -webkit-text-fill-color: #ffe2a0 !important;
+	      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95);
+	    }
+
+	    #col-896907260 > .col-inner > p,
+	    #col-896907260 > .col-inner > p *,
+	    #col-764234197 > .col-inner > p,
+	    #col-764234197 > .col-inner > p *,
+	    #col-144272533 > .col-inner > p,
+	    #col-144272533 > .col-inner > p *,
+	    #col-476970206 > .col-inner > p,
+	    #col-476970206 > .col-inner > p * {
+	      color: #ffffff !important;
+	      -webkit-text-fill-color: #ffffff !important;
+	      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95);
+	    }
 	  </style>
     <main id="main" class="">
       <div id="content" role="main" class="content-area">
