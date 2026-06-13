@@ -736,7 +736,7 @@
 
   <link rel="stylesheet" id="flatsome-main-css" href="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/css/flatsome.css?ver=3.32.0"
     type="text/css" media="all" />
-  <link rel="stylesheet" href="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/css/home.css?ver=3.32.1" type="text/css" media="all" />
+  <link rel="stylesheet" href="<?php echo get_site_url(); ?>/wp-content/themes/metta-theme/vendor/flatsome/assets/css/home.css?ver=3.32.2" type="text/css" media="all" />
   <style id="flatsome-main-inline-css" type="text/css">
     @font-face {
       font-family: "fl-icons";

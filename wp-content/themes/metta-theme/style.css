@@ -4,7 +4,7 @@ Theme URI: http://example.com/metta-theme
 Author: Metta Team
 Author URI: http://example.com
 Description: Custom theme converted from static HTML for Metta Spa.
-Version: 3.34.0
+Version: 3.35.4
 Text Domain: metta-theme
 */
 
@@ -1169,5 +1169,17 @@ section.section {
 @media (max-width: 768px) {
   section iframe {
     height: 250px !important;
+  }
+}
+
+/* --- Banner mobile aspect ratio override --- */
+@media (max-width: 768px) {
+  .banner {
+    padding-top: 0 !important;
+    height: auto !important;
+  }
+  .banner .banner-inner {
+    position: relative !important;
+    height: auto !important;
   }
 }

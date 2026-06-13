@@ -2355,3 +2355,15 @@ section {
     top: 8px;
   }
 }
+
+/* --- Banner mobile aspect ratio override --- */
+@media (max-width: 768px) {
+  .banner {
+    padding-top: 0 !important;
+    height: auto !important;
+  }
+  .banner .banner-inner {
+    position: relative !important;
+    height: auto !important;
+  }
+}
