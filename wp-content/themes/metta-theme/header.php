@@ -1886,31 +1886,63 @@
     #main { padding-top: 0px !important; }
 
     /* ROTATING LOGO SYSTEM */
-    .logo-rotate-wrapper {
+    #logo,
+    #logo .logo-rotate-wrapper,
+    .header-main,
+    .header-inner {
+      overflow: visible !important;
+    }
+
+    #logo a.logo-rotate-wrapper {
       position: relative !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
+      width: 70px !important;
+      height: 70px !important;
+      margin: 0 auto !important;
     }
 
-    .logo-rotate-wrapper img {
+    .header.transparent #logo a.logo-rotate-wrapper {
+      width: 80px !important;
+      height: 80px !important;
+    }
+
+    #logo a.logo-rotate-wrapper img {
+      width: 52px !important;
+      height: 52px !important;
+      max-height: 52px !important;
+      object-fit: contain !important;
       z-index: 2 !important;
       position: relative !important;
+      margin: 0 !important;
+      padding: 0 !important;
       animation: logoStaticPulse 5s ease-in-out infinite !important;
     }
 
-    .logo-rotate-wrapper .overlay-ring-svg {
+    .header.transparent #logo a.logo-rotate-wrapper img {
+      width: 60px !important;
+      height: 60px !important;
+      max-height: 60px !important;
+    }
+
+    #logo a.logo-rotate-wrapper .overlay-ring-svg {
       position: absolute !important;
       top: 50% !important;
       left: 50% !important;
       transform: translate(-50%, -50%);
-      width: 90px !important;
-      height: 90px !important;
+      width: 76px !important;
+      height: 76px !important;
       z-index: 1 !important;
       pointer-events: none !important;
       transform-origin: center !important;
-      animation: rotateRingSvg 50s linear infinite !important;
-      margin-top: -11px !important;
+      animation: rotateRingSvg 25s linear infinite !important;
+      margin: 0 !important;
+    }
+
+    .header.transparent #logo a.logo-rotate-wrapper .overlay-ring-svg {
+      width: 88px !important;
+      height: 88px !important;
     }
 
     @keyframes rotateRingSvg {
@@ -1930,10 +1962,10 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .logo-rotate-wrapper .overlay-ring-svg {
+      #logo a.logo-rotate-wrapper .overlay-ring-svg {
         animation: none !important;
       }
-      .logo-rotate-wrapper img {
+      #logo a.logo-rotate-wrapper img {
         animation: none !important;
       }
     }
@@ -1979,11 +2011,11 @@
                 $custom_logo = function_exists('get_field') ? get_field('site_logo', $f_id) : '';
                 $logo_url = !empty($custom_logo) ? $custom_logo : get_site_url() . '/wp-content/uploads/2025/12/logo_meta.svg';
                 ?>
-                <img width="160" height="70"
+                <img width="70" height="70"
                   src="<?php echo $logo_url; ?>"
                   class="header_logo header-logo" alt="Metta đông y Spa" 
                   style="object-fit: contain;" />
-                <img width="160" height="70"
+                <img width="70" height="70"
                   src="<?php echo $logo_url; ?>"
                   class="header-logo-dark" alt="Metta đông y Spa" 
                   style="object-fit: contain; display: none;" />
