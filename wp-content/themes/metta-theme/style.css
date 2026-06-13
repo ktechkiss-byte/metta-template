@@ -1183,3 +1183,173 @@ section.section {
     height: auto !important;
   }
 }
+
+/* ============================================
+   DARK THEME CONTRAST FIX FOR NEWS & BLOG PAGES
+   ============================================ */
+
+/* 1. Reset background for wrapper & main to transparent to keep dark theme background */
+body.single-post #wrapper,
+body.single-post #main,
+body.archive #wrapper,
+body.archive #main,
+body.page-template-page-tin-tuc #wrapper,
+body.page-template-page-tin-tuc #main {
+  background-color: transparent !important;
+}
+
+/* 2. Style single post text colors to light for legibility */
+body.single-post {
+  color: var(--metta-sub, #f5f2e8) !important;
+}
+
+/* Entry content text & headings inside post content */
+body.single-post .entry-content p,
+body.single-post .entry-content li,
+body.single-post .entry-content table td,
+body.single-post .entry-content table th {
+  color: var(--metta-sub, #f5f2e8) !important;
+}
+
+/* Headings colors */
+body.single-post h1.entry-title {
+  color: var(--metta-main, #f49d21) !important;
+}
+
+body.single-post .entry-content h1,
+body.single-post .entry-content h2,
+body.single-post .entry-content h3,
+body.single-post .entry-content h4,
+body.single-post .entry-content h5,
+body.single-post .entry-content h6 {
+  color: var(--metta-gold-soft, #e5d3bd) !important;
+}
+
+body.single-post .entry-category a {
+  color: var(--metta-gold-soft, #e5d3bd) !important;
+  font-weight: 700;
+}
+
+body.single-post .entry-category a:hover {
+  color: var(--metta-main, #f49d21) !important;
+}
+
+/* Bold / Strong emphasis text */
+body.single-post .entry-content strong,
+body.single-post .entry-content b {
+  color: #fff !important;
+  font-weight: 700;
+}
+
+/* Article inner links styling */
+body.single-post .entry-content a {
+  color: var(--metta-main, #f49d21) !important;
+  text-decoration: underline;
+}
+
+body.single-post .entry-content a:hover {
+  color: var(--metta-gold-soft, #e5d3bd) !important;
+}
+
+/* Divider lines in post content */
+body.single-post .is-divider {
+  background-color: var(--metta-gold-dark, #a87e09) !important;
+}
+
+/* Share icons on single post page */
+body.single-post .social-icons.share-icons a {
+  border-color: var(--metta-gold-soft, #e5d3bd) !important;
+  color: var(--metta-gold-soft, #e5d3bd) !important;
+}
+
+body.single-post .social-icons.share-icons a:hover {
+  background-color: var(--metta-main, #f49d21) !important;
+  border-color: var(--metta-main, #f49d21) !important;
+  color: #fff !important;
+}
+
+/* Next / Prev post navigation links */
+body.single-post .navigation-post a {
+  color: var(--metta-sub, #f5f2e8) !important;
+}
+
+body.single-post .navigation-post a:hover {
+  color: var(--metta-main, #f49d21) !important;
+}
+
+body.single-post .navigation-post .next-prev-nav {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Blockquote styling */
+body.single-post .entry-content blockquote {
+  border-left-color: var(--metta-main, #f49d21) !important;
+  color: var(--metta-gold-soft, #e5d3bd) !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Table styling for dark theme readability */
+body.single-post .entry-content table {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+body.single-post .entry-content th,
+body.single-post .entry-content td {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.single-post .entry-content thead th {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: var(--metta-main, #f49d21) !important;
+}
+
+/* 3. Style news archive headers to light for legibility */
+body.archive .archive-header h1.page-title,
+body.page-template-page-tin-tuc .archive-header h1.page-title {
+  color: var(--metta-main, #f49d21) !important;
+}
+
+body.archive .archive-header p,
+body.page-template-page-tin-tuc .archive-header p {
+  color: var(--metta-gold-soft, #e5d3bd) !important;
+}
+
+/* 4. Style sidebar widget text and links to light for legibility */
+body.single-post .widget-title,
+body.single-post .widget-title span,
+body.archive .widget-title,
+body.archive .widget-title span,
+body.page-template-page-tin-tuc .widget-title,
+body.page-template-page-tin-tuc .widget-title span {
+  color: var(--metta-main, #f49d21) !important;
+}
+
+body.single-post .widget-area aside,
+body.archive .widget-area aside,
+body.page-template-page-tin-tuc .widget-area aside {
+  color: var(--metta-sub, #f5f2e8) !important;
+}
+
+body.single-post .widget-area a,
+body.archive .widget-area a,
+body.page-template-page-tin-tuc .widget-area a {
+  color: var(--metta-sub, #f5f2e8) !important;
+  transition: color 0.2s ease;
+}
+
+body.single-post .widget-area a:hover,
+body.archive .widget-area a:hover,
+body.page-template-page-tin-tuc .widget-area a:hover {
+  color: var(--metta-main, #f49d21) !important;
+}
+
+body.single-post .widget-area .post_comments,
+body.single-post .widget-area .post_comments span,
+body.archive .widget-area .post_comments,
+body.archive .widget-area .post_comments span,
+body.page-template-page-tin-tuc .widget-area .post_comments,
+body.page-template-page-tin-tuc .widget-area .post_comments span {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
