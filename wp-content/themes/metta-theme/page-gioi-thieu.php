@@ -561,7 +561,7 @@ get_header(); ?>
                       <div class="col-inner">
                         <div class="img has-hover about-intro-img x md-x lg-x y md-y lg-y" id="image_1811577849">
                           <div class="img-inner image-cover dark" style="padding-top: 75%">
-                            <img width="1920" height="1280" src="<?php echo metta_get_field('about_img_1') ?: get_site_url().'/wp-content/uploads/2026/05/metta_spa_zen_corner.png'; ?>" class="attachment-original size-original" />
+                            <img width="1920" height="1280" src="<?php echo esc_url( metta_about_image_url('about_img_1', get_site_url().'/wp-content/uploads/2026/05/metta_spa_zen_corner.png') ); ?>" class="attachment-original size-original" />
                           </div>
 
                           <style>
@@ -577,7 +577,7 @@ get_header(); ?>
                       <div class="col-inner">
                         <div class="img has-hover about-intro-img x md-x lg-x y md-y lg-y" id="image_935462736">
                           <div class="img-inner image-cover dark" style="padding-top: 75%">
-                            <img width="1920" height="1280" src="<?php echo metta_get_field('about_img_2') ?: get_site_url().'/wp-content/uploads/2026/05/metta_spa_tea_lounge.png'; ?>" class="attachment-original size-original" />
+                            <img width="1920" height="1280" src="<?php echo esc_url( metta_about_image_url('about_img_2', get_site_url().'/wp-content/uploads/2026/05/metta_spa_tea_lounge.png') ); ?>" class="attachment-original size-original" />
                           </div>
 
                           <style>
@@ -593,14 +593,15 @@ get_header(); ?>
                       <div class="col-inner">
                         <div class="img has-hover about-intro-img x md-x lg-x y md-y lg-y" id="image_496264494">
                           <div class="img-inner image-cover dark" style="padding-top: 75%">
+                            <?php $about_img_3 = esc_url( metta_about_image_url('about_img_3', get_site_url() . '/wp-content/uploads/2026/05/metta_spa_empty_room.png') ); ?>
                             <img decoding="async" width="1920" height="1536"
-  src="<?php echo metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/05/metta_spa_empty_room.png'; ?>"
-  class="attachment-original size-original" alt=""
-  style="width:100%;height:100%;object-fit:cover;" /><noscript><img
+                              src="<?php echo $about_img_3; ?>"
+                              class="attachment-original size-original" alt=""
+                              style="width:100%;height:100%;object-fit:cover;" /><noscript><img
                                 decoding="async" width="1920" height="1536"
-                                src="<?php echo metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/05/metta_spa_empty_room.png'; ?>"
+                                src="<?php echo $about_img_3; ?>"
                                  class="attachment-original size-original" alt="" srcset="
-                                     <?php echo metta_get_field('about_img_3') ?: get_site_url() . '/wp-content/uploads/2026/05/metta_spa_empty_room.png 1536w'; ?>
+                                     <?php echo $about_img_3; ?> 1536w
                                    " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
                           </div>
 
@@ -753,10 +754,15 @@ get_header(); ?>
 
                       <div class="banner-layers container">
                         <div class="fill banner-link"></div>
+                        <?php 
+                        $about_intro_img1 = esc_url( metta_about_image_url('about_intro_img1', get_site_url() . '/wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg') );
+                        $about_intro_img2 = esc_url( metta_about_image_url('about_intro_img2', get_site_url() . '/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg') );
+                        $about_intro_img3 = esc_url( metta_about_image_url('about_intro_img3') );
+                        ?>
                         <div class="img has-hover about-first-img x50 md-x0 lg-x0 y0 md-y0 lg-y0" id="image_1474311785">
                           <div class="img-inner image-cover dark" style="padding-top: 75%">
                             <img decoding="async" width="2560" height="1707"
-                              src="<?php echo metta_get_field('about_intro_img1') ?: get_site_url() . '/wp-content/uploads/2025/12/481078375_961583879444009_7732675770945397832_n.jpg'; ?>"
+                              src="<?php echo $about_intro_img1; ?>"
                               class="attachment-original size-original" alt=""
                               style="width:100%;height:100%;object-fit:cover;" />
                           </div>
@@ -774,12 +780,13 @@ get_header(); ?>
                           </style>
                         </div>
 
+                        <?php if ( ! empty( $about_intro_img3 ) ) : ?>
                         <div class="img has-hover x50 md-x0 lg-x0 y95 md-y100 lg-y100" id="image_298351937">
                           <div class="img-inner dark">
                             <img decoding="async"
-  src="<?php echo metta_get_field('about_intro_img3') ?: ''; ?>"
-  class="attachment-original size-original" alt=""
-  style="width:100%;height:100%;object-fit:cover;" />
+                              src="<?php echo $about_intro_img3; ?>"
+                              class="attachment-original size-original" alt=""
+                              style="width:100%;height:100%;object-fit:cover;" />
                           </div>
 
                           <style>
@@ -794,13 +801,14 @@ get_header(); ?>
                             }
                           </style>
                         </div>
+                        <?php endif; ?>
 
                         <div
                           class="img has-hover about-second-img hide-for-small x100 md-x95 lg-x95 y85 md-y100 lg-y100"
                           id="image_1626772419">
                           <div class="img-inner image-cover dark" style="padding-top: 100%">
                             <img decoding="async" width="1920" height="1280"
-                              src="<?php echo metta_get_field('about_intro_img2') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243484732_2d1e46a5ab82dc922a8ed3862ffd0c98.jpg'; ?>"
+                              src="<?php echo $about_intro_img2; ?>"
                               class="attachment-original size-original" alt=""
                               style="width:100%;height:100%;object-fit:cover;" />
                           </div>
@@ -977,9 +985,9 @@ get_header(); ?>
                     <div class="banner-inner fill">
                       <div class="banner-bg fill">
                         <img decoding="async" width="2560" height="1706"
-  src="<?php echo metta_get_field('about_why_bg') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243450674_8d3238bb894d1985ed7e8f5af7ed3638.jpg'; ?>"
-  class="attachment-original size-original" alt=""
-  style="width:100%;height:100%;object-fit:cover;" />
+                          src="<?php echo esc_url( metta_about_image_url('about_why_bg', get_site_url() . '/wp-content/uploads/2025/12/z7321243450674_8d3238bb894d1985ed7e8f5af7ed3638.jpg') ); ?>"
+                          class="attachment-original size-original" alt=""
+                          style="width:100%;height:100%;object-fit:cover;" />
                         <div class="overlay"></div>
                       </div>
 
@@ -1048,12 +1056,16 @@ get_header(); ?>
                           </style>
                         </div>
 
+                        <?php 
+                        $about_why_img_float = esc_url( metta_about_image_url('about_why_img_float') );
+                        if ( ! empty( $about_why_img_float ) ) :
+                        ?>
                         <div class="img has-hover x0 md-x0 lg-x0 y100 md-y100 lg-y100" id="image_654226472">
                           <div class="img-inner dark">
                             <img decoding="async"
-  src="<?php echo metta_get_field('about_why_img_float') ?: ''; ?>"
-  class="attachment-original size-original" alt=""
-  style="width:100%;height:100%;object-fit:cover;" />
+                              src="<?php echo $about_why_img_float; ?>"
+                              class="attachment-original size-original" alt=""
+                              style="width:100%;height:100%;object-fit:cover;" />
                           </div>
 
                           <style>
@@ -1068,6 +1080,7 @@ get_header(); ?>
                             }
                           </style>
                         </div>
+                        <?php endif; ?>
                       </div>
                     </div>
 
@@ -1129,17 +1142,18 @@ get_header(); ?>
                                   <div class="box has-hover about-img-box has-hover box-overlay dark box-text-bottom">
                                     <div class="box-image">
                                       <div class="image-cover" style="padding-top: 150%">
+                                        <?php $about_why_item1_img = esc_url( metta_about_image_url('about_why_item1_img', get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg') ); ?>
                                         <img decoding="async" width="1920" height="1920"
-  src="<?php echo metta_get_field('about_why_item1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg'; ?>"
-  class="attachment-original size-original" alt=""
-  style="width:100%;height:100%;object-fit:cover;" /><noscript><img decoding="async" width="1920"
+                                          src="<?php echo $about_why_item1_img; ?>"
+                                          class="attachment-original size-original" alt=""
+                                          style="width:100%;height:100%;object-fit:cover;" /><noscript><img decoding="async" width="1920"
                                             height="1920"
-                                            src="<?php echo metta_get_field('about_why_item1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg'; ?>"
+                                            src="<?php echo $about_why_item1_img; ?>"
                                             class="attachment-original size-original" alt="" srcset="
-                                                <?php echo metta_get_field('about_why_item1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg'; ?>           1920w,
-                                                <?php echo metta_get_field('about_why_item1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg'; ?> 1024w,
-                                                <?php echo metta_get_field('about_why_item1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg'; ?>    768w,
-                                                <?php echo metta_get_field('about_why_item1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321244112065_aa7062f58e5722d9955707e8b0c43090.jpg'; ?> 1536w
+                                                <?php echo $about_why_item1_img; ?>           1920w,
+                                                <?php echo $about_why_item1_img; ?> 1024w,
+                                                <?php echo $about_why_item1_img; ?>    768w,
+                                                <?php echo $about_why_item1_img; ?> 1536w
                                               " sizes="(max-width: 1920px) 100vw, 1920px" data-eio="l" /></noscript>
                                         <div class="overlay" style="background-color: #3729007a"></div>
                                       </div>
@@ -1172,17 +1186,18 @@ get_header(); ?>
                                   <div class="box has-hover about-img-box has-hover box-overlay dark box-text-bottom">
                                     <div class="box-image">
                                       <div class="image-cover" style="padding-top: 150%">
+                                        <?php $about_why_item2_img = esc_url( metta_about_image_url('about_why_item2_img', get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp') ); ?>
                                         <img decoding="async" width="1666" height="1920"
-  src="<?php echo metta_get_field('about_why_item2_img') ?: get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp'; ?>"
-  class="attachment-original size-original" alt=""
-  style="width:100%;height:100%;object-fit:cover;" /><noscript><img decoding="async" width="1666"
+                                          src="<?php echo $about_why_item2_img; ?>"
+                                          class="attachment-original size-original" alt=""
+                                          style="width:100%;height:100%;object-fit:cover;" /><noscript><img decoding="async" width="1666"
                                             height="1920"
-                                            src="<?php echo metta_get_field('about_why_item2_img') ?: get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp'; ?>"
+                                            src="<?php echo $about_why_item2_img; ?>"
                                             class="attachment-original size-original" alt="" srcset="
-                                                <?php echo metta_get_field('about_why_item2_img') ?: get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp'; ?>           1666w,
-                                                <?php echo metta_get_field('about_why_item2_img') ?: get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp'; ?>   889w,
-                                                <?php echo metta_get_field('about_why_item2_img') ?: get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp'; ?>    768w,
-                                                <?php echo metta_get_field('about_why_item2_img') ?: get_site_url() . '/wp-content/uploads/2025/12/vn-11134207-820l4-meo2lbllybk2c1.webp'; ?> 1333w
+                                                <?php echo $about_why_item2_img; ?>           1666w,
+                                                <?php echo $about_why_item2_img; ?>   889w,
+                                                <?php echo $about_why_item2_img; ?>    768w,
+                                                <?php echo $about_why_item2_img; ?> 1333w
                                               " sizes="(max-width: 1666px) 100vw, 1666px" data-eio="l" /></noscript>
                                         <div class="overlay" style="background-color: #3729007a"></div>
                                       </div>
@@ -2001,7 +2016,7 @@ get_header(); ?>
                                 id="image_1666817933">
                                 <div class="img-inner image-cover dark" style="padding-top: 56.25%">
                                   <img decoding="async" width="1414" height="812"
-                                    src="<?php echo metta_get_field('about_branch_1_img') ?: get_site_url() . '/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg'; ?>"
+                                    src="<?php echo esc_url( metta_about_image_url('about_branch_1_img', get_site_url() . '/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg') ); ?>"
                                     class="attachment-original size-original" alt=""
                                     style="width:100%;height:100%;object-fit:cover;" />
                                 </div>
@@ -2058,7 +2073,7 @@ get_header(); ?>
                                 id="image_984473400">
                                 <div class="img-inner image-cover dark" style="padding-top: 56.25%">
                                   <img decoding="async" width="1413" height="812"
-                                    src="<?php echo metta_get_field('about_branch_2_img') ?: get_site_url() . '/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg'; ?>"
+                                    src="<?php echo esc_url( metta_about_image_url('about_branch_2_img', get_site_url() . '/wp-content/uploads/2026/03/z7321244104166_d5f483d125730f143fbd2d4124c88633.jpg') ); ?>"
                                     class="attachment-original size-original" alt=""
                                     style="width:100%;height:100%;object-fit:cover;" />
                                 </div>

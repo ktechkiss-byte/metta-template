@@ -7,7 +7,7 @@ get_header(); ?>
       <div id="content" role="main" class="content-area">
         <section class="section" id="section_190891064">
           <div class="section-bg fill">
-            <img width="2483" height="1002" src="<?php echo metta_get_field('branch_page_bg') ?: get_site_url().'/wp-content/uploads/2026/03/Frame-Metta-Moi.jpg'; ?>"
+            <img width="2483" height="1002" src="<?php echo esc_url( metta_resolve_image_url( metta_get_field('branch_page_bg'), get_site_url().'/wp-content/uploads/2026/03/Frame-Metta-Moi.jpg' ) ); ?>"
               class="bg attachment- size-" alt="" decoding="async" fetchpriority="high" />
           </div>
 
@@ -33,7 +33,7 @@ get_header(); ?>
 	                  <div class="row align-middle align-center branchs">
 	                    <?php 
 	                    foreach(metta_get_branch_items() as $i => $branch):
-	                        $b_img = $branch['image'];
+	                        $b_img = metta_resolve_image_url($branch['image'], get_site_url() . '/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg');
 	                        $b_name = $branch['name'];
 	                        $b_hot = $branch['hotline'];
 	                        $b_addr = $branch['address'];

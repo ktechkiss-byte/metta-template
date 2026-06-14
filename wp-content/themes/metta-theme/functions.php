@@ -25,7 +25,7 @@ function metta_theme_scripts() {
     };
 
     // Main theme stylesheet. Flatsome CSS/JS are already hard-coded in header.php/footer.php.
-    wp_enqueue_style( 'metta-theme-style', get_stylesheet_uri(), array(), '3.36.1' );
+    wp_enqueue_style( 'metta-theme-style', get_stylesheet_uri(), array(), '3.36.2' );
 
     $uses_swiper = is_front_page()
         || is_page_template( 'page-khoa-hoc-duong-sinh.php' )
@@ -164,6 +164,27 @@ function metta_row_value($row, $key, $fallback = '') {
     return !empty($row[$key]) ? $row[$key] : $fallback;
 }
 
+function metta_resolve_image_url($image, $fallback = '') {
+    if (empty($image)) {
+        return $fallback;
+    }
+
+    if (is_array($image) && !empty($image['url'])) {
+        return $image['url'];
+    }
+
+    if (is_numeric($image)) {
+        $image_url = wp_get_attachment_image_url((int) $image, 'full');
+        return $image_url ?: $fallback;
+    }
+
+    if (is_string($image)) {
+        return $image;
+    }
+
+    return $fallback;
+}
+
 function metta_default_branches() {
     return array(
         array(
@@ -186,6 +207,7 @@ function metta_default_branches() {
 function metta_get_branch_items($field_name = 'branch_items', $legacy_prefix = 'branch', $post_id = false) {
     $rows = metta_get_repeater_rows($field_name, $post_id);
     $items = array();
+    $default_image = get_site_url() . '/wp-content/uploads/2025/12/z7321243434473_0b4c7065cbeea0b7a8817deed701d409.jpg';
 
     foreach ($rows as $row) {
         $name = metta_row_value($row, 'name');
@@ -194,7 +216,7 @@ function metta_get_branch_items($field_name = 'branch_items', $legacy_prefix = '
         }
 
         $items[] = array(
-            'image' => !empty($row['image']) ? $row['image'] : '',
+            'image' => metta_resolve_image_url(metta_row_value($row, 'image'), $default_image),
             'name' => $name,
             'hotline' => metta_row_value($row, 'hotline'),
             'address' => metta_row_value($row, 'address'),
@@ -219,7 +241,7 @@ function metta_get_branch_items($field_name = 'branch_items', $legacy_prefix = '
         }
 
         $items[] = array(
-            'image' => metta_get_field($img_key),
+            'image' => metta_resolve_image_url(metta_get_field($img_key), $default_image),
             'name' => $name,
             'hotline' => metta_get_field($hotline_key),
             'address' => metta_get_field($address_key),
