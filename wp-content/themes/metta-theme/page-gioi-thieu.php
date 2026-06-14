@@ -23,24 +23,7 @@ get_header(); ?>
 	       Global rules are in style.css
 	       ============================================ */
 
-	    body::before {
-	      content: '';
-	      position: fixed;
-	      inset: 0;
-	      z-index: -2;
-	      background: url('<?php echo get_site_url(); ?>/wp-content/uploads/2026/05/Gemini_Generated_Image_12ahia12ahia12ah-scaled.png') center center / cover no-repeat;
-	      filter: blur(3px) brightness(0.72);
-	      transform: scale(1.04);
-	    }
-
-	    body::after {
-	      content: '';
-	      position: fixed;
-	      inset: 0;
-	      z-index: -1;
-	      background: rgba(52, 22, 8, 0.52);
-	      pointer-events: none;
-	    }
+	    /* Global background image and overlay are handled by style.css */
 
 	    #wrapper,
 	    #main,

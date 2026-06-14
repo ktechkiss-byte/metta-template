@@ -4,7 +4,7 @@ Theme URI: http://example.com/metta-theme
 Author: Metta Team
 Author URI: http://example.com
 Description: Custom theme converted from static HTML for Metta Spa.
-Version: 3.35.6
+Version: 3.35.7
 Text Domain: metta-theme
 */
 
@@ -69,10 +69,34 @@ html {
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background: transparent;
+  background: transparent !important;
   color: #333;
   line-height: 1.6;
   position: relative;
+}
+
+/* ========================================================
+   GLOBAL BACKGROUND SYSTEM (MOSS GREEN & GLOWING LOTUS)
+======================================================== */
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: -2 !important;
+  background: url('images/green_lotus_bg.png') center center / cover no-repeat !important;
+  filter: brightness(0.68) contrast(1.05) !important;
+  pointer-events: none !important;
+  display: block !important;
+}
+
+body::after {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  background: linear-gradient(110deg, rgba(7, 33, 23, 0.45) 0%, rgba(75, 35, 42, 0.55) 45%, rgba(90, 47, 56, 0.5) 65%, rgba(3, 15, 10, 0.78) 100%) !important;
+  pointer-events: none !important;
+  display: block !important;
 }
 
 body .blog-single {
@@ -124,8 +148,12 @@ body .blog-single {
 
 #wrapper,
 #main,
-#main.dark {
-  background-color: transparent;
+#main.dark,
+#content,
+.section,
+.section-bg {
+  background-color: transparent !important;
+  background: transparent !important;
 }
 
 .container-width,

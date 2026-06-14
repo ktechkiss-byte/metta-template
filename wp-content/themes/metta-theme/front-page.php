@@ -6,25 +6,7 @@
    Áp dụng cho tất cả sections từng có nền trắng
 ======================================================== */
 
-/* Fixed background image cho toàn trang */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background: url('<?php echo get_template_directory_uri(); ?>/images/green_lotus_bg.png') center center / cover no-repeat;
-  filter: brightness(0.72);
-}
-
-/* Overlay tối nhẹ để text dễ đọc */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(110deg, rgba(7, 33, 23, 0.45) 0%, rgba(75, 35, 42, 0.55) 45%, rgba(90, 47, 56, 0.5) 65%, rgba(3, 15, 10, 0.78) 100%);
-  pointer-events: none;
-}
+/* Global background image and overlay are handled by style.css */
 
 /* Remove nền trắng cũ của các sections */
 #section_707428218 .section-bg,

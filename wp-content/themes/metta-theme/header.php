@@ -875,7 +875,7 @@
     body {
       margin: 0;
       font-family: "Inter", sans-serif;
-      background: var(--metta-bg);
+      background: transparent !important;
       color: var(--metta-main);
       line-height: 1.6;
     }
@@ -884,7 +884,7 @@
     #wrapper,
     #main,
     #main.dark {
-      background-color: #fffcf9;
+      background-color: transparent !important;
     }
 
     .header-main {

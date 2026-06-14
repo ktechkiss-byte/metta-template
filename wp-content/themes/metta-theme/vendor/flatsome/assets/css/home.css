@@ -361,7 +361,7 @@ body.home,
 body.front-page {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background: #072117;
+  background: transparent !important;
   color: var(--metta-main);
   line-height: 1.6;
 }
