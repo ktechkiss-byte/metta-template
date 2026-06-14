@@ -290,13 +290,13 @@
     
     /* Base mobile sidebar styling - SOLID BACKGROUND */
     #main-menu.mobile-sidebar {
-      background-color: var(--metta-bg) !important;
+      background-color: var(--metta-bg-wine) !important;
       opacity: 1 !important;
       z-index: 999999 !important;
     }
     
     #main-menu.mobile-sidebar .sidebar-menu {
-      background-color: var(--metta-bg) !important;
+      background-color: var(--metta-bg-wine) !important;
       opacity: 1 !important;
     }
     
@@ -319,7 +319,7 @@
     .mfp-ready #main-menu.mobile-sidebar,
     .mfp-ready .mobile-sidebar .sidebar-menu {
       opacity: 1 !important;
-      background-color: var(--metta-bg) !important;
+      background-color: var(--metta-bg-wine) !important;
     }
     
     #main-menu .nav-sidebar {
@@ -355,7 +355,7 @@
       justify-content: center !important;
       margin: 10px 20px 0 !important;
       border-radius: 8px !important;
-      background: linear-gradient(92deg, #9c4b00 1.53%, #c67427 93.65%) !important;
+      background: var(--metta-gradient-cta) !important;
       color: #fff !important;
       font-weight: 700 !important;
       text-align: center !important;
