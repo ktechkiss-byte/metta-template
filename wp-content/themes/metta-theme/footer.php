@@ -256,7 +256,7 @@
           }
 
           #section_1305578020 .section-bg-overlay {
-            background-color: rgba(7, 33, 23, 0.69);
+            background-color: rgba(45, 20, 25, 0.82);
           }
 
           #section_1305578020 .section-bg img {
