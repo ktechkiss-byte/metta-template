@@ -138,7 +138,7 @@ get_header(); ?>
             justify-content: flex-end;
             gap: 8px;
             padding: 10px 12px;
-            background: #4a2d2e;
+            background: var(--metta-bg);
           }
 
           .metta-menu-btn {

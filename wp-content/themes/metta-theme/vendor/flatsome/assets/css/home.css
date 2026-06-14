@@ -305,7 +305,7 @@
 }
 
 :root {
-  --metta-bg: #4A2D2E;
+  --metta-bg: #072117;
   /* nền mận trầm */
   --metta-main: #F49D21;
   /* text chính vàng ánh kim */
@@ -361,7 +361,7 @@ body.home,
 body.front-page {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background: #4a2d2e;
+  background: #072117;
   color: var(--metta-main);
   line-height: 1.6;
 }
@@ -541,7 +541,7 @@ section {
   border-bottom-right-radius: 50px;
   border: 2px solid rgba(255, 215, 160, 0.45);
 
-  color: #4A2D2E !important;
+  color: #072117 !important;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.3px;
@@ -559,7 +559,7 @@ section {
   content: "➜";
   font-size: 18px;
   font-weight: 900;
-  color: #4A2D2E;
+  color: #072117;
   display: flex;
   align-items: center;
 }
@@ -625,7 +625,7 @@ section {
 .mobile-booking,
 .btn-primary {
   background: linear-gradient(135deg, var(--metta-main), var(--metta-gold-soft));
-  color: #4A2D2E !important;
+  color: #072117 !important;
   box-shadow: 0 10px 24px rgba(244, 157, 33, 0.4);
 }
 
@@ -758,7 +758,7 @@ section {
   content: "➜";
   font-size: 18px;
   font-weight: 900;
-  color: #4A2D2E;
+  color: #072117;
   display: flex;
   align-items: center;
 }
@@ -801,7 +801,7 @@ section {
   right: 0;
   bottom: 0;
   padding-bottom: 50px;
-  background-color: #4a2d2eb0
+  background-color: #072117b0
 }
 
 @media (max-width: 992px) {
@@ -1352,7 +1352,7 @@ section {
   }
 
   .banner-inner .banner-bg.blur {
-    background-color: #4a2d2ede;
+    background-color: #072117de;
   }
 
   .hero-v2-image-card .flickity-page-dots {

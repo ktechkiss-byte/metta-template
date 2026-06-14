@@ -12,9 +12,8 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: url('<?php echo get_site_url(); ?>/wp-content/uploads/2026/05/Gemini_Generated_Image_12ahia12ahia12ah-scaled.png') center center / cover no-repeat;
-  filter: blur(3px) brightness(0.8);
-  transform: scale(1.04); /* Prevent blur edges showing */
+  background: url('<?php echo get_template_directory_uri(); ?>/images/green_lotus_bg.png') center center / cover no-repeat;
+  filter: brightness(0.72);
 }
 
 /* Overlay tối nhẹ để text dễ đọc */
@@ -23,7 +22,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: rgba(58, 28, 10, 0.45);
+  background: linear-gradient(110deg, rgba(7, 33, 23, 0.45) 0%, rgba(75, 35, 42, 0.55) 45%, rgba(90, 47, 56, 0.5) 65%, rgba(3, 15, 10, 0.78) 100%);
   pointer-events: none;
 }
 
@@ -1352,7 +1351,7 @@ $_review_bg  = metta_get_field('review_bg_image') ?: $_default_bg;
             }
 
             #section_467763596 .section-bg-overlay {
-              background-color: #4a2d2eb0;
+              background-color: rgba(7, 33, 23, 0.69);
             }
 
             #section_467763596 .section-bg img {

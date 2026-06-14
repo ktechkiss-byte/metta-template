@@ -802,18 +802,29 @@
   
   <style id="custom-css" type="text/css">
     :root {
-      --metta-bg: #4a2d2e;
+      --metta-bg: #072117;
+      --metta-bg-wine: #4b232a;
+      --metta-bg-wine2: #5a2f38;
+      --metta-bg-wine3: #6a3b42;
+      --metta-primary: #4b232a;
       --metta-main: #f49d21;
+      --metta-gold: #c89b3c;
+      --metta-gold-dark: #a87e09;
+      --metta-cream: #fffcf9;
       --metta-sub: #f5f2e8;
-      --metta-gold-soft: #e5d3bd;
-      --primary-color: #603813;
-      --fs-color-primary: #603813;
-      --fs-color-secondary: #074404;
-      --fs-color-success: #627d47;
-      --fs-color-alert: #603813;
+      --metta-green: #072117;
+      --metta-green-light: #627d47;
+      
+      --primary-color: var(--metta-primary);
+      --vang-dat: var(--metta-gold-dark);
+      --fs-color-primary: var(--metta-primary);
+      --fs-color-secondary: var(--metta-green);
+      --fs-color-success: var(--metta-green-light);
+      --fs-color-alert: var(--metta-primary);
       --fs-color-base: #361b01;
-      --fs-experimental-link-color: #603813;
-      --fs-experimental-link-color-hover: #074404;
+      
+      --metta-gradient-cta: linear-gradient(92deg, #c89b3c 1.53%, #f49d21 93.65%);
+      --metta-gradient-dark: linear-gradient(110deg, var(--metta-bg) 0%, var(--metta-bg-wine) 42%, var(--metta-bg-wine2) 62%, rgba(7,33,23,0.88) 100%);
     }
 
     .tooltipster-base {
@@ -824,12 +835,12 @@
     .off-canvas-right .mfp-content,
     .off-canvas-left .mfp-content {
       --drawer-width: 300px;
-      background-color: #4a2d2e !important;
+      background-color: var(--metta-bg-wine) !important;
       color: #fff !important;
     }
 
     html {
-      background: #4a2d2e;
+      background: var(--metta-bg);
       color: var(--metta-main);
     }
 
@@ -864,7 +875,7 @@
     body {
       margin: 0;
       font-family: "Inter", sans-serif;
-      background: #4a2d2e;
+      background: var(--metta-bg);
       color: var(--metta-main);
       line-height: 1.6;
     }
@@ -878,7 +889,7 @@
 
     .header-main {
       height: 70px;
-      background: var(--metta-bg);
+      background: var(--metta-bg-wine);
       color: var(--metta-main);
     }
 
@@ -920,7 +931,7 @@
     .header.show-on-scroll,
     .stuck .header-main {
       height: 70px !important;
-      background: #4a2d2e;
+      background: var(--metta-bg);
       color: #e5d3bd;
     }
 
@@ -1163,7 +1174,7 @@
       text-align: center;
       padding: 20px 20px;
 
-      background: linear-gradient(92deg, #4a2d2e 1.53%, #9c5410 93.65%);
+      background: var(--metta-gradient-dark);
       border-bottom-right-radius: 20px;
       border-bottom-left-radius: 20px;
 
@@ -1284,12 +1295,12 @@
     }
 
     .header-button .button {
-      background: linear-gradient(92deg, #9c4b00 1.53%, #c67427 93.65%);
+      background: var(--metta-gradient-cta);
       border: 0;
     }
 
     #booking .button {
-      background: linear-gradient(92deg, #9c4b00 1.53%, #c67427 93.65%);
+      background: var(--metta-gradient-cta);
       border: 1px solid #a87e09;
     }
 
@@ -1302,7 +1313,7 @@
     .branch-item .button {
       margin: 0;
       border-radius: 100px;
-      background: linear-gradient(92deg, #9c4b00 1.53%, #c67427 93.65%);
+      background: var(--metta-gradient-cta);
       border: 0;
       border: 1px solid #a87e09;
     }
@@ -1354,7 +1365,7 @@
       right: 0;
       bottom: 0;
       padding-bottom: 50px;
-      background-color: #4a2d2eb0;
+      background-color: rgba(7, 33, 23, 0.69);
     }
 
     .about-end-banner,

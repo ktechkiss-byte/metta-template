@@ -1582,7 +1582,7 @@ get_header(); ?>
               <style>
                 #row-317605118>.col>.col-inner {
                   padding: 100px 30px 100px 30px;
-                  background-color: #4a2d2ed1;
+                  background-color: rgba(7, 33, 23, 0.82);
                   color: white;
                 }
                 /* White text for all descriptions in Giá Trị Cốt Lõi cards */
@@ -1602,7 +1602,7 @@ get_header(); ?>
             }
 
             #section_1967216007 .section-bg-overlay {
-              background-color: #4a2d2eb0;
+              background-color: rgba(7, 33, 23, 0.69);
             }
 
             @media (min-width: 550px) {

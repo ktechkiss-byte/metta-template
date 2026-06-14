@@ -256,7 +256,7 @@
           }
 
           #section_1305578020 .section-bg-overlay {
-            background-color: #4a2d2eb0;
+            background-color: rgba(7, 33, 23, 0.69);
           }
 
           #section_1305578020 .section-bg img {
@@ -290,13 +290,13 @@
     
     /* Base mobile sidebar styling - SOLID BACKGROUND */
     #main-menu.mobile-sidebar {
-      background-color: #4a2d2e !important;
+      background-color: var(--metta-bg) !important;
       opacity: 1 !important;
       z-index: 999999 !important;
     }
     
     #main-menu.mobile-sidebar .sidebar-menu {
-      background-color: #4a2d2e !important;
+      background-color: var(--metta-bg) !important;
       opacity: 1 !important;
     }
     
@@ -319,7 +319,7 @@
     .mfp-ready #main-menu.mobile-sidebar,
     .mfp-ready .mobile-sidebar .sidebar-menu {
       opacity: 1 !important;
-      background-color: #4a2d2e !important;
+      background-color: var(--metta-bg) !important;
     }
     
     #main-menu .nav-sidebar {
