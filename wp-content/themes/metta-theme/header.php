@@ -931,7 +931,7 @@
     .header.show-on-scroll,
     .stuck .header-main {
       height: 70px !important;
-      background: var(--metta-bg);
+      background: rgba(75, 35, 42, 0.95) !important;
       color: #e5d3bd;
     }
 
@@ -1800,10 +1800,10 @@
     /* Transparent & Sticky Header Backgrounds */
     .header.transparent .header-main,
     .header.transparent .header-wrapper,
-    .header.transparent .header-bg-color { background: var(--metta-bg) !important; background-color: var(--metta-bg) !important; }
+    .header.transparent .header-bg-color { background: rgba(75, 35, 42, 0.85) !important; background-color: rgba(75, 35, 42, 0.85) !important; }
 
     .header-wrapper.stuck {
-      background: var(--metta-bg) !important;
+      background: rgba(75, 35, 42, 0.95) !important;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       box-shadow: 0 2px 15px rgba(0,0,0,0.3);

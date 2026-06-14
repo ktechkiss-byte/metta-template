@@ -1565,7 +1565,10 @@ get_header(); ?>
               <style>
                 #row-317605118>.col>.col-inner {
                   padding: 100px 30px 100px 30px;
-                  background-color: rgba(7, 33, 23, 0.82);
+                  background-color: rgba(45, 20, 25, 0.68);
+                  backdrop-filter: blur(10px);
+                  -webkit-backdrop-filter: blur(10px);
+                  border: 1px solid rgba(200, 155, 60, 0.22);
                   color: white;
                 }
                 /* White text for all descriptions in Giá Trị Cốt Lõi cards */
