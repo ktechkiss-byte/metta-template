@@ -25,7 +25,7 @@ function metta_theme_scripts() {
     };
 
     // Main theme stylesheet. Flatsome CSS/JS are already hard-coded in header.php/footer.php.
-    wp_enqueue_style( 'metta-theme-style', get_stylesheet_uri(), array(), '3.36.2' );
+    wp_enqueue_style( 'metta-theme-style', get_stylesheet_uri(), array(), '3.36.3' );
 
     $uses_swiper = is_front_page()
         || is_page_template( 'page-khoa-hoc-duong-sinh.php' )
@@ -35,7 +35,7 @@ function metta_theme_scripts() {
     if ( $uses_swiper ) {
         wp_enqueue_style( 'swiper-bundle', $asset('vendor/flatsome-child/assets/css/swiper-bundle.min.css'), array(), '1.0' );
         wp_enqueue_script( 'swiper-js', $asset('vendor/flatsome-child/assets/js/swiper-bundle.min.js'), array(), '1.0', true );
-        wp_enqueue_script( 'single-chi-nhanh-js', $asset('vendor/flatsome-child/assets/js/single-chi-nhanh.js'), array('swiper-js'), '1.0', true );
+        wp_enqueue_script( 'single-chi-nhanh-js', $asset('vendor/flatsome-child/assets/js/single-chi-nhanh.js'), array('swiper-js'), '2026061502', true );
     }
 
     $uses_fancybox = is_page_template( 'page-chi-nhanh.php' ) || is_singular( 'chi-nhanh' );
@@ -699,10 +699,10 @@ add_filter( 'rank_math/opengraph/facebook/image', function( $attachment_url ) {
 });
 
 /**
- * DearFlip is only needed for the Menu PDF viewer.
+ * DearFlip is needed for the standalone Menu page and branch Menu sections.
  */
 function metta_enqueue_menu_flipbook_assets() {
-    if ( ! metta_is_menu_flipbook_page() ) {
+    if ( ! metta_is_dflip_viewer_page() ) {
         metta_dequeue_dflip_outside_menu();
         return;
     }
@@ -713,6 +713,11 @@ function metta_enqueue_menu_flipbook_assets() {
     if ( ! file_exists( $asset_path . '/js/dflip.min.js' ) || ! file_exists( $asset_path . '/css/dflip.min.css' ) ) {
         return;
     }
+
+    wp_dequeue_style( 'dflip-style' );
+    wp_deregister_style( 'dflip-style' );
+    wp_dequeue_script( 'dflip-script' );
+    wp_deregister_script( 'dflip-script' );
 
     wp_enqueue_style( 'metta-dflip-style', $asset_url . 'css/dflip.min.css', array(), '2.4.30' );
     wp_enqueue_script( 'metta-dflip-script', $asset_url . 'js/dflip.min.js', array( 'jquery' ), '2.4.30', true );
@@ -767,11 +772,19 @@ function metta_enqueue_menu_flipbook_assets() {
         'autoPlayStart' => 'false',
         'linkTarget' => '2',
         'sharePrefix' => 'flipbook-',
+        'pdfjsSrc' => $asset_url . 'js/libs/pdf.min.js',
+        'pdfjsWorkerSrc' => $asset_url . 'js/libs/pdf.worker.min.js',
+        'threejsSrc' => $asset_url . 'js/libs/three.min.js',
+        'cMapUrl' => $asset_url . 'js/libs/cmaps/',
     );
+
+    $menu_pdf_url = get_site_url() . '/wp-content/uploads/2026/01/menu-metta-web-20260612.pdf';
 
     wp_add_inline_script(
         'metta-dflip-script',
-        'window.dFlipLocation = ' . wp_json_encode( $asset_url ) . '; window.dFlipWPGlobal = ' . wp_json_encode( $dflip_global ) . ';',
+        'window.dFlipLocation = ' . wp_json_encode( $asset_url ) . '; window.dFlipWPGlobal = ' . wp_json_encode( $dflip_global ) . ';' . "\n" .
+        'window.mettaMenuPdfUrl = ' . wp_json_encode( $menu_pdf_url ) . ';' . "\n" .
+        '(function(){var pdf=window.mettaMenuPdfUrl;if(!pdf){return;}for(var key in window){if(/^option_df_/.test(key)&&window[key]&&typeof window[key]==="object"){var option=window[key];if(!option.source||/Metta_menu\.pdf(?:$|\?)/.test(option.source)){option.source=pdf;}}}})();',
         'before'
     );
 }
@@ -781,8 +794,12 @@ function metta_is_menu_flipbook_page() {
     return is_page_template( 'page-menu.php' ) || is_page( 'menu' );
 }
 
+function metta_is_dflip_viewer_page() {
+    return metta_is_menu_flipbook_page() || is_singular( 'chi-nhanh' );
+}
+
 function metta_dequeue_dflip_outside_menu() {
-    if ( metta_is_menu_flipbook_page() ) {
+    if ( metta_is_dflip_viewer_page() ) {
         return;
     }
 
