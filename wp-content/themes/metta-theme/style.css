@@ -4,7 +4,7 @@ Theme URI: http://example.com/metta-theme
 Author: Metta Team
 Author URI: http://example.com
 Description: Custom theme converted from static HTML for Metta Spa.
-Version: 3.36.3
+Version: 3.36.4
 Text Domain: metta-theme
 */
 
@@ -84,7 +84,7 @@ body::before {
   inset: 0 !important;
   z-index: -2 !important;
   background: url('images/green_lotus_bg.png') center center / cover no-repeat;
-  filter: brightness(0.35) contrast(1) opacity(0.15); /* Very faint (15%) for home/main pages */
+  filter: brightness(0.55) contrast(1.02) opacity(0.45); /* Balanced 45% opacity for home/main pages */
   pointer-events: none !important;
   display: block !important;
 }

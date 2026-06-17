@@ -25,7 +25,7 @@ function metta_theme_scripts() {
     };
 
     // Main theme stylesheet. Flatsome CSS/JS are already hard-coded in header.php/footer.php.
-    wp_enqueue_style( 'metta-theme-style', get_stylesheet_uri(), array(), '3.36.3' );
+    wp_enqueue_style( 'metta-theme-style', get_stylesheet_uri(), array(), '3.36.4' );
 
     $uses_swiper = is_front_page()
         || is_page_template( 'page-khoa-hoc-duong-sinh.php' )
