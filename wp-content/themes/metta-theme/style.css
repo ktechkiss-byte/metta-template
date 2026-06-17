@@ -4,7 +4,7 @@ Theme URI: http://example.com/metta-theme
 Author: Metta Team
 Author URI: http://example.com
 Description: Custom theme converted from static HTML for Metta Spa.
-Version: 3.36.5
+Version: 3.36.6
 Text Domain: metta-theme
 */
 
@@ -1427,4 +1427,73 @@ body.page-template-page-tin-tuc .widget-area .post_comments span {
 .section.bg-dark-moss {
   background-color: var(--metta-bg) !important;
   background: var(--metta-bg) !important;
+}
+
+/* ========================================================
+   COURSE PAGE (page-khoa-hoc-duong-sinh) DARK THEME & MOTIFS
+======================================================== */
+body.page-template-page-khoa-hoc-duong-sinh::before {
+  background-image: url('images/vietnamese_motifs_bg.png') !important;
+  filter: brightness(0.48) contrast(1.02) opacity(0.38) !important;
+}
+
+/* Force transparent backgrounds for all sections to reveal background pattern */
+.page-template-page-khoa-hoc-duong-sinh .section {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Typography contrast overrides for dark theme */
+.page-template-page-khoa-hoc-duong-sinh h2 {
+  color: var(--metta-main) !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.page-template-page-khoa-hoc-duong-sinh h3,
+.page-template-page-khoa-hoc-duong-sinh h4 {
+  color: var(--metta-main) !important;
+}
+
+.page-template-page-khoa-hoc-duong-sinh .content-body,
+.page-template-page-khoa-hoc-duong-sinh .content-body p,
+.page-template-page-khoa-hoc-duong-sinh p,
+.page-template-page-khoa-hoc-duong-sinh li,
+.page-template-page-khoa-hoc-duong-sinh span:not(.hero-chip-icon):not(.swiper-pagination-bullet) {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Ensure strong emphasis tags stand out in gold */
+.page-template-page-khoa-hoc-duong-sinh strong,
+.page-template-page-khoa-hoc-duong-sinh strong * {
+  color: var(--metta-main) !important;
+}
+
+/* Cards (USP, Modules, Testimonials) for Dark Theme */
+.page-template-page-khoa-hoc-duong-sinh .usp-card,
+.page-template-page-khoa-hoc-duong-sinh .module-item,
+.page-template-page-khoa-hoc-duong-sinh .testimonial-card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+.page-template-page-khoa-hoc-duong-sinh .usp-card p,
+.page-template-page-khoa-hoc-duong-sinh .module-body,
+.page-template-page-khoa-hoc-duong-sinh .module-body p,
+.page-template-page-khoa-hoc-duong-sinh .testimonial-card p {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.page-template-page-khoa-hoc-duong-sinh .testimonial-card strong {
+  color: var(--metta-main) !important;
+}
+
+.page-template-page-khoa-hoc-duong-sinh .testimonial-card small {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Benefit circles/boxes background adjustment */
+.page-template-page-khoa-hoc-duong-sinh .benefit-list > div > div:first-child {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
