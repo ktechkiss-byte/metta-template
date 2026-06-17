@@ -270,7 +270,7 @@ $course_testi_items = $course_rows('course_testi_list', array(
 
     <!-- CONTENT SECTIONS -->
     <!-- 2. GIỚI THIỆU -->
-    <section class="section section-padding" style="background: #fffcf9; padding-top: 80px; padding-bottom: 80px;">
+    <section class="section section-padding bg-cream" style="padding-top: 80px; padding-bottom: 80px;">
       <div class="container relative">
         <div class="row align-middle col-equal-box">
           <div class="col medium-6 small-12">
@@ -307,7 +307,7 @@ $course_testi_items = $course_rows('course_testi_list', array(
     </section>
 
     <!-- 3. USP -->
-    <section class="section section-padding" style="background: #fff; padding: 80px 0;">
+    <section class="section section-padding bg-white" style="padding: 80px 0;">
       <div class="container">
         <div class="text-center mb-50">
           <div class="text-heading">
@@ -332,7 +332,7 @@ $course_testi_items = $course_rows('course_testi_list', array(
     </section>
     
     <!-- 4. LỘ TRÌNH -->
-    <section class="section section-padding" style="background: #fdfaf7; padding: 100px 0;">
+    <section class="section section-padding bg-light-cream" style="padding: 100px 0;">
       <div class="container relative">
         <div class="text-center mb-50">
           <div class="text-heading">
@@ -393,7 +393,7 @@ $course_testi_items = $course_rows('course_testi_list', array(
     </section>
 
     <!-- 6. TARGET -->
-    <section class="section section-padding" style="background: var(--metta-bg); color: #fff; padding: 100px 0;">
+    <section class="section section-padding bg-dark-moss" style="color: #fff; padding: 100px 0;">
       <div class="container text-center">
         <div class="text-heading-light">
           <h2 style="color: var(--metta-main); font-size: 2.8rem; margin-bottom: 60px;"><?php echo esc_html($course_text('course_target_title', 'ĐỐI TƯỢNG PHÙ HỢP', array('KHÓA HỌC DÀNH CHO AI?'))); ?></h2>
@@ -412,7 +412,7 @@ $course_testi_items = $course_rows('course_testi_list', array(
     </section>
 
     <!-- 7. TESTIMONIALS -->
-    <section class="section section-padding" style="background: #fffcf9; padding: 100px 0;">
+    <section class="section section-padding bg-cream" style="padding: 100px 0;">
       <div class="container">
         <div class="text-center mb-60">
           <div class="text-heading">
@@ -444,7 +444,7 @@ $course_testi_items = $course_rows('course_testi_list', array(
     </section>
 
     <!-- 8. FORM -->
-    <section id="register" class="section section-padding" style="background: #fff; padding: 120px 0;">
+    <section id="register" class="section section-padding bg-white" style="padding: 120px 0;">
       <div class="container">
         <div class="reg-wrapper" style="background: var(--metta-bg); border-radius: 40px; overflow: hidden; padding: 80px 60px; position: relative; box-shadow: 0 30px 80px rgba(0,0,0,0.4);">
           <div class="row align-middle relative" style="z-index: 2;">

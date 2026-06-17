@@ -86,7 +86,7 @@ get_header(); ?>
 
     <!-- CONTENT SECTIONS -->
     <!-- 2. GIỚI THIỆU -->
-    <section class="section section-padding" style="background: #fffcf9; padding-top: 80px; padding-bottom: 80px;">
+    <section class="section section-padding bg-cream" style="padding-top: 80px; padding-bottom: 80px;">
       <div class="container relative">
         <div class="row align-middle col-equal-box">
           <div class="col medium-6 small-12">
@@ -123,7 +123,7 @@ get_header(); ?>
     </section>
 
     <!-- 3. USP - Fixed items instead of repeater -->
-    <section class="section section-padding" style="background: #fff; padding: 80px 0;">
+    <section class="section section-padding bg-white" style="padding: 80px 0;">
       <div class="container">
         <div class="text-center mb-50">
           <div class="text-heading">
@@ -170,7 +170,7 @@ get_header(); ?>
     </section>
     
     <!-- 4. LỘ TRÌNH - Fixed 3 modules -->
-    <section class="section section-padding" style="background: #fdfaf7; padding: 100px 0;">
+    <section class="section section-padding bg-light-cream" style="padding: 100px 0;">
       <div class="container relative">
         <div class="text-center mb-50">
           <div class="text-heading">
@@ -307,7 +307,7 @@ get_header(); ?>
     foreach($targets as $t) { if(!empty($t['desc'])) { $has_targets = true; break; } }
     if($has_targets): 
     ?>
-    <section class="section section-padding target-audience-section" style="background: var(--metta-bg); color: #fff; padding: 80px 0;">
+    <section class="section section-padding target-audience-section bg-dark-moss" style="color: #fff; padding: 80px 0;">
       <div class="container text-center">
         <div class="text-heading-light">
           <h2 style="color: var(--metta-main); font-size: 2.4rem; margin-bottom: 50px; font-weight: 700;"><?php echo metta_get_with_fallback('training_target_title', 'KHÓA HỌC DÀNH CHO AI?'); ?></h2>
@@ -348,7 +348,7 @@ get_header(); ?>
     foreach($testimonials as $t) { if(!empty($t['content'])) { $has_testi = true; break; } }
     if($has_testi): 
     ?>
-    <section class="section section-padding" style="background: #fffcf9; padding: 100px 0;">
+    <section class="section section-padding bg-cream" style="padding: 100px 0;">
       <div class="container">
         <div class="text-center mb-60">
           <div class="text-heading">
@@ -381,7 +381,7 @@ get_header(); ?>
     <?php endif; ?>
 
     <!-- 8. FORM -->
-    <section id="register" class="section section-padding" style="background: #fff; padding: 120px 0;">
+    <section id="register" class="section section-padding bg-white" style="padding: 120px 0;">
       <div class="container">
         <div class="reg-wrapper" style="background: var(--metta-bg); border-radius: 40px; overflow: hidden; padding: 80px 60px; position: relative; box-shadow: 0 30px 80px rgba(0,0,0,0.4);">
           <div class="row align-middle relative" style="z-index: 2;">
