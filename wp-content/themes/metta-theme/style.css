@@ -4,7 +4,7 @@ Theme URI: http://example.com/metta-theme
 Author: Metta Team
 Author URI: http://example.com
 Description: Custom theme converted from static HTML for Metta Spa.
-Version: 3.36.6
+Version: 3.36.7
 Text Domain: metta-theme
 */
 
@@ -99,26 +99,7 @@ body::after {
   display: block !important;
 }
 
-/* ── Page-specific Background Accent Customizations (Option 1) ── */
-body.page-template-page-gioi-thieu::before {
-  background: url('images/green_lotus_bg.png') top -100px right -100px / 750px no-repeat;
-  filter: brightness(0.5) contrast(1.05) opacity(0.25);
-}
-
-body.page-template-page-chi-nhanh::before {
-  background: url('images/green_lotus_bg.png') top -100px left -100px / 750px no-repeat;
-  filter: brightness(0.5) contrast(1.05) opacity(0.25);
-}
-
-body.page-template-page-dao-tao::before {
-  background: url('images/green_lotus_bg.png') bottom -150px right -150px / 750px no-repeat;
-  filter: brightness(0.5) contrast(1.05) opacity(0.25);
-}
-
-body.page-template-page-san-pham::before {
-  background: url('images/green_lotus_bg.png') bottom -150px left -150px / 750px no-repeat;
-  filter: brightness(0.5) contrast(1.05) opacity(0.25);
-}
+/* Page-specific background accents are overridden by the unified vietnamese_motifs_bg dark theme at the bottom of this file. */
 
 body .blog-single {
   color: #333;
@@ -1430,27 +1411,78 @@ body.page-template-page-tin-tuc .widget-area .post_comments span {
 }
 
 /* ========================================================
-   COURSE PAGE (page-khoa-hoc-duong-sinh) DARK THEME & MOTIFS
+   SITE-WIDE DARK MOTIFS THEME OVERRIDES
 ======================================================== */
-body.page-template-page-khoa-hoc-duong-sinh::before {
+body.page-template-page-khoa-hoc-duong-sinh::before,
+body.page-template-page-gioi-thieu::before,
+body.page-template-page-lien-he::before,
+body.single-post::before,
+body.single-chi-nhanh::before,
+body.page-template-page-chi-nhanh::before,
+body.page-template-page-tin-tuc::before,
+body.archive::before,
+body.blog::before {
   background-image: url('images/vietnamese_motifs_bg.png') !important;
+  background-position: center center !important;
+  background-size: cover !important;
   filter: brightness(0.48) contrast(1.02) opacity(0.38) !important;
 }
 
-/* Force transparent backgrounds for all sections to reveal background pattern */
-.page-template-page-khoa-hoc-duong-sinh .section {
+/* Force transparent backgrounds for all sections to reveal background pattern on these pages */
+.page-template-page-khoa-hoc-duong-sinh .section,
+.page-template-page-gioi-thieu .section,
+.page-template-page-lien-he .section,
+.single-post .section,
+.single-chi-nhanh .section,
+.page-template-page-chi-nhanh .section,
+.page-template-page-tin-tuc .section,
+.archive .section,
+.blog .section {
   background: transparent !important;
   background-color: transparent !important;
 }
 
-/* Typography contrast overrides for dark theme */
-.page-template-page-khoa-hoc-duong-sinh h2 {
+/* Typography contrast overrides for dark theme pages */
+.page-template-page-khoa-hoc-duong-sinh h2,
+.page-template-page-gioi-thieu h2,
+.page-template-page-lien-he h2,
+.single-post h2,
+.single-chi-nhanh h2,
+.page-template-page-chi-nhanh h2,
+.page-template-page-tin-tuc h2,
+.archive h2,
+.blog h2,
+.page-template-page-khoa-hoc-duong-sinh h1,
+.page-template-page-gioi-thieu h1,
+.page-template-page-lien-he h1,
+.single-post h1,
+.single-chi-nhanh h1,
+.page-template-page-chi-nhanh h1,
+.page-template-page-tin-tuc h1,
+.archive h1,
+.blog h1 {
   color: var(--metta-main) !important;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .page-template-page-khoa-hoc-duong-sinh h3,
-.page-template-page-khoa-hoc-duong-sinh h4 {
+.page-template-page-khoa-hoc-duong-sinh h4,
+.page-template-page-gioi-thieu h3,
+.page-template-page-gioi-thieu h4,
+.page-template-page-lien-he h3,
+.page-template-page-lien-he h4,
+.single-post h3,
+.single-post h4,
+.single-chi-nhanh h3,
+.single-chi-nhanh h4,
+.page-template-page-chi-nhanh h3,
+.page-template-page-chi-nhanh h4,
+.page-template-page-tin-tuc h3,
+.page-template-page-tin-tuc h4,
+.archive h3,
+.archive h4,
+.blog h3,
+.blog h4 {
   color: var(--metta-main) !important;
 }
 
@@ -1458,20 +1490,80 @@ body.page-template-page-khoa-hoc-duong-sinh::before {
 .page-template-page-khoa-hoc-duong-sinh .content-body p,
 .page-template-page-khoa-hoc-duong-sinh p,
 .page-template-page-khoa-hoc-duong-sinh li,
-.page-template-page-khoa-hoc-duong-sinh span:not(.hero-chip-icon):not(.swiper-pagination-bullet) {
+.page-template-page-khoa-hoc-duong-sinh span:not(.hero-chip-icon):not(.swiper-pagination-bullet),
+.page-template-page-gioi-thieu p,
+.page-template-page-gioi-thieu li,
+.page-template-page-gioi-thieu span:not(.hero-chip-icon):not(.swiper-pagination-bullet),
+.page-template-page-lien-he p,
+.page-template-page-lien-he li,
+.page-template-page-lien-he span:not(.hero-chip-icon):not(.swiper-pagination-bullet),
+.single-post p,
+.single-post li,
+.single-post span:not(.hero-chip-icon):not(.swiper-pagination-bullet),
+.single-chi-nhanh p,
+.single-chi-nhanh li,
+.single-chi-nhanh span:not(.hero-chip-icon):not(.swiper-pagination-bullet),
+.page-template-page-chi-nhanh p,
+.page-template-page-chi-nhanh li,
+.page-template-page-chi-nhanh span:not(.hero-chip-icon):not(.swiper-pagination-bullet),
+.page-template-page-tin-tuc p,
+.page-template-page-tin-tuc li,
+.page-template-page-tin-tuc span:not(.hero-chip-icon):not(.swiper-pagination-bullet),
+.archive p,
+.archive li,
+.archive span:not(.hero-chip-icon):not(.swiper-pagination-bullet),
+.blog p,
+.blog li,
+.blog span:not(.hero-chip-icon):not(.swiper-pagination-bullet) {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
 /* Ensure strong emphasis tags stand out in gold */
 .page-template-page-khoa-hoc-duong-sinh strong,
-.page-template-page-khoa-hoc-duong-sinh strong * {
+.page-template-page-khoa-hoc-duong-sinh strong *,
+.page-template-page-gioi-thieu strong,
+.page-template-page-gioi-thieu strong *,
+.page-template-page-lien-he strong,
+.page-template-page-lien-he strong *,
+.single-post strong,
+.single-post strong *,
+.single-chi-nhanh strong,
+.single-chi-nhanh strong *,
+.page-template-page-chi-nhanh strong,
+.page-template-page-chi-nhanh strong *,
+.page-template-page-tin-tuc strong,
+.page-template-page-tin-tuc strong *,
+.archive strong,
+.archive strong *,
+.blog strong,
+.blog strong * {
   color: var(--metta-main) !important;
 }
 
-/* Cards (USP, Modules, Testimonials) for Dark Theme */
+/* Cards (USP, Modules, Testimonials, Branch items) for Dark Theme */
 .page-template-page-khoa-hoc-duong-sinh .usp-card,
 .page-template-page-khoa-hoc-duong-sinh .module-item,
-.page-template-page-khoa-hoc-duong-sinh .testimonial-card {
+.page-template-page-khoa-hoc-duong-sinh .testimonial-card,
+.page-template-page-gioi-thieu .usp-card,
+.page-template-page-gioi-thieu .module-item,
+.page-template-page-gioi-thieu .testimonial-card,
+.page-template-page-gioi-thieu .card,
+.page-template-page-gioi-thieu .box-text-inner,
+.page-template-page-lien-he .card,
+.page-template-page-lien-he .box-text-inner,
+.single-post .card,
+.single-post .box-text-inner,
+.single-chi-nhanh .card,
+.single-chi-nhanh .box-text-inner,
+.page-template-page-chi-nhanh .card,
+.page-template-page-chi-nhanh .box-text-inner,
+.page-template-page-chi-nhanh .branch-item,
+.page-template-page-tin-tuc .card,
+.page-template-page-tin-tuc .box-text-inner,
+.archive .card,
+.archive .box-text-inner,
+.blog .card,
+.blog .box-text-inner {
   background: rgba(255, 255, 255, 0.04) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3) !important;
@@ -1480,20 +1572,45 @@ body.page-template-page-khoa-hoc-duong-sinh::before {
 .page-template-page-khoa-hoc-duong-sinh .usp-card p,
 .page-template-page-khoa-hoc-duong-sinh .module-body,
 .page-template-page-khoa-hoc-duong-sinh .module-body p,
-.page-template-page-khoa-hoc-duong-sinh .testimonial-card p {
+.page-template-page-khoa-hoc-duong-sinh .testimonial-card p,
+.page-template-page-gioi-thieu .usp-card p,
+.page-template-page-gioi-thieu .module-body,
+.page-template-page-gioi-thieu .module-body p,
+.page-template-page-gioi-thieu .testimonial-card p,
+.page-template-page-gioi-thieu .card p,
+.page-template-page-gioi-thieu .box-text-inner p,
+.page-template-page-lien-he .card p,
+.page-template-page-lien-he .box-text-inner p,
+.single-post .card p,
+.single-post .box-text-inner p,
+.single-chi-nhanh .card p,
+.single-chi-nhanh .box-text-inner p,
+.page-template-page-chi-nhanh .card p,
+.page-template-page-chi-nhanh .box-text-inner p,
+.page-template-page-chi-nhanh .branch-item p,
+.page-template-page-tin-tuc .card p,
+.page-template-page-tin-tuc .box-text-inner p,
+.archive .card p,
+.archive .box-text-inner p,
+.blog .card p,
+.blog .box-text-inner p {
   color: rgba(255, 255, 255, 0.72) !important;
 }
 
-.page-template-page-khoa-hoc-duong-sinh .testimonial-card strong {
+.page-template-page-khoa-hoc-duong-sinh .testimonial-card strong,
+.page-template-page-gioi-thieu .testimonial-card strong {
   color: var(--metta-main) !important;
 }
 
-.page-template-page-khoa-hoc-duong-sinh .testimonial-card small {
+.page-template-page-khoa-hoc-duong-sinh .testimonial-card small,
+.page-template-page-gioi-thieu .testimonial-card small {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
 /* Benefit circles/boxes background adjustment */
-.page-template-page-khoa-hoc-duong-sinh .benefit-list > div > div:first-child {
+.page-template-page-khoa-hoc-duong-sinh .benefit-list > div > div:first-child,
+.page-template-page-gioi-thieu .benefit-list > div > div:first-child,
+.page-template-page-lien-he .benefit-list > div > div:first-child {
   background: rgba(255, 255, 255, 0.03) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
