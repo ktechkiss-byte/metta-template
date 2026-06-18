@@ -514,8 +514,18 @@
             } else {
                  $parent.addClass('submenu-open');
                  $submenu.addClass('submenu-visible').slideDown(300);
-            }
-         }
+             }
+          }
+       });
+
+      // Force parent menu items to navigate to their URL on desktop (>= 850px)
+      $('.header-nav-main.nav > li.menu-item-has-children > a').on('click', function(e) {
+        if ($(window).width() >= 850) {
+          var href = $(this).attr('href');
+          if (href && href !== '#' && href !== 'javascript:void(0);') {
+            window.location.href = href;
+          }
+        }
       });
     });
   </script>
