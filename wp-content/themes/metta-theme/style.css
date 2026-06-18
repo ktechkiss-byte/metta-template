@@ -4,7 +4,7 @@ Theme URI: http://example.com/metta-theme
 Author: Metta Team
 Author URI: http://example.com
 Description: Custom theme converted from static HTML for Metta Spa.
-Version: 3.36.7
+Version: 3.36.8
 Text Domain: metta-theme
 */
 
@@ -1613,4 +1613,164 @@ body.blog::before {
 .page-template-page-lien-he .benefit-list > div > div:first-child {
   background: rgba(255, 255, 255, 0.03) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* ========================================================
+   CONTACT PAGE (LIEN-HE) SPECIFIC DARK THEME OVERRIDES
+======================================================== */
+/* Info Cards Grid & Cards */
+.page-template-page-lien-he .mc-cards__grid {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  gap: 16px !important;
+}
+.page-template-page-lien-he .mc-card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3) !important;
+}
+.page-template-page-lien-he .mc-card:hover {
+  background: rgba(200, 169, 110, 0.15) !important;
+}
+.page-template-page-lien-he .mc-card__label {
+  color: var(--metta-main) !important;
+}
+.page-template-page-lien-he .mc-card__val,
+.page-template-page-lien-he .mc-card__val a {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.page-template-page-lien-he .mc-card:hover .mc-card__icon,
+.page-template-page-lien-he .mc-card:hover .mc-card__label,
+.page-template-page-lien-he .mc-card:hover .mc-card__val,
+.page-template-page-lien-he .mc-card:hover .mc-card__val a {
+  color: #fff !important;
+}
+
+/* Connect Social Box inside Map Column */
+.page-template-page-lien-he .mc-map-col div[style*="background: #fff"],
+.page-template-page-lien-he .mc-map-col div[style*="background:#fff"] {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Booking Form Elements */
+.page-template-page-lien-he .mc-form-header h2 {
+  color: var(--metta-main) !important;
+}
+.page-template-page-lien-he .mc-form-header p {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.page-template-page-lien-he .mc-field label {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.page-template-page-lien-he .mc-field input,
+.page-template-page-lien-he .mc-field select,
+.page-template-page-lien-he .mc-field textarea {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+.page-template-page-lien-he .mc-field input::placeholder,
+.page-template-page-lien-he .mc-field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35) !important;
+}
+.page-template-page-lien-he .mc-field input:focus,
+.page-template-page-lien-he .mc-field select:focus,
+.page-template-page-lien-he .mc-field textarea:focus {
+  border-color: var(--metta-main) !important;
+  box-shadow: 0 0 0 3px rgba(244, 157, 33, 0.2) !important;
+}
+.page-template-page-lien-he .mc-field select option {
+  background: #072117 !important;
+  color: #ffffff !important;
+}
+.page-template-page-lien-he .mc-submit-btn {
+  background: var(--metta-gradient-cta) !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+.page-template-page-lien-he .mc-submit-btn:hover {
+  background: var(--metta-gradient-cta) !important;
+  filter: brightness(1.1) !important;
+  transform: translateY(-2px) !important;
+  color: #ffffff !important;
+}
+
+/* Branches Section */
+.page-template-page-lien-he .mc-branches {
+  background: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.page-template-page-lien-he .mc-branch-grid {
+  background: transparent !important;
+  gap: 16px !important;
+}
+.page-template-page-lien-he .mc-branch-item {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.page-template-page-lien-he .mc-branch-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+.page-template-page-lien-he .mc-branch-name {
+  color: var(--metta-main) !important;
+}
+.page-template-page-lien-he .mc-branch-addr {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+.page-template-page-lien-he .mc-branch-num {
+  color: rgba(244, 157, 33, 0.12) !important;
+}
+.page-template-page-lien-he .mc-branch-item:hover .mc-branch-num {
+  color: rgba(244, 157, 33, 0.25) !important;
+}
+
+/* CTA Section */
+.page-template-page-lien-he .mc-cta {
+  background: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.page-template-page-lien-he .mc-cta-btn--gold {
+  background: var(--metta-gradient-cta) !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+.page-template-page-lien-he .mc-cta-btn--gold:hover {
+  filter: brightness(1.1) !important;
+}
+.page-template-page-lien-he .mc-cta-btn--outline {
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+}
+.page-template-page-lien-he .mc-cta-btn--outline:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: #ffffff !important;
+}
+
+/* Success Modal */
+.page-template-page-lien-he .metta-modal-content {
+  background: var(--metta-bg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-top: 4px solid var(--metta-main) !important;
+}
+.page-template-page-lien-he .metta-modal-header h2 {
+  color: var(--metta-main) !important;
+}
+.page-template-page-lien-he .metta-modal-body p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.page-template-page-lien-he .modal-info li {
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.page-template-page-lien-he .modal-footer-msg {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+.page-template-page-lien-he .metta-modal-btn {
+  background: var(--metta-gradient-cta) !important;
+  color: #ffffff !important;
+}
+.page-template-page-lien-he .metta-modal-btn:hover {
+  filter: brightness(1.1) !important;
 }
