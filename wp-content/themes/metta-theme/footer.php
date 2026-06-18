@@ -80,7 +80,7 @@
                     data-label="Instagram" class="icon button circle is-outline tooltip instagram"
                     title="Theo dõi trên Instagram" aria-label="Theo dõi trên Instagram" rel="noopener nofollow"><i
                       class="icon-instagram" aria-hidden="true"></i></a><a
-                    href="https://www.tiktok.com/@mettaspavietnam.official" target="_blank" data-label="TikTok"
+                    href="https://www.tiktok.com/@metta_daotaoduongsinh?_r=1&_t=ZS-97ImBgciB1h" target="_blank" data-label="TikTok"
                     class="icon button circle is-outline tooltip tiktok" title="Theo dõi trên TikTok"
                     aria-label="Theo dõi trên TikTok" rel="noopener nofollow"><i class="icon-tiktok"
                       aria-hidden="true"></i></a>
